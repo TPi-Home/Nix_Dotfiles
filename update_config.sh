@@ -90,6 +90,10 @@ echo "Safety check passed."
 # Git
 # ============================================================================
 
+# ============================================================================
+# Git
+# ============================================================================
+
 echo
 echo "Git status:"
 git status
@@ -107,10 +111,17 @@ if [[ "$answer" != "y" && "$answer" != "Y" ]]; then
     exit 0
 fi
 
+echo
+read -r -p "Commit message: " commit_message
+
+if [[ -z "$commit_message" ]]; then
+    echo "ERROR: Commit message cannot be empty."
+    exit 1
+fi
+
 git add .
-git commit -m "Update NixOS and dotfiles configuration"
+git commit -m "$commit_message"
 git push
 
 echo
 echo "Backup committed and pushed successfully."
-
