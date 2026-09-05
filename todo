@@ -1,3 +1,7 @@
 * home mgr -> manage .config in home 
 * move to unstable channel
-* nerd fonts?
+* nerd fonts? should be finished
+* nix really does not seem to enjoy global installs of various deps, so I should handle that with extrapackages
+for said deps 
+* setup shell.nix files in various folders 
+* something about the language server for c++ still does not feel right
