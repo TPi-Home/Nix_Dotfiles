@@ -1,0 +1,70 @@
+# Secrets / credentials
+*.key
+*.pem
+*.p12
+*.pfx
+*.secret
+*.secrets
+*.token
+*.credentials
+
+# Browser profiles / credentials
+**/key4.db
+**/logins.json
+**/cookies.sqlite
+**/cookies.sqlite-wal
+**/cookies.sqlite-shm
+**/places.sqlite
+**/places.sqlite-wal
+**/places.sqlite-shm
+
+# Generic credential/config databases
+**/*credentials*
+**/*password*
+**/*secrets*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# SSH
+.ssh/
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# GPG
+.gnupg/
+
+# Editor / IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Build output
+build/
+out/
+result
+result-*
+
+# C/C++ build artifacts
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
