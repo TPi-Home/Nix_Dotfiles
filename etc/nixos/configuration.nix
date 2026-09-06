@@ -179,6 +179,7 @@
     fastfetch
     btop
     direnv
+    nvtopPackages.full
 
     # --------------------------------------------------------------------------
     # Editors
