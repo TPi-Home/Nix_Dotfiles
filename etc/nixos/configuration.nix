@@ -318,6 +318,8 @@
     man-pages
     stow
     ncdu
+    # Utilities specific to Nix:
+    nh
 
     # ============================================================================
     # Games
