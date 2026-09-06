@@ -28,7 +28,7 @@ echo "NixOS configuration copied successfully."
 
 mkdir -p "$DEST_CONFIG"
 
-for dir in lazygit nvim alacritty; do
+for dir in lazygit nvim alacritty kitty; do
     if [[ -d "$CONFIG/$dir" ]]; then
         rm -rf "$DEST_CONFIG/$dir"
         cp -a "$CONFIG/$dir" "$DEST_CONFIG/$dir"
