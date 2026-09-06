@@ -7,3 +7,4 @@ for said deps - tried this, some of the globals have to stay but thankfully we h
 * something about the language server for c++ still does not feel right - done
 * submit pull request for protonvpn-cli - done
 * disable protonvpn-cli killswitch before I forget and revert to feeling like my tech skills are elementary 
+* there is a pull request in protonvpn-cli that I want to use if it doesn't get merged that allows you to select the protocol 
