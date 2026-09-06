@@ -1,7 +1,9 @@
 * home mgr -> manage .config in home 
-* move to unstable channel
-* nerd fonts? should be finished
+* move to unstable channel - done 
+* nerd fonts? should be finished - done 
 * nix really does not seem to enjoy global installs of various deps, so I should handle that with extrapackages
-for said deps 
-* setup shell.nix files in various folders 
-* something about the language server for c++ still does not feel right
+for said deps - tried this, some of the globals have to stay but thankfully we have flakes
+* setup shell.nix files in various folders - done 
+* something about the language server for c++ still does not feel right - done
+* submit pull request for protonvpn-cli - done
+* disable protonvpn-cli killswitch before I forget and revert to feeling like my tech skills are elementary 
