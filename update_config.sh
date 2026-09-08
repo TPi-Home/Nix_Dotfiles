@@ -8,6 +8,8 @@ DEST_NIX="$REPO/etc/nixos"
 CONFIG="$HOME/.config"
 DEST_CONFIG="$REPO/.config"
 
+VMCONF="$HOME/VM/configuration.nix"
+DEST_VM="$REPO/VM"
 
 cd "$REPO"
 
@@ -35,6 +37,16 @@ for dir in lazygit nvim kitty; do
         echo ".config/$dir copied successfully."
     fi
 done
+
+# ============================================================================
+# VM Configuration
+# ============================================================================
+
+if [[ -f "$VMCONF" ]]; then
+    mkdir -p "$DEST_VM"
+    cp -a "$VMCONF" "$DEST_VM/configuration.nix"
+    echo "VM configuration.nix copied successfully."
+fi
 
 # ============================================================================
 # Starship
