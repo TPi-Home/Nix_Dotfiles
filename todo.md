@@ -2,6 +2,8 @@
 
 ## Hyperlink these files to README and create a folder for priority and timelines
 
+9/9/26: This is a mess and I am going to bed.
+
 ## High Priority
 
 ### Flakes & Home Manager
@@ -84,6 +86,7 @@
 * Evaluate whether a tiling WM/compositor is still desirable
 * Identify GNOME functionality that would be lost or become awkward with a tiling WM to prepare for that migration if I go that route
 * Document workarounds for missing GNOME conveniences
+* Push configuration files for keybinds and tiling in gnome
 
 ### GNOME Niceties
 

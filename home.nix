@@ -5,6 +5,7 @@
     ./zsh.nix
     ./.config/kitty/kitty.nix
     ./.config/nvim/nvim.nix
+    ./.config/starship.nix
   ];
 
   home.username = "tyler";

@@ -20,8 +20,6 @@
 
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-      eval "$(starship init zsh)"
-
       export EDITOR=nvim
       export VISUAL=nvim
     '';
