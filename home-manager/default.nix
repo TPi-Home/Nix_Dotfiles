@@ -1,11 +1,13 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
+    ./git.nix
+    ./kitty.nix
+    ./nvim.nix
+    ./packages.nix
+    ./starship.nix
     ./zsh.nix
-    ./.config/kitty/kitty.nix
-    ./.config/nvim/nvim.nix
-    ./.config/starship.nix
   ];
 
   home.username = "tyler";
