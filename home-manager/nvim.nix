@@ -1,14 +1,10 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.neovim = {
     enable = true;
 
     extraPackages = with pkgs; [
-      tree-sitter
-      fd
-      ripgrep
-      lazygit
       wl-clipboard
     ];
 
