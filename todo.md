@@ -119,7 +119,7 @@
 * Review existing Zsh configuration and move user-specific settings into Home Manager
 * Review shell plugins and completion configuration
 * Decide whether shell configuration should be shared across machines
-* Increase context/history size for terminal
+* Increase context/history size for zsh
 * Ctrl + c/v as copy/paste in terminal
 
 ---

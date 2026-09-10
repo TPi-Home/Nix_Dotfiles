@@ -30,7 +30,9 @@ $docker_context\
 $nix_shell\
 [](fg:#06969A bg:#33658A)\
 $time\
-[ ](fg:#33658A)\
+[ ](fg:#33658A)
+$line_break\
+$character
 """
 
 [nix_shell]
@@ -159,4 +161,8 @@ disabled = false
 time_format = "%R" 
 style = "bg:#33658A"
 format = '[ ♥ $time ]($style)'
+
+[character]
+success_symbol = "[❯](bold)"
+error_symbol = "[❯](bold red)"
 
