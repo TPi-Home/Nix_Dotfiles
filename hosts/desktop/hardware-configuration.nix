@@ -1,0 +1,52 @@
+# Hardware configuration for the desktop.
+# Filesystem UUIDs are preserved from the existing working configuration.
+{ config, lib, pkgs, modulesPath, ... }:
+
+{
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
+
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "ahci"
+    "usbhid"
+    "uas"
+    "usb_storage"
+    "sd_mod"
+  ];
+
+  boot.initrd.kernelModules = [ ];
+
+  boot.kernelModules = [
+    "kvm-amd"
+  ];
+
+  boot.extraModulePackages = [ ];
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/402576bf-3a1f-49ec-83e8-7912f4215ae6";
+    fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/B51A-D026";
+    fsType = "vfat";
+    options = [
+      "fmask=0077"
+      "dmask=0077"
+    ];
+  };
+
+  swapDevices = [
+    {
+      device = "/dev/disk/by-uuid/440e96a8-8e49-4945-b635-7dc89e3383b3";
+    }
+  ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
+}

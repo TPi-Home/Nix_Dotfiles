@@ -1,4 +1,3 @@
-
 {
   description = "TPi's NixOS configuration";
 
@@ -13,21 +12,57 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
     {
-      nixosConfigurations.nix-test = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+      nixosConfigurations = {
+        #desktop = nixpkgs.lib.nixosSystem {
+          #system = "x86_64-linux";
 
-        modules = [
-          ./configuration.nix
+          #modules = [
+            #./modules/configuration.nix
+            #./hosts/hardware-configuration.nix
 
-          home-manager.nixosModules.home-manager
+            #home-manager.nixosModules.home-manager
 
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            #{
+              #home-manager.useGlobalPkgs = true;
+              #home-manager.useUserPackages = true;
+              #home-manager.users.tyler = import ./home-manager/home.nix;
+            #}
+          #];
+        #};
 
-            home-manager.users.tyler = import ./home.nix;
-          }
-        ];
+        #laptop = nixpkgs.lib.nixosSystem {
+          #system = "x86_64-linux";
+
+          #modules = [
+            #./modules/configuration.nix
+            #./hosts/hardware-configuration.nix
+
+            #home-manager.nixosModules.home-manager
+
+            #{
+              #home-manager.useGlobalPkgs = true;
+              #home-manager.useUserPackages = true;
+              #home-manager.users.tyler = import ./home-manager/home.nix;
+            #}
+          #];
+        #};
+
+        generic = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+
+          modules = [
+            ./modules/configuration.nix
+            ./hosts/generic/hardware-configuration.nix
+
+            home-manager.nixosModules.home-manager
+
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.tyler = import ./home-manager/default.nix;
+            }
+          ];
+        };
       };
-    };
+    }
 }

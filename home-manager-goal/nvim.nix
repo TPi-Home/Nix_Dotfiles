@@ -1,3 +1,4 @@
+# I don't want to keep this lengthy system wide config forever
 { config, pkgs, ... }:
 
 {
@@ -5,11 +6,37 @@
     enable = true;
 
     extraPackages = with pkgs; [
+      pkg-config
       tree-sitter
       fd
       ripgrep
+      git
       lazygit
       wl-clipboard
+      
+      lua-language-server
+      luarocks
+      stylua
+
+      gcc
+      clang-tools
+      cmake
+      ninja
+      gdb
+      lldb
+
+      rustup
+      rust-analyzer
+
+      python3
+      pyright
+      
+      nil
+
+      bash-language-server
+      yaml-language-server
+
+      marksman
     ];
 
     plugins = [
@@ -27,6 +54,6 @@
       }
     ];
 
-    extraLuaConfig = builtins.readFile ../home/.config/nvim/init.lua;
+    extraLuaConfig = builtins.readFile ./nvim/init.lua;
   };
 }
