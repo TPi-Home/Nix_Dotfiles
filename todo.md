@@ -3,6 +3,11 @@
 ## Hyperlink these files to README and create a folder for priority and timelines
 
 9/9/26: This is a mess and I am going to bed.
+9/10/26: Getting to a more modular layout. Tomorrow I will setup nvim wrappers and finish making these configs more modular.
+  I ALSO NEED TO SET UP OVERLAYS THAT I WANT:
+    * NVIM NIGHTLY
+    * Firefox nightly
+    *
 
 ## High Priority
 
@@ -74,7 +79,7 @@
 
 * Reproduce current GNOME preferences declaratively
 * Manage GNOME settings with Home Manager / `dconf`
-* Manage GTK theme declaratively? 
+* Manage GTK theme declaratively? `stylix`
 * Manage icon theme declaratively?
 * Manage cursor theme declaratively?
 * Manage fonts declaratively? - attempted, will likely have to use home manager as opposed to a module
