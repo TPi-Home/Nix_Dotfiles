@@ -84,6 +84,13 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- Testing Section:
+
+vim.api.nvim_create_autocmd("VimResized", {
+  pattern = "*",
+  command = "clear | redraw!",
+})
+
 -- ============================================================
 -- SECTION 1: OPTIONS
 -- Core Neovim settings, leaders, options
@@ -423,15 +430,12 @@ do
   -- change the command under that to load whatever the name of that colorscheme is.
   --
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-vim.pack.add { gh 'AstroNvim/astrotheme' }
 
-require('astrotheme').setup {
-  plugins = {
-    ['dashboard-nvim'] = true,
-  },
-}
+vim.pack.add { gh 'olimorris/onedarkpro.nvim' }
 
-vim.cmd.colorscheme 'astrodark'
+require('onedarkpro').setup()
+
+vim.cmd.colorscheme 'onedark_dark'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
