@@ -182,7 +182,8 @@
     # --------------------------------------------------------------------------
 
     curl
-    wgetangrr
+    wget
+    angrr
     unzip
     unrar
     zip
@@ -223,7 +224,7 @@
     # nix deps:
     nix-tree
     # what I wish I knew about when building bash scripts to rebuild:
-    nixos-cli
+    #nixos-cli
     # auto enter env upon "cd dir" if I understand correctly:
     direnv
     # if I ever write derivations:
