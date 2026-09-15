@@ -4,7 +4,7 @@
   programs.zsh = {
     enable = true;
 
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
 
@@ -22,6 +22,9 @@
 
       export EDITOR=nvim
       export VISUAL=nvim
+
+      alias ddgr="ddgr --colors eDngxy"
+
     '';
   };
 }

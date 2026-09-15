@@ -430,13 +430,13 @@ do
   -- change the command under that to load whatever the name of that colorscheme is.
   --
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  require('astrotheme').setup {
+    plugins = {
+      ['dashboard-nvim'] = true,
+    },
+  }
 
-vim.pack.add { gh 'olimorris/onedarkpro.nvim' }
-
-require('onedarkpro').setup()
-
-vim.cmd.colorscheme 'onedark_dark'
-
+  vim.cmd.colorscheme 'astrodark'
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
   require('todo-comments').setup { signs = false }

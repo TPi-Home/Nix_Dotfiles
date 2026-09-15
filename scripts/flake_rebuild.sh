@@ -1,1 +1,1 @@
- sudo switch --flake ~/Nix_Dot_Files#generic
+sudo nixos-rebuild switch --flake ~/Nix_Dot_Files#generic

@@ -22,7 +22,8 @@
         '';
       }
     ];
-
-    extraLuaConfig = builtins.readFile ../home/.config/nvim/init.lua;
   };
+
+  xdg.configFile."nvim/init.lua".source =
+    ../home/.config/nvim/init.lua;
 }
