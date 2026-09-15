@@ -7,6 +7,7 @@
 
 ### Configuration Organization
 
+* I really would like to optimize what is built, as much of this software is not updated very often
 * Decide which configurations should be shared between machines/accounts
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
 
