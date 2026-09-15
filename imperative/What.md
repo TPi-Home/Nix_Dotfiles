@@ -1,8 +1,20 @@
-### Package Configuration
+# Package Configuration
 
-Dot files may be in this repository making this seem redundant. This File exists as a user readable backup for software that can neither be declared nore easily backed up by a simple configuration file.
+Dot files may be in this repository making this seem redundant. This File exists as a user readable backup for software that can neither be declared more easily backed up by a simple configuration file.
 
 ---
+
+## Table of Contents
+- [About](About.md)
+- [ToDo](ToDo.md)
+
+**Imperative Implementations**
+- [Imperative/What?](imperative/What.md)
+- [Imperative/Why?](imperative/Why.md)
+
+---
+
+
 
 ## Gnome
 

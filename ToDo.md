@@ -1,6 +1,15 @@
 # NixOS / Dotfiles To-Do
 
-## Hyperlink these files to README and create a folder for priority and timelines
+## Table of Contents
+- [About](About.md)
+- [ToDo](ToDo.md)
+
+**Imperative Implementations**
+- [Imperative/What?](imperative/What.md)
+- [Imperative/Why?](imperative/Why.md)
+
+---
+
 
 
 ## High Priority
@@ -98,6 +107,8 @@
 
 ## Future / Exploration
 
+* Make a fastfetch weather widget
+* Make a UI tool that automatically populates .nix files from various types of configuration file languages for common tools 
 * Investigate automated dotfile migration tools
 * Investigate Home Manager modules/wrappers for commonly used applications
 * Investigate `xdg.configFile` / `home.file` for applications without Home Manager modules or extend my backup scripts to include those
