@@ -8,6 +8,7 @@
     ./packages.nix
     ./starship.nix
     ./zsh.nix
+    ./vscode.nix
   ];
 
   home.username = "tyler";
