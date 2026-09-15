@@ -1,28 +1,28 @@
-**# Package Configuration**
+### Package Configuration
 
 Dot files may be in this repository making this seem redundant. This File exists as a user readable backup for software that can neither be declared nore easily backed up by a simple configuration file.
 
-**---**
+---
 
-**## Gnome**
+## Gnome
 
-**### MAY SWAP TO A WINDOW MANAGER AND INSTALL FROM A DE AS NEEDED**
+### MAY SWAP TO A WINDOW MANAGER AND INSTALL FROM A DE AS NEEDED
 
 I will keep this file here though because it will be relevant regardless of how much I approach to manage things in a declarative fashion.
 
-**---**
+---
 
-**### Extensions**
+### Extensions
 
-**### Themes**
+### Themes
 
-**### Icons**
+### Icons
 
 This how to is not me dying on a hill for this theme so much as me testing ways to manage themes that are not a package. 
 
 I could make a derivation:
 
-1\. Add to flake:
+1. Add to flake:
 
    ```nix
    inputs = {
@@ -48,7 +48,7 @@ I could make a derivation:
    };
    ```
 
-2\. Add to modules folder "adwaita-colors.nix", system wide for compatibility:
+2. Add to modules folder "adwaita-colors.nix", system wide for compatibility:
 
    ```nix
    { pkgs, src }:
@@ -137,18 +137,18 @@ I could make a derivation:
    }
    ```
 
-3\. Add the module to the configuration.nix file. 
+3. Add the module to the configuration.nix file. 
 
-Alternatively, I could just extract icon packs to .icons in my home folder. 
+Alternatively, I could just extract icon packs to .icons in my home folder and leave a note somewhere for future me. 
 
-**### Wallpaper**
+### Wallpaper
 
-**---**
+---
 
-**## VSCode**
+## VSCode
 
-**### Extensions**
+### Extensions
 
 Should actually be set up with Home Manager.
 
-**### Config**
+### Config
