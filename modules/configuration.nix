@@ -93,7 +93,8 @@
   # ============================================================================
   # User (KEEP ROOT SH AS BASH )
   # ============================================================================
-
+  
+  programs.zsh.enable = true;
   users.users.tyler = {
     isNormalUser = true;
     description = "tyler";
@@ -127,7 +128,6 @@
     # --------------------------------------------------------------------------
 
     kitty
-    zsh
     starship
     fzf
     zsh-completions

@@ -4,7 +4,7 @@
   programs.zsh = {
     enable = true;
 
-    autosuggestions.enable = true;
+    enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
 
@@ -12,7 +12,7 @@
       "CORRECT"
     ];
 
-    interactiveShellInit = ''
+    initContent = ''
       autoload -Uz compinit
       compinit
 
