@@ -10,6 +10,7 @@
     ./fish.nix
     ./vscode.nix
     ./helix.nix
+    ./firefox.nix
   ];
 
   home.username = "tyler";

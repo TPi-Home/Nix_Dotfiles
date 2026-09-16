@@ -23,6 +23,7 @@
     dconf
     taskwarrior3
     zellij
+    yazi
 
     # --------------------------------------------------------------------------
     # Editors (for TTY fallback only at system level)
