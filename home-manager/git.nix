@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
-# testing git
+
 {
   programs.git = {
     enable = true;
