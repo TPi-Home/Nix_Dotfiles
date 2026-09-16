@@ -1,0 +1,186 @@
+# ============================================================================
+# Sway
+# ============================================================================
+
+include /etc/sway/config.d/*
+
+# ----------------------------------------------------------------------------
+# General
+# ----------------------------------------------------------------------------
+
+set $mod Mod4
+
+font pango:Monaspace Neon NF 14
+
+default_border pixel 2
+titlebar_border_thickness 2
+
+gaps inner 5
+gaps outer 5
+
+focus_follows_mouse yes
+floating_modifier $mod
+
+# ----------------------------------------------------------------------------
+# Colors - Tokyo Night
+# ----------------------------------------------------------------------------
+
+client.focused          #7aa2f7 #414868 #c0caf5 #7dcfff #7aa2f7
+client.focused_inactive #7aa2f7 #414868 #c0caf5 #7dcfff #7aa2f7
+client.unfocused        #414868 #24283b #a9b1d6 #7dcfff #414868
+client.urgent           #e0af68 #e0af68 #1d202f #7dcfff #e0af68
+
+# ----------------------------------------------------------------------------
+# Applications
+# ----------------------------------------------------------------------------
+
+set $term kitty
+set $menu wofi --show drun
+
+# ----------------------------------------------------------------------------
+# Startup
+# ----------------------------------------------------------------------------
+
+exec mako
+exec udiskie
+
+exec swayidle -w \
+    timeout 600 'swaylock -f' \
+    timeout 1200 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f'
+
+# ----------------------------------------------------------------------------
+# Input
+# ----------------------------------------------------------------------------
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+# ----------------------------------------------------------------------------
+# Terminal / Launcher
+# ----------------------------------------------------------------------------
+
+bindsym $mod+Return exec $term
+bindsym $mod+space exec $menu
+bindsym $mod+q kill
+
+# ----------------------------------------------------------------------------
+# Notifications
+# ----------------------------------------------------------------------------
+
+bindsym Ctrl+space exec makoctl dismiss
+
+# ----------------------------------------------------------------------------
+# Screenshots
+# ----------------------------------------------------------------------------
+
+bindsym Print exec grim - | swappy -f -
+bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
+
+# ----------------------------------------------------------------------------
+# Reload / Exit
+# ----------------------------------------------------------------------------
+
+bindsym $mod+Shift+c reload
+
+bindsym $mod+Shift+e exec \
+    swaynag -t custom \
+    -m 'Exit Sway?' \
+    -b 'Yes, exit Sway' 'swaymsg exit'
+
+# ----------------------------------------------------------------------------
+# Focus
+# ----------------------------------------------------------------------------
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# ----------------------------------------------------------------------------
+# Move Windows
+# ----------------------------------------------------------------------------
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# ----------------------------------------------------------------------------
+# Workspaces
+# ----------------------------------------------------------------------------
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# ----------------------------------------------------------------------------
+# Move Windows to Workspaces
+# ----------------------------------------------------------------------------
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+Tab workspace back_and_forth
+
+# ----------------------------------------------------------------------------
+# Layout
+# ----------------------------------------------------------------------------
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+m layout tabbed
+bindsym $mod+t layout toggle split
+bindsym $mod+f fullscreen
+
+# ----------------------------------------------------------------------------
+# Floating
+# ----------------------------------------------------------------------------
+
+bindsym $mod+s floating toggle
+bindsym $mod+Shift+s focus mode_toggle
+
+# ----------------------------------------------------------------------------
+# Resize
+# ----------------------------------------------------------------------------
+
+bindsym $mod+Mod1+h resize shrink width 20px
+bindsym $mod+Mod1+j resize shrink height 20px
+bindsym $mod+Mod1+k resize grow height 20px
+bindsym $mod+Mod1+l resize grow width 20px
+
+# ----------------------------------------------------------------------------
+# Media
+# ----------------------------------------------------------------------------
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# ----------------------------------------------------------------------------
+# Waybar
+# ----------------------------------------------------------------------------
+
+bar {
+    swaybar_command waybar
+}

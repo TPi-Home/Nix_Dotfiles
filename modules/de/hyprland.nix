@@ -2,6 +2,6 @@
   # WM
   # ============================================================================
     
-  #p rograms.hyprland.enable = true;
+  # programs.hyprland.enable = true;
 
   # security.polkit.enable = true;

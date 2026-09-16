@@ -3,10 +3,6 @@
 {
   programs.neovim = {
     enable = true;
-
-    extraPackages = with pkgs; [
-      wl-clipboard
-    ];
   };
 
   xdg.configFile."nvim/init.lua".source =

@@ -16,6 +16,11 @@
 
 ### Configuration Organization
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
+* Need to finish default nix files used to tie modules together, specifically for:
+  1. Audio
+  2. WM
+
+* Attempting the window manager setup is a lot to do in the nix language. To me it makes the most sense to get a clean and stable setup running first, then translate those configuration files into something nix understands, but even that may not be the best for portability. Perhaps there are better solutions? If you have ideas and want to email me, you should be able to find it via the website I have linked. 
 
 ### Wrappers for
 * Neovim
