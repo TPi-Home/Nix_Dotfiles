@@ -69,7 +69,6 @@
 
     curl
     wget
-    angrr
     unzip
     unrar
     zip

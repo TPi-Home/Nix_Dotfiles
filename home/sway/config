@@ -50,6 +50,8 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock -f'
 
+exec nm-applet
+exec blueman-applet
 # ----------------------------------------------------------------------------
 # Input
 # ----------------------------------------------------------------------------
