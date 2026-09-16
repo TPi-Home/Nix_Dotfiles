@@ -2,21 +2,23 @@
 
 {
   imports = [
+    # Core system
     ./system/system.nix
     ./boot/boot.nix
     ./locale/locale.nix
-    ./nvidia/nvidia.nix
     ./networking/networking.nix
-    ./audio/audio.nix
     ./users/tyler.nix
-    ./packages/packages.nix
+
+    # Hardware / services
+    ./nvidia/nvidia.nix
+    ./audio/audio.nix
+
+    # Desktop / WM
     ./de/gnome.nix
+
+    # Software that is not directly enabled
+    ./packages/packages.nix
   ];
 
-  # ============================================================================
-  # System Version (How NixOS formats the database. DO NOT CHANGE!)
-  # ============================================================================
-
   system.stateVersion = "26.05";
-
 }
