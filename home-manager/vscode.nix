@@ -12,31 +12,33 @@
 
       # Theme
       github.github-vscode-theme
-      
+
       # Icons
       pkief.material-icon-theme
-      #vscode-icons-team.vscode-icons
-      
+
       # Misc
-      streetsidesoftware.code-spell-checker     
+      streetsidesoftware.code-spell-checker
 
       # --------------------------------------------------------------------------
       # C / C++
       # --------------------------------------------------------------------------
-      
+
       ms-vscode.cpptools-extension-pack
-      
+
       # --------------------------------------------------------------------------
       # Python
       # --------------------------------------------------------------------------
 
       ms-python.python
-      
+
       # --------------------------------------------------------------------------
       # Nix
       # --------------------------------------------------------------------------
-      jnoortheen.nix-ide
 
+      jnoortheen.nix-ide
     ];
   };
+
+  xdg.configFile."Code/User/settings.json".source =
+    ../home/.config/Code/User/settings.json;
 }
