@@ -9,6 +9,7 @@
     ./starship.nix
     ./fish.nix
     ./vscode.nix
+    ./helix.nix
   ];
 
   home.username = "tyler";
