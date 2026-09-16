@@ -38,6 +38,7 @@
     unityhub
     tiled
     aseprite
+    godot-mono
 
     # --------------------------------------------------------------------------
     # Graphics / Vulkan
