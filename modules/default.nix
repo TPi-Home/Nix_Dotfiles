@@ -3,14 +3,16 @@
 {
   imports = [
     # Core system
+    ./system/boot.nix
     ./system/system.nix
-    ./boot/boot.nix
     ./system/locale.nix
-    ./networking/networking.nix
-    ./users/tyler.nix
+    ./system/networking.nix
     ./system/fonts.nix
     ./system/security.nix
 
+    # Users
+    ./users/tyler.nix
+    
     # Gaming
     ./packages/gaming.nix
     
