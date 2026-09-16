@@ -17,7 +17,7 @@
           system = "x86_64-linux";
 
           modules = [
-            ./modules/configuration.nix
+            ./modules/default.nix
             ./hosts/generic/hardware-configuration.nix
 
             home-manager.nixosModules.home-manager

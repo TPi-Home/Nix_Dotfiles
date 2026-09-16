@@ -47,16 +47,30 @@
 * Evaluate Mosaic
 * Evaluate whether a tiling WM/compositor is still desirable
 * Identify GNOME functionality that would be lost or become awkward with a tiling WM to prepare for that migration if I go that route
-    |I would need:|| 
-    |---|---|
-    | a wireless manager interface | `nm-applet` |
-    | a supported display manager |`greetd` or TTY |
-    | a launcher ||
-    | a status bar ||
-    | a wallpaper tool |`hyprpaper`|
-    | a power manager|`brightnessctl`|
+| I would need: | |
+  |---|---|
+  | a Wi-Fi GUI | `nm-applet` |
+  | a Bluetooth GUI | `blueman` |
+  | a supported display manager | `greetd` or TTY |
+  | a launcher | `wofi` / `rofi-wayland` |
+  | a status bar | `waybar` |
+  | a wallpaper tool | `hyprpaper` |
+  | a power/brightness tool | `brightnessctl` |
+  | idle handling | `hypridle` |
+  | screen locking | `hyprlock` |
+  | audio control | `pavucontrol` |
+  | a file manager | `nautilus` / `thunar` |
+  | screenshots | `hyprshot` |
+  | clipboard | move `wl-clipboard` from `nvim.nix` to a system module |
+  | notifications | `mako` / `swaync` |
+  | authentication agent | `polkit_gnome` |
+  | Wayland portals | `xdg-desktop-portal-hyprland` |
+  | a logout/power menu | `wlogout` |
+  | a terminal | `kitty` |
+  | a network backend | `NetworkManager` |
+  | an audio backend | `PipeWire` + `WirePlumber` |
+  | a secret/keyring service | `gnome-keyring` |
     
-
 * Document workarounds for missing GNOME conveniences
 * Push configuration files for keybinds and tiling in gnome
 
@@ -64,21 +78,11 @@
 
 * Hardware plug-and-play management / GUI tools
 * "Save as root" workflow for VS Code
-
-  * Configure VS Code as the default editor if appropriate but:
-  * Ensure there is still a usable editor when booted into a TTY
-  * Consider whether `sudoedit` is preferable to running VS Code as root
 * Review other GNOME utilities currently relied upon before changing WM/compositor
 
 ---
 
 ## Networking / VPN
-
-### ProtonVPN CLI
-
-* Track ProtonVPN CLI protocol-selection pull request
-* If PR is not merged, determine whether to package/use the patched version I found through Nix, after of course making sure that is permitted 
-* If merged, update the Nix package and remove any workaround
 
 ---
 
