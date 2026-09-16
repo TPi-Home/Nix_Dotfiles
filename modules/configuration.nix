@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./de/gnome.nix
+  ];
   # ============================================================================
   # Boot
   # ============================================================================
@@ -24,18 +27,6 @@
   time.timeZone = "America/Indiana/Indianapolis";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # ============================================================================
-  # Desktop / Display
-  # ============================================================================
-
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.gvfs.enable = true;
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # ============================================================================
   # WM
@@ -135,7 +126,7 @@
     btop
     direnv
     nvtopPackages.full
-    proton-vpn-cli
+    proton-vpn
     dconf
     taskwarrior3
     zellij
