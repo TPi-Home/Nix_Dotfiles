@@ -5,16 +5,24 @@
     # Core system
     ./system/system.nix
     ./boot/boot.nix
-    ./locale/locale.nix
+    ./system/locale.nix
     ./networking/networking.nix
     ./users/tyler.nix
+    ./system/fonts.nix
+    ./system/security.nix
 
+    # Gaming
+    ./packages/gaming.nix
+    
     # Hardware / services
-    ./nvidia/nvidia.nix
+    ./graphics/nvidia.nix
     ./audio/audio.nix
 
+    # Display Manager
+    ./dm/greetd.nix
+
     # Desktop / WM
-    ./de/gnome.nix
+    ./de/sway.nix
 
     # Software that is not directly enabled
     ./packages/packages.nix

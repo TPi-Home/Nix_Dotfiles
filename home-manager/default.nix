@@ -11,6 +11,9 @@
     ./vscode.nix
     ./helix.nix
     ./firefox.nix
+
+    # Desktop
+    ./sway/sway.nix
   ];
 
   home.username = "tyler";

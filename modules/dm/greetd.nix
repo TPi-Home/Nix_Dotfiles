@@ -15,7 +15,7 @@
     theme.name = "Adwaita";
 
     font = {
-      name = "Monaspace Neon";
+      name = "Monaspace Neon NF";
       size = 16;
     };
 
@@ -29,6 +29,14 @@
 
   services.greetd = {
     enable = true;
+
+    # Optional settings:
+    # settings = {
+    #   background = {
+    #     path = "/path/to/wallpaper.jpg";
+    #     fit = "Cover";
+    #   };
+    # };
 
     settings = {
       default_session = {
@@ -45,7 +53,6 @@
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
-    cantarell-fonts
   ];
 
 
