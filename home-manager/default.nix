@@ -7,7 +7,7 @@
     ./nvim.nix
     ./packages.nix
     ./starship.nix
-    ./zsh.nix
+    ./fish.nix
     ./vscode.nix
   ];
 

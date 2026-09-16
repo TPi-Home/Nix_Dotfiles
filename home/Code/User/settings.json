@@ -1,0 +1,17 @@
+{
+  "workbench.startupEditor": "none",
+  "chat.agent.thinking.phrases": {
+    "mode": "append",
+    "phrases": []
+  },
+  "chat.disableAIFeatures": true,
+  "window.openFoldersInNewWindow": "off",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "GitHub Dark",
+  "terminal.integrated.shellIntegration.enabled": false,
+
+  "terminal.integrated.env.linux": {
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8"
+  }
+}

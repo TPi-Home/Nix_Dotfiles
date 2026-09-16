@@ -94,11 +94,11 @@
   # User (KEEP ROOT SH AS BASH )
   # ============================================================================
   
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
   users.users.tyler = {
     isNormalUser = true;
     description = "tyler";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
 
     extraGroups = [
       "wheel"
@@ -130,7 +130,7 @@
     kitty
     starship
     fzf
-    zsh-completions
+    #zsh-completions
     fastfetch
     btop
     direnv
