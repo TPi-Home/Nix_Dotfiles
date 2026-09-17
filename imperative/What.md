@@ -5,8 +5,9 @@ Dot files may be in this repository making this seem redundant. This File exists
 ---
 
 ## Table of Contents
-- [About](About.md)
-- [ToDo](ToDo.md)
+- [README](../README.md)
+- [About](../About.md)
+- [ToDo](../ToDo.md)
 
 **Imperative Implementations**
 - [Imperative/What?](imperative/What.md)

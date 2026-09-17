@@ -3,6 +3,10 @@
 # ============================================================================
 
 include /etc/sway/config.d/*
+# This is a Nix anti-pattern basically:
+# exec dbus-update-activation-environment --systemd --all 
+# Because that can be a problem with Nix, I will try:
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # ----------------------------------------------------------------------------
 # General
@@ -76,7 +80,7 @@ input type:touchpad {
 
 bindsym $mod+Return exec $term
 # bindsym $mod+d exec $menu
-bindsym $mod+d exec rofi --show drun
+bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
 
 # ----------------------------------------------------------------------------

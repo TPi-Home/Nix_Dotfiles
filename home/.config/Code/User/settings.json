@@ -10,6 +10,9 @@
   "workbench.colorTheme": "GitHub Dark",
   "terminal.integrated.shellIntegration.enabled": false,
 
+  "editor.fontFamily": "'Monaspace Neon NF', monospace",
+  "editor.fontSize": 14,
+
   "terminal.integrated.env.linux": {
     "LANG": "en_US.UTF-8",
     "LC_ALL": "en_US.UTF-8"

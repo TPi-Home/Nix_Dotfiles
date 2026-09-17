@@ -1,8 +1,9 @@
 # Why would you do that? 
 
 ## Table of Contents
-- [About](About.md)
-- [ToDo](ToDo.md)
+- [README](../README.md)
+- [About](../About.md)
+- [ToDo](../ToDo.md)
 
 **Imperative Implementations**
 - [Imperative/What?](imperative/What.md)

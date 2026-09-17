@@ -1,6 +1,7 @@
 # About
 
 ## Table of Contents
+- [README](README.md)
 - [About](About.md)
 - [ToDo](ToDo.md)
 

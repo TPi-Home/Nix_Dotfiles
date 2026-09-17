@@ -2,6 +2,7 @@
 I am likely going to regret this. 
 
 ## Table of Contents
+- [README](README.md)
 - [About](About.md)
 - [ToDo](ToDo.md)
 
@@ -42,30 +43,39 @@ Nix_Dotfiles/
 ├── modules/                     
 │   ├── default.nix              
 │   │
-│   ├── audio/
+│   ├── system/
 │   │   └── audio.nix
-│   │
-│   ├── boot/
+│   │   └── security.nix
 │   │   └── boot.nix
-│   │
-│   ├── de/
-│   │   ├── gnome.nix
-│   │   └── hyprland.nix
-│   │
-│   ├── locale/
+│   │   └── fonts.nix
 │   │   └── locale.nix
-│   │
-│   ├── networking/
 │   │   └── networking.nix
+│   |   └── system.nix
+|   |
+|   ├── dm/
+│   │   └── gdm.nix
+│   │   └── sddm.nix
+|   |   └── greetd.nix
+|   |   └── ly.nix
+|   |
+│   ├── de/
+│   │   └── gnome.nix
+│   │   └── hyprland.nix
+|   |   └── sway.nix
+|   |   └── niri.nix
 │   │
-│   ├── nvidia/
-│   │   └── nvidia.nix
+│   ├── users/
+│   │   └── tyler.nix
 │   │
 │   ├── packages/
-│   │   └── packages.nix
+│   │   └── gaming.nix
+|   |   └── packages.nix
 │   │
-│   ├── system/
-│   │   └── system.nix
+│   ├── graphics/
+│   │   └── nvidia.nix
+│   │
+│   ├── audio/
+│   │   └── audio.nix
 │   │
 │   └── users/
 │       └── tyler.nix
@@ -82,6 +92,8 @@ Nix_Dotfiles/
 │   ├── starship.nix             
 │   └── vscode.nix               
 │
+
+
 ├── home/       
 │   └── .config/
 │       ├── Code/
@@ -91,7 +103,13 @@ Nix_Dotfiles/
 │       ├── kitty/
 │       │   ├── kitty.conf
 │       │   └── themes/
-│       │       └── *.conf        
+│       │       └── *.conf   
+│       │         
+│       ├── sway/
+│       │   └── config 
+│       │  
+│       ├── waybar/
+│       │   └── style.css 
 │       │
 │       ├── nvim/
 │       │   ├── init.lua

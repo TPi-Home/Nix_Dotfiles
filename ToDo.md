@@ -1,6 +1,7 @@
 # NixOS / Dotfiles To-Do
 
 ## Table of Contents
+- [README](README.md)
 - [About](About.md)
 - [ToDo](ToDo.md)
 
