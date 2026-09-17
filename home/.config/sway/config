@@ -98,7 +98,7 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
-    swaynag -t custom \
+    swaynag -t warning \
     -m 'Exit Sway?' \
     -b 'Yes, exit Sway' 'swaymsg exit'
 
@@ -185,14 +185,6 @@ bindsym $mod+Mod1+l resize grow width 20px
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-# ----------------------------------------------------------------------------
-# Waybar
-# ----------------------------------------------------------------------------
-# home-manager should take care of this
-bar {
-    swaybar_command waybar
-}
 
 # ----------------------------------------------------------------------------
 # Wallpaper

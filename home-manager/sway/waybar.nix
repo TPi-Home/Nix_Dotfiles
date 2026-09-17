@@ -3,7 +3,7 @@
 {
   programs.waybar = {
     enable = true;
-    systemd.enable = false;
+    systemd.enable = true;
 
     style = ../../home/.config/waybar/style.css;
 
@@ -12,11 +12,11 @@
         layer = "top";
         position = "top";
 
-        height = 26;
-
+        height = 36;
+        margin-top = 8;
         margin-left = 8;
         margin-right = 8;
-        margin-bottom = 6;
+        margin-bottom = 0;
 
         spacing = 0;
 
@@ -61,16 +61,16 @@
           };
 
           format-icons = {
-            "1" = "󰋜";
-            "2" = "󰖟";
-            "3" = "󰠮";
-            "4" = "󰭹";
-            "5" = "󱓷";
-            "6" = "󱇧";
-            "7" = "󰊢";
-            "8" = "󰖲";
-            "9" = "󰕧";
-            "10" = "󰝚";
+            "1" = "  ";
+            "2" = "  ";
+            "3" = "  ";
+            "4" = "  ";
+            "5" = "  ";
+            "6" = "  ";
+            "7" = "  ";
+            "8" = "  ";
+            "9" = "  ";
+            "10" = "  ";
 
             urgent = "";
             default = "";
@@ -87,9 +87,9 @@
           interval = 5;
 
           format-wifi = "";
-          format-ethernet = "󰈀";
-          format-linked = "󰛵";
-          format-disconnected = "󰤮";
+          format-ethernet = "  ";
+          format-linked = "  ";
+          format-disconnected = "  ";
 
           tooltip-format-wifi = "{essid}\nSignal: {signalStrength}%\nInterface: {ifname}";
           tooltip-format-ethernet = "Ethernet\n{ifname}\n{ipaddr}/{cidr}";
@@ -106,7 +106,7 @@
           scroll-step = 2;
 
           format = "{icon}";
-          format-muted = "󰖁";
+          format-muted = "  ";
 
           tooltip-format = "{desc}\nVolume: {volume}%";
 
@@ -141,18 +141,18 @@
           };
 
           format = "{icon} {capacity}%";
-          format-charging = "󰂄 {capacity}%";
-          format-plugged = "󰂄 {capacity}%";
-          format-full = "󱈑 {capacity}%";
+          format-charging = "   {capacity}%";
+          format-plugged = "   {capacity}%";
+          format-full = "   {capacity}%";
 
           format-alt = "{time} {icon}";
 
           format-icons = [
-            "󱊡"
-            "󱊢"
-            "󱊣"
-            "󱊤"
-            "󱊥"
+            "  "
+            "  "
+            "  "
+            "  "
+            "  "
           ];
 
           tooltip-format = "{capacity}%\n{timeTo}\nStatus: {status}";
@@ -163,7 +163,7 @@
         # --------------------------------------------------------------------
         
         clock = {
-          format = "󰸗 {:%b %d   󰅐 %H:%M}";
+          format = "   {:%b %d      %H:%M}";
 
           tooltip-format =
             "<big>{:%A, %B %d, %Y}</big>\n\n"

@@ -4,3 +4,5 @@ https://github.com/lokesh-krishna
 
 to-do:
 cage or something full screen
+home-manager system ctl mgmt
+vscode nf

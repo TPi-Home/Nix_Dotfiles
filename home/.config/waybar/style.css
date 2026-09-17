@@ -1,255 +1,159 @@
 /* ============================================================================
  * Waybar
- * Catppuccin Mocha
+ * Custom Vaporwave Mountain Palette (Matches Wallpaper Gradient)
  * ========================================================================== */
 
-/* ----------------------------------------------------------------------------
- * Palette
- * -------------------------------------------------------------------------- */
-
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-@define-color text #cdd6f4;
-@define-color subtext1 #bac2de;
-@define-color subtext0 #a6adc8;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
-@define-color surface2 #585b70;
-@define-color surface1 #45475a;
-@define-color surface0 #313244;
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
-
-
-/* ----------------------------------------------------------------------------
- * Global
- * -------------------------------------------------------------------------- */
-
 * {
-    font-family:
-        "Monaspace Neon NF",
-        sans-serif;
-
+    font-family: "Monaspace Neon NF", sans-serif;
     font-size: 14px;
     font-weight: 500;
-
-    min-height: 0;
-
     border: none;
     box-shadow: none;
     text-shadow: none;
 }
 
-
 /* ----------------------------------------------------------------------------
- * Bar
+ * Bar Container
  * -------------------------------------------------------------------------- */
-
 #waybar {
-    background: @crust;
-    color: @text;
-
-    border: 2px solid @mauve;
+    background: #0e0f1d; 
+    color: #e2ebf8;
+    border: 2px solid #ff94e0; 
     border-radius: 0;
 }
-
 
 /* ----------------------------------------------------------------------------
  * Workspaces
  * -------------------------------------------------------------------------- */
-
 #workspaces {
-    background: @crust;
-
-    border: 2px solid @mauve;
+    background: #070810;
+    border: 2px solid #4fa3ff; 
     border-radius: 0;
-
-    padding: 0 3px;
+    padding: 0;
+    margin: 0;
 }
 
 #workspaces button {
-    color: @overlay1;
     background: transparent;
-
     min-width: 32px;
-    min-height: 28px;
-
-    margin: 1px;
-    padding: 0 6px;
-
+    padding: 0;
+    margin: 0;
     border-radius: 0;
+}
 
-    transition:
-        background 150ms ease,
-        color 150ms ease,
-        min-width 150ms ease;
+/* FORCES THE GLYPH ICONS INSIDE THE BOXES TO RENDER STABLE COLORS */
+#workspaces button label {
+    color: #4fa3ff; 
 }
 
 #workspaces button:hover {
-    color: @text;
-    background: @surface1;
+    background: #1a1936;
 }
 
-#workspaces button.empty {
-    color: @overlay0;
+#workspaces button:hover label {
+    color: #e2ebf8;
 }
 
-#workspaces button.visible {
-    color: @blue;
+#workspaces button.empty label {
+    color: #313244; 
 }
 
-#workspaces button.persistent {
-    color: @overlay1;
+#workspaces button.visible label {
+    color: #4fa3ff; 
+}
+
+#workspaces button.persistent label {
+    color: #4fa3ff;
 }
 
 #workspaces button.focused {
-    color: @crust;
-    background: @blue;
+    background: #4fa3ff; 
+}
 
-    min-width: 36px;
+#workspaces button.focused label {
+    color: #070810; 
+    font-weight: bold;
 }
 
 #workspaces button.urgent {
-    color: @crust;
-    background: @red;
+    background: #ff4a75;
 }
 
+#workspaces button.urgent label {
+    color: #e2ebf8;
+}
 
 /* ----------------------------------------------------------------------------
  * Right-side modules
  * -------------------------------------------------------------------------- */
-
 #network,
 #pulseaudio,
 #battery,
 #clock,
 #tray {
-    background: @crust;
-
-    min-height: 30px;
-
+    background: #070810;
     border-radius: 0;
 }
 
-
-/* ----------------------------------------------------------------------------
- * Network
- * -------------------------------------------------------------------------- */
-
 #network {
-    color: @peach;
-
+    color: #4fa3ff; 
     padding: 0 12px;
-
-    border: 2px solid @peach;
-    border-radius: 0;
+    border: 2px solid #4fa3ff;
 }
 
 #network.disconnected {
-    color: @red;
-    border-color: @red;
+    color: #ff4a75;
+    border-color: #ff4a75;
 }
 
-
-/* ----------------------------------------------------------------------------
- * Audio
- * -------------------------------------------------------------------------- */
-
 #pulseaudio {
-    color: @yellow;
-
+    color: #8c6ad2; 
     padding: 0 12px;
-
-    border: 2px solid @yellow;
-    border-radius: 0;
+    border: 2px solid #8c6ad2;
 }
 
 #pulseaudio.muted {
-    color: @overlay1;
-    border-color: @overlay1;
+    color: #60648c;
+    border-color: #60648c;
 }
 
-
-/* ----------------------------------------------------------------------------
- * Battery
- * -------------------------------------------------------------------------- */
-
 #battery {
-    color: @green;
-
+    color: #4fa3ff; 
     padding: 0 12px;
-
-    border: 2px solid @green;
-    border-radius: 0;
+    border: 2px solid #4fa3ff;
 }
 
 #battery.warning:not(.charging) {
-    color: @peach;
-    border-color: @peach;
+    color: #d464c4;
+    border-color: #d464c4;
 }
 
 #battery.critical:not(.charging) {
-    color: @red;
-    border-color: @red;
-
-    animation-name: battery-critical;
-    animation-duration: 1s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    color: #ff4a75;
+    border-color: #ff4a75;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: @green;
-    border-color: @green;
+    color: #4fa3ff;
+    border-color: #4fa3ff;
 }
 
 #battery.full {
-    color: @teal;
-    border-color: @teal;
+    color: #4fa3ff;
+    border-color: #4fa3ff;
 }
-
-
-/* ----------------------------------------------------------------------------
- * Clock
- * -------------------------------------------------------------------------- */
 
 #clock {
-    color: @pink;
-
+    color: #ff94e0; 
     padding: 0 14px;
-
-    border: 2px solid @pink;
-    border-radius: 0;
+    border: 2px solid #ff94e0;
 }
 
-
-/* ----------------------------------------------------------------------------
- * Tray
- * -------------------------------------------------------------------------- */
-
 #tray {
-    color: @text;
-
+    color: #e2ebf8;
     padding: 0 10px;
-
-    border: 2px solid @text;
-    border-radius: 0;
+    border: 2px solid #e2ebf8;
 }
 
 #tray > .passive {
@@ -257,44 +161,21 @@
 }
 
 #tray > .needs-attention {
-    color: @red;
+    color: #ff4a75;
 }
 
-
-/* ----------------------------------------------------------------------------
- * Tooltips
- * -------------------------------------------------------------------------- */
-
 tooltip {
-    background: @crust;
-    color: @text;
-
-    border: 2px solid @mauve;
+    background: #0e0f1d;
+    color: #e2ebf8;
+    border: 2px solid #d464c4;
     border-radius: 0;
 }
 
 tooltip label {
-    color: @text;
+    color: #e2ebf8;
     padding: 5px 7px;
 }
 
-
-/* ----------------------------------------------------------------------------
- * Fullscreen
- * -------------------------------------------------------------------------- */
-
 window#waybar.fullscreen {
     background: transparent;
-}
-
-
-/* ----------------------------------------------------------------------------
- * Animations
- * -------------------------------------------------------------------------- */
-
-@keyframes battery-critical {
-    to {
-        color: @crust;
-        background-color: @red;
-    }
 }
