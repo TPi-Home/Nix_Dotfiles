@@ -41,8 +41,7 @@ client.urgent           #ff4a75 #ff4a75 #070810 #e2ebf8 #ff4a75
 # ----------------------------------------------------------------------------
 
 set $term kitty
-set $menu rofi 
-# --show drun
+#set $menu wofi --show drun
 
 # ----------------------------------------------------------------------------
 # Startup
@@ -76,7 +75,8 @@ input type:touchpad {
 # ----------------------------------------------------------------------------
 
 bindsym $mod+Return exec $term
-bindsym $mod+d exec $menu
+# bindsym $mod+d exec $menu
+bindsym $mod+d exec rofi --show drun
 bindsym $mod+q kill
 
 # ----------------------------------------------------------------------------
