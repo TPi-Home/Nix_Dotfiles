@@ -14,6 +14,7 @@
 
     # Desktop
     ./sway/sway.nix
+    ./sway/waybar.nix
   ];
 
   home.username = "tyler";
