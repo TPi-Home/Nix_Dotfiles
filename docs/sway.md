@@ -1,4 +1,6 @@
 # SWAY TODO
+
+## uwsm
 cage or something full screen
 home-manager system ctl mgmt
 vscode nf
@@ -6,6 +8,11 @@ swayfx
 sway notifications 
 app launcher
 vscode starting firefox from wofi
+test logout 
+configure wayland in a different module than wm/de/dm
+file picker scaling needs fixed
+
+THIS IS WHY I DO NOT RUSH TO A WINDOW MANAGER OVER A FULL DE
 
 wayland issues:
 session would break after logging back to display manager
