@@ -165,11 +165,11 @@
         clock = {
           format = "󰸗 {:%b %d}   󰅐 {:%H:%M}";
 
+          tooltip = true;
+
           tooltip-format =
             "<big>{:%A, %B %d, %Y}</big>\n\n"
             + "<tt><small>{calendar}</small></tt>";
-
-          format-alt = "{:%Y-%m-%d %H:%M:%S}";
 
           calendar = {
             mode = "month";
@@ -188,7 +188,6 @@
           };
 
           actions = {
-            on-click = "mode";
             on-scroll-up = "shift_up";
             on-scroll-down = "shift_down";
           };
