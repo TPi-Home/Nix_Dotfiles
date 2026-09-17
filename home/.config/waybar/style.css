@@ -21,19 +21,15 @@
 @define-color sapphire #74c7ec;
 @define-color blue #89b4fa;
 @define-color lavender #b4befe;
-
 @define-color text #cdd6f4;
 @define-color subtext1 #bac2de;
 @define-color subtext0 #a6adc8;
-
 @define-color overlay2 #9399b2;
 @define-color overlay1 #7f849c;
 @define-color overlay0 #6c7086;
-
 @define-color surface2 #585b70;
 @define-color surface1 #45475a;
 @define-color surface0 #313244;
-
 @define-color base #1e1e2e;
 @define-color mantle #181825;
 @define-color crust #11111b;
@@ -65,8 +61,11 @@
  * -------------------------------------------------------------------------- */
 
 #waybar {
-    background: transparent;
+    background: @crust;
     color: @text;
+
+    border: 2px solid @mauve;
+    border-radius: 0;
 }
 
 
@@ -78,7 +77,7 @@
     background: @crust;
 
     border: 2px solid @mauve;
-    border-radius: 10px;
+    border-radius: 0;
 
     padding: 0 3px;
 }
@@ -93,7 +92,7 @@
     margin: 1px;
     padding: 0 6px;
 
-    border-radius: 7px;
+    border-radius: 0;
 
     transition:
         background 150ms ease,
@@ -143,6 +142,8 @@
     background: @crust;
 
     min-height: 30px;
+
+    border-radius: 0;
 }
 
 
@@ -155,10 +156,8 @@
 
     padding: 0 12px;
 
-    border-top: 2px solid @peach;
-    border-bottom: 2px solid @peach;
-
-    border-radius: 8px 0 0 8px;
+    border: 2px solid @peach;
+    border-radius: 0;
 }
 
 #network.disconnected {
@@ -176,8 +175,8 @@
 
     padding: 0 12px;
 
-    border-top: 2px solid @yellow;
-    border-bottom: 2px solid @yellow;
+    border: 2px solid @yellow;
+    border-radius: 0;
 }
 
 #pulseaudio.muted {
@@ -195,8 +194,8 @@
 
     padding: 0 12px;
 
-    border-top: 2px solid @green;
-    border-bottom: 2px solid @green;
+    border: 2px solid @green;
+    border-radius: 0;
 }
 
 #battery.warning:not(.charging) {
@@ -237,6 +236,7 @@
     padding: 0 14px;
 
     border: 2px solid @pink;
+    border-radius: 0;
 }
 
 
@@ -249,10 +249,8 @@
 
     padding: 0 10px;
 
-    border-top: 2px solid @text;
-    border-bottom: 2px solid @text;
-
-    border-radius: 0 8px 8px 0;
+    border: 2px solid @text;
+    border-radius: 0;
 }
 
 #tray > .passive {
@@ -270,16 +268,14 @@
 
 tooltip {
     background: @crust;
-
     color: @text;
 
     border: 2px solid @mauve;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 tooltip label {
     color: @text;
-
     padding: 5px 7px;
 }
 

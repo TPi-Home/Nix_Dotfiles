@@ -10,7 +10,7 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "bottom";
+        position = "top";
 
         height = 34;
 
@@ -133,6 +133,8 @@
         # --------------------------------------------------------------------
 
         battery = {
+          bat = "BAT1";
+
           states = {
             warning = 30;
             critical = 15;
