@@ -12,7 +12,7 @@
         layer = "top";
         position = "top";
 
-        height = 34;
+        height = 26;
 
         margin-left = 8;
         margin-right = 8;
@@ -161,11 +161,9 @@
         # --------------------------------------------------------------------
         # Clock
         # --------------------------------------------------------------------
-
+        
         clock = {
-          format = "󰸗 {:%b %d}   󰅐 {:%H:%M}";
-
-          tooltip = true;
+          format = "󰸗 {:%b %d   󰅐 %H:%M}";
 
           tooltip-format =
             "<big>{:%A, %B %d, %Y}</big>\n\n"
@@ -175,7 +173,6 @@
             mode = "month";
             mode-mon-col = 3;
             weeks-pos = "right";
-
             on-scroll = 1;
 
             format = {
@@ -188,11 +185,12 @@
           };
 
           actions = {
+            on-click = "mode";
             on-scroll-up = "shift_up";
             on-scroll-down = "shift_down";
           };
         };
-
+                
         # --------------------------------------------------------------------
         # System tray
         # --------------------------------------------------------------------
