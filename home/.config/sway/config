@@ -192,4 +192,4 @@ bar {
 # Wallpaper
 # ----------------------------------------------------------------------------
 
-output * bg /home/tyler/Pictures/Hilltopper (Final).png fill
+output * bg /home/tyler/Pictures/Hilltopper.png fill
