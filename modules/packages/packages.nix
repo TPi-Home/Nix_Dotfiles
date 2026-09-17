@@ -103,7 +103,7 @@
     # nix code formatter:
     alejandra
     # search nix packages:
-    nix-search-tv
+    nix-search-tv 
     # simply run a binary:
     comma
     # visualiz and cleanup gc-roots:

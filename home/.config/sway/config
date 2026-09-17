@@ -6,8 +6,7 @@ include /etc/sway/config.d/*
 # This is a Nix anti-pattern basically:
 # exec dbus-update-activation-environment --systemd --all 
 # Because that can be a problem with Nix, I will try:
-dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
+exec "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP"
 # ----------------------------------------------------------------------------
 # General
 # ----------------------------------------------------------------------------

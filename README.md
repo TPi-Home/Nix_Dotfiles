@@ -24,10 +24,11 @@ The goal is to make it easier to try a different workflow without starting from 
 
 ```text
 Nix_Dotfiles/
-├── flake.nix                    
-├── flake.lock                   
 │
-├── hosts/                       
+├── flake.nix
+├── flake.lock
+│
+├── hosts/
 │   ├── desktop/
 │   │   ├── default.nix
 │   │   └── hardware-configuration.nix
@@ -40,61 +41,66 @@ Nix_Dotfiles/
 │       ├── default.nix
 │       └── hardware-configuration.nix
 │
-├── modules/                     
-│   ├── default.nix              
+├── modules/
+│   ├── default.nix
 │   │
 │   ├── system/
-│   │   └── audio.nix
+│   │   ├── system.nix
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── locale.nix
+│   │   ├── networking.nix
 │   │   └── security.nix
-│   │   └── boot.nix
-│   │   └── fonts.nix
-│   │   └── locale.nix
-│   │   └── networking.nix
-│   |   └── system.nix
-|   |
-|   ├── dm/
-│   │   └── gdm.nix
-│   │   └── sddm.nix
-|   |   └── greetd.nix
-|   |   └── ly.nix
-|   |
-│   ├── de/
-│   │   └── gnome.nix
-│   │   └── hyprland.nix
-|   |   └── sway.nix
-|   |   └── niri.nix
-│   │
-│   ├── users/
-│   │   └── tyler.nix
-│   │
-│   ├── packages/
-│   │   └── gaming.nix
-|   |   └── packages.nix
-│   │
-│   ├── graphics/
-│   │   └── nvidia.nix
 │   │
 │   ├── audio/
 │   │   └── audio.nix
 │   │
+│   ├── dm/
+│   │   ├── gdm.nix
+│   │   ├── greetd.nix
+│   │   ├── ly.nix
+│   │   └── sddm.nix
+│   │
+│   ├── graphics/
+│   │   └── nvidia.nix
+│   │
+│   ├── de/
+│   │   ├── gnome.nix
+│   │   ├── hyprland.nix
+│   │   ├── niri.nix
+│   │   └── sway.nix
+│   │
+│   ├── packages/
+│   │   ├── packages.nix
+│   │   └── gaming.nix
+│   │
 │   └── users/
 │       └── tyler.nix
 │
-├── home-manager/                
-│   ├── default.nix              
-│   ├── packages.nix             
-│   ├── fish.nix                 
-│   ├── zsh.nix                  
-│   ├── git.nix                  
-│   ├── kitty.nix                
-│   ├── nvim.nix                 
-│   ├── helix.nix                
-│   ├── starship.nix             
-│   └── vscode.nix               
+├── home-manager/
+│   ├── default.nix
+│   ├── packages.nix
+│   ├── firefox.nix
+│   ├── fish.nix
+│   ├── zsh.nix
+│   ├── git.nix
+│   ├── kitty.nix
+│   ├── nvim.nix
+│   ├── helix.nix
+│   ├── starship.nix
+│   ├── vscode.nix
+│   │
+│   ├── sway/
+│   │   ├── sway.nix
+│   │   └── waybar.nix
+│   │
+│   ├── hyprland/
+│   │   └── hyprland.nix
+│   │
+│   └── niri/
+│       └── niri.nix
 │
-
-
-├── home/       
+├── home/
 │   └── .config/
 │       ├── Code/
 │       │   └── User/
@@ -103,13 +109,13 @@ Nix_Dotfiles/
 │       ├── kitty/
 │       │   ├── kitty.conf
 │       │   └── themes/
-│       │       └── *.conf   
-│       │         
+│       │       └── *.conf
+│       │
 │       ├── sway/
-│       │   └── config 
-│       │  
+│       │   └── config
+│       │
 │       ├── waybar/
-│       │   └── style.css 
+│       │   └── style.css
 │       │
 │       ├── nvim/
 │       │   ├── init.lua
@@ -119,7 +125,6 @@ Nix_Dotfiles/
 │       │   │   ├── custom/
 │       │   │   │   └── plugins/
 │       │   │   │       └── init.lua
-│       │   │   │
 │       │   │   └── kickstart/
 │       │   │       ├── health.lua
 │       │   │       └── plugins/
@@ -128,23 +133,25 @@ Nix_Dotfiles/
 │       │   │           ├── indent_line.lua
 │       │   │           ├── lint.lua
 │       │   │           └── neo-tree.lua
-│       │   │
 │       │   └── .gitignore
 │       │
 │       └── starship.toml
 │
-├── scripts/                    
+├── scripts/
 │   ├── rebuild.sh
 │   ├── upgrade.sh
 │   ├── editglobalconf.sh
 │   └── trash.sh
 │
-├── imperative/                  
+├── docs/
+│   └── sway.md
+│
+├── imperative/
 │   ├── Setup_Example
 │   ├── What.md
 │   └── Why.md
 │
-├── deprecated/                 
+├── deprecated/
 │   ├── configuration.nix
 │   ├── update_config.sh
 │   ├── vscode_astrodark.json
@@ -152,9 +159,9 @@ Nix_Dotfiles/
 │       └── nvim/
 │           └── onedark.lua
 │
-├── README.md                    
-├── About.md                     
-├── ToDo.md                      
+├── README.md
+├── About.md
+├── ToDo.md
 ├── LICENSE
 └── .gitignore
 ```
