@@ -189,10 +189,10 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # ----------------------------------------------------------------------------
 # Waybar
 # ----------------------------------------------------------------------------
-
-bar {
-    swaybar_command waybar
-}
+# home-manager should take care of this
+#bar {
+#    swaybar_command waybar
+#}
 
 # ----------------------------------------------------------------------------
 # Wallpaper

@@ -1,6 +1,11 @@
 /* ============================================================================
+ * Waybar
  * Catppuccin Mocha
  * ========================================================================== */
+
+/* ----------------------------------------------------------------------------
+ * Palette
+ * -------------------------------------------------------------------------- */
 
 @define-color rosewater #f5e0dc;
 @define-color flamingo #f2cdcd;
@@ -20,6 +25,7 @@
 @define-color text #cdd6f4;
 @define-color subtext1 #bac2de;
 @define-color subtext0 #a6adc8;
+
 @define-color overlay2 #9399b2;
 @define-color overlay1 #7f849c;
 @define-color overlay0 #6c7086;
@@ -33,16 +39,30 @@
 @define-color crust #11111b;
 
 
-/* ============================================================================
+/* ----------------------------------------------------------------------------
  * Global
- * ========================================================================== */
+ * -------------------------------------------------------------------------- */
 
 * {
-    font-family: "Monaspace Neon NF";
+    font-family:
+        "Monaspace Neon Frozen",
+        "CaskaydiaCove Nerd Font",
+        sans-serif;
+
     font-size: 14px;
+    font-weight: 500;
+
     min-height: 0;
+
     border: none;
+    box-shadow: none;
+    text-shadow: none;
 }
+
+
+/* ----------------------------------------------------------------------------
+ * Bar
+ * -------------------------------------------------------------------------- */
 
 #waybar {
     background: transparent;
@@ -50,57 +70,59 @@
 }
 
 
-/* ============================================================================
+/* ----------------------------------------------------------------------------
  * Workspaces
- * ========================================================================== */
+ * -------------------------------------------------------------------------- */
 
 #workspaces {
     background: @crust;
+
     border: 2px solid @mauve;
-    border-radius: 8px;
-    padding: 0;
-    margin: 0;
+    border-radius: 10px;
+
+    padding: 0 3px;
 }
 
 #workspaces button {
-    color: @blue;
+    color: @overlay1;
     background: transparent;
 
-    padding: 0 8px;
-    margin: 3px 2px;
+    min-width: 32px;
+    min-height: 28px;
 
-    border-radius: 5px;
+    margin: 1px;
+    padding: 0 6px;
 
-    opacity: 0.8;
+    border-radius: 7px;
 
     transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        opacity 0.2s ease;
+        background 150ms ease,
+        color 150ms ease,
+        min-width 150ms ease;
 }
 
 #workspaces button:hover {
-    color: @crust;
-    background: @mauve;
-    opacity: 1;
+    color: @text;
+    background: @surface1;
 }
 
 #workspaces button.empty {
-    color: @overlay2;
-    opacity: 0.4;
+    color: @overlay0;
 }
 
 #workspaces button.visible {
     color: @blue;
-    opacity: 1;
 }
 
-#workspaces button.focused,
-#workspaces button.active {
+#workspaces button.persistent {
+    color: @overlay1;
+}
+
+#workspaces button.focused {
     color: @crust;
     background: @blue;
-    opacity: 1;
-    min-width: 30px;
+
+    min-width: 36px;
 }
 
 #workspaces button.urgent {
@@ -109,9 +131,9 @@
 }
 
 
-/* ============================================================================
- * Common status modules
- * ========================================================================== */
+/* ----------------------------------------------------------------------------
+ * Right-side modules
+ * -------------------------------------------------------------------------- */
 
 #network,
 #pulseaudio,
@@ -119,97 +141,108 @@
 #clock,
 #tray {
     background: @crust;
+
+    min-height: 30px;
 }
 
 
-/* ============================================================================
+/* ----------------------------------------------------------------------------
  * Network
- * ========================================================================== */
+ * -------------------------------------------------------------------------- */
 
 #network {
     color: @peach;
 
-    padding: 0 10px;
+    padding: 0 12px;
 
-    border-top: 2px solid @text;
-    border-bottom: 2px solid @text;
+    border-top: 2px solid @peach;
+    border-bottom: 2px solid @peach;
 
-    border-radius: 5px 0 0 5px;
+    border-radius: 8px 0 0 8px;
 }
 
 #network.disconnected {
     color: @red;
+    border-color: @red;
 }
 
 
-/* ============================================================================
+/* ----------------------------------------------------------------------------
  * Audio
- * ========================================================================== */
+ * -------------------------------------------------------------------------- */
 
 #pulseaudio {
     color: @yellow;
 
-    padding: 0 10px;
+    padding: 0 12px;
 
-    border-top: 2px solid @text;
-    border-bottom: 2px solid @text;
+    border-top: 2px solid @yellow;
+    border-bottom: 2px solid @yellow;
 }
 
 #pulseaudio.muted {
     color: @overlay1;
+    border-color: @overlay1;
 }
 
 
-/* ============================================================================
+/* ----------------------------------------------------------------------------
  * Battery
- * ========================================================================== */
+ * -------------------------------------------------------------------------- */
 
 #battery {
-    color: @yellow;
-
-    padding: 0 10px;
-
-    border-top: 2px solid @text;
-    border-bottom: 2px solid @text;
-}
-
-#battery.charging,
-#battery.plugged {
     color: @green;
+
+    padding: 0 12px;
+
+    border-top: 2px solid @green;
+    border-bottom: 2px solid @green;
 }
 
 #battery.warning:not(.charging) {
     color: @peach;
+    border-color: @peach;
 }
 
 #battery.critical:not(.charging) {
     color: @red;
+    border-color: @red;
 
-    animation-name: blink;
+    animation-name: battery-critical;
     animation-duration: 1s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
+#battery.charging,
+#battery.plugged {
+    color: @green;
+    border-color: @green;
+}
 
-/* ============================================================================
+#battery.full {
+    color: @teal;
+    border-color: @teal;
+}
+
+
+/* ----------------------------------------------------------------------------
  * Clock
- * ========================================================================== */
+ * -------------------------------------------------------------------------- */
 
 #clock {
     color: @pink;
 
-    padding: 0 12px;
+    padding: 0 14px;
 
     border: 2px solid @pink;
-    border-radius: 0 8px 8px 0;
 }
 
 
-/* ============================================================================
- * System tray
- * ========================================================================== */
+/* ----------------------------------------------------------------------------
+ * Tray
+ * -------------------------------------------------------------------------- */
 
 #tray {
     color: @text;
@@ -218,10 +251,12 @@
 
     border-top: 2px solid @text;
     border-bottom: 2px solid @text;
+
+    border-radius: 0 8px 8px 0;
 }
 
 #tray > .passive {
-    opacity: 0.6;
+    opacity: 0.55;
 }
 
 #tray > .needs-attention {
@@ -229,21 +264,13 @@
 }
 
 
-/* ============================================================================
- * Window state
- * ========================================================================== */
-
-window#waybar.fullscreen {
-    color: @red;
-}
-
-
-/* ============================================================================
- * Tooltip
- * ========================================================================== */
+/* ----------------------------------------------------------------------------
+ * Tooltips
+ * -------------------------------------------------------------------------- */
 
 tooltip {
     background: @crust;
+
     color: @text;
 
     border: 2px solid @mauve;
@@ -252,15 +279,25 @@ tooltip {
 
 tooltip label {
     color: @text;
-    padding: 4px;
+
+    padding: 5px 7px;
 }
 
 
-/* ============================================================================
- * Animations
- * ========================================================================== */
+/* ----------------------------------------------------------------------------
+ * Fullscreen
+ * -------------------------------------------------------------------------- */
 
-@keyframes blink {
+window#waybar.fullscreen {
+    background: transparent;
+}
+
+
+/* ----------------------------------------------------------------------------
+ * Animations
+ * -------------------------------------------------------------------------- */
+
+@keyframes battery-critical {
     to {
         color: @crust;
         background-color: @red;
