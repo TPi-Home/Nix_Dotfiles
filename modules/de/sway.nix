@@ -81,7 +81,7 @@
 
   environment.systemPackages = with pkgs; [
     # Launcher
-    wofi
+    rofi
 
     # Bar
     waybar
