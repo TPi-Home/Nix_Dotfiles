@@ -52,6 +52,7 @@ exec swayidle -w \
 
 exec nm-applet
 exec blueman-applet
+
 # ----------------------------------------------------------------------------
 # Input
 # ----------------------------------------------------------------------------
@@ -68,7 +69,7 @@ input type:touchpad {
 # ----------------------------------------------------------------------------
 
 bindsym $mod+Return exec $term
-bindsym $mod+space exec $menu
+bindsym $mod+d exec $menu
 bindsym $mod+q kill
 
 # ----------------------------------------------------------------------------
@@ -89,7 +90,7 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 # ----------------------------------------------------------------------------
 
 bindsym $mod+Shift+c reload
-
+bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
     swaynag -t custom \
     -m 'Exit Sway?' \
@@ -186,3 +187,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bar {
     swaybar_command waybar
 }
+
+# ----------------------------------------------------------------------------
+# Wallpaper
+# ----------------------------------------------------------------------------
+
+output * bg /home/tyler/Pictures/Hilltopper (Final).png fill
