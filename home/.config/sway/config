@@ -41,7 +41,7 @@ client.urgent           #ff4a75 #ff4a75 #070810 #e2ebf8 #ff4a75
 # ----------------------------------------------------------------------------
 
 set $term kitty
-set $menu wofi --show drun
+set $menu rofi --show drun
 
 # ----------------------------------------------------------------------------
 # Startup
@@ -50,11 +50,11 @@ set $menu wofi --show drun
 exec mako
 exec udiskie
 
-exec swayidle -w \
-    timeout 600 'swaylock -f' \
-    timeout 1200 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f'
+#exec swayidle -w \
+#    timeout 600 'swaylock -f' \
+#    timeout 1200 'swaymsg "output * dpms off"' \
+#    resume 'swaymsg "output * dpms on"' \
+#    before-sleep 'swaylock -f'
 
 exec nm-applet
 exec blueman-applet
