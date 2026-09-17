@@ -30,17 +30,9 @@
   services.greetd = {
     enable = true;
 
-    # Optional settings:
-    # settings = {
-    #   background = {
-    #     path = "/path/to/wallpaper.jpg";
-    #     fit = "Cover";
-    #   };
-    # };
-
     settings = {
       default_session = {
-        command = "${pkgs.sway}/bin/sway --config /etc/greetd/sway-config";
+        command = "${pkgs.sway}/bin/sway --unsupported-gpu --config /etc/greetd/sway-config";
         user = "greeter";
       };
     };
@@ -61,6 +53,8 @@
   # --------------------------------------------------------------------------
 
   environment.etc."greetd/sway-config".text = ''
+    set $SWAYSOCK /run/user/$(id -u)/sway-ipc.sock
+
     exec "${pkgs.regreet}/bin/regreet; ${pkgs.sway}/bin/swaymsg exit"
   '';
 }

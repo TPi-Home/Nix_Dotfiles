@@ -16,7 +16,11 @@
     extraPackages = with pkgs; [
       swayidle
       swaylock
-      swaynag
+      # swaynag - pkg does not exist?
+    ];
+
+    extraOptions = [
+      "--unsupported-gpu"
     ];
   };
 
