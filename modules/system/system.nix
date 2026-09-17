@@ -2,13 +2,14 @@
 # Input / System Services (I refuse to place packages that get installed via enable with defaults in packages)
 # ============================================================================
 
-{...}:
+{ ... }:
 
 {
 
   services.libinput.enable = true;
   services.flatpak.enable = true;
 
+  programs.firefox.enable = true;
   # ============================================================================
   # Nix
   # ============================================================================

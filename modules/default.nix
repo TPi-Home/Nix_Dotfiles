@@ -12,16 +12,16 @@
 
     # Users
     ./users/tyler.nix
-    
+
     # Gaming
     ./packages/gaming.nix
-    
+
     # Hardware / services
     ./graphics/nvidia.nix
     ./audio/audio.nix
 
     # Display Manager
-    ./dm/greetd.nix
+    #./dm/greetd.nix
 
     # Desktop / WM
     ./de/sway.nix
