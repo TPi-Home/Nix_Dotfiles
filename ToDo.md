@@ -16,6 +16,7 @@
 ## High Priority
 
 ### Configuration Organization
+* SECRET SERVICE GOT COOKED ON MIGRATION -> unbreak it for signal
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
 * Need to finish default nix files used to tie modules together, specifically for:
   1. Audio

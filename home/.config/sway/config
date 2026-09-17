@@ -7,6 +7,7 @@ include /etc/sway/config.d/*
 # exec dbus-update-activation-environment --systemd --all 
 # Because that can be a problem with Nix, I will try:
 exec "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP"
+
 # ----------------------------------------------------------------------------
 # General
 # ----------------------------------------------------------------------------
@@ -44,7 +45,7 @@ client.urgent           #ff4a75 #ff4a75 #070810 #e2ebf8 #ff4a75
 # ----------------------------------------------------------------------------
 
 set $term kitty
-#set $menu wofi --show drun
+set $menu wofi --show drun
 
 # ----------------------------------------------------------------------------
 # Startup
@@ -78,8 +79,8 @@ input type:touchpad {
 # ----------------------------------------------------------------------------
 
 bindsym $mod+Return exec $term
-# bindsym $mod+d exec $menu
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec $menu
+# bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
 
 # ----------------------------------------------------------------------------
