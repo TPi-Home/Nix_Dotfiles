@@ -1,14 +1,6 @@
-# ============================================================================
-# greetd / ReGreet
-# ============================================================================
-
 { pkgs, ... }:
 
 {
-  # --------------------------------------------------------------------------
-  # ReGreet
-  # --------------------------------------------------------------------------
-
   programs.regreet = {
     enable = true;
 
@@ -20,41 +12,36 @@
     };
 
     cursorTheme.name = "Adwaita";
+
+    settings = {
+      GTK = {
+        cursor_theme_name = "Adwaita";
+      };
+
+      env = {
+        XCURSOR_SIZE = "24";
+      };
+    };
   };
-
-
-  # --------------------------------------------------------------------------
-  # greetd
-  # --------------------------------------------------------------------------
 
   services.greetd = {
     enable = true;
 
     settings = {
       default_session = {
-        command = "${pkgs.sway}/bin/sway --unsupported-gpu --config /etc/greetd/sway-config";
+        command = "${pkgs.swayfx}/bin/sway --unsupported-gpu --config /etc/greetd/sway-config";
         user = "greeter";
       };
     };
   };
 
-
-  # --------------------------------------------------------------------------
-  # ReGreet dependencies
-  # --------------------------------------------------------------------------
-
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
   ];
 
-
-  # --------------------------------------------------------------------------
-  # greetd Sway configuration
-  # --------------------------------------------------------------------------
-
   environment.etc."greetd/sway-config".text = ''
     set $SWAYSOCK /run/user/$(id -u)/sway-ipc.sock
 
-    exec "${pkgs.regreet}/bin/regreet; ${pkgs.sway}/bin/swaymsg exit"
+    exec "${pkgs.regreet}/bin/regreet; ${pkgs.swayfx}/bin/swaymsg exit"
   '';
 }
