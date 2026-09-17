@@ -172,36 +172,14 @@
         # Clock
         # --------------------------------------------------------------------
         
+                # --------------------------------------------------------------------
+        # Clock
+        # --------------------------------------------------------------------
+        
         clock = {
-          format = "󰸗 {:%b %d}   󰅐 {:%H:%M}";
-
-          tooltip-format =
-            "<big>{:%A, %B %d, %Y}</big>\n\n"
-            + "<tt><small>{calendar}</small></tt>";
-
-          format-alt = "{:%Y-%m-%d %H:%M:%S}";
-
-          calendar = {
-            mode = "month";
-            mode-mon-col = 3;
-            weeks-pos = "right";
-            on-scroll = 1;
-
-            format = {
-              months = "<span color='#cba6f7'><b>{}</b></span>";
-              days = "<span color='#cdd6f4'><b>{}</b></span>";
-              weeks = "<span color='#89b4fa'><b>W{}</b></span>";
-              weekdays = "<span color='#94e2d5'><b>{}</b></span>";
-              today = "<span color='#f5c2e7'><b><u>{}</u></b></span>";
-            };
-          };
-
-          actions = {
-            on-click = "mode";
-            on-scroll-up = "shift_up";
-            on-scroll-down = "shift_down";
-          };
+          format = "{:%H:%M}";
         };
+
                 
         # --------------------------------------------------------------------
         # System tray
