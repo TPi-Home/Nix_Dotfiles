@@ -31,10 +31,10 @@ seat seat0 xcursor_theme Adwaita 24
 # Colors - Tokyo Night
 # ----------------------------------------------------------------------------
 
-client.focused          #7aa2f7 #414868 #c0caf5 #7dcfff #7aa2f7
-client.focused_inactive #7aa2f7 #414868 #c0caf5 #7dcfff #7aa2f7
-client.unfocused        #414868 #24283b #a9b1d6 #7dcfff #414868
-client.urgent           #e0af68 #e0af68 #1d202f #7dcfff #e0af68
+client.focused          #4fa3ff #4fa3ff #070810 #e2ebf8 #4fa3ff
+client.focused_inactive #8c6ad2 #8c6ad2 #070810 #e2ebf8 #8c6ad2
+client.unfocused        #313244 #070810 #60648c #e2ebf8 #313244
+client.urgent           #ff4a75 #ff4a75 #070810 #e2ebf8 #ff4a75
 
 # ----------------------------------------------------------------------------
 # Applications
