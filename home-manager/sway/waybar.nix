@@ -45,7 +45,7 @@
           disable-scroll = true;
           all-outputs = true;
 
-          format = "{icon}";
+          format = "{windows}";
 
           persistent_workspaces = {
             "1" = [];
@@ -60,21 +60,31 @@
             "10" = [];
           };
 
-          format-icons = {
-            "1" = "  ";
-            "2" = "  ";
-            "3" = "  ";
-            "4" = "  ";
-            "5" = "  ";
-            "6" = "  ";
-            "7" = "  ";
-            "8" = "  ";
-            "9" = "  ";
-            "10" = "  ";
+          window-rewrite-default = "";
 
-            urgent = "";
-            default = "";
+          window-rewrite = {
+            "class<firefox>" = "󰈹";
+            "class<kitty>" = "󰄛";
+            "class<Code>" = "󰨞";
+            "class<code>" = "󰨞";
+            "class<discord>" = "󰙯";
+            "class<signal>" = "󰭻";
+            "class<Signal>" = "󰭻";
+            "class<thunderbird>" = "󰇮";
+            "class<vlc>" = "󰕼";
+            "class<obsidian>" = "󰠮";
+            "class<gimp>" = "󰏘";
+            "class<qbittorrent>" = "󰇚";
+            "class<org.qbittorrent.qBittorrent>" = "󰇚";
+            "class<steam>" = "󰓓";
+            "class<Steam>" = "󰓓";
+            "class<spotify>" = "󰓇";
+            "class<emacs>" = "󰰮";
+            "class<Alacritty>" = "󰄛";
+            "class<foot>" = "󰆍";
           };
+
+          format-window-separator = "  ";
 
           sort-by-number = true;
         };
@@ -163,11 +173,13 @@
         # --------------------------------------------------------------------
         
         clock = {
-          format = "   {:%b %d      %H:%M}";
+          format = "󰸗 {:%b %d}   󰅐 {:%H:%M}";
 
           tooltip-format =
             "<big>{:%A, %B %d, %Y}</big>\n\n"
             + "<tt><small>{calendar}</small></tt>";
+
+          format-alt = "{:%Y-%m-%d %H:%M:%S}";
 
           calendar = {
             mode = "month";
