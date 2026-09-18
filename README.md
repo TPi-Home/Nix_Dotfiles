@@ -3,8 +3,8 @@ I am likely going to regret this.
 
 ## Table of Contents
 - [README](README.md)
-- [About](./docs/About.md)
-- [ToDo](./docs/ToDo.md)
+- [About](./docs/about.md)
+- [ToDo](./docs/todo.md)
 - [Sway](./docs/sway.md)
 ---
 ## Use Case

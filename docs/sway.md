@@ -20,7 +20,8 @@
 * GTK
 * Qt
 
-## UWSM
+## How This Sway Config Works
+### UWSM
 * `services.dbus.implementation = "broker";` - uwsm default
 * `uwsm` 
     * connects the Wayland compositor session to the existing user session infrastructure, which in this case is dbus and systemd 
