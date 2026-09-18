@@ -26,5 +26,8 @@
 * `uwsm` 
     * connects the Wayland compositor session to the existing user session infrastructure, which in this case is dbus and systemd 
     * propagates the graphical session environment
+### XWayland
+* Enabled with scaling set to 1 for maximum compatibility
+### 
 
 
