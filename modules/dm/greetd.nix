@@ -44,6 +44,8 @@
   environment.etc."greetd/sway-config".text = ''
     set $SWAYSOCK /run/user/$(id -u)/sway-ipc.sock
 
+    seat seat0 xcursor_theme Adwaita 24
+
     exec "${pkgs.regreet}/bin/regreet; ${pkgs.swayfx}/bin/swaymsg exit"
   '';
 }
