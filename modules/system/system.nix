@@ -18,7 +18,7 @@
       sway = {
         prettyName = "Sway";
         comment = "Sway compositor managed by UWSM";
-        binPath = "/run/current-systemaf/sw/bin/sway";
+        binPath = "/run/current-system/sw/bin/sway";
       };
     };
   };
