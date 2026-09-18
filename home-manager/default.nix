@@ -14,6 +14,9 @@
     # Desktop
     ./sway/sway.nix
     ./sway/waybar.nix
+
+    # Application Launcher
+    ./fuzzel.nix
   ];
 
   home.username = "tyler";

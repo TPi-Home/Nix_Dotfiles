@@ -1,6 +1,6 @@
 /* ============================================================================
  * Waybar
- * AstroDark Color Palette Configuration
+ * AstroDark Grayscale & Black Color Palette Configuration
  * ========================================================================== */
 
 * {
@@ -16,7 +16,7 @@
  * Bar Container
  * -------------------------------------------------------------------------- */
 #waybar {
-    background: #111520; 
+    background: #000000;       /* Deep near-black background */
     color: #e3e6ed;    
     border: 2px solid #5fa9f6; 
     border-radius: 0;
@@ -26,7 +26,7 @@
  * Workspaces
  * -------------------------------------------------------------------------- */
 #workspaces {
-    background: #1a1f2e; 
+    background: #111111;       /* Dark charcoal gray for workspace container */
     border: 2px solid #5fa9f6; 
     border-radius: 0;
     padding: 0;
@@ -47,7 +47,7 @@
 }
 
 #workspaces button:hover {
-    background: #23293e; 
+    background: #222630;       /* Slightly lighter gray hover state */
 }
 
 #workspaces button:hover label {
@@ -67,16 +67,17 @@
 }
 
 #workspaces button.focused {
-    background: #5fa9f6; /* Selected Workspace */
+    background: #5fa9f6;       /* Selected Workspace */
 }
 
 #workspaces button.focused label {
-    color: #111520; 
+    background: transparent;
+    color: #0d0f14;            /* Inverted text color to match new deep background */
     font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background: #f65a5a; /* AstroDark Intense Red */
+    background: #f65a5a;       /* AstroDark Intense Red */
 }
 
 #workspaces button.urgent label {
@@ -91,7 +92,7 @@
 #battery,
 #clock,
 #tray {
-    background: #1a1f2e; 
+    background: #111111;       /* Consistent dark charcoal gray background */
     border-radius: 0;
 }
 
@@ -145,15 +146,15 @@
 }
 
 #clock {
-    color: #5deb9a; 
+    color: #5fa9f6; 
     padding: 0 14px;
-    border: 2px solid #5deb9a;
+    border: 2px solid #5fa9f6;
 }
 
 #tray {
     color: #3ae2f6; 
     padding: 0 10px;
-    border: 2px solid #e3e6ed;
+    border: 2px solid #df8df6;
 }
 
 #tray > .passive {
@@ -165,7 +166,7 @@
 }
 
 tooltip {
-    background: #111520;
+    background: #000000;   
     color: #e3e6ed;
     border: 2px solid #3ae2f6;
     border-radius: 0;

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.regreet = {
+  services.displayManager.regreet = {
     enable = true;
 
     package = pkgs.swayfx;
