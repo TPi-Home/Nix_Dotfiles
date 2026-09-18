@@ -16,9 +16,9 @@
  * Bar Container
  * -------------------------------------------------------------------------- */
 #waybar {
-    background: #000000;       /* Deep near-black background */
-    color: #e3e6ed;    
-    border: 2px solid #5fa9f6; 
+    background: #161718;       /* Deep near-black background */
+    color: #c4c8c5;    
+    border: 2px solid #85befd; 
     border-radius: 0;
 }
 
@@ -26,8 +26,8 @@
  * Workspaces
  * -------------------------------------------------------------------------- */
 #workspaces {
-    background: #111111;       /* Dark charcoal gray for workspace container */
-    border: 2px solid #5fa9f6; 
+    background: #161718;       /* Dark charcoal gray for workspace container */
+    border: 2px solid #85befd; 
     border-radius: 0;
     padding: 0;
     margin: 0;
@@ -43,45 +43,45 @@
 
 /* FORCES THE GLYPH ICONS INSIDE THE BOXES TO RENDER STABLE COLORS */
 #workspaces button label {
-    color: #5fa9f6; 
+    color: #85befd; 
 }
 
 #workspaces button:hover {
-    background: #222630;       /* Slightly lighter gray hover state */
+    background: #444444;       /* Slightly lighter gray hover state */
 }
 
 #workspaces button:hover label {
-    color: #e3e6ed; 
+    color: #c4c8c5; 
 }
 
 #workspaces button.empty label {
-    color: #4c566a; 
+    color: #000000; 
 }
 
 #workspaces button.visible label {
-    color: #5fa9f6; 
+    color: #85befd; 
 }
 
 #workspaces button.persistent label {
-    color: #5fa9f6;
+    color: #85befd;
 }
 
 #workspaces button.focused {
-    background: #5fa9f6;       /* Selected Workspace */
+    background: #85befd;       /* Selected Workspace */
 }
 
 #workspaces button.focused label {
     background: transparent;
-    color: #0d0f14;            /* Inverted text color to match new deep background */
+    color: #161718;            /* Inverted text color to match new deep background */
     font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background: #f65a5a;       /* AstroDark Intense Red */
+    background: #fc5ef0;       /* AstroDark Intense Red */
 }
 
 #workspaces button.urgent label {
-    color: #e3e6ed;
+    color: #c4c8c5;
 }
 
 /* ----------------------------------------------------------------------------
@@ -92,69 +92,69 @@
 #battery,
 #clock,
 #tray {
-    background: #111111;       /* Consistent dark charcoal gray background */
+    background: #161718;       /* Consistent dark charcoal gray background */
     border-radius: 0;
 }
 
 #network {
-    color: #5fa9f6; 
+    color: #85befd; 
     padding: 0 12px;
-    border: 2px solid #5fa9f6;
+    border: 2px solid #85befd;
 }
 
 #network.disconnected {
-    color: #f65a5a; 
-    border-color: #f65a5a;
+    color: #fc5ef0; 
+    border-color: #fc5ef0;
 }
 
 #pulseaudio {
-    color: #df8df6; 
+    color: #b9b5fc; 
     padding: 0 12px;
-    border: 2px solid #df8df6;
+    border: 2px solid #b9b5fc;
 }
 
 #pulseaudio.muted {
-    color: #6c7a96; 
-    border-color: #6c7a96;
+    color: #c4c8c5; 
+    border-color: #c4c8c5;
 }
 
 #battery {
-    color: #5deb9a; 
+    color: #86c38a; 
     padding: 0 12px;
-    border: 2px solid #5deb9a;
+    border: 2px solid #86c38a;
 }
 
 #battery.warning:not(.charging) {
-    color: #f6ae5a; 
-    border-color: #f6ae5a;
+    color: #ffd6b1; 
+    border-color: #ffd6b1;
 }
 
 #battery.critical:not(.charging) {
-    color: #f65a5a; 
-    border-color: #f65a5a;
+    color: #fc5ef0; 
+    border-color: #fc5ef0;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #5deb9a;
-    border-color: #5deb9a;
+    color: #86c38a;
+    border-color: #86c38a;
 }
 
 #battery.full {
-    color: #5deb9a;
-    border-color: #5deb9a;
+    color: #86c38a;
+    border-color: #86c38a;
 }
 
 #clock {
-    color: #5fa9f6; 
+    color: #85befd; 
     padding: 0 14px;
-    border: 2px solid #5fa9f6;
+    border: 2px solid #85befd;
 }
 
 #tray {
-    color: #3ae2f6; 
+    color: #95cbfe; 
     padding: 0 10px;
-    border: 2px solid #df8df6;
+    border: 2px solid #b9b5fc;
 }
 
 #tray > .passive {
@@ -162,18 +162,18 @@
 }
 
 #tray > .needs-attention {
-    color: #f65a5a;
+    color: #fc5ef0;
 }
 
 tooltip {
-    background: #000000;   
-    color: #e3e6ed;
-    border: 2px solid #3ae2f6;
+    background: #161718;   
+    color: #c4c8c5;
+    border: 2px solid #95cbfe;
     border-radius: 0;
 }
 
 tooltip label {
-    color: #e3e6ed;
+    color: #c4c8c5;
     padding: 5px 7px;
 }
 
