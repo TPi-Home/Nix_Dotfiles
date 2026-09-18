@@ -3,14 +3,13 @@
 ## uwsm
 cage or something full screen
 home-manager system ctl mgmt
-vscode nf
-swayfx
 sway notifications 
 app launcher
 vscode starting firefox from wofi
 test logout 
 configure wayland in a different module than wm/de/dm
 file picker scaling needs fixed
+rning: The option `programs.regreet' defined in `/nix/store/6d891y6f53d62xprbjh5ag29zdhd2jhj-source/modules/dm/greetd.nix' has been renamed to `services.displayManager.regreet'.
 
 THIS IS WHY I DO NOT RUSH TO A WINDOW MANAGER OVER A FULL DE
 
