@@ -1,28 +1,12 @@
-# SWAY TODO
+# Sway Setup
 
-## uwsm
-cage or something full screen
-home-manager system ctl mgmt
-sway notifications 
-app launcher
-vscode starting firefox from wofi
-test logout 
-configure wayland in a different module than wm/de/dm
-file picker scaling needs fixed
-rning: The option `programs.regreet' defined in `/nix/store/6d891y6f53d62xprbjh5ag29zdhd2jhj-source/modules/dm/greetd.nix' has been renamed to `services.displayManager.regreet'.
+## Table of Contents
+- [README](../README.md)
+- [About](about.md)
+- [ToDo](todo.md)
+- [Sway](sway.md)
 
-THIS IS WHY I DO NOT RUSH TO A WINDOW MANAGER OVER A FULL DE
-
-wayland issues:
-session would break after logging back to display manager
-opening firefox would do nothing. i kept trying to open it, nothing happened. i accidentally locked the screen to fall back to tty and when i logged back in, 20 firefox instances opened.
-
-perhaps env variables not carried over well from gnome setup
-wofi- i will come back to this
-    * swapping with rofi to debug, rofi has wayland support anyway
-    * was opening random apps when apps hung up
-
-## Sway
+## How Sway Works
 * Wayland session
 * XWayland
 * D-Bus session
@@ -36,25 +20,10 @@ wofi- i will come back to this
 * GTK
 * Qt
 
-## Important Environment Variables
+## UWSM
+* `services.dbus.implementation = "broker";` - uwsm default
+* `uwsm` 
+    * connects the Wayland compositor session to the existing user session infrastructure, which in this case is dbus and systemd 
+    * propagates the graphical session environment
 
-```text
 
-XDG_SESSION_TYPE
-XDG_CURRENT_DESKTOP
-XDG_SESSION_DESKTOP
-
-WAYLAND_DISPLAY
-DISPLAY
-
-XDG_RUNTIME_DIR
-
-DBUS_SESSION_BUS_ADDRESS
-
-PATH
-
-XDG_CONFIG_HOME
-XDG_DATA_HOME
-XDG_CACHE_HOME
-
-```

@@ -83,7 +83,6 @@
     # Launcher
     rofi
     fuzzel
-    wofi
 
     # Bar
     waybar

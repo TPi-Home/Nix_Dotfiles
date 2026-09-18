@@ -3,13 +3,9 @@ I am likely going to regret this.
 
 ## Table of Contents
 - [README](README.md)
-- [About](About.md)
-- [ToDo](ToDo.md)
-
-**Imperative Implementations**
-- [Imperative/What?](imperative/What.md)
-- [Imperative/Why?](imperative/Why.md)
-
+- [About](./docs/About.md)
+- [ToDo](./docs/ToDo.md)
+- [Sway](./docs/sway.md)
 ---
 ## Use Case
 I have long wanted to experiment with different workflows in Linux. The problem with experimentation is obvious: dependencies, configurations, and general clutter from software you no longer use pile up the more you experiment. Enter Nix, which, for the sake of this discussion, can function almost atomically.
@@ -21,6 +17,7 @@ The goal is to make it easier to try a different workflow without starting from 
 > **Warning:** This is primarily my goal, not a claim that this project is ready to be installed as a complete system, especially by beginners. It is still a work in progress and reflects my own experimentation with NixOS. It wasn't until I saw how easily Nix could be used to build a custom environment brick by brick that I realized how powerful it is as a tool for experimentation.
 
 ## Layout
+To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.
 
 ```text
 Nix_Dotfiles/
@@ -83,6 +80,7 @@ Nix_Dotfiles/
 │   ├── firefox.nix
 │   ├── fish.nix
 │   ├── zsh.nix
+│   ├── fuzzel.nix
 │   ├── git.nix
 │   ├── kitty.nix
 │   ├── nvim.nix
@@ -111,6 +109,9 @@ Nix_Dotfiles/
 │       │   └── themes/
 │       │       └── *.conf
 │       │
+│       ├── fuzzel/
+│       │   └── fuzzel.init
+|       |
 │       ├── sway/
 │       │   └── config
 │       │
@@ -151,13 +152,6 @@ Nix_Dotfiles/
 │   ├── What.md
 │   └── Why.md
 │
-├── deprecated/
-│   ├── configuration.nix
-│   ├── update_config.sh
-│   ├── vscode_astrodark.json
-│   └── alternative_configs/
-│       └── nvim/
-│           └── onedark.lua
 │
 ├── README.md
 ├── About.md
@@ -165,10 +159,10 @@ Nix_Dotfiles/
 ├── LICENSE
 └── .gitignore
 ```
-
+**The Above Structure is a Work In Progress**
 ## Structure
 
-### Separation of responsibilities
+### Separation of Responsibilities
 
 | Directory | Purpose |
 |---|---|
@@ -213,3 +207,4 @@ flake.nix
                           ├── Code/
                           └── starship.toml
 ```
+For most situations, home manager having a nix file that points to a config file is the easiest I have found to avoid my fighting with NixOS. 

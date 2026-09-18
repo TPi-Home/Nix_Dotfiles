@@ -1,30 +1,21 @@
 # NixOS / Dotfiles To-Do
 
 ## Table of Contents
-- [README](README.md)
-- [About](About.md)
-- [ToDo](ToDo.md)
-
-**Imperative Implementations**
-- [Imperative/What?](imperative/What.md)
-- [Imperative/Why?](imperative/Why.md)
-
+- [README](../README.md)
+- [About](about.md)
+- [ToDo](todo.md)
+- [Sway](sway.md)
 ---
 
-
-
-## High Priority
-
-### Configuration Organization
+## Configuration Organization
 * SECRET SERVICE GOT COOKED ON MIGRATION -> unbreak it for signal
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
 * Need to finish default nix files used to tie modules together, specifically for:
   1. Audio
   2. WM
+* Deployment scripts
 
-* Attempting the window manager setup is a lot to do in the nix language. To me it makes the most sense to get a clean and stable setup running first, then translate those configuration files into something nix understands, but even that may not be the best for portability. Perhaps there are better solutions? If you have ideas and want to email me, you should be able to find it via the website I have linked. 
-
-### Wrappers for
+### Wrappers For
 * Neovim
 ---
 
@@ -36,7 +27,7 @@
 
 ---
 
-## Desktop / GNOME
+## Desktop Environment / Window Manager Setup
 
 ### GNOME Configuration
 
@@ -49,38 +40,9 @@
 | Manage fonts declaratively | `stylix`  or `home-manager` |
 | Manage application-specific themes/configuration | `stylix` or `home-manager` | 
 
-### Tiling (Much of this could be managed the Nix way)
+### Tiling
 
-* Evaluate Mosaic
-* Evaluate whether a tiling WM/compositor is still desirable
-* Identify GNOME functionality that would be lost or become awkward with a tiling WM to prepare for that migration if I go that route
-| I will need for hyprland: | |
-  |---|---|
-  | a Wi-Fi GUI | `nm-applet` |
-  | a Bluetooth GUI | `blueman` |
-  | a supported display manager | `greetd` or TTY |
-  | a launcher | `wofi` / `rofi-wayland` |
-  | a status bar | `waybar` |
-  | a wallpaper tool | `hyprpaper` |
-  | a power/brightness tool | `brightnessctl` |
-  | idle handling | `hypridle` |
-  | screen locking | `hyprlock` |
-  | audio control | `pavucontrol` |
-  | screenshots | `hyprshot` |
-  | clipboard | move `wl-clipboard` from `nvim.nix` to a system module |
-  | notifications | `mako` / `swaync` |
-  | authentication agent | `polkit_gnome` |
-  | Wayland portals | `xdg-desktop-portal-hyprland` |
-  | a logout/power menu | `wlogout` |
-  | a terminal | `kitty` |
-  | a network backend | `NetworkManager` |
-  | an audio backend | `PipeWire` + `WirePlumber` |
-  | a secret/keyring service | `gnome-keyring` |
-  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
-  |cursors|`Adwaita`|
-  |file manager| cli|
-
-| I will need for sway: | |
+| I should have for sway: | |
   |---|---|
   | a Wi-Fi GUI | `nm-applet` |
   | a Bluetooth GUI | `blueman` |
@@ -105,17 +67,47 @@
   | a secret/keyring service | `gnome-keyring` |
   |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
   |cursors|`Adwaita`|
-  |file manager| cli|
-  
-**NOTE: THIS IS A WORK IN PROGRESS**
-    
-* Document workarounds for missing GNOME conveniences
-* Push configuration files for keybinds and tiling in gnome
+  |file manager| tui|
+  |wayland session mgmt|`uwsm`|
 
-### GNOME Niceties
+___
+<br/>
+
+| I will need for hyprland: | |
+  |---|---|
+  | a Wi-Fi GUI | `nm-applet` |
+  | a Bluetooth GUI | `blueman` |
+  | a supported display manager | `greetd` or TTY |
+  | a launcher | `wofi` / `rofi-wayland` |
+  | a status bar | `waybar` |
+  | a wallpaper tool | `hyprpaper` |
+  | a power/brightness tool | `brightnessctl` |
+  | idle handling | `hypridle` |
+  | screen locking | `hyprlock` |
+  | audio control | `pavucontrol` |
+  | screenshots | `hyprshot` |
+  | clipboard | move `wl-clipboard` from `nvim.nix` to a system module |
+  | notifications | `mako` / `swaync` |
+  | authentication agent | `polkit_gnome` |
+  | Wayland portals | `xdg-desktop-portal-hyprland` |
+  | a logout/power menu | `wlogout` |
+  | a terminal | `kitty` |
+  | a network backend | `NetworkManager` |
+  | an audio backend | `PipeWire` + `WirePlumber` |
+  | a secret/keyring service | `gnome-keyring` |
+  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
+  |cursors|`Adwaita`|
+  |file manager| tui|
+  |wayland session mgmt|`uwsm` if not built in|
+
+**NOTE: THIS IS A WORK IN PROGRESS**
+
+I would like to add support for Niri next.
+
+### GNOME Niceties I Miss
 
 * Hardware plug-and-play management / GUI tools
-* "Save as root" workflow for VS Code
+* "Save as root" workflow for VS Code - no longer really needed with flakes and NixOS
 * Review other GNOME utilities currently relied upon before changing WM/compositor
 
 ---

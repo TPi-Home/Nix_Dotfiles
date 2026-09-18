@@ -1,13 +1,10 @@
 # About
 
 ## Table of Contents
-- [README](README.md)
-- [About](About.md)
-- [ToDo](ToDo.md)
-
-**Imperative Implementations**
-- [Imperative/What?](imperative/What.md)
-- [Imperative/Why?](imperative/Why.md)
+- [README](../README.md)
+- [About](about.md)
+- [ToDo](todo.md)
+- [Sway](sway.md)
 
 ---
 
