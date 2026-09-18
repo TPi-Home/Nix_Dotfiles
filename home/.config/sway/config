@@ -40,7 +40,7 @@ seat seat0 xcursor_theme Adwaita 24
 # Format:               border  bg      text    indic   child_border
 client.focused          #85befd #85befd #161718 #95cbfe #85befd
 client.focused_inactive #b9b5fc #b9b5fc #161718 #c4c8c5 #b9b5fc
-client.unfocused        #000000 #161718 #c4c8c5 #c4c8c5 #000000
+client.unfocused        #444444 #161718 #c4c8c5 #c4c8c5 #444444
 client.urgent           #fc5ef0 #fc5ef0 #161718 #fc5ef0 #fc5ef0
 
 # ----------------------------------------------------------------------------
@@ -57,10 +57,10 @@ set $menu fuzzel
 exec mako
 exec udiskie
 
-#exec swayidle -w \
-#    timeout 600 'swaylock -f' \
-#    timeout 1200 'swaymsg "output * dpms off"' \
-#    resume 'swaymsg "output * dpms on"' \
+#exec swayidle -w \\
+#    timeout 600 'swaylock -f' \\
+#    timeout 1200 'swaymsg "output * dpms off"' \\
+#    resume 'swaymsg "output * dpms on"' \\
 #    before-sleep 'swaylock -f'
 
 exec nm-applet
@@ -105,9 +105,9 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec \
-    swaynag -t warning \
-    -m 'Exit Sway?' \
+bindsym $mod+Shift+e exec \\
+    swaynag -t warning \\
+    -m 'Exit Sway?' \\
     -b 'Yes, exit Sway' 'swaymsg exit'
 
 # ----------------------------------------------------------------------------
