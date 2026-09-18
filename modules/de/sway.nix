@@ -73,7 +73,7 @@
   # Security
   # --------------------------------------------------------------------------
 
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 
   # --------------------------------------------------------------------------
   # Sway Runtime Utilities
@@ -83,6 +83,7 @@
     # Launcher
     rofi
     fuzzel
+    wofi
 
     # Bar
     waybar
@@ -108,7 +109,7 @@
 
     # Audio UI
     pavucontrol
-    
+
   ];
 
   # --------------------------------------------------------------------------
