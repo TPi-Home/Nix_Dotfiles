@@ -38,10 +38,10 @@ seat seat0 xcursor_theme Adwaita 24
 # ----------------------------------------------------------------------------
 
 # Format:               border  bg      text    indic   child_border
-client.focused          #5fa9f6 #5fa9f6 #111520 #3ae2f6 #5fa9f6
-client.focused_inactive #df8df6 #df8df6 #111520 #e3e6ed #df8df6
-client.unfocused        #4c566a #1a1f2e #6c7a96 #e3e6ed #4c566a
-client.urgent           #f65a5a #f65a5a #111520 #f65a5a #f65a5a
+client.focused          #85befd #85befd #161718 #95cbfe #85befd
+client.focused_inactive #b9b5fc #b9b5fc #161718 #c4c8c5 #b9b5fc
+client.unfocused        #000000 #161718 #c4c8c5 #c4c8c5 #000000
+client.urgent           #fc5ef0 #fc5ef0 #161718 #fc5ef0 #fc5ef0
 
 # ----------------------------------------------------------------------------
 # Applications
