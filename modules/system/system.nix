@@ -10,18 +10,19 @@
   services.flatpak.enable = true;
   programs.firefox.enable = true;
 
+  services.dbus.implementation = "broker";
+
   programs.uwsm = {
     enable = true;
-    # You must configure the waylandCompositors suboptions so that UWSM knows which compositors to manage. 
     waylandCompositors = {
       sway = {
         prettyName = "Sway";
         comment = "Sway compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/sway";
+        binPath = "/run/current-systemaf/sw/bin/sway";
       };
     };
   };
-  
+
   # ============================================================================
   # Nix
   # ============================================================================
