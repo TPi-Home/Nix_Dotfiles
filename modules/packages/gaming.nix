@@ -7,12 +7,22 @@
 {
   programs.steam.enable = true;
   programs.gamemode.enable = true;
+  programs.gamescope = {
+    enable = true;
+    capSysNice = true; # Helps gamescope get real-time scheduling priority
+  };
   
   environment.systemPackages = with pkgs; [
 
-    # ============================================================================
-    # Games from Nix packages
-    # ============================================================================
+    # --------------------------------------------------------------------------
+    # Gaming Utilities
+    # --------------------------------------------------------------------------
+
+    
+
+    # --------------------------------------------------------------------------
+    # Games from Nix Pkgs
+    # --------------------------------------------------------------------------
 
     cataclysm-dda
 
