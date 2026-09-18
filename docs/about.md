@@ -30,3 +30,8 @@ Not everything can be managed declaratively. Software or configuration that is i
 - Easy rollbacks and recovery
 - Version-controlled dotfiles
 - A configuration that remains understandable as it grows
+
+## Setup Outside of Wayland
+
+### Flake Structure
+The flake.nix file largely points to default.nix for the system and user configurations, as well as the hardware configurations. 
