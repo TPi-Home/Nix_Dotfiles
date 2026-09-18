@@ -207,4 +207,4 @@ flake.nix
                           ├── Code/
                           └── starship.toml
 ```
-For most situations, home manager having a nix file that points to a config file is the easiest I have found to avoid my fighting with NixOS. 
+For most situations, home manager having a nix file that points to a config file is the easiest way I have found to avoid my fighting with NixOS. 
