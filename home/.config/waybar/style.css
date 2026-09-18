@@ -1,6 +1,6 @@
 /* ============================================================================
  * Waybar
- * Custom Vaporwave Mountain Palette (Matches Wallpaper Gradient)
+ * AstroDark Color Palette Configuration
  * ========================================================================== */
 
 * {
@@ -16,9 +16,9 @@
  * Bar Container
  * -------------------------------------------------------------------------- */
 #waybar {
-    background: #0e0f1d; 
-    color: #e2ebf8;
-    border: 2px solid #ff94e0; 
+    background: #111520; 
+    color: #e3e6ed;    
+    border: 2px solid #5fa9f6; 
     border-radius: 0;
 }
 
@@ -26,8 +26,8 @@
  * Workspaces
  * -------------------------------------------------------------------------- */
 #workspaces {
-    background: #070810;
-    border: 2px solid #4fa3ff; 
+    background: #1a1f2e; 
+    border: 2px solid #5fa9f6; 
     border-radius: 0;
     padding: 0;
     margin: 0;
@@ -43,44 +43,44 @@
 
 /* FORCES THE GLYPH ICONS INSIDE THE BOXES TO RENDER STABLE COLORS */
 #workspaces button label {
-    color: #4fa3ff; 
+    color: #5fa9f6; 
 }
 
 #workspaces button:hover {
-    background: #1a1936;
+    background: #23293e; 
 }
 
 #workspaces button:hover label {
-    color: #e2ebf8;
+    color: #e3e6ed; 
 }
 
 #workspaces button.empty label {
-    color: #313244; 
+    color: #4c566a; 
 }
 
 #workspaces button.visible label {
-    color: #4fa3ff; 
+    color: #5fa9f6; 
 }
 
 #workspaces button.persistent label {
-    color: #4fa3ff;
+    color: #5fa9f6;
 }
 
 #workspaces button.focused {
-    background: #4fa3ff; 
+    background: #5fa9f6; /* Selected Workspace */
 }
 
 #workspaces button.focused label {
-    color: #070810; 
+    color: #111520; 
     font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background: #ff4a75;
+    background: #f65a5a; /* AstroDark Intense Red */
 }
 
 #workspaces button.urgent label {
-    color: #e2ebf8;
+    color: #e3e6ed;
 }
 
 /* ----------------------------------------------------------------------------
@@ -91,69 +91,69 @@
 #battery,
 #clock,
 #tray {
-    background: #070810;
+    background: #1a1f2e; 
     border-radius: 0;
 }
 
 #network {
-    color: #4fa3ff; 
+    color: #5fa9f6; 
     padding: 0 12px;
-    border: 2px solid #4fa3ff;
+    border: 2px solid #5fa9f6;
 }
 
 #network.disconnected {
-    color: #ff4a75;
-    border-color: #ff4a75;
+    color: #f65a5a; 
+    border-color: #f65a5a;
 }
 
 #pulseaudio {
-    color: #8c6ad2; 
+    color: #df8df6; 
     padding: 0 12px;
-    border: 2px solid #8c6ad2;
+    border: 2px solid #df8df6;
 }
 
 #pulseaudio.muted {
-    color: #60648c;
-    border-color: #60648c;
+    color: #6c7a96; 
+    border-color: #6c7a96;
 }
 
 #battery {
-    color: #4fa3ff; 
+    color: #5deb9a; 
     padding: 0 12px;
-    border: 2px solid #4fa3ff;
+    border: 2px solid #5deb9a;
 }
 
 #battery.warning:not(.charging) {
-    color: #d464c4;
-    border-color: #d464c4;
+    color: #f6ae5a; 
+    border-color: #f6ae5a;
 }
 
 #battery.critical:not(.charging) {
-    color: #ff4a75;
-    border-color: #ff4a75;
+    color: #f65a5a; 
+    border-color: #f65a5a;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #4fa3ff;
-    border-color: #4fa3ff;
+    color: #5deb9a;
+    border-color: #5deb9a;
 }
 
 #battery.full {
-    color: #4fa3ff;
-    border-color: #4fa3ff;
+    color: #5deb9a;
+    border-color: #5deb9a;
 }
 
 #clock {
-    color: #ff94e0; 
+    color: #5deb9a; 
     padding: 0 14px;
-    border: 2px solid #ff94e0;
+    border: 2px solid #5deb9a;
 }
 
 #tray {
-    color: #4fa3ff;
+    color: #3ae2f6; 
     padding: 0 10px;
-    border: 2px solid #4fa3ff;
+    border: 2px solid #e3e6ed;
 }
 
 #tray > .passive {
@@ -161,18 +161,18 @@
 }
 
 #tray > .needs-attention {
-    color: #ff4a75;
+    color: #f65a5a;
 }
 
 tooltip {
-    background: #0e0f1d;
-    color: #e2ebf8;
-    border: 2px solid #d464c4;
+    background: #111520;
+    color: #e3e6ed;
+    border: 2px solid #3ae2f6;
     border-radius: 0;
 }
 
 tooltip label {
-    color: #e2ebf8;
+    color: #e3e6ed;
     padding: 5px 7px;
 }
 

@@ -34,13 +34,14 @@ floating_modifier $mod
 seat seat0 xcursor_theme Adwaita 24
 
 # ----------------------------------------------------------------------------
-# Colors - Tokyo Night
+# Colors - AstroDark
 # ----------------------------------------------------------------------------
 
-client.focused          #4fa3ff #4fa3ff #070810 #e2ebf8 #4fa3ff
-client.focused_inactive #8c6ad2 #8c6ad2 #070810 #e2ebf8 #8c6ad2
-client.unfocused        #313244 #070810 #60648c #e2ebf8 #313244
-client.urgent           #ff4a75 #ff4a75 #070810 #e2ebf8 #ff4a75
+# Format:               border  bg      text    indic   child_border
+client.focused          #5fa9f6 #5fa9f6 #111520 #3ae2f6 #5fa9f6
+client.focused_inactive #df8df6 #df8df6 #111520 #e3e6ed #df8df6
+client.unfocused        #4c566a #1a1f2e #6c7a96 #e3e6ed #4c566a
+client.urgent           #f65a5a #f65a5a #111520 #f65a5a #f65a5a
 
 # ----------------------------------------------------------------------------
 # Applications
