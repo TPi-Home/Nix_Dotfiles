@@ -11,7 +11,7 @@
   };
 
   wayland.windowManager.sway = {
-    xwayland = false;  # if this option errors, use extraConfig = "xwayland disable";
+    xwayland = true;  # if this option errors, use extraConfig = "xwayland disable";
     extraSessionCommands = ''
       export DISPLAY=:1
     '';
