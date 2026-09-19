@@ -16,6 +16,8 @@ The goal is to make it easier to try a different workflow without starting from 
 
 > **Warning:** This is primarily my goal, not a claim that this project is ready to be installed as a complete system, especially by beginners. It is still a work in progress and reflects my own experimentation with NixOS. It wasn't until I saw how easily Nix could be used to build a custom environment brick by brick that I realized how powerful it is as a tool for experimentation.
 
+## Screenshots
+![Screenshot 2](scrot.png)
 ## Layout
 To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.
 
