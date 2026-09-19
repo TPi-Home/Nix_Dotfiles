@@ -11,10 +11,7 @@
   };
 
   wayland.windowManager.sway = {
-    xwayland = true;  # if this option errors, use extraConfig = "xwayland disable";
-    extraSessionCommands = ''
-      export DISPLAY=:1
-    '';
+    xwayland = false;  # if this option errors, use extraConfig = "xwayland disable";
     config = {
       output."eDP-2".scale = "2";
       startup = [
