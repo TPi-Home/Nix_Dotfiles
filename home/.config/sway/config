@@ -26,6 +26,7 @@ gaps outer 0
 
 focus_follows_mouse yes
 floating_modifier $mod
+exec_always xwayland-satellite :1
 
 # ----------------------------------------------------------------------------
 # Cursor
