@@ -4,12 +4,6 @@
 
 include /etc/sway/config.d/*
 
-# This is a Nix anti-pattern basically:
-# exec dbus-update-activation-environment --systemd --all 
-# Because that can be a problem with Nix, I will try:
-# exec "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP"
-# trying to have uwsm handle this 
-
 # ----------------------------------------------------------------------------
 # General
 # ----------------------------------------------------------------------------
@@ -29,8 +23,10 @@ gaps outer 0
 focus_follows_mouse yes
 floating_modifier $mod
 
-#exec_always xwayland-satellite :1
 output * scale 1
+
+# X11 Compatibility Tool: (must visit /home-manager/sway/sway.nix to change 2 other lines)
+#exec_always xwayland-satellite :1
 
 # ----------------------------------------------------------------------------
 # Cursor
@@ -101,7 +97,7 @@ bindsym Ctrl+space exec makoctl dismiss
 # Screenshots
 # ----------------------------------------------------------------------------
 
-bindsym Print exec grim - | swappy -f -
+bindsym $mod+Shift+p exec grim - | swappy -f -
 bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 
 # ----------------------------------------------------------------------------

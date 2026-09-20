@@ -18,14 +18,22 @@
 
 ### Wrappers For
 * Neovim
+
+### UI to Finish
+* DM:
+  * CSS
+  * Try TUI if GTK is problematic
+
 ---
 
 ## Nix Development Environment
 
-### Development Tools
+### Mis Development Tools
 
 * Not really a development tool, but `npins` looks interesting 
 
+### Flake 
+* Try Doom Emacs
 ---
 
 ## Desktop Environment / Window Manager Setup
