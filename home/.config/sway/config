@@ -107,7 +107,7 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f -
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
-    swaynag -t warning \
+    swaynag -t logout \
     -m 'Log out of Sway?' \
     -b 'Yes, log out' 'uwsm stop'
 
