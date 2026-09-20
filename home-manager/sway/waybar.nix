@@ -12,7 +12,7 @@
         layer = "top";
         position = "top";
 
-        height = 36;
+        height = 54;
         margin-top = 8;
         margin-left = 8;
         margin-right = 8;
@@ -84,7 +84,7 @@
             "class<foot>" = "󰆍";
           };
 
-          format-window-separator = "  ";
+          format-window-separator = "  ";
 
           sort-by-number = true;
         };
@@ -122,8 +122,7 @@
 
           format-icons = {
             headphone = "";
-            hands-free = "";
-            headset = "";
+            headset = "󰋏";
             phone = "";
             portable = "";
             car = "";
@@ -143,29 +142,20 @@
         # --------------------------------------------------------------------
 
         battery = {
-          bat = "BAT1";
-
-          states = {
-            warning = 30;
-            critical = 15;
-          };
+          bat = "BAT0";
 
           format = "{icon} {capacity}%";
-          format-charging = "   {capacity}%";
-          format-plugged = "   {capacity}%";
-          format-full = "   {capacity}%";
-
-          format-alt = "{time} {icon}";
+          format-charging = "󰂄 {capacity}%";
+          format-plugged = "󰂄 {capacity}%";
+          format-full = "󰁹 {capacity}%";
 
           format-icons = [
-            "  "
-            "  "
-            "  "
-            "  "
-            "  "
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁹"
           ];
-
-          tooltip-format = "{capacity}%\n{timeTo}\nStatus: {status}";
         };
 
         # --------------------------------------------------------------------
@@ -181,8 +171,8 @@
         # --------------------------------------------------------------------
 
         tray = {
-          icon-size = 18;
-          spacing = 8;
+          icon-size = 28;
+          spacing = 7;
         };
       };
     };

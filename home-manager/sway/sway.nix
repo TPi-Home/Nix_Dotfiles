@@ -11,11 +11,11 @@
   };
 
   wayland.windowManager.sway = {
-    xwayland = false;  # if this option errors, use extraConfig = "xwayland disable";
+    xwayland = false;  # false if trying to use line 18, true if not
     config = {
-      output."eDP-2".scale = "2";
+      output."eDP-2".scale = "1";
       startup = [
-        { command = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :1"; }
+        #{ command = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :1"; }
       ];
     };
   };

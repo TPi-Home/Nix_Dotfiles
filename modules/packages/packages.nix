@@ -24,6 +24,7 @@
     taskwarrior3
     zellij
     yazi
+    stow
 
     # --------------------------------------------------------------------------
     # Editors (for TTY fallback only at system level)
@@ -46,7 +47,7 @@
     # --------------------------------------------------------------------------
 
     vulkan-tools
-    xwayland-satellite
+    # xwayland-satellite
     # mesa
     # mesa-demos
 

@@ -4,8 +4,8 @@
  * ========================================================================== */
 
 * {
-    font-family: "Monaspace Neon NF", sans-serif;
-    font-size: 14px;
+    font-family: "Monaspace Neon NF", "Symbols Nerd Font";
+    font-size: 28px;
     font-weight: 500;
     border: none;
     box-shadow: none;
@@ -35,7 +35,7 @@
 
 #workspaces button {
     background: transparent;
-    min-width: 80px;
+    min-width: 140px;
     padding: 0;
     margin: 0;
     border-radius: 0;
@@ -77,7 +77,7 @@
 }
 
 #workspaces button.urgent {
-    background: #fc5ef0;
+    background: #c678dd;
 }
 
 #workspaces button.urgent label {
@@ -103,14 +103,14 @@
 }
 
 #network.disconnected {
-    color: #fc5ef0;
-    border-color: #fc5ef0;
+    color: #c678dd;
+    border-color: #c678dd;
 }
 
 #pulseaudio {
-    color: #b9b5fc;
+    color: #c678dd;
     padding: 0 12px;
-    border: 2px solid #b9b5fc;
+    border: 2px solid #c678dd;
 }
 
 #pulseaudio.muted {
@@ -130,8 +130,8 @@
 }
 
 #battery.critical:not(.charging) {
-    color: #fc5ef0;
-    border-color: #fc5ef0;
+    color: #c678dd;
+    border-color: #c678dd;
 }
 
 #battery.charging,
@@ -146,15 +146,15 @@
 }
 
 #clock {
-    color: #85befd;
+    color: #e5c07b;
     padding: 0 14px;
-    border: 2px solid #85befd;
+    border: 2px solid #e5c07b;
 }
 
 #tray {
     color: #85befd;
     padding: 0 10px;
-    border: 2px solid #b9b5fc;
+    border: 2px solid #85befd;
 }
 
 #tray > .passive {
@@ -162,7 +162,7 @@
 }
 
 #tray > .needs-attention {
-    color: #fc5ef0;
+    color: #c678dd;
 }
 
 tooltip {
@@ -180,3 +180,4 @@ tooltip label {
 window#waybar.fullscreen {
     background: transparent;
 }
+

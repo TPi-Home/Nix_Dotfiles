@@ -1,15 +1,26 @@
 # ============================================================================
-# Input / System Services (I refuse to place packages that get installed via enable with defaults in packages)
+# Nix System Core
 # ============================================================================
 
 { ... }:
 
 {
+  # Leaving this here in case of home-manager corruption:
+  programs.firefox.enable = true; 
 
+  # Input Hardware Support
   services.libinput.enable = true;
-  services.flatpak.enable = true;
-  programs.firefox.enable = true;
 
+  # Software Management
+  nixpkgs.config.allowUnfree = true;
+  services.flatpak.enable = true;
+  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  # Wayland Support 
   services.dbus.implementation = "broker";
 
   programs.uwsm = {
@@ -22,16 +33,5 @@
       };
     };
   };
-
-  # ============================================================================
-  # Nix
-  # ============================================================================
-
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
 }

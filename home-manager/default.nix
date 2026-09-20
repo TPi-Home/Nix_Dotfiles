@@ -10,6 +10,8 @@
     ./fish.nix
     ./vscode.nix
     ./helix.nix
+    ./firefox.nix
+    ./chromium.nix
 
     # Desktop
     ./sway/sway.nix
@@ -21,6 +23,8 @@
 
   home.username = "tyler";
   home.homeDirectory = "/home/tyler";
+  
+  fonts.fontconfig.enable = true;
 
   home.stateVersion = "26.11";
 }

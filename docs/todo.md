@@ -14,6 +14,7 @@
   1. Audio
   2. WM
 * Deployment scripts
+* Stow script for managing .conf files to avoid needing to rebuild for every config file change
 
 ### Wrappers For
 * Neovim

@@ -15,17 +15,13 @@
     enable = true;
     capSysNice = true; # Helps gamescope get real-time scheduling priority
   };
-
-  environment.sessionVariables = {
-    STEAM_FORCE_DESKTOPUI_SCALING = "1.5";
-  };
   
   environment.systemPackages = with pkgs; [
 
     # --------------------------------------------------------------------------
     # Gaming Utilities
     # --------------------------------------------------------------------------
-
+    
     #bubblewrap   
 
     # --------------------------------------------------------------------------

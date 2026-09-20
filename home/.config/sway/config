@@ -16,6 +16,8 @@ include /etc/sway/config.d/*
 
 set $mod Mod4
 
+input type:keyboard xkb_numlock enabled
+
 font pango:Monaspace Neon NF 14
 
 default_border pixel 2
@@ -26,7 +28,9 @@ gaps outer 0
 
 focus_follows_mouse yes
 floating_modifier $mod
-exec_always xwayland-satellite :1
+
+#exec_always xwayland-satellite :1
+output * scale 1
 
 # ----------------------------------------------------------------------------
 # Cursor
