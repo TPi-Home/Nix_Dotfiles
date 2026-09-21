@@ -13,6 +13,10 @@
   1. Audio
   2. WM
 * Deployment scripts
+* Separate Waybar configurations for different window managers
+* Add scaling to Chromium, may need to write a wrapper like was done for Unity
+* Enable swaylock
+* Finish Hyprland and Niri modules
 
 ### Wrappers For
 * Neovim
