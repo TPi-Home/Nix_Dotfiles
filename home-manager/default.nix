@@ -12,6 +12,7 @@
     ./helix.nix
     ./firefox.nix
     ./chromium.nix
+    ./unity.nix
 
     # Desktop
     ./sway/sway.nix

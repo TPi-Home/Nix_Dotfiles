@@ -21,7 +21,7 @@
     ./audio/audio.nix
 
     # Display Manager
-    ./dm/hyprgreet.nix
+    ./dm/tuigreet.nix
 
     # Desktop / WM
     ./de/sway.nix

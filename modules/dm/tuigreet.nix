@@ -1,13 +1,19 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
   services.greetd = {
     enable = true;
+
     settings = {
       default_session = {
         user = "greeter";
-        command = getExe' pkgs.tuigreet "tuigreet"; # you may pass `--config` here
+
+        command = pkgs.lib.getExe pkgs.tuigreet;
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    tuigreet
+  ];
 }

@@ -1,5 +1,5 @@
 # ============================================================================
-# ReGreet
+# ReGreet - Hyprland-style rounded theme
 # ============================================================================
 
 { pkgs, ... }:
@@ -32,10 +32,6 @@
         color: #ADB0BB;
       }
 
-      /* --------------------------------------------------------------------
-       * Base
-       * -------------------------------------------------------------------- */
-
       window {
         background: transparent;
       }
@@ -48,24 +44,20 @@
         color: #ADB0BB;
       }
 
-      /* --------------------------------------------------------------------
-       * Main panel
-       * -------------------------------------------------------------------- */
+      /* Main panel */
 
       window > box {
         background: alpha(#111317, 0.88);
 
         border: 1px solid alpha(#50A4E9, 0.20);
-        border-radius: 0;
+        border-radius: 32px;
 
         box-shadow:
           0 20px 50px alpha(#111317, 0.48),
           0 0 0 1px alpha(#CC83E3, 0.035);
       }
 
-      /* --------------------------------------------------------------------
-       * Entries / selectors
-       * -------------------------------------------------------------------- */
+      /* Entries / selectors */
 
       entry,
       combobox button {
@@ -78,7 +70,7 @@
         color: #ADB0BB;
 
         border: 1px solid #3A3E47;
-        border-radius: 0;
+        border-radius: 22px;
 
         box-shadow:
           inset 0 1px alpha(#ADB0BB, 0.025),
@@ -105,9 +97,7 @@
         color: #5EB7FF;
       }
 
-      /* --------------------------------------------------------------------
-       * Generic buttons
-       * -------------------------------------------------------------------- */
+      /* Generic buttons */
 
       button {
         min-height: 46px;
@@ -119,7 +109,7 @@
         color: #ADB0BB;
 
         border: 1px solid #3A3E47;
-        border-radius: 0;
+        border-radius: 22px;
 
         box-shadow:
           0 5px 16px alpha(#111317, 0.22);
@@ -142,9 +132,7 @@
           inset 0 2px 5px alpha(#111317, 0.30);
       }
 
-      /* --------------------------------------------------------------------
-       * Login button
-       * -------------------------------------------------------------------- */
+      /* Login / primary action */
 
       button.suggested-action {
         min-width: 105px;
@@ -154,7 +142,7 @@
         color: #111317;
 
         border: 1px solid #50A4E9;
-        border-radius: 0;
+        border-radius: 999px;
 
         font-weight: 700;
 
@@ -181,9 +169,7 @@
           inset 0 2px 6px alpha(#111317, 0.24);
       }
 
-      /* --------------------------------------------------------------------
-       * Circular controls
-       * -------------------------------------------------------------------- */
+      /* Circular controls */
 
       button.circular {
         min-width: 44px;
@@ -195,7 +181,7 @@
         color: #9B9FA9;
 
         border: 1px solid #3A3E47;
-        border-radius: 0;
+        border-radius: 999px;
 
         box-shadow:
           0 4px 14px alpha(#111317, 0.22);
@@ -210,9 +196,7 @@
           0 6px 20px alpha(#111317, 0.28);
       }
 
-      /* --------------------------------------------------------------------
-       * Power controls
-       * -------------------------------------------------------------------- */
+      /* Power controls */
 
       button.destructive-action,
       button.flat {
@@ -225,7 +209,7 @@
         color: #9B9FA9;
 
         border: 1px solid #3A3E47;
-        border-radius: 0;
+        border-radius: 999px;
 
         box-shadow:
           0 4px 14px alpha(#111317, 0.20);
@@ -238,9 +222,7 @@
         border-color: alpha(#CC83E3, 0.42);
       }
 
-      /* --------------------------------------------------------------------
-       * Dropdowns / menus
-       * -------------------------------------------------------------------- */
+      /* Dropdowns / menus */
 
       popover {
         background: transparent;
@@ -252,7 +234,7 @@
         color: #ADB0BB;
 
         border: 1px solid #3A3E47;
-        border-radius: 0;
+        border-radius: 22px;
 
         box-shadow:
           0 16px 44px alpha(#111317, 0.48);
@@ -260,7 +242,7 @@
 
       row {
         padding: 7px;
-        border-radius: 0;
+        border-radius: 16px;
       }
 
       row:hover {
@@ -272,9 +254,7 @@
         color: #5EB7FF;
       }
 
-      /* --------------------------------------------------------------------
-       * Checkbox
-       * -------------------------------------------------------------------- */
+      /* Checkbox */
 
       checkbutton {
         color: #9B9FA9;
@@ -287,7 +267,7 @@
         background: #16181D;
 
         border: 1px solid #3A3E47;
-        border-radius: 0;
+        border-radius: 7px;
       }
 
       checkbutton check:checked {
@@ -296,17 +276,13 @@
         border-color: #50A4E9;
       }
 
-      /* --------------------------------------------------------------------
-       * Icons
-       * -------------------------------------------------------------------- */
+      /* Icons */
 
       image {
         color: #9B9FA9;
       }
 
-      /* --------------------------------------------------------------------
-       * Scrollbars
-       * -------------------------------------------------------------------- */
+      /* Scrollbars */
 
       scrollbar {
         background: transparent;
@@ -317,23 +293,21 @@
         min-height: 5px;
 
         background: alpha(#9B9FA9, 0.22);
-        border-radius: 0;
+        border-radius: 999px;
       }
 
       scrollbar slider:hover {
         background: alpha(#50A4E9, 0.55);
       }
 
-      /* --------------------------------------------------------------------
-       * Tooltips
-       * -------------------------------------------------------------------- */
+      /* Tooltips */
 
       tooltip {
         background: alpha(#111317, 0.97);
         color: #ADB0BB;
 
         border: 1px solid alpha(#50A4E9, 0.18);
-        border-radius: 0;
+        border-radius: 14px;
 
         box-shadow:
           0 8px 24px alpha(#111317, 0.42);
@@ -360,6 +334,11 @@
 
       appearance = {
         greeting_msg = "Welcome back!";
+      };
+
+      background = {
+        path = "${../../Hilltopper.png}";
+        fit = "Cover";
       };
 
       commands = {
@@ -401,4 +380,5 @@
 
     exec "${pkgs.regreet}/bin/regreet; ${pkgs.swayfx}/bin/swaymsg exit"
   '';
+  
 }
