@@ -1,33 +1,26 @@
-/* ============================================================================
- * Waybar
- * AstroDark Grayscale & Black Color Palette Configuration
- * ========================================================================== */
-
 * {
     font-family: "Monaspace Neon NF", "Symbols Nerd Font";
     font-size: 28px;
     font-weight: 500;
     border: none;
-    box-shadow: none;
     text-shadow: none;
 }
 
-/* ----------------------------------------------------------------------------
- * Bar Container
- * -------------------------------------------------------------------------- */
+/* Bar Container */
 #waybar {
-    background: #161718;
+    background: alpha(#161718, 0.75);
     color: #c4c8c5;
-    border: 2px solid #85befd;
+    border: 1px solid alpha(#85befd, 0.20);
     border-radius: 0;
+    box-shadow:
+        0 18px 48px alpha(#161718, 0.32),
+        0 0 0 1px alpha(#85befd, 0.035);
 }
 
-/* ----------------------------------------------------------------------------
- * Workspaces
- * -------------------------------------------------------------------------- */
+/* Workspaces */
 #workspaces {
-    background: #161718;
-    border: 2px solid #85befd;
+    background: transparent;
+    border: none;
     border-radius: 0;
     padding: 0;
     margin: 0;
@@ -39,15 +32,20 @@
     padding: 0;
     margin: 0;
     border-radius: 0;
+    border: 1px solid alpha(#85befd, 0.12);
+    box-shadow: 0 4px 14px alpha(#161718, 0.14);
 }
 
-/* FORCES THE GLYPH ICONS INSIDE THE BOXES TO RENDER STABLE COLORS */
 #workspaces button label {
     color: #85befd;
 }
 
 #workspaces button:hover {
-    background: #444444;
+    background: alpha(#252525, 0.90);
+    border-color: alpha(#85befd, 0.24);
+    box-shadow:
+        0 6px 20px alpha(#161718, 0.18),
+        0 0 0 1px alpha(#85befd, 0.12);
 }
 
 #workspaces button:hover label {
@@ -55,7 +53,7 @@
 }
 
 #workspaces button.empty label {
-    color: #444444;
+    color: alpha(#85befd, 0.35);
 }
 
 #workspaces button.visible label {
@@ -68,93 +66,117 @@
 
 #workspaces button.focused {
     background: #85befd;
+    border-color: #85befd;
+    box-shadow:
+        0 8px 26px alpha(#85befd, 0.26),
+        0 4px 12px alpha(#161718, 0.18);
 }
 
 #workspaces button.focused label {
-    background: transparent;
     color: #161718;
     font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background: #c678dd;
+    background: alpha(#fc5ef0, 0.80);
+    border-color: #fc5ef0;
 }
 
 #workspaces button.urgent label {
     color: #c4c8c5;
 }
 
-/* ----------------------------------------------------------------------------
- * Right-side modules
- * -------------------------------------------------------------------------- */
+/* Right-side modules */
 #network,
 #pulseaudio,
 #battery,
 #clock,
 #tray {
-    background: #161718;
+    background: alpha(#1a1a1a, 0.82);
     border-radius: 0;
+    box-shadow:
+        0 6px 22px alpha(#161718, 0.18),
+        inset 0 1px alpha(#c4c8c5, 0.02);
 }
 
 #network {
     color: #85befd;
     padding: 0 12px;
-    border: 2px solid #85befd;
+    border: 1px solid alpha(#85befd, 0.20);
+}
+
+#network:hover {
+    background: alpha(#252525, 0.90);
+    border-color: alpha(#85befd, 0.28);
+    box-shadow:
+        0 8px 28px alpha(#161718, 0.24),
+        inset 0 1px alpha(#c4c8c5, 0.03);
 }
 
 #network.disconnected {
-    color: #c678dd;
-    border-color: #c678dd;
+    color: #fc5ef0;
+    border-color: alpha(#fc5ef0, 0.25);
 }
 
 #pulseaudio {
-    color: #c678dd;
+    color: #b9b5fc;
     padding: 0 12px;
-    border: 2px solid #c678dd;
+    border: 1px solid alpha(#b9b5fc, 0.20);
+}
+
+#pulseaudio:hover {
+    background: alpha(#252525, 0.90);
+    border-color: alpha(#b9b5fc, 0.28);
 }
 
 #pulseaudio.muted {
     color: #c4c8c5;
-    border-color: #c4c8c5;
+    border-color: alpha(#c4c8c5, 0.12);
+    opacity: 0.65;
 }
 
 #battery {
     color: #86c38a;
     padding: 0 12px;
-    border: 2px solid #86c38a;
+    border: 1px solid alpha(#86c38a, 0.20);
+}
+
+#battery:hover {
+    background: alpha(#252525, 0.90);
+    border-color: alpha(#86c38a, 0.28);
 }
 
 #battery.warning:not(.charging) {
     color: #ffd6b1;
-    border-color: #ffd6b1;
+    border-color: alpha(#ffd6b1, 0.25);
 }
 
 #battery.critical:not(.charging) {
-    color: #c678dd;
-    border-color: #c678dd;
+    color: #fc5ef0;
+    border-color: alpha(#fc5ef0, 0.30);
 }
 
 #battery.charging,
 #battery.plugged {
     color: #86c38a;
-    border-color: #86c38a;
-}
-
-#battery.full {
-    color: #86c38a;
-    border-color: #86c38a;
+    border-color: alpha(#86c38a, 0.25);
 }
 
 #clock {
-    color: #e5c07b;
+    color: #ffd6b1;
     padding: 0 14px;
-    border: 2px solid #e5c07b;
+    border: 1px solid alpha(#ffd6b1, 0.20);
+}
+
+#clock:hover {
+    background: alpha(#252525, 0.90);
+    border-color: alpha(#ffd6b1, 0.28);
 }
 
 #tray {
     color: #85befd;
     padding: 0 10px;
-    border: 2px solid #85befd;
+    border: 1px solid alpha(#85befd, 0.20);
 }
 
 #tray > .passive {
@@ -162,14 +184,17 @@
 }
 
 #tray > .needs-attention {
-    color: #c678dd;
+    color: #fc5ef0;
 }
 
+/* Tooltip styling */
 tooltip {
-    background: #161718;
+    background: alpha(#161718, 0.96);
     color: #c4c8c5;
-    border: 2px solid #85befd;
+    border: 1px solid alpha(#85befd, 0.14);
     border-radius: 0;
+    box-shadow:
+        0 6px 20px alpha(#161718, 0.28);
 }
 
 tooltip label {
@@ -180,4 +205,3 @@ tooltip label {
 window#waybar.fullscreen {
     background: transparent;
 }
-
