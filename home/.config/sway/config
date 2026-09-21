@@ -32,7 +32,7 @@ output * scale 1
 # Cursor
 # ----------------------------------------------------------------------------
 
-seat seat0 xcursor_theme Adwaita 24
+seat seat0 xcursor_theme Adwaita 36
 
 # ----------------------------------------------------------------------------
 # Colors - AstroDark
