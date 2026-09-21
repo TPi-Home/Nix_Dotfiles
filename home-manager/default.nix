@@ -2,6 +2,7 @@
 
 {
   imports = [
+    # Misc
     ./git.nix
     ./kitty.nix
     ./nvim.nix
@@ -10,8 +11,12 @@
     ./fish.nix
     ./vscode.nix
     ./helix.nix
+
+    # Browsers
     ./firefox.nix
     ./chromium.nix
+
+    # Game Dev
     ./unity.nix
 
     # Desktop

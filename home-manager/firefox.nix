@@ -26,7 +26,7 @@
       path = "d4wf0d9o.default";
 
       settings = {
-        "layout.css.devPixelsPerPx" = "1.3";
+        "layout.css.devPixelsPerPx" = "1.5";
       };
     };
   };
