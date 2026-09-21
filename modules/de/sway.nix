@@ -82,7 +82,6 @@
 
   environment.systemPackages = with pkgs; [
     # Launcher
-    rofi
     fuzzel
 
     # Bar

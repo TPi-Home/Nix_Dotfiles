@@ -17,7 +17,7 @@
     ./chromium.nix
 
     # Game Dev
-    ./unity.nix
+    ./unity_hub.nix
 
     # Desktop
     ./sway/sway.nix
