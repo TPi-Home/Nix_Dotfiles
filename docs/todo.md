@@ -20,6 +20,7 @@
 * Harden Systemd
 * Add support for cloud storage & mount at boot
 * All code should use a C-family/Microsoft-like formatting style where the language permits it
+* Increase mouse movement speed
 
 ### Wrappers For
 ---
