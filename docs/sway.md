@@ -20,6 +20,37 @@
 * GTK
 * Qt
 
+| Final Sway Stack: | |
+  |---|---|
+  | a Wi-Fi GUI | `nm-applet` |
+  | a Bluetooth GUI | `blueman` |
+  | a supported display manager | `greetd` with `tuigreet` |
+  | a launcher | `fuzzel` |
+  | a status bar | `waybar` |
+  | a wallpaper tool | `swaybg` |
+  | a power/brightness tool | `brightnessctl` |
+  | idle handling | `swayidle` |
+  | screen locking | `swaylock` |
+  | audio control | `pavucontrol` |
+  | a file manager | cli |
+  | screenshots | `grim` + `slurp` |
+  | clipboard | `wl-clipboard` |
+  | notifications | `swaync` |
+  | authentication agent | `polkit_gnome` |
+  | Wayland portals | `xdg-desktop-portal-hyprland` |
+  | a logout/power menu | `wlogout` |
+  | a terminal | `kitty` |
+  | a network backend | `NetworkManager` |
+  | an audio backend | `PipeWire` + `WirePlumber` |
+  | a secret/keyring service | `gnome-keyring` |
+  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
+  |cursors|`Adwaita`|
+  |file manager| tui|
+  |wayland session mgmt|`uwsm`|
+
+### Keybindings
+NEEDS WORK
+
 ## Wayland Scaling and X11 Support in Sway
 
 ### UWSM

@@ -31,6 +31,11 @@ Not everything can be managed declaratively. Software or configuration that is i
 - Version-controlled dotfiles
 - A configuration that remains understandable as it grows
 
+### Paradigms I Aim to Create 
+
+* vim style manual tiler
+* dynamic supported
+
 ## Setup Outside of Wayland
 
 ### Flake Structure
