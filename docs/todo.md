@@ -6,28 +6,35 @@
 - [ToDo](todo.md)
 - [Sway](sway.md)
 ---
-
+**This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents.**
 ## Configuration Organization
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
 * Need to finish default nix files used to tie modules together, specifically for:
   1. Audio
   2. WM
-* Deployment scripts
-* Separate Waybar configurations for different window managers
+* Deployment scripts and documentation scripts
+* Revision of network configuration, perhaps per machine
 * Add scaling to Chromium, may need to write a wrapper like was done for Unity
 * Enable swaylock
 * Finish Hyprland and Niri modules
+* Harden Systemd
+* Add support for cloud storage & mount at boot
 
 ### Wrappers For
+---
 * Neovim
 
 ### UI to Finish
+---
 * DM:
   * CSS
   * Try TUI if GTK is problematic
 
----
 
+## Dot File Documentation
+* Directory Structure on README.md needs updated
+  * I could use a script for this
+  * 
 ## Nix Development Environment
 
 ### Mis Development Tools

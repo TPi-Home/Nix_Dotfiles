@@ -13,7 +13,6 @@
 
   # Software Management
   nixpkgs.config.allowUnfree = true;
-  services.flatpak.enable = true;
   
   nix.settings.experimental-features = [
     "nix-command"

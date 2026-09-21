@@ -23,7 +23,8 @@ gaps outer 0
 focus_follows_mouse yes
 floating_modifier $mod
 
-output * scale 1
+# This should be handled by Kanshi now:
+# output * scale 1
 
 # X11 Compatibility Tool: (must visit /home-manager/sway/sway.nix to change 2 other lines)
 #exec_always xwayland-satellite :1
