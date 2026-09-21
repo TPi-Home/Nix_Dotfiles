@@ -29,6 +29,10 @@
 
     # Application Launcher
     ./fuzzel.nix
+
+    # Hardware IO
+    ./kanshi.nix
+    
   ];
 
   home.username = "tyler";
