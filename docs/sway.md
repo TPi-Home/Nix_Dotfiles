@@ -33,11 +33,26 @@
 
 Enabled with scaling set to 1 for maximum compatibility
 
+### Display Compatibility
+
+I am having Kanshi handle my display management. To get your monitor's display information, run `swaymsg -t get_outputs.` You can then use the information printed to the terminal to manage `kanshi.nix.` I would like to eventually have a script automate this. Kanshi should handle every bit of display management, but I am not 100% sure of this yet.
+```
+outputs = [
+    {
+        criteria = "LG Electronics LG ULTRAGEAR 110NTRLAS678";
+        mode = "3440x1440@160Hz";
+        position = "0,0";
+        scale = 1;
+    }
+];
+```
+
+
 ### Steam
 
 X11 apps can't really be scaled separately from Wayland, so the easiest way I have found to manage scaling with a high dpi display is by keeping the scaling in sway at 1 via `output * scale 1` in the Sway configuration file, then manually scaling the apps and desktop components to the degree I desire.
 
-`xwayland-satellite` can be enabled for an extra x11/gaming compatibility option. Xwayland must first be disabled in the home manager's sway.nix file, then xwayland-satellite needs to be enabled in that same file and executed from the Sway config file. 
+`xwayland-satellite` can be enabled for an extra x11/gaming compatibility option. Xwayland must first be disabled in the home manager's `sway.nix` file, then xwayland-satellite needs to be enabled in that same file and executed from the Sway config file. 
 
 
 

@@ -34,4 +34,4 @@ Not everything can be managed declaratively. Software or configuration that is i
 ## Setup Outside of Wayland
 
 ### Flake Structure
-The flake.nix file largely points to default.nix for the system and user configurations, as well as the hardware configurations. 
+The `flake.nix` file largely points to `default.nix` for the system and user configurations, as well as the hardware configurations. 
