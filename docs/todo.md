@@ -6,7 +6,7 @@
 - [ToDo](todo.md)
 - [Sway](sway.md)
 ---
-**This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents.**
+**This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents. I would like to update the directory structure in the readme before I try to tackle breaking this document up.**
 ## Configuration Organization
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
 * Need to finish default nix files used to tie modules together, specifically for:
@@ -121,7 +121,9 @@ ___
 
 **NOTE: THIS IS A WORK IN PROGRESS**
 
-I would like to add support for Niri next.
+I would like to add support for Niri next. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
+
+Upon getting that all set up, `systemd-analyze security --no-pager greetd.service` seemed to indicate that my display manager had way more permissions than was necessary. I then had to sandbox the display manager and test its functionality with different limitations. This makes me want to review the source code, not because I think it is malicious at all, but because I believe there is much to be learned from it. If something breaks, it probably stems from my cap on the permissions granted to greetd, which means that the permissions granted were permissions that were needed. 
 
 ### GNOME Niceties I Miss
 
@@ -148,3 +150,34 @@ I would like to add support for Niri next.
 * Explore impermanence / separating persistent data from system configuration
 * Explore secrets management
 * Explore automated rebuilding/updating workflows
+* Need to abandon gtk/qt theme elements like icon folder that I am not using
+
+## For If I Ever Learn Rust
+```
+{
+  description = "My configuration";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { nixpkgs, rust-overlay, ... }: {
+    nixosConfigurations = {
+      hostname = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix # Your system configuration.
+          ({ pkgs, ... }: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          })
+        ];
+      };
+    };
+  };
+}
+```
