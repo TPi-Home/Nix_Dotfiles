@@ -8,7 +8,6 @@
     ./system/locale.nix
     ./system/networking.nix
     ./system/fonts.nix
-    ./system/security.nix
 
     # Users
     ./users/tyler.nix
@@ -28,6 +27,11 @@
 
     # Software that is not directly enabled
     ./packages/packages.nix
+
+    # Security
+    ./system/security.nix
+    ./system/systemd.nix
+    
   ];
 
   system.stateVersion = "26.05";
