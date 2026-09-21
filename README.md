@@ -18,6 +18,15 @@ The goal is to make it easier to try a different workflow without starting from 
 
 ## Screenshots
 ![Screenshot 2](scrot.png)
+
+## Wallpaper Credit
+
+Madison has made some of my favorite wallpapers to use, many of which I have used for years now. 
+
+**[Positron Dream](https://www.positrondream.com/about)**
+
+**[Madison's Reddit](https://www.reddit.com/user/Madisor_)**
+
 ## Layout
 To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.
 
