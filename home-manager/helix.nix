@@ -5,24 +5,6 @@
 
     # 1. Install LSPs and Formatters exclusively for Helix
     extraPackages = with pkgs; [
-      # C / C++
-      clang-tools          # Provides clangd LSP + clang-format
-      
-      # Rust
-      rust-analyzer        # Rust LSP
-      rustfmt              # Rust Formatter
-      
-      # JSON & TOML
-      vscode-langservers-extracted # Provides vscode-json-language-server
-      taplo                # TOML LSP & Formatter
-      
-      # Nix
-      nixd                 # High-performance Nix LSP
-      alejandra            # Opinionated Nix Formatter
-      
-      # Lua
-      lua-language-server  # Lua LSP
-      stylua               # Lua Formatter
     ];
 
     # 2. Map languages to their respective formatters and settings

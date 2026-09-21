@@ -34,6 +34,7 @@
           "pulseaudio"
           "battery"
           "clock"
+          "power-profiles-daemon"
           "tray"
         ];
 
@@ -156,6 +157,20 @@
             "󰁽"
             "󰁹"
           ];
+        };
+
+        # --------------------------------------------------------------------
+        # Power Profile
+        # --------------------------------------------------------------------
+
+        "power-profiles-daemon" = {
+          format = "{icon} {profile}";
+          tooltip-format = "Power profile: {profile}\nDriver: {driver}";
+          format-icons = {
+            performance = "󰓅";
+            balanced = "󰗑";
+            "power-saver" = "󰌪";
+          };
         };
 
         # --------------------------------------------------------------------

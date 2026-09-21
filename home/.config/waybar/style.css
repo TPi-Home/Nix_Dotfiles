@@ -6,18 +6,56 @@
     text-shadow: none;
 }
 
-/* Bar Container */
+/* --------------------------------------------------------------------------
+ * Palette (Inspired by Astrodark)
+ * -------------------------------------------------------------------------- */
+
+@define-color black #111317;
+@define-color inactive #16181D;
+@define-color base #1A1D23;
+@define-color float #14161B;
+@define-color current #1E222A;
+@define-color highlight #23272F;
+@define-color selection #26343F;
+
+@define-color border #3A3E47;
+
+@define-color blue #50A4E9;
+@define-color bright-blue #5EB7FF;
+@define-color purple #CC83E3;
+@define-color bright-purple #DD97F1;
+
+@define-color text #ADB0BB;
+@define-color text-dim #9B9FA9;
+@define-color text-muted #696C76;
+@define-color text-inactive #494D56;
+
+@define-color green #87C05F;
+@define-color yellow #DFAB25;
+@define-color orange #F5983A;
+@define-color red #FF838B;
+@define-color cyan #4AC2B8;
+
+
+/* --------------------------------------------------------------------------
+ * Bar
+ * -------------------------------------------------------------------------- */
+
 #waybar {
-    background: alpha(#161718, 0.75);
-    color: #c4c8c5;
-    border: 1px solid alpha(#85befd, 0.20);
+    background: alpha(@black, 0.94);
+    color: @text;
+    border: 1px solid alpha(@blue, 0.18);
     border-radius: 0;
     box-shadow:
-        0 18px 48px alpha(#161718, 0.32),
-        0 0 0 1px alpha(#85befd, 0.035);
+        0 18px 48px alpha(@black, 0.45),
+        0 0 0 1px alpha(@blue, 0.035);
 }
 
-/* Workspaces */
+
+/* --------------------------------------------------------------------------
+ * Workspaces
+ * -------------------------------------------------------------------------- */
+
 #workspaces {
     background: transparent;
     border: none;
@@ -32,151 +70,204 @@
     padding: 0;
     margin: 0;
     border-radius: 0;
-    border: 1px solid alpha(#85befd, 0.12);
-    box-shadow: 0 4px 14px alpha(#161718, 0.14);
+    border: 1px solid alpha(@border, 0.55);
+    box-shadow: none;
 }
 
 #workspaces button label {
-    color: #85befd;
+    color: @text-muted;
 }
 
 #workspaces button:hover {
-    background: alpha(#252525, 0.90);
-    border-color: alpha(#85befd, 0.24);
-    box-shadow:
-        0 6px 20px alpha(#161718, 0.18),
-        0 0 0 1px alpha(#85befd, 0.12);
+    background: @highlight;
+    border-color: alpha(@blue, 0.45);
 }
 
 #workspaces button:hover label {
-    color: #c4c8c5;
+    color: @text;
 }
 
 #workspaces button.empty label {
-    color: alpha(#85befd, 0.35);
+    color: @text-inactive;
 }
 
 #workspaces button.visible label {
-    color: #85befd;
+    color: @blue;
 }
 
 #workspaces button.persistent label {
-    color: #85befd;
+    color: @blue;
 }
 
 #workspaces button.focused {
-    background: #85befd;
-    border-color: #85befd;
+    background: @blue;
+    border-color: @blue;
     box-shadow:
-        0 8px 26px alpha(#85befd, 0.26),
-        0 4px 12px alpha(#161718, 0.18);
+        0 8px 26px alpha(@blue, 0.22),
+        0 4px 12px alpha(@black, 0.35);
 }
 
 #workspaces button.focused label {
-    color: #161718;
+    color: @black;
     font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background: alpha(#fc5ef0, 0.80);
-    border-color: #fc5ef0;
+    background: alpha(@purple, 0.80);
+    border-color: @purple;
 }
 
 #workspaces button.urgent label {
-    color: #c4c8c5;
+    color: @black;
 }
 
-/* Right-side modules */
+
+/* --------------------------------------------------------------------------
+ * Right-side modules
+ * -------------------------------------------------------------------------- */
+
 #network,
 #pulseaudio,
 #battery,
 #clock,
+#power-profiles-daemon,
 #tray {
-    background: alpha(#1a1a1a, 0.82);
+    background: @inactive;
     border-radius: 0;
     box-shadow:
-        0 6px 22px alpha(#161718, 0.18),
-        inset 0 1px alpha(#c4c8c5, 0.02);
+        0 6px 22px alpha(@black, 0.30),
+        inset 0 1px alpha(@text, 0.025);
 }
 
+
+/* Network */
+
 #network {
-    color: #85befd;
+    color: @blue;
     padding: 0 12px;
-    border: 1px solid alpha(#85befd, 0.20);
+    border: 1px solid alpha(@blue, 0.22);
 }
 
 #network:hover {
-    background: alpha(#252525, 0.90);
-    border-color: alpha(#85befd, 0.28);
-    box-shadow:
-        0 8px 28px alpha(#161718, 0.24),
-        inset 0 1px alpha(#c4c8c5, 0.03);
+    background: @highlight;
+    border-color: alpha(@blue, 0.50);
 }
 
 #network.disconnected {
-    color: #fc5ef0;
-    border-color: alpha(#fc5ef0, 0.25);
+    color: @purple;
+    border-color: alpha(@purple, 0.35);
 }
 
+
+/* Audio */
+
 #pulseaudio {
-    color: #b9b5fc;
+    color: @purple;
     padding: 0 12px;
-    border: 1px solid alpha(#b9b5fc, 0.20);
+    border: 1px solid alpha(@purple, 0.22);
 }
 
 #pulseaudio:hover {
-    background: alpha(#252525, 0.90);
-    border-color: alpha(#b9b5fc, 0.28);
+    background: @highlight;
+    border-color: alpha(@purple, 0.50);
 }
 
 #pulseaudio.muted {
-    color: #c4c8c5;
-    border-color: alpha(#c4c8c5, 0.12);
+    color: @text-muted;
+    border-color: alpha(@border, 0.45);
     opacity: 0.65;
 }
 
+
+/* Battery */
+
 #battery {
-    color: #86c38a;
+    color: @green;
     padding: 0 12px;
-    border: 1px solid alpha(#86c38a, 0.20);
+    border: 1px solid alpha(@green, 0.22);
 }
 
 #battery:hover {
-    background: alpha(#252525, 0.90);
-    border-color: alpha(#86c38a, 0.28);
+    background: @highlight;
+    border-color: alpha(@green, 0.50);
 }
 
 #battery.warning:not(.charging) {
-    color: #ffd6b1;
-    border-color: alpha(#ffd6b1, 0.25);
+    color: @orange;
+    border-color: alpha(@orange, 0.35);
 }
 
 #battery.critical:not(.charging) {
-    color: #fc5ef0;
-    border-color: alpha(#fc5ef0, 0.30);
+    color: @red;
+    border-color: alpha(@red, 0.40);
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #86c38a;
-    border-color: alpha(#86c38a, 0.25);
+    color: @green;
+    border-color: alpha(@green, 0.30);
 }
 
+
+/* Clock */
+
 #clock {
-    color: #ffd6b1;
+    color: @bright-purple;
     padding: 0 14px;
-    border: 1px solid alpha(#ffd6b1, 0.20);
+    border: 1px solid alpha(@purple, 0.24);
 }
 
 #clock:hover {
-    background: alpha(#252525, 0.90);
-    border-color: alpha(#ffd6b1, 0.28);
+    background: @highlight;
+    border-color: alpha(@purple, 0.50);
 }
 
+/* Power Profile */
+
+#power-profiles-daemon {
+
+    padding: 0 12px;
+
+    border: 1px solid alpha(@blue, 0.22);
+
+}
+
+#power-profiles-daemon.performance {
+
+    color: @purple;
+
+    border-color: alpha(@blue, 0.35);
+
+}
+
+#power-profiles-daemon.balanced {
+
+    color: @blue;
+
+    border-color: alpha(@border, 0.45);
+
+}
+
+#power-profiles-daemon.power-saver {
+
+    color: @green;
+
+    border-color: alpha(@green, 0.30);
+
+}
+
+#power-profiles-daemon:hover {
+
+    background: @highlight;
+
+}
+
+/* Tray */
+
 #tray {
-    color: #85befd;
+    color: @blue;
     padding: 0 10px;
-    border: 1px solid alpha(#85befd, 0.20);
+    border: 1px solid alpha(@blue, 0.20);
 }
 
 #tray > .passive {
@@ -184,23 +275,32 @@
 }
 
 #tray > .needs-attention {
-    color: #fc5ef0;
+    color: @purple;
 }
 
-/* Tooltip styling */
+
+/* --------------------------------------------------------------------------
+ * Tooltips
+ * -------------------------------------------------------------------------- */
+
 tooltip {
-    background: alpha(#161718, 0.96);
-    color: #c4c8c5;
-    border: 1px solid alpha(#85befd, 0.14);
+    background: alpha(@float, 0.98);
+    color: @text;
+    border: 1px solid alpha(@blue, 0.22);
     border-radius: 0;
     box-shadow:
-        0 6px 20px alpha(#161718, 0.28);
+        0 8px 24px alpha(@black, 0.45);
 }
 
 tooltip label {
-    color: #c4c8c5;
+    color: @text;
     padding: 5px 7px;
 }
+
+
+/* --------------------------------------------------------------------------
+ * Fullscreen
+ * -------------------------------------------------------------------------- */
 
 window#waybar.fullscreen {
     background: transparent;

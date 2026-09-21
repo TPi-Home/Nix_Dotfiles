@@ -1,3 +1,7 @@
+# ============================================================================
+# ReGreet
+# ============================================================================
+
 { pkgs, ... }:
 
 {
@@ -7,8 +11,8 @@
     package = pkgs.swayfx;
 
     theme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
     };
 
     font = {
@@ -25,251 +29,285 @@
       * {
         font-family: "Monaspace Neon NF";
         font-size: 16px;
-        color: #dfdfdf;
+        color: #ADB0BB;
       }
+
+      /* --------------------------------------------------------------------
+       * Base
+       * -------------------------------------------------------------------- */
 
       window {
         background: transparent;
       }
 
       label {
-        color: #dfdfdf;
-        text-shadow: 0 1px 3px alpha(#000000, 0.20);
+        color: #ADB0BB;
       }
 
       box {
-        color: #dfdfdf;
+        color: #ADB0BB;
       }
 
-      /* Main panel - BLACK TRANSPARENT */
-      window > box {
-        background: alpha(#000000, 0.75);
+      /* --------------------------------------------------------------------
+       * Main panel
+       * -------------------------------------------------------------------- */
 
-        border: 1px solid alpha(#85befd, 0.20);
-        border-radius: 32px;
+      window > box {
+        background: alpha(#111317, 0.88);
+
+        border: 1px solid alpha(#50A4E9, 0.20);
+        border-radius: 0;
 
         box-shadow:
-            0 18px 48px alpha(#000000, 0.32),
-            0 0 0 1px alpha(#85befd, 0.035);
+          0 20px 50px alpha(#111317, 0.48),
+          0 0 0 1px alpha(#CC83E3, 0.035);
       }
 
-      /* Input / selection fields */
+      /* --------------------------------------------------------------------
+       * Entries / selectors
+       * -------------------------------------------------------------------- */
+
       entry,
       combobox button {
         min-height: 50px;
 
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 16px;
+        padding-right: 16px;
 
-        background: alpha(#1a1a1a, 0.82);
-        color: #dfdfdf;
+        background: alpha(#1A1D23, 0.94);
+        color: #ADB0BB;
 
-        border: 1px solid alpha(#85befd, 0.20);
-        border-radius: 22px;
+        border: 1px solid #3A3E47;
+        border-radius: 0;
 
         box-shadow:
-            0 6px 22px alpha(#000000, 0.18),
-            inset 0 1px alpha(#dfdfdf, 0.035);
+          inset 0 1px alpha(#ADB0BB, 0.025),
+          0 5px 18px alpha(#111317, 0.24);
       }
 
       entry:hover,
       combobox button:hover {
-        background: alpha(#252525, 0.90);
-        border-color: alpha(#85befd, 0.20);
+        background: #1E222A;
+        border-color: alpha(#50A4E9, 0.38);
       }
 
       entry:focus,
       combobox button:focus {
-        border: 2px solid alpha(#85befd, 0.88);
+        border: 1px solid #50A4E9;
 
         box-shadow:
-            0 0 0 3px alpha(#85befd, 0.10),
-            0 8px 28px alpha(#000000, 0.24);
+          0 0 0 2px alpha(#50A4E9, 0.12),
+          0 8px 24px alpha(#111317, 0.30);
       }
 
       entry selection {
-        background: #85befd;
-        color: #161718;
+        background: #26343F;
+        color: #5EB7FF;
       }
 
-      /* Generic buttons */
+      /* --------------------------------------------------------------------
+       * Generic buttons
+       * -------------------------------------------------------------------- */
+
       button {
-        min-height: 48px;
-
-        padding-left: 18px;
-        padding-right: 18px;
-
-        background: alpha(#1a1a1a, 0.80);
-        color: #dfdfdf;
-
-        border: 1px solid alpha(#85befd, 0.14);
-        border-radius: 22px;
-
-        box-shadow:
-            0 5px 18px alpha(#000000, 0.16);
-      }
-
-      button:hover {
-        background: alpha(#252525, 0.95);
-        border-color: alpha(#85befd, 0.24);
-
-        box-shadow:
-            0 7px 24px alpha(#000000, 0.20),
-            0 0 0 1px alpha(#85befd, 0.08);
-      }
-
-      button:active {
-        background: alpha(#85befd, 0.16);
-
-        box-shadow:
-            inset 0 2px 5px alpha(#000000, 0.18);
-      }
-
-      /* Login button */
-      button.suggested-action {
-        min-width: 105px;
-        min-height: 52px;
-
-        background: #85befd;
-        color: #161718;
-
-        border: none;
-        border-radius: 999px;
-
-        font-weight: 700;
-
-        box-shadow:
-            0 8px 26px alpha(#85befd, 0.26),
-            0 4px 12px alpha(#000000, 0.18);
-      }
-
-      button.suggested-action:hover {
-        background: #95cbfe;
-        color: #161718;
-
-        box-shadow:
-            0 10px 32px alpha(#85befd, 0.34),
-            0 5px 16px alpha(#000000, 0.20);
-      }
-
-      button.suggested-action:active {
-        background: #85befd;
-
-        box-shadow:
-            inset 0 2px 6px alpha(#000000, 0.22);
-      }
-
-      /* Small circular icon/edit buttons */
-      button.circular {
-        min-width: 46px;
         min-height: 46px;
-
-        padding: 0;
-
-        background: alpha(#1a1a1a, 0.78);
-
-        border: 1px solid alpha(#85befd, 0.12);
-        border-radius: 999px;
-
-        box-shadow:
-            0 4px 14px alpha(#000000, 0.14);
-      }
-
-      button.circular:hover {
-        background: alpha(#85befd, 0.14);
-
-        border-color: alpha(#85befd, 0.18);
-
-        box-shadow:
-            0 0 0 1px alpha(#85befd, 0.18),
-            0 6px 20px alpha(#000000, 0.18);
-      }
-
-      /* Reboot / Power Off - BLUE */
-      button.destructive-action,
-      button.flat {
-        min-height: 42px;
 
         padding-left: 16px;
         padding-right: 16px;
 
-        background: alpha(#1a1a1a, 0.66);
-        color: #dfdfdf;
+        background: #16181D;
+        color: #ADB0BB;
 
-        border: 1px solid alpha(#85befd, 0.08);
-        border-radius: 999px;
+        border: 1px solid #3A3E47;
+        border-radius: 0;
 
         box-shadow:
-            0 5px 18px alpha(#000000, 0.16);
+          0 5px 16px alpha(#111317, 0.22);
+      }
+
+      button:hover {
+        background: #23272F;
+        color: #ADB0BB;
+        border-color: alpha(#50A4E9, 0.42);
+
+        box-shadow:
+          0 7px 22px alpha(#111317, 0.28);
+      }
+
+      button:active {
+        background: #26343F;
+        border-color: #50A4E9;
+
+        box-shadow:
+          inset 0 2px 5px alpha(#111317, 0.30);
+      }
+
+      /* --------------------------------------------------------------------
+       * Login button
+       * -------------------------------------------------------------------- */
+
+      button.suggested-action {
+        min-width: 105px;
+        min-height: 50px;
+
+        background: #50A4E9;
+        color: #111317;
+
+        border: 1px solid #50A4E9;
+        border-radius: 0;
+
+        font-weight: 700;
+
+        box-shadow:
+          0 8px 24px alpha(#50A4E9, 0.20),
+          0 5px 16px alpha(#111317, 0.28);
+      }
+
+      button.suggested-action:hover {
+        background: #5EB7FF;
+        color: #111317;
+        border-color: #5EB7FF;
+
+        box-shadow:
+          0 9px 28px alpha(#5EB7FF, 0.24),
+          0 5px 16px alpha(#111317, 0.30);
+      }
+
+      button.suggested-action:active {
+        background: #50A4E9;
+        border-color: #50A4E9;
+
+        box-shadow:
+          inset 0 2px 6px alpha(#111317, 0.24);
+      }
+
+      /* --------------------------------------------------------------------
+       * Circular controls
+       * -------------------------------------------------------------------- */
+
+      button.circular {
+        min-width: 44px;
+        min-height: 44px;
+
+        padding: 0;
+
+        background: #16181D;
+        color: #9B9FA9;
+
+        border: 1px solid #3A3E47;
+        border-radius: 0;
+
+        box-shadow:
+          0 4px 14px alpha(#111317, 0.22);
+      }
+
+      button.circular:hover {
+        background: #1E222A;
+        color: #5EB7FF;
+        border-color: alpha(#50A4E9, 0.45);
+
+        box-shadow:
+          0 6px 20px alpha(#111317, 0.28);
+      }
+
+      /* --------------------------------------------------------------------
+       * Power controls
+       * -------------------------------------------------------------------- */
+
+      button.destructive-action,
+      button.flat {
+        min-height: 42px;
+
+        padding-left: 14px;
+        padding-right: 14px;
+
+        background: alpha(#16181D, 0.90);
+        color: #9B9FA9;
+
+        border: 1px solid #3A3E47;
+        border-radius: 0;
+
+        box-shadow:
+          0 4px 14px alpha(#111317, 0.20);
       }
 
       button.destructive-action:hover,
       button.flat:hover {
-        background: alpha(#85befd, 0.13);
-
-        border-color: alpha(#85befd, 0.18);
+        background: #23272F;
+        color: #ADB0BB;
+        border-color: alpha(#CC83E3, 0.42);
       }
 
-      /* Dropdown / popovers */
+      /* --------------------------------------------------------------------
+       * Dropdowns / menus
+       * -------------------------------------------------------------------- */
+
       popover {
         background: transparent;
       }
 
       popover contents,
       menu {
-        background: alpha(#1a1a1a, 0.96);
-        color: #dfdfdf;
+        background: #14161B;
+        color: #ADB0BB;
 
-        border: 1px solid alpha(#85befd, 0.14);
-        border-radius: 22px;
+        border: 1px solid #3A3E47;
+        border-radius: 0;
 
         box-shadow:
-            0 16px 44px alpha(#000000, 0.34);
+          0 16px 44px alpha(#111317, 0.48);
       }
 
-      /* Menu rows */
       row {
         padding: 7px;
-        border-radius: 16px;
+        border-radius: 0;
       }
 
       row:hover {
-        background: alpha(#85befd, 0.10);
+        background: #23272F;
       }
 
       row:selected {
-        background: alpha(#85befd, 0.17);
-        color: #dfdfdf;
+        background: #26343F;
+        color: #5EB7FF;
       }
 
-      /* Checkbox */
+      /* --------------------------------------------------------------------
+       * Checkbox
+       * -------------------------------------------------------------------- */
+
       checkbutton {
-        color: #dfdfdf;
+        color: #9B9FA9;
       }
 
       checkbutton check {
         min-width: 20px;
         min-height: 20px;
 
-        background: alpha(#252525, 0.86);
+        background: #16181D;
 
-        border: 1px solid alpha(#85befd, 0.35);
-        border-radius: 7px;
+        border: 1px solid #3A3E47;
+        border-radius: 0;
       }
 
       checkbutton check:checked {
-        background: #85befd;
-        color: #161718;
-
-        border-color: #85befd;
+        background: #50A4E9;
+        color: #111317;
+        border-color: #50A4E9;
       }
 
-      /* Icons */
+      /* --------------------------------------------------------------------
+       * Icons
+       * -------------------------------------------------------------------- */
+
       image {
-        color: alpha(#dfdfdf, 0.82);
+        color: #9B9FA9;
       }
 
-      /* Scrollbars */
+      /* --------------------------------------------------------------------
+       * Scrollbars
+       * -------------------------------------------------------------------- */
+
       scrollbar {
         background: transparent;
       }
@@ -278,28 +316,31 @@
         min-width: 5px;
         min-height: 5px;
 
-        background: alpha(#dfdfdf, 0.25);
-
-        border-radius: 999px;
+        background: alpha(#9B9FA9, 0.22);
+        border-radius: 0;
       }
 
       scrollbar slider:hover {
-        background: alpha(#85befd, 0.48);
+        background: alpha(#50A4E9, 0.55);
       }
 
-      /* Tooltips */
-      tooltip {
-        background: alpha(#000000, 0.96);
-        color: #dfdfdf;
+      /* --------------------------------------------------------------------
+       * Tooltips
+       * -------------------------------------------------------------------- */
 
-        border-radius: 14px;
+      tooltip {
+        background: alpha(#111317, 0.97);
+        color: #ADB0BB;
+
+        border: 1px solid alpha(#50A4E9, 0.18);
+        border-radius: 0;
 
         box-shadow:
-            0 6px 20px alpha(#000000, 0.28);
+          0 8px 24px alpha(#111317, 0.42);
       }
 
       tooltip label {
-        color: #dfdfdf;
+        color: #ADB0BB;
       }
     '';
 
@@ -310,7 +351,7 @@
         cursor_blink = true;
         font_name = "Monaspace Neon NF 16";
         icon_theme_name = "Adwaita";
-        theme_name = "Adwaita";
+        theme_name = "Adwaita-dark";
       };
 
       env = {
@@ -319,6 +360,11 @@
 
       appearance = {
         greeting_msg = "Welcome back!";
+      };
+
+      commands = {
+        reboot = [ "systemctl" "reboot" ];
+        poweroff = [ "systemctl" "poweroff" ];
       };
     };
   };
@@ -335,18 +381,23 @@
     };
   };
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.monaspace
+  ];
+
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
+    gnome-themes-extra
   ];
 
   environment.etc."greetd/sway-config".text = ''
     set $SWAYSOCK /run/user/$(id -u)/sway-ipc.sock
+    set $mod Mod4
 
     seat seat0 xcursor_theme Adwaita 36
-
     input type:keyboard xkb_numlock enabled
 
-    output * scale 1 
+    output * scale 1
 
     exec "${pkgs.regreet}/bin/regreet; ${pkgs.swayfx}/bin/swaymsg exit"
   '';
