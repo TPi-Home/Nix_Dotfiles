@@ -18,14 +18,16 @@
     edge=bottom
   '';
 
-  home.pointerCursor = {
+  home.pointerCursor = 
+  {
     enable = true;
     package = pkgs.adwaita-icon-theme;
     name = "Adwaita";
     size = 24;
   };
 
-  wayland.windowManager.sway = {
+  wayland.windowManager.sway = 
+  {
     xwayland = false;  # false if trying to use line 18, true if not
     config = {
       output."eDP-2".scale = "1";
