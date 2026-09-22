@@ -56,13 +56,13 @@ set $menu fuzzel
 # Startup
 # ----------------------------------------------------------------------------
 
+exec_always kanshictl reload
 exec mako
 exec udiskie
 exec nm-applet
 exec blueman-applet
 exec swayidle -w \
-    resume 'pkill -SIGUSR1 waybar' \
-    timeout 600 'swaymsg "output * power off"' \
+    timeout 300 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"'
 
 # ----------------------------------------------------------------------------
