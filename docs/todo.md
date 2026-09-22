@@ -12,6 +12,7 @@
 * Sway to match GTK rounding 
 * Alignment of windows and waybar
 * Electron apps bugging out in x11
+* Round fuzzel border
 ### Security
 * I need to setup some containers
 ### Misc
