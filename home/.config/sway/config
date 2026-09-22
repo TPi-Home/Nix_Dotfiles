@@ -15,8 +15,8 @@ corner_radius 10
 shadows enable
 shadows_on_csd enable
 blur enable
-blur_passes 4
-blur_radius 4
+blur_passes 8
+# blur_radius 2
 shadow_blur_radius 30
 #shadow_color #00000066
 shadow_offset 0 8
