@@ -8,6 +8,9 @@
 ---
 **This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents. I would like to update the directory structure in the readme before I try to tackle breaking this document up.**
 ## Configuration Organization
+### Performance Cleanups
+* Sway to match GTK rounding 
+* Alignment of windows and waybar
 ### Security
 * I need to setup some containers
 ### Misc

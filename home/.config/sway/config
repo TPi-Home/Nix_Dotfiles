@@ -14,17 +14,10 @@ corner_radius 10
 # Shadows (Provides the deep background drop-shadow separation)
 shadows enable
 shadows_on_csd enable
-blur enable
-blur_passes 8
-# blur_radius 2
 shadow_blur_radius 30
-#shadow_color #00000066
+shadow_color #00000066
 shadow_offset 0 8
 
-# Inactive window fade amount. 0.0 = no dimming, 1.0 = fully dimmed
-default_dim_inactive 0.1
-dim_inactive_colors.unfocused #000000FF
-dim_inactive_colors.urgent #900000FF
 
 
 layer_effects "waybar" blur enable; shadows enable;

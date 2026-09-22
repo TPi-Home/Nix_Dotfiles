@@ -44,6 +44,15 @@
     VISUAL = "nvim";
   };
 
+  home.file.".config/uwsm/env".text = 
+  ''
+    export GBM_BACKEND=nvidia-drm
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export WLR_NO_HARDWARE_CURSORS=1
+  '';
+
+
+
   fonts.fontconfig.enable = true;
 
   home.stateVersion = "26.11";
