@@ -4,6 +4,31 @@
 
 include /etc/sway/config.d/*
 
+# ============================================================================
+# SwayFX
+# ============================================================================
+
+smart_corner_radius enable
+corner_radius 10
+
+# Shadows (Provides the deep background drop-shadow separation)
+shadows enable
+shadows_on_csd enable
+blur enable
+blur_passes 4
+blur_radius 4
+shadow_blur_radius 30
+#shadow_color #00000066
+shadow_offset 0 8
+
+# Inactive window fade amount. 0.0 = no dimming, 1.0 = fully dimmed
+default_dim_inactive 0.1
+dim_inactive_colors.unfocused #000000FF
+dim_inactive_colors.urgent #900000FF
+
+
+layer_effects "waybar" blur enable; shadows enable;
+
 # ----------------------------------------------------------------------------
 # General
 # ----------------------------------------------------------------------------
@@ -14,17 +39,16 @@ input type:keyboard xkb_numlock enabled
 
 font pango:Monaspace Neon NF 14
 
-default_border pixel 2
-titlebar_border_thickness 2
+default_border pixel 3
+default_floating_border pixel 3
+smart_borders off
+titlebar_border_thickness 0
 
-gaps inner 5
-gaps outer 0
+gaps inner 12
+gaps outer 6
 
 focus_follows_mouse yes
 floating_modifier $mod
-
-# This should be handled by Kanshi now:
-# output * scale 1
 
 # X11 Compatibility Tool: (must visit /home-manager/sway/sway.nix to change 2 other lines)
 #exec_always xwayland-satellite :1

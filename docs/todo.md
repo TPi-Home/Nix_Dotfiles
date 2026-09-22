@@ -8,6 +8,9 @@
 ---
 **This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents. I would like to update the directory structure in the readme before I try to tackle breaking this document up.**
 ## Configuration Organization
+### Security
+* I need to setup some containers
+### Misc
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
 * Need to finish default nix files used to tie modules together, specifically for:
   1. Audio

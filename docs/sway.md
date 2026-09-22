@@ -15,6 +15,14 @@
     * Receives Sway environment
 * XDG: 
     * desktop portals
+        * file chooser
+        * open url
+        * settings
+        * secret 
+        * print
+        * notifications
+        * remote desktops
+        * screen cast/shot
     * MIME/default applications
     * config/data/cache dirs
 * GTK

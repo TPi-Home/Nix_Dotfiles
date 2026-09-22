@@ -14,7 +14,6 @@
     kitty
     starship
     fzf
-    #zsh-completions
     fastfetch
     btop
     direnv
@@ -23,7 +22,6 @@
     dconf
     taskwarrior3
     zellij
-    yazi
     stow
 
     # --------------------------------------------------------------------------

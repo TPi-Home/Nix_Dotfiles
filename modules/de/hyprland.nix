@@ -105,6 +105,9 @@
     # Audio
     pulseaudio
     pavucontrol
+
+    # TUI File Manager
+    yazi
     
   ];
 

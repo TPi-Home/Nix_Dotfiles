@@ -9,7 +9,7 @@
   {
     enable = true;
     # For SwayFX:
-    # package = pkgs.swayfx;
+    package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
 
     extraPackages = with pkgs; 
@@ -113,7 +113,10 @@
     # Audio
     pulseaudio
     pavucontrol
-    
+
+    # TUI File Manager
+    nnn
+
   ];
 
   # --------------------------------------------------------------------------

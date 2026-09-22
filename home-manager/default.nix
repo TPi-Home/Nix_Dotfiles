@@ -38,6 +38,12 @@
   home.username = "tyler";
   home.homeDirectory = "/home/tyler";
   
+  home.sessionVariables = 
+  {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   fonts.fontconfig.enable = true;
 
   home.stateVersion = "26.11";

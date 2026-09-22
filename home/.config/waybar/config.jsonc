@@ -1,11 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 70,
+    "height": 50,
     "margin-top": 8,
-    "margin-left": 8,
-    "margin-right": 8,
-    "margin-bottom": 0,
+    "margin-left": 18,
+    "margin-right": 18,
+    "margin-bottom": -2,
     "spacing": 0,
     "reload_style_on_change": true,
 
@@ -15,14 +15,13 @@
     ],
 
     "modules-center":
-    [],
+    ["clock"],
 
     "modules-right":
     [
         "network",
         "pulseaudio",
         "battery",
-        "clock",
         "power-profiles-daemon",
         "tray"
     ],
