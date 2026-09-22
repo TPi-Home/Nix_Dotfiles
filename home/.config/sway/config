@@ -14,9 +14,9 @@ corner_radius 10
 # Shadows (Provides the deep background drop-shadow separation)
 shadows enable
 shadows_on_csd enable
-shadow_blur_radius 30
+shadow_blur_radius 10
 shadow_color #00000066
-shadow_offset 0 8
+shadow_offset 0 5
 
 
 
