@@ -20,4 +20,10 @@ systemd.services.greetd.serviceConfig =
     NoNewPrivileges = true;
     RestrictNamespaces = true;
   };
+
+  # For: 
+  # NIXOS_OZONE_WL = "1"; 
+  # Try:
+  # services.logind.killUserProcesses = true;
+
 }
