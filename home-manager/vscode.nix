@@ -5,10 +5,12 @@
 { pkgs, ... }:
 
 {
-  programs.vscode = {
+  programs.vscode = 
+  {
     enable = true;
 
-    profiles.default.extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; 
+    [
 
       # --------------------------------------------------------------------------
       # IDE Niceties
@@ -40,6 +42,7 @@
       # --------------------------------------------------------------------------
 
       jnoortheen.nix-ide
+      
     ];
   };
 

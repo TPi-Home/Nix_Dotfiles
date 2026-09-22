@@ -5,6 +5,9 @@
 { pkgs, ... }:
 
 {
+  # --------------------------------------------------------------------------
+  # Sway
+  # --------------------------------------------------------------------------
   xdg.configFile."sway/config".source = ../../home/.config/sway/config;
 
   xdg.configFile."swaynag/config".text = ''
@@ -28,7 +31,7 @@
 
   wayland.windowManager.sway = 
   {
-    xwayland = false;  # false if trying to use line 18, true if not
+    xwayland = true;  # false if trying to use line 18, true if not
     config = {
       output."eDP-2".scale = "1";
       startup = [

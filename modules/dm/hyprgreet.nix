@@ -32,21 +32,25 @@
         color: #ADB0BB;
       }
 
-      window {
+      window 
+      {
         background: transparent;
       }
 
-      label {
+      label 
+      {
         color: #ADB0BB;
       }
 
-      box {
+      box 
+      {
         color: #ADB0BB;
       }
 
       /* Main panel */
 
-      window > box {
+      window > box 
+      {
         background: alpha(#111317, 0.88);
 
         border: 1px solid alpha(#50A4E9, 0.20);
@@ -60,7 +64,8 @@
       /* Entries / selectors */
 
       entry,
-      combobox button {
+      combobox button 
+      {
         min-height: 50px;
 
         padding-left: 16px;
@@ -78,13 +83,15 @@
       }
 
       entry:hover,
-      combobox button:hover {
+      combobox button:hover 
+      {
         background: #1E222A;
         border-color: alpha(#50A4E9, 0.38);
       }
 
       entry:focus,
-      combobox button:focus {
+      combobox button:focus 
+      {
         border: 1px solid #50A4E9;
 
         box-shadow:
@@ -92,14 +99,16 @@
           0 8px 24px alpha(#111317, 0.30);
       }
 
-      entry selection {
+      entry selection 
+      {
         background: #26343F;
         color: #5EB7FF;
       }
 
       /* Generic buttons */
 
-      button {
+      button 
+      {
         min-height: 46px;
 
         padding-left: 16px;
@@ -115,7 +124,8 @@
           0 5px 16px alpha(#111317, 0.22);
       }
 
-      button:hover {
+      button:hover 
+      {
         background: #23272F;
         color: #ADB0BB;
         border-color: alpha(#50A4E9, 0.42);
@@ -124,7 +134,8 @@
           0 7px 22px alpha(#111317, 0.28);
       }
 
-      button:active {
+      button:active 
+      {
         background: #26343F;
         border-color: #50A4E9;
 
@@ -134,7 +145,8 @@
 
       /* Login / primary action */
 
-      button.suggested-action {
+      button.suggested-action 
+      {
         min-width: 105px;
         min-height: 50px;
 
@@ -151,7 +163,8 @@
           0 5px 16px alpha(#111317, 0.28);
       }
 
-      button.suggested-action:hover {
+      button.suggested-action:hover 
+      {
         background: #5EB7FF;
         color: #111317;
         border-color: #5EB7FF;
@@ -161,7 +174,8 @@
           0 5px 16px alpha(#111317, 0.30);
       }
 
-      button.suggested-action:active {
+      button.suggested-action:active 
+      {
         background: #50A4E9;
         border-color: #50A4E9;
 
@@ -171,7 +185,8 @@
 
       /* Circular controls */
 
-      button.circular {
+      button.circular 
+      {
         min-width: 44px;
         min-height: 44px;
 
@@ -187,7 +202,8 @@
           0 4px 14px alpha(#111317, 0.22);
       }
 
-      button.circular:hover {
+      button.circular:hover 
+      {
         background: #1E222A;
         color: #5EB7FF;
         border-color: alpha(#50A4E9, 0.45);
@@ -199,7 +215,8 @@
       /* Power controls */
 
       button.destructive-action,
-      button.flat {
+      button.flat 
+      {
         min-height: 42px;
 
         padding-left: 14px;
@@ -216,7 +233,8 @@
       }
 
       button.destructive-action:hover,
-      button.flat:hover {
+      button.flat:hover 
+      {
         background: #23272F;
         color: #ADB0BB;
         border-color: alpha(#CC83E3, 0.42);
@@ -224,12 +242,14 @@
 
       /* Dropdowns / menus */
 
-      popover {
+      popover 
+      {
         background: transparent;
       }
 
       popover contents,
-      menu {
+      menu 
+      {
         background: #14161B;
         color: #ADB0BB;
 
@@ -240,27 +260,32 @@
           0 16px 44px alpha(#111317, 0.48);
       }
 
-      row {
+      row 
+      {
         padding: 7px;
         border-radius: 16px;
       }
 
-      row:hover {
+      row:hover 
+      {
         background: #23272F;
       }
 
-      row:selected {
+      row:selected 
+      {
         background: #26343F;
         color: #5EB7FF;
       }
 
       /* Checkbox */
 
-      checkbutton {
+      checkbutton 
+      {
         color: #9B9FA9;
       }
 
-      checkbutton check {
+      checkbutton check 
+      {
         min-width: 20px;
         min-height: 20px;
 
@@ -270,7 +295,8 @@
         border-radius: 7px;
       }
 
-      checkbutton check:checked {
+      checkbutton check:checked 
+      {
         background: #50A4E9;
         color: #111317;
         border-color: #50A4E9;
@@ -278,17 +304,20 @@
 
       /* Icons */
 
-      image {
+      image 
+      {
         color: #9B9FA9;
       }
 
       /* Scrollbars */
 
-      scrollbar {
+      scrollbar 
+      {
         background: transparent;
       }
 
-      scrollbar slider {
+      scrollbar slider 
+      {
         min-width: 5px;
         min-height: 5px;
 
@@ -296,13 +325,15 @@
         border-radius: 999px;
       }
 
-      scrollbar slider:hover {
+      scrollbar slider:hover 
+      {
         background: alpha(#50A4E9, 0.55);
       }
 
       /* Tooltips */
 
-      tooltip {
+      tooltip 
+      {
         background: alpha(#111317, 0.97);
         color: #ADB0BB;
 
@@ -313,13 +344,15 @@
           0 8px 24px alpha(#111317, 0.42);
       }
 
-      tooltip label {
+      tooltip label 
+      {
         color: #ADB0BB;
       }
     '';
 
     settings = {
-      GTK = {
+      GTK = 
+      {
         application_prefer_dark_theme = true;
         cursor_theme_name = "Adwaita";
         cursor_blink = true;
@@ -328,31 +361,38 @@
         theme_name = "Adwaita-dark";
       };
 
-      env = {
+      env = 
+      {
         XCURSOR_SIZE = "36";
       };
 
-      appearance = {
+      appearance = 
+      {
         greeting_msg = "Welcome back!";
       };
 
-      background = {
+      background = 
+      {
         path = "${../../Hilltopper.png}";
         fit = "Cover";
       };
 
-      commands = {
+      commands = 
+      {
         reboot = [ "systemctl" "reboot" ];
         poweroff = [ "systemctl" "poweroff" ];
       };
     };
   };
 
-  services.greetd = {
+  services.greetd = 
+  {
     enable = true;
 
-    settings = {
-      default_session = {
+    settings = 
+    {
+      default_session = 
+      {
         command =
           "${pkgs.swayfx}/bin/sway --unsupported-gpu --config /etc/greetd/sway-config";
         user = "greeter";
@@ -360,11 +400,13 @@
     };
   };
 
-  fonts.packages = with pkgs; [
+  fonts.packages = with pkgs; 
+  [
     nerd-fonts.monaspace
   ];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; 
+  [
     adwaita-icon-theme
     gnome-themes-extra
   ];
@@ -373,7 +415,7 @@
     set $SWAYSOCK /run/user/$(id -u)/sway-ipc.sock
     set $mod Mod4
 
-    seat seat0 xcursor_theme Adwaita 36
+    seat seat0 xcursor_theme Adwaita 24
     input type:keyboard xkb_numlock enabled
 
     output * scale 1

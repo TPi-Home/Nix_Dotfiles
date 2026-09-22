@@ -13,9 +13,10 @@
 
   # Software Management
   nixpkgs.config.allowUnfree = true;
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
   
-  nix.settings.experimental-features = [
+  nix.settings.experimental-features = 
+  [
     "nix-command"
     "flakes"
   ];
@@ -23,10 +24,13 @@
   # Wayland Support 
   services.dbus.implementation = "broker";
 
-  programs.uwsm = {
+  programs.uwsm = 
+  {
     enable = true;
-    waylandCompositors = {
-      sway = {
+    waylandCompositors = 
+    {
+      sway = 
+      {
         prettyName = "Sway";
         comment = "Sway compositor managed by UWSM";
         binPath = "/run/current-system/sw/bin/sway";

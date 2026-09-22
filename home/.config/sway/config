@@ -58,25 +58,27 @@ set $menu fuzzel
 
 exec mako
 exec udiskie
-
-#exec swayidle -w \\
-#    timeout 600 'swaylock -f' \\
-#    timeout 1200 'swaymsg "output * dpms off"' \\
-#    resume 'swaymsg "output * dpms on"' \\
-#    before-sleep 'swaylock -f'
-
 exec nm-applet
 exec blueman-applet
+exec swayidle -w \
+    resume 'pkill -SIGUSR1 waybar' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"'
 
 # ----------------------------------------------------------------------------
 # Input
 # ----------------------------------------------------------------------------
 
-input type:touchpad {
+input type:touchpad 
+{
     dwt enabled
     tap enabled
     natural_scroll enabled
     middle_emulation enabled
+}
+
+input type:pointer {
+    pointer_accel 0.5
 }
 
 # ----------------------------------------------------------------------------
@@ -201,3 +203,14 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 # ----------------------------------------------------------------------------
 
 output * bg /home/tyler/Pictures/Hilltopper.png fill
+
+# ----------------------------------------------------------------------------
+# Easy Enable
+# ----------------------------------------------------------------------------
+
+# Idle:
+#exec swayidle -w \\
+#    timeout 600 'swaylock -f' \\
+#    timeout 1200 'swaymsg "output * dpms off"' \\
+#    resume 'swaymsg "output * dpms on"' \\
+#    before-sleep 'swaylock -f'

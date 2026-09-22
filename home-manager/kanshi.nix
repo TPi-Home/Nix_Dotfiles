@@ -19,6 +19,21 @@
           ];
         };
       }
+
+      {
+        profile = {
+          name = "laptop";
+
+          outputs = [
+            {
+              criteria = "EDO EF10QBC64.C Unknown";
+              mode = "2560x1600@165Hz";
+              position = "0,0";
+              scale = 1.0;
+            }
+          ];
+        };
+      }
     ];
   };
 }

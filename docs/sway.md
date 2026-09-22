@@ -69,7 +69,7 @@ Enabled with scaling set to 1 for maximum compatibility. This is important for h
 ### Display Compatibility
 ---
 
-I am having Kanshi handle my display management. To get your monitor's display information, run `swaymsg -t get_outputs.` You can then use the information printed to the terminal to manage `kanshi.nix.` I would like to eventually have a script automate this. Kanshi should handle every bit of display management, but I am not 100% sure of this yet.
+I am having Kanshi handle my display management. To get your monitor's display information, run `swaymsg -t get_outputs`. You can then use the information printed to the terminal to manage `kanshi.nix.` I would like to eventually have a script automate this. Kanshi should handle every bit of display management, but I am not 100% sure of this yet.
 
 #### Kanshi Example
 ---

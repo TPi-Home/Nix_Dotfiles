@@ -1,6 +1,7 @@
 {
   "workbench.startupEditor": "none",
-  "chat.agent.thinking.phrases": {
+  "chat.agent.thinking.phrases": 
+  {
     "mode": "append",
     "phrases": []
   },
@@ -13,7 +14,8 @@
   "editor.fontFamily": "'Monaspace Neon NF', monospace",
   "editor.fontSize": 16,
 
-  "terminal.integrated.env.linux": {
+  "terminal.integrated.env.linux": 
+  {
     "LANG": "en_US.UTF-8",
     "LC_ALL": "en_US.UTF-8"
   }

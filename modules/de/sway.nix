@@ -5,23 +5,23 @@
 { pkgs, ... }:
 
 {
-  # --------------------------------------------------------------------------
-  # Sway
-  # --------------------------------------------------------------------------
-
-  programs.sway = {
+  programs.sway = 
+  {
     enable = true;
-    package = pkgs.swayfx;
+    # For SwayFX:
+    # package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs; 
+    [
       swayidle
       swaylock
       swaybg
       swayfx
     ];
 
-    extraOptions = [
+    extraOptions = 
+    [
       "--unsupported-gpu"
     ];
   };
@@ -30,7 +30,8 @@
   # Waybar
   # --------------------------------------------------------------------------
 
-  systemd.user.services.waybar.path = with pkgs; [
+  systemd.user.services.waybar.path = with pkgs; 
+  [
     wlogout
     wleave
     pavucontrol
@@ -56,7 +57,8 @@
   # Bluetooth
   # --------------------------------------------------------------------------
 
-  hardware.bluetooth = {
+  hardware.bluetooth = 
+  {
     enable = true;
     powerOnBoot = true;
   };
@@ -65,7 +67,8 @@
   # Wayland
   # --------------------------------------------------------------------------
 
-  xdg.portal = {
+  xdg.portal = 
+  {
     enable = true;
     wlr.enable = true;
   };
@@ -80,7 +83,8 @@
   # Sway Runtime Utilities
   # --------------------------------------------------------------------------
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; 
+  [
     # Launcher
     fuzzel
 
@@ -106,6 +110,10 @@
     # Bluetooth GUI
     blueman
 
+    # Audio
+    pulseaudio
+    pavucontrol
+    
   ];
 
   # --------------------------------------------------------------------------
