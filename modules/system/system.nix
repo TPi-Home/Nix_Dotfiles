@@ -21,6 +21,9 @@
     "flakes"
   ];
 
+  # Theme Support
+  programs.dconf.enable = true;
+
   # Wayland Support 
   services.dbus.implementation = "broker";
 

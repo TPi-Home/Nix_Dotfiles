@@ -19,7 +19,6 @@
     direnv
     nvtopPackages.full
     proton-vpn
-    dconf
     taskwarrior3
     zellij
     stow
