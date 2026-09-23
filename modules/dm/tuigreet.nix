@@ -2,21 +2,18 @@
 # TUIGreet
 # ============================================================================
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-  services.greetd = 
-  {
+  services.greetd = {
     enable = true;
 
-    settings = 
-    {
-      default_session = 
-      {
+    settings = {
+      default_session = {
         user = "greeter";
         command =
           "${pkgs.tuigreet}/bin/tuigreet "
-          + "--sessions /run/current-system/sw/share/wayland-sessions "
+          + "--sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions "
           + "--time "
           + "--time-format '%a %b %d  %H:%M' "
           + "--greeting 'Welcome back!' "
@@ -32,10 +29,8 @@
       };
     };
   };
-#           + "--theme 'border=bright-blue;text=white;time=magenta;container=black;title=bright-blue;greet=white;prompt=bright-blue;input=white;action=bright-blue;button=magenta' "
 
-  environment.systemPackages = with pkgs; 
-  [
+  environment.systemPackages = with pkgs; [
     tuigreet
   ];
 }

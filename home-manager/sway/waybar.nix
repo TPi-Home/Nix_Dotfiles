@@ -7,7 +7,6 @@
 {
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
 
     style = ../../home/.config/waybar/style.css;
   };

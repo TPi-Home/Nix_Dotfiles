@@ -32,8 +32,8 @@
     ./pkg/unity_hub.nix
 
     # Desktop
-    ../sway/sway.nix
-    ../sway/waybar.nix
+    ./sway/sway.nix
+    ./sway/waybar.nix
 
     # Application Launcher
     ./pkg/fuzzel.nix
