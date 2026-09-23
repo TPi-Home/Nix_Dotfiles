@@ -30,12 +30,7 @@
   {
     xwayland = true;
 
-    systemd = 
-    {
-      enable = true;
-      dbusImplementation = "broker";
-      variables = [ "--all" ];
-    };
+    systemd.enable = false;
 
     config = {
       output."eDP-2".scale = "1";

@@ -55,9 +55,9 @@ set $menu fuzzel
 # Startup
 # ----------------------------------------------------------------------------
 
-exec dbus-update-activation-environment --systemd --all
-#exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+#exec dbus-update-activation-environment --systemd --all
 exec waybar
+exec kanshi
 exec_always kanshictl reload
 exec mako
 exec udiskie
