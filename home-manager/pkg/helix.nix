@@ -4,16 +4,20 @@
 
 { pkgs, ... }: {
 
-  programs.helix = {
+  programs.helix = 
+  {
     enable = true;
 
     # 1. Install LSPs and Formatters exclusively for Helix
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs; 
+    [
     ];
 
     # 2. Map languages to their respective formatters and settings
-    languages = {
-      language = [
+    languages = 
+    {
+      language = 
+      [
         {
           name = "nix";
           auto-format = true;
@@ -47,7 +51,8 @@
       ];
 
       # 3. Optional: Fine-tune specific Language Server Behaviors
-      language-server = {
+      language-server = 
+        {
         # Configure rust-analyzer to use clippy on save
         rust-analyzer.config.check = {
           command = "clippy";
@@ -59,9 +64,11 @@
     };
 
     # Core Editor Adjustments
-    settings = {
+    settings = 
+    {
       theme = "onedark";
-      editor = {
+      editor = 
+      {
         line-number = "relative";
         lsp.display-messages = true;
       };

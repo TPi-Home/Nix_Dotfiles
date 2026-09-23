@@ -8,38 +8,38 @@
   imports = [
     
     # Misc
-    ./packages.nix
+    ./pkg/packages.nix
 
     # Terminal
-    ./git.nix
-    ./kitty.nix    
+    ./pkg/git.nix
+    ./pkg/kitty.nix    
 
     # Editors
-    ./vscode.nix
-    ./helix.nix
-    ./nvim.nix
+    ./pkg/vscode.nix
+    ./pkg/helix.nix
+    ./pkg/nvim.nix
 
     # Customization
-    ./dconf.nix
-    ./fish.nix
-    ./starship.nix
+    ./pkg/dconf.nix
+    ./pkg/fish.nix
+    ./pkg/starship.nix
 
     # Browsers
-    ./firefox.nix
-    ./chromium.nix
+    ./pkg/firefox.nix
+    ./pkg/chromium.nix
 
     # Game Dev
-    ./unity_hub.nix
+    ./pkg/unity_hub.nix
 
     # Desktop
-    ./sway/sway.nix
-    ./sway/waybar.nix
+    ../sway/sway.nix
+    ../sway/waybar.nix
 
     # Application Launcher
-    ./fuzzel.nix
+    ./pkg/fuzzel.nix
 
     # Display Settings
-    ./kanshi.nix
+    ./pkg/kanshi.nix
 
   ];
 
@@ -51,16 +51,7 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
-
-  home.file.".config/uwsm/env".text = 
-  ''
-    export GBM_BACKEND=nvidia-drm
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export WLR_NO_HARDWARE_CURSORS=1
-  '';
-
-
-
+  
   fonts.fontconfig.enable = true;
 
   home.stateVersion = "26.11";

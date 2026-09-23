@@ -26,19 +26,4 @@
 
   # Wayland Support 
   services.dbus.implementation = "broker";
-
-  programs.uwsm = 
-  {
-    enable = true;
-    waylandCompositors = 
-    {
-      sway = 
-      {
-        prettyName = "Sway";
-        comment = "Sway compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/sway";
-      };
-    };
-  };
-
 }

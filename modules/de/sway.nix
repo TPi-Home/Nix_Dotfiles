@@ -8,8 +8,6 @@
   programs.sway = 
   {
     enable = true;
-    # For SwayFX:
-    package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
 
     extraPackages = with pkgs; 
@@ -25,20 +23,6 @@
       "--unsupported-gpu"
     ];
   };
-
-  # --------------------------------------------------------------------------
-  # Waybar
-  # --------------------------------------------------------------------------
-
-  systemd.user.services.waybar.path = with pkgs; 
-  [
-    wlogout
-    wleave
-    pavucontrol
-    waylogout
-    pamixer
-    procps
-  ];
 
   # --------------------------------------------------------------------------
   # Power
@@ -75,12 +59,11 @@
 
   environment.sessionVariables = 
   {
-    SWAY_UNSUPPORTED_GPU = "1";    
+    SWAY_UNSUPPORTED_GPU = "1";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS=1;
+    WLR_NO_HARDWARE_CURSORS = "1";
   };
-  
 
   # --------------------------------------------------------------------------
   # Security
@@ -96,9 +79,6 @@
   [
     # Launcher
     fuzzel
-
-    # Bar
-    waybar
 
     # Notifications
     libnotify
@@ -126,6 +106,12 @@
     # TUI File Manager
     nnn
 
+    # Logout
+    wlogout
+    wleave
+    waylogout
+    pamixer
+    procps
   ];
 
   # --------------------------------------------------------------------------

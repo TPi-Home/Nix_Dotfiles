@@ -5,9 +5,6 @@
 { pkgs, ... }:
 
 {
-  # --------------------------------------------------------------------------
-  # Sway
-  # --------------------------------------------------------------------------
   xdg.configFile."sway/config".source = ../../home/.config/sway/config;
 
   xdg.configFile."swaynag/config".text = ''
@@ -31,13 +28,17 @@
 
   wayland.windowManager.sway = 
   {
-    xwayland = true;  # false if trying to use line 18, true if not
+    xwayland = true;
+
+    systemd = 
+    {
+      enable = true;
+      dbusImplementation = "broker";
+      variables = [ "--all" ];
+    };
+
     config = {
       output."eDP-2".scale = "1";
-      startup = [
-        #{ command = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :1"; }
-      ];
     };
   };
-  
 }

@@ -5,7 +5,7 @@
 {...}:
 
 {
-systemd.services.greetd.serviceConfig = 
+  systemd.services.greetd.serviceConfig = 
   {
     PrivateTmp = true;
     LockPersonality = true;
