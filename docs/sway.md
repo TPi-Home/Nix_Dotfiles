@@ -28,6 +28,104 @@
 * GTK
 * Qt
 
+## Ownership
+### NixOS
+
+**Owns the system**
+- Boot and kernel
+- Hardware and NVIDIA
+- Networking
+- Audio / PipeWire
+- Bluetooth
+- System fonts
+- System packages
+- Users
+- Security / PAM
+- Portals
+- greetd
+- Sway installation and runtime dependencies
+
+**Files**
+- `modules/system/`
+- `modules/graphics/`
+- `modules/audio/`
+- `modules/packages/`
+- `modules/users/`
+- `modules/dm/`
+- `modules/de/sway.nix`
+
+### greetd / tuigreet
+
+**Owns login**
+- Login screen
+- Session selection
+- Starting the selected Wayland session
+- Ending the login session
+
+**File**
+- `modules/dm/tuigreet.nix`
+
+### Sway
+
+**Owns the graphical session**
+- Windows
+- Workspaces
+- Keybindings
+- Input
+- Outputs
+- Rendering
+- XWayland
+- Programs explicitly launched by the Sway config
+
+**Files**
+- `modules/de/sway.nix` → installs/enables Sway
+- `home-manager/sway/sway.nix` → HM integration
+- `home/.config/sway/config` → actual Sway configuration
+
+### Home Manager
+
+**Owns user configuration**
+- User applications
+- User services
+- XDG configuration
+- Application configuration
+- User environment
+
+**Directory**
+- `home-manager/`
+
+### `home/.config`
+
+**Owns application configuration directly**
+
+- `sway/` → Sway
+- `waybar/` → Waybar
+- `fuzzel/` → Fuzzel
+- Other `.config/*` → respective application
+
+Home Manager deploys these files. It does not define what the applications themselves do.
+
+### Desktop Utilities
+
+- **Waybar** → status bar
+- **Kanshi** → output profiles
+- **Fuzzel** → application launcher
+- **Mako** → notifications
+- **Swayidle** → idle handling
+- **Swaylock** → screen locking
+
+Their packages are installed by NixOS; their configuration is primarily managed through Home Manager / `home/.config`.
+
+### Ownership Rule
+
+> NixOS owns the **system**.  
+> Home Manager owns the **user environment**.  
+> Sway owns the **graphical session**.  
+> Individual applications own their **configuration and behavior**.
+
+
+
+
 | Final Sway Stack: | |
   |---|---|
   | a Wi-Fi GUI | `nm-applet` |
