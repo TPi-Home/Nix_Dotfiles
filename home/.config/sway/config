@@ -4,24 +4,6 @@
 
 include /etc/sway/config.d/*
 
-# ============================================================================
-# SwayFX
-# ============================================================================
-
-smart_corner_radius enable
-corner_radius 10
-
-# Shadows (Provides the deep background drop-shadow separation)
-shadows enable
-shadows_on_csd enable
-shadow_blur_radius 10
-shadow_color #00000066
-shadow_offset 0 5
-
-
-
-layer_effects "waybar" blur enable; shadows enable;
-
 # ----------------------------------------------------------------------------
 # General
 # ----------------------------------------------------------------------------
@@ -37,8 +19,8 @@ default_floating_border pixel 3
 smart_borders off
 titlebar_border_thickness 0
 
-gaps inner 12
-gaps outer 6
+gaps inner 0
+gaps outer 0
 
 focus_follows_mouse yes
 floating_modifier $mod

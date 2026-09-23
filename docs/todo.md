@@ -8,11 +8,14 @@
 ---
 **This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents. I would like to update the directory structure in the readme before I try to tackle breaking this document up.**
 ## Configuration Organization
-### Performance Cleanups
-* Sway to match GTK rounding 
+### Performance Cleanups 
 * Alignment of windows and waybar
 * Electron apps bugging out in x11
-* Round fuzzel border
+* Would like to end dependency on UWSM
+### Inconsistent UI
+* Save File Manager
+* No Power Button
+
 ### Security
 * I need to setup some containers
 ### Misc

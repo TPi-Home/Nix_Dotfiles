@@ -6,15 +6,23 @@
 
 {
   imports = [
+    
     # Misc
-    ./git.nix
-    ./kitty.nix
-    ./nvim.nix
     ./packages.nix
-    ./starship.nix
-    ./fish.nix
+
+    # Terminal
+    ./git.nix
+    ./kitty.nix    
+
+    # Editors
     ./vscode.nix
     ./helix.nix
+    ./nvim.nix
+
+    # Customization
+    ./dconf.nix
+    ./fish.nix
+    ./starship.nix
 
     # Browsers
     ./firefox.nix

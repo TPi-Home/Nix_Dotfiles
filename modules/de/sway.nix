@@ -80,6 +80,7 @@
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     WLR_NO_HARDWARE_CURSORS=1;
   };
+  
 
   # --------------------------------------------------------------------------
   # Security
