@@ -74,6 +74,9 @@
     # Launcher
     fuzzel
 
+    # Status Bar
+    waybar
+
     # Notifications
     libnotify
     mako
