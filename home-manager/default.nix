@@ -6,13 +6,13 @@
 
 {
   imports = [
-    
+
     # Misc
     ./pkg/packages.nix
 
     # Terminal
     ./pkg/git.nix
-    ./pkg/kitty.nix    
+    ./pkg/kitty.nix
 
     # Editors
     ./pkg/vscode.nix
@@ -45,13 +45,13 @@
 
   home.username = "tyler";
   home.homeDirectory = "/home/tyler";
-  
-  home.sessionVariables = 
-  {
+
+  home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
+    NIXOS_OZONE_WL = "1";
   };
-  
+
   fonts.fontconfig.enable = true;
 
   home.stateVersion = "26.11";
