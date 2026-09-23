@@ -1,12 +1,11 @@
 # ============================================================================
 # Systemd Services and Service Hardening
 # ============================================================================
-  
-{...}:
+
+{ ... }:
 
 {
-  systemd.services.greetd.serviceConfig = 
-  {
+  systemd.services.greetd.serviceConfig = {
     PrivateTmp = true;
     LockPersonality = true;
     RestrictRealtime = true;
@@ -17,12 +16,11 @@
     ProtectKernelLogs = true;
     ProtectKernelModules = true;
 
-    NoNewPrivileges = true;
     RestrictNamespaces = true;
   };
 
-  # For: 
-  # NIXOS_OZONE_WL = "1"; 
+  # For:
+  # NIXOS_OZONE_WL = "1";
   # Try:
   # services.logind.killUserProcesses = true;
 

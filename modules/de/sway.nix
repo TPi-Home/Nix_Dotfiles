@@ -5,21 +5,18 @@
 { pkgs, ... }:
 
 {
-  programs.sway = 
-  {
+  programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
 
-    extraPackages = with pkgs; 
-    [
+    extraPackages = with pkgs; [
       swayidle
       swaylock
       swaybg
       swayfx
     ];
 
-    extraOptions = 
-    [
+    extraOptions = [
       "--unsupported-gpu"
     ];
   };
@@ -41,8 +38,7 @@
   # Bluetooth
   # --------------------------------------------------------------------------
 
-  hardware.bluetooth = 
-  {
+  hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
@@ -51,18 +47,17 @@
   # Wayland
   # --------------------------------------------------------------------------
 
-  xdg.portal = 
-  {
+  xdg.portal = {
     enable = true;
     wlr.enable = true;
   };
 
-  environment.sessionVariables = 
-  {
+  environment.sessionVariables = {
     SWAY_UNSUPPORTED_GPU = "1";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = 1;
   };
 
   # --------------------------------------------------------------------------
@@ -75,8 +70,7 @@
   # Sway Runtime Utilities
   # --------------------------------------------------------------------------
 
-  environment.systemPackages = with pkgs; 
-  [
+  environment.systemPackages = with pkgs; [
     # Launcher
     fuzzel
 

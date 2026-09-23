@@ -55,7 +55,7 @@ set $menu fuzzel
 # Startup
 # ----------------------------------------------------------------------------
 
-exec swaybar
+exec waybar
 exec_always kanshictl reload
 exec mako
 exec udiskie
