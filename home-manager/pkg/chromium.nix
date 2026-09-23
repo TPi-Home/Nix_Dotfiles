@@ -9,7 +9,7 @@
     enable = true;
 
     commandLineArgs = [
-      "--force-device-scale-factor=1.5"
+      "--force-device-scale-factor=1.25"
     ];
 
     extensions = [
