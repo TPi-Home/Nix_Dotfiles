@@ -124,8 +124,6 @@ Their packages are installed by NixOS; their configuration is primarily managed 
 > Individual applications own their **configuration and behavior**.
 
 
-
-
 | Final Sway Stack: | |
   |---|---|
   | a Wi-Fi GUI | `nm-applet` |
@@ -152,20 +150,11 @@ Their packages are installed by NixOS; their configuration is primarily managed 
   |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
   |cursors|`Adwaita`|
   |file manager| tui|
-  |wayland session mgmt|`uwsm`|
 
 ### Keybindings
 NEEDS WORK
 
-## Wayland Scaling and X11 Support in Sway
-
-### UWSM
----
-
-* `services.dbus.implementation = "broker";` - uwsm default
-* `uwsm` 
-    * connects the Wayland compositor session to the existing user session infrastructure, which in this case is dbus and systemd 
-    * propagates the graphical session environment
+## Wayland and Scaling/X11 Support in Sway
 
 ### Sway Scaling
 ---
