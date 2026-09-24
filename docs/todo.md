@@ -17,6 +17,8 @@
 * Save File Manager
 * Switch from gtk apps to tui apps launched via kitty
 * No brightnessctl
+* Check shells for inspo
+* White text on waybar may be cleaner 
 ### Security
 * I need to setup some containers
 ### Misc
