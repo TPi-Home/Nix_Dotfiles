@@ -29,6 +29,7 @@
 * Qt
 
 ## Ownership
+
 ### NixOS
 
 **Owns the system**
@@ -75,11 +76,13 @@
 - Outputs
 - Rendering
 - XWayland
-- Programs explicitly launched by the Sway config
+- Programs explicitly launched by the Sway configuration
+
+Sway is launched by greetd in this setup. Systemd may provide user/session services used by applications, but it is not the owner of the Sway graphical session.
 
 **Files**
 - `modules/de/sway.nix` → installs/enables Sway
-- `home-manager/sway/sway.nix` → HM integration
+- `home-manager/sway/sway.nix` → Home Manager integration
 - `home/.config/sway/config` → actual Sway configuration
 
 ### Home Manager
@@ -93,6 +96,8 @@
 
 **Directory**
 - `home-manager/`
+
+Home Manager integrates with Sway but does not replace greetd as the mechanism that starts the Sway session in this setup.
 
 ### `home/.config`
 
@@ -119,8 +124,9 @@ Their packages are installed by NixOS; their configuration is primarily managed 
 ### Ownership Rule
 
 > NixOS owns the **system**.  
-> Home Manager owns the **user environment**.  
+> greetd owns **login and session startup**.  
 > Sway owns the **graphical session**.  
+> Home Manager owns the **user environment and configuration deployment**.  
 > Individual applications own their **configuration and behavior**.
 
 

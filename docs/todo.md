@@ -14,8 +14,7 @@
 * Would like to end dependency on UWSM
 ### Inconsistent UI
 * Save File Manager
-* No Power Button
-
+* 
 ### Security
 * I need to setup some containers
 ### Misc

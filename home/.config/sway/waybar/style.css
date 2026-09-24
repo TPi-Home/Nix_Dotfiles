@@ -44,7 +44,7 @@
 #waybar {
     background: alpha(@black, 0.94);
     color: @text;
-    border: 1px solid alpha(@blue, 0.18);
+    border: 2px solid alpha(@blue, 0.18);
     border-radius: 0;
     box-shadow:
         0 18px 48px alpha(@black, 0.45),
@@ -146,7 +146,7 @@
 #network {
     color: @blue;
     padding: 0 12px;
-    border: 1px solid alpha(@blue, 0.22);
+    border: 2px solid alpha(@blue, 0.22);
 }
 
 #network:hover {
@@ -165,7 +165,7 @@
 #pulseaudio {
     color: @purple;
     padding: 0 12px;
-    border: 1px solid alpha(@purple, 0.22);
+    border: 2px solid alpha(@purple, 0.22);
 }
 
 #pulseaudio:hover {
@@ -185,7 +185,7 @@
 #battery {
     color: @green;
     padding: 0 12px;
-    border: 1px solid alpha(@green, 0.22);
+    border: 2px solid alpha(@green, 0.22);
 }
 
 #battery:hover {
@@ -215,7 +215,7 @@
 #clock {
     color: @bright-purple;
     padding: 0 14px;
-    border: 1px solid alpha(@purple, 0.24);
+    border: 2px solid alpha(@purple, 0.24);
 }
 
 #clock:hover {
@@ -227,7 +227,7 @@
 
 #power-profiles-daemon {
     padding: 0 12px;
-    border: 1px solid alpha(@blue, 0.22);
+    border: 2px solid alpha(@blue, 0.22);
 }
 
 #power-profiles-daemon.performance {
@@ -254,7 +254,7 @@
 #custom-power {
     color: @blue;
     padding: 0 12px;
-    border: 1px solid alpha(@blue, 0.22);
+    border: 2px solid alpha(@blue, 0.22);
 }
 
 #custom-power:hover {
@@ -267,7 +267,7 @@
 #tray {
     color: @blue;
     padding: 0 10px;
-    border: 1px solid alpha(@blue, 0.20);
+    border: 2px solid alpha(@blue, 0.20);
 }
 
 #tray > .passive {
@@ -286,7 +286,7 @@
 tooltip {
     background: alpha(@float, 0.98);
     color: @text;
-    border: 1px solid alpha(@blue, 0.22);
+    border: 2px solid alpha(@blue, 0.22);
     border-radius: 0;
     box-shadow:
         0 8px 24px alpha(@black, 0.45);
