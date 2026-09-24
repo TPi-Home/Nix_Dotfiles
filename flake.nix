@@ -4,13 +4,18 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, stylix, home-manager, ... }:
     {
       nixosConfigurations = {
         generic = nixpkgs.lib.nixosSystem {
@@ -19,6 +24,8 @@
           modules = [
             ./modules/default.nix
             ./hosts/generic/hardware-configuration.nix
+
+            stylix.nixosModules.stylix
 
             home-manager.nixosModules.home-manager
 
@@ -32,4 +39,3 @@
       };
     };
 }
-

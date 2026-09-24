@@ -12,9 +12,11 @@
 * Alignment of windows and waybar
 * Electron apps bugging out in x11
 * Would like to end dependency on UWSM
+* Enable power management
 ### Inconsistent UI
 * Save File Manager
 * Switch from gtk apps to tui apps launched via kitty
+* No brightnessctl
 ### Security
 * I need to setup some containers
 ### Misc

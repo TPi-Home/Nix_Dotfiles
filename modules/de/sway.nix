@@ -5,18 +5,21 @@
 { pkgs, ... }:
 
 {
-  programs.sway = {
+  programs.sway = 
+  {
     enable = true;
     wrapperFeatures.gtk = true;
 
-    extraPackages = with pkgs; [
+    extraPackages = with pkgs; 
+    [
       swayidle
       swaylock
       swaybg
       swayfx
     ];
 
-    extraOptions = [
+    extraOptions = 
+    [
       "--unsupported-gpu"
     ];
   };
@@ -32,13 +35,14 @@
   # Networking
   # --------------------------------------------------------------------------
 
-  programs.nm-applet.enable = true;
+  # programs.nm-applet.enable = true;
 
   # --------------------------------------------------------------------------
   # Bluetooth
   # --------------------------------------------------------------------------
 
-  hardware.bluetooth = {
+  hardware.bluetooth = 
+  {
     enable = true;
     powerOnBoot = true;
   };
@@ -47,9 +51,12 @@
   # Wayland
   # --------------------------------------------------------------------------
 
-  xdg.portal = {
+  xdg.portal = 
+  {
     enable = true;
 
+    # Application -> XDG Desktop Portal -> wlroots portal backend -> 
+    # PipeWire -> Back to Application
     wlr.enable = true;
 
     extraPortals = [
@@ -63,13 +70,20 @@
     };
   };
 
-  environment.sessionVariables = {
+  # --------------------------------------------------------------------------
+  # Environment 
+  # --------------------------------------------------------------------------
+
+  environment.sessionVariables = 
+  {
     SWAY_UNSUPPORTED_GPU = "1";
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
+
+  programs.qt5ct.enable = true;
 
   # --------------------------------------------------------------------------
   # Security
@@ -81,7 +95,8 @@
   # Sway Runtime Utilities
   # --------------------------------------------------------------------------
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; 
+  [
     # Launcher
     fuzzel
 
@@ -95,7 +110,6 @@
     # Screenshots
     grim
     slurp
-    swappy
     sway-contrib.grimshot
 
     # Clipboard
@@ -105,12 +119,10 @@
     udiskie
 
     # Bluetooth GUI
-    blueman
+    bluetuith
 
     # Audio
-    pulseaudio
-    pavucontrol
-    pamixer
+    wiremix
 
     # TUI File Manager
     nnn

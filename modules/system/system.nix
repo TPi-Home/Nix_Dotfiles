@@ -22,6 +22,8 @@
   ];
 
   # Theme Support
+  stylix.enable = true;
+  stylix.autoEnable = false;
   programs.dconf.enable = true;
 
   # Wayland Support 

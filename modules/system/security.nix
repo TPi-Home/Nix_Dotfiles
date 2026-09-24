@@ -15,7 +15,7 @@
     #  Extra Security Packages
     # --------------------------------------------------------------------------
     bubblewrap
-    polkit_gnome
+    # polkit_gnome
 
   ];
 }

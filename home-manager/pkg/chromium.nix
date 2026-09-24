@@ -5,14 +5,17 @@
 { ... }:
 
 {
-  programs.chromium = {
+  programs.chromium = 
+  {
     enable = true;
 
-    commandLineArgs = [
+    commandLineArgs = 
+    [
       "--force-device-scale-factor=1.25"
     ];
 
-    extensions = [
+    extensions = 
+    [
       "ddkjiahejlhfcafbddmgiahcphecmpfh" # uBlock Origin Lite
     ];
   };

@@ -86,7 +86,8 @@
         "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%\nInterface: {ifname}",
         "tooltip-format-ethernet": "Ethernet\n{ifname}\n{ipaddr}/{cidr}",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "kitty -e nmtui"
     },
 
     "pulseaudio":
@@ -112,7 +113,7 @@
             ]
         },
 
-        "on-click": "pavucontrol"
+        "on-click": "kitty -e wiremix"
     },
 
     "battery":
@@ -155,7 +156,7 @@
     {
         "format": "⏻",
         "tooltip": false,
-        "on-click": "wlogout"
+        "on-click":"swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Suspend' 'swaymsg exec systemctl suspend' -b 'shutdown' 'systemctl shutdown'" 
     },
 
     "tray":

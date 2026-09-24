@@ -5,11 +5,14 @@
 { config, pkgs, ... }:
 
 {
-  services.greetd = {
+  services.greetd = 
+  {
     enable = true;
 
-    settings = {
-      default_session = {
+    settings = 
+    {
+      default_session = 
+      {
         user = "greeter";
         command =
           "${pkgs.tuigreet}/bin/tuigreet "
@@ -30,7 +33,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; 
+  [
     tuigreet
   ];
 }
