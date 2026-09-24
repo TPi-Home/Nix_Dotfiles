@@ -68,7 +68,7 @@
     GBM_BACKEND = "nvidia-drm";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = 1;
+    NIXOS_OZONE_WL = "1";
   };
 
   # --------------------------------------------------------------------------
@@ -110,15 +110,12 @@
     # Audio
     pulseaudio
     pavucontrol
+    pamixer
 
     # TUI File Manager
     nnn
 
-    # Logout
-    wlogout
-    wleave
-    waylogout
-    pamixer
+    # Misc
     procps
   ];
 
@@ -127,4 +124,22 @@
   # --------------------------------------------------------------------------
 
   services.udisks2.enable = true;
+
+  # --------------------------------------------------------------------------
+  # Wayland Session Management
+  # --------------------------------------------------------------------------
+
+  programs.uwsm =
+  {
+    enable = true;
+    waylandCompositors = 
+    {
+      sway = 
+      {
+        prettyName = "Sway";
+        comment = "Sway compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/sway";
+      };
+    };
+  };
 }

@@ -14,7 +14,7 @@
 * Would like to end dependency on UWSM
 ### Inconsistent UI
 * Save File Manager
-* 
+* Switch from gtk apps to tui apps launched via kitty
 ### Security
 * I need to setup some containers
 ### Misc

@@ -114,7 +114,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
     swaynag -t logout \
     -m 'Log out of Sway?' \
-    -b 'Yes, log out' 'swaymsg exit'
+    -b 'Yes, log out' 'uwsm stop'
 
 # ----------------------------------------------------------------------------
 # Focus
