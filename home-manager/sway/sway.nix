@@ -30,8 +30,6 @@
   {
     xwayland = true;
 
-    systemd.enable = false;
-
     config = {
       output."eDP-2".scale = "1";
     };
