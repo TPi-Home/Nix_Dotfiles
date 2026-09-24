@@ -23,7 +23,8 @@
         "pulseaudio",
         "battery",
         "power-profiles-daemon",
-        "tray"
+        "tray",
+        "custom/power"
     ],
 
     "sway/workspaces":
@@ -154,5 +155,13 @@
     {
         "icon-size": 28,
         "spacing": 7
+    },
+
+    "custom/power": 
+    {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout"
     }
+
 }

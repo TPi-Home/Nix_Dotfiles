@@ -8,9 +8,9 @@
   programs.waybar = {
     enable = true;
 
-    style = ../../home/.config/waybar/style.css;
+    style = ../../home/.config/sway/waybar/style.css;
   };
 
   xdg.configFile."waybar/config.jsonc".source =
-    ../../home/.config/waybar/config.jsonc;
+    ../../home/.config/sway/waybar/config.jsonc;
 }

@@ -131,6 +131,7 @@
 #battery,
 #clock,
 #power-profiles-daemon,
+#custom-power,
 #tray {
     background: @inactive;
     border-radius: 0;
@@ -225,41 +226,40 @@
 /* Power Profile */
 
 #power-profiles-daemon {
-
     padding: 0 12px;
-
     border: 1px solid alpha(@blue, 0.22);
-
 }
 
 #power-profiles-daemon.performance {
-
     color: @purple;
-
     border-color: alpha(@blue, 0.35);
-
 }
 
 #power-profiles-daemon.balanced {
-
     color: @blue;
-
     border-color: alpha(@border, 0.45);
-
 }
 
 #power-profiles-daemon.power-saver {
-
     color: @green;
-
     border-color: alpha(@green, 0.30);
-
 }
 
 #power-profiles-daemon:hover {
-
     background: @highlight;
+}
 
+/* Power Button */
+
+#custom-power {
+    color: @blue;
+    padding: 0 12px;
+    border: 1px solid alpha(@blue, 0.22);
+}
+
+#custom-power:hover {
+    background: @highlight;
+    border-color: alpha(@blue, 0.50);
 }
 
 /* Tray */
