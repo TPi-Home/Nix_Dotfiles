@@ -112,8 +112,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
     swaynag -t logout \
     -m 'Log out of Sway?' \
-    -b 'Yes, log out' 'loginctl terminate-session "$XDG_SESSION_ID"'
-
+    -b 'Yes, log out' 'systemctl --user stop wayland-session.scope'
 
 # ----------------------------------------------------------------------------
 # Focus
@@ -209,7 +208,7 @@ output * bg /home/tyler/Pictures/Hilltopper.png fill
 # Easy Enable
 # ----------------------------------------------------------------------------
 
-# Idle:
+# Idle Lock:
 #exec swayidle -w \\
 #    timeout 600 'swaylock -f' \\
 #    timeout 1200 'swaymsg "output * dpms off"' \\

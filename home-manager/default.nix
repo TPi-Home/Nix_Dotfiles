@@ -20,7 +20,7 @@
     ./pkg/nvim.nix
 
     # Customization
-    # ./pkg/dconf.nix
+    ./pkg/dconf.nix
     ./pkg/fish.nix
     ./pkg/starship.nix
     ./stylix/default.nix

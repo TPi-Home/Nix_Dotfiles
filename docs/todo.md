@@ -13,6 +13,27 @@
 * Electron apps bugging out in x11
 * Would like to end dependency on UWSM
 * Enable power management
+### Systemd
+*
+```  systemd.user.services.kanshi = {
+    description = "Kanshi output autoconfig ";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    environment = { XDG_CONFIG_HOME="/home/mschwaig/.config"; };
+    serviceConfig = {
+      # kanshi doesn't have an option to specifiy config file yet, so it looks
+      # at .config/kanshi/config
+      ExecStart = ''
+      ${pkgs.kanshi}/bin/kanshi
+      '';
+      RestartSec = 5;
+      Restart = "always";
+    };
+  };``` 
+  and rm exec from sway
+
+* may have to find a tty based setup so the session-*.scope that sway ends up in is not the same as the levels of network manager or display manager for example
+* what a mess this has become
 ### Inconsistent UI
 * Keep showing workspace if empty but < current workspace
 * Save File Manager
@@ -20,6 +41,9 @@
 * No brightnessctl
 * Check shells for inspo
 * White text on waybar may be cleaner 
+* Scroll and mouse speed
+* Retro folder theme for thunar
+* 12 hr time and no tooltip, maybe white text, explore simple swaybar solution`
 ### Security
 * I need to setup some containers
 ### Misc

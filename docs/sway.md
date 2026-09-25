@@ -59,75 +59,42 @@
 
 **Owns login**
 - Login screen
+- Authentication
 - Session selection
-- Starting the selected Wayland session
-- Ending the login session
+- Selecting the Wayland session from its `.desktop` entry
+- Starting the selected session through the session wrapper
+- Returning to the login screen after the graphical session ends
 
 **File**
 - `modules/dm/tuigreet.nix`
 
-### Sway
+greetd / tuigreet owns the **login interface**, but not the lifetime of individual applications inside the graphical session.
 
-**Owns the graphical session**
-- Windows
-- Workspaces
-- Keybindings
-- Input
-- Outputs
-- Rendering
-- XWayland
-- Programs explicitly launched by the Sway configuration
+### systemd user session scope
 
-Sway is launched by greetd in this setup. Systemd may provide user/session services used by applications, but it is not the owner of the Sway graphical session.
+**Owns the graphical session lifecycle**
+- Provides the cgroup boundary for the graphical session
+- Starts the selected Wayland session inside that boundary
+- Tracks processes belonging to the graphical session
+- Terminates the graphical session as a unit
 
-**Files**
-- `modules/de/sway.nix` → installs/enables Sway
-- `home-manager/sway/sway.nix` → Home Manager integration
-- `home/.config/sway/config` → actual Sway configuration
+The session is launched through:
+systemd --user
+└── wayland-session.scope
+    └── selected Wayland session
+        └── Sway
 
-### Home Manager
-
-**Owns user configuration**
-- User applications
-- User services
-- XDG configuration
-- Application configuration
-- User environment
-
-**Directory**
-- `home-manager/`
-
-Home Manager integrates with Sway but does not replace greetd as the mechanism that starts the Sway session in this setup.
-
-### `home/.config`
-
-**Owns application configuration directly**
-
-- `sway/` → Sway
-- `waybar/` → Waybar
-- `fuzzel/` → Fuzzel
-- Other `.config/*` → respective application
-
-Home Manager deploys these files. It does not define what the applications themselves do.
-
-### Desktop Utilities
-
-- **Waybar** → status bar
-- **Kanshi** → output profiles
-- **Fuzzel** → application launcher
-- **Mako** → notifications
-- **Swayidle** → idle handling
-- **Swaylock** → screen locking
-
-Their packages are installed by NixOS; their configuration is primarily managed through Home Manager / `home/.config`.
-
-### Ownership Rule
-
-> NixOS owns the **system**.  
-> greetd owns **login and session startup**.  
-> Sway owns the **graphical session**.  
-> Home Manager owns the **user environment and configuration deployment**.  
-> Individual applications own their **configuration and behavior**.
+Which should allow for:
+systemd
+└─ user@1000.service
+   ├─ tty/login session
+   │  └─ greetd/tuigreet
+   │
+   └─ wayland-session.scope
+      └─ Sway
+         ├─ Waybar
+         ├─ Firefox
+         ├─ Kitty
 
 
 | Final Sway Stack: | |

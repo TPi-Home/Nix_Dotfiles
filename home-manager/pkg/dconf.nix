@@ -1,27 +1,24 @@
 { pkgs, ... }:
 
 {
-  gtk = {
+  gtk = 
+  {
     enable = true;
-
-    gtk3 = {
-      enable = true;
-      colorScheme = "dark";
-
-      theme = {
-        package = pkgs.gnome-themes-extra;
-        name = "Adwaita";
-      };
+    
+    gtk3.extraConfig = 
+    {
+      gtk-application-prefer-dark-theme = 1;
     };
-
-    gtk4 = {
-      enable = true;
-      colorScheme = "dark";
+    gtk4.extraConfig = 
+    {
+      gtk-application-prefer-dark-theme = 1;
     };
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
+  dconf.settings = 
+  {
+    "org/gnome/desktop/interface" = 
+    {
       color-scheme = "prefer-dark";
     };
   };

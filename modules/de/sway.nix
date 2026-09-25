@@ -25,6 +25,22 @@
   };
 
   # --------------------------------------------------------------------------
+  # Thunar & File System Backends
+  # --------------------------------------------------------------------------
+
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman       
+    ];
+  };
+
+  programs.xfconf.enable = true;  # Saves Thunar's internal settings
+  services.gvfs.enable = true;     # Core virtual file system (needed for trash & USB mounts)
+  services.tumbler.enable = true;  # Generates image thumbnails in Thunar
+
+  # --------------------------------------------------------------------------
   # Waybar
   # --------------------------------------------------------------------------
 
@@ -75,23 +91,11 @@
   };
 
   # --------------------------------------------------------------------------
-  # Environment 
-  # --------------------------------------------------------------------------
-
-  environment.sessionVariables = 
-  {
-    SWAY_UNSUPPORTED_GPU = "1";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    NIXOS_OZONE_WL = "1";
-  };
-
-  # --------------------------------------------------------------------------
-  # Security
+  # Security & Permissions
   # --------------------------------------------------------------------------
 
   security.pam.services.swaylock = { };
+  
 
   # --------------------------------------------------------------------------
   # Sway Runtime Utilities
@@ -118,9 +122,6 @@
     # Clipboard
     wl-clipboard
 
-    # Removable devices
-    thunar-volman
-
     # Bluetooth
     bluetuith
     blueman
@@ -134,17 +135,10 @@
 
     # File Manager
     nnn
-    thunar
 
     # Misc
     procps
     wlogout
   ];
-
-  # --------------------------------------------------------------------------
-  # Storage
-  # --------------------------------------------------------------------------
-
-  services.udisks2.enable = true;
 
 }

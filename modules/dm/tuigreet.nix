@@ -17,6 +17,7 @@
         command =
           "${pkgs.tuigreet}/bin/tuigreet "
           + "--sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions "
+          + "--session-wrapper 'systemd-run --user --scope --unit=wayland-session' "
           + "--time "
           + "--time-format '%a %b %d  %H:%M' "
           + "--greeting 'Welcome back!' "
