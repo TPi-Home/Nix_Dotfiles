@@ -11,7 +11,7 @@
 
     commandLineArgs = 
     [
-      "--force-device-scale-factor=1.25"
+      "--force-device-scale-factor=1.5"
     ];
 
     extensions = 

@@ -25,6 +25,20 @@
   };
 
   # --------------------------------------------------------------------------
+  # Waybar
+  # --------------------------------------------------------------------------
+
+  systemd.user.services.waybar.path = with pkgs; 
+  [
+    wlogout
+    wleave
+    pavucontrol
+    waylogout
+    pamixer
+    procps
+  ];
+
+  # --------------------------------------------------------------------------
   # Power
   # --------------------------------------------------------------------------
 
@@ -35,7 +49,7 @@
   # Networking
   # --------------------------------------------------------------------------
 
-  # programs.nm-applet.enable = true;
+  programs.nm-applet.enable = true;
 
   # --------------------------------------------------------------------------
   # Bluetooth
@@ -58,16 +72,6 @@
     # Application -> XDG Desktop Portal -> wlroots portal backend -> 
     # PipeWire -> Back to Application
     wlr.enable = true;
-
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-
-    config = {
-      sway = {
-        default = [ "gtk" ];
-      };
-    };
   };
 
   # --------------------------------------------------------------------------
@@ -82,8 +86,6 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
-
-  programs.qt5ct.enable = true;
 
   # --------------------------------------------------------------------------
   # Security
@@ -110,25 +112,33 @@
     # Screenshots
     grim
     slurp
+    swappy
     sway-contrib.grimshot
 
     # Clipboard
     wl-clipboard
 
     # Removable devices
-    udiskie
+    thunar-volman
 
-    # Bluetooth GUI
+    # Bluetooth
     bluetuith
+    blueman
+
+    # Removable devices
+    udiskie
 
     # Audio
     wiremix
+    pavucontrol
 
-    # TUI File Manager
+    # File Manager
     nnn
+    thunar
 
     # Misc
     procps
+    wlogout
   ];
 
   # --------------------------------------------------------------------------
@@ -137,21 +147,4 @@
 
   services.udisks2.enable = true;
 
-  # --------------------------------------------------------------------------
-  # Wayland Session Management
-  # --------------------------------------------------------------------------
-
-  programs.uwsm =
-  {
-    enable = true;
-    waylandCompositors = 
-    {
-      sway = 
-      {
-        prettyName = "Sway";
-        comment = "Sway compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/sway";
-      };
-    };
-  };
 }

@@ -55,14 +55,12 @@ set $menu fuzzel
 # Startup
 # ----------------------------------------------------------------------------
 
-#exec dbus-update-activation-environment --systemd --all
+exec dbus-update-activation-environment --systemd --all
 exec waybar
 exec kanshi
 exec_always kanshictl reload
 exec mako
 exec udiskie
-exec nm-applet
-exec blueman-applet
 exec swayidle -w \
     timeout 300 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"'
@@ -114,7 +112,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec \
     swaynag -t logout \
     -m 'Log out of Sway?' \
-    -b 'Yes, log out' 'uwsm stop'
+    -b 'Yes, log out' 'loginctl terminate-session "$XDG_SESSION_ID"'
+
 
 # ----------------------------------------------------------------------------
 # Focus

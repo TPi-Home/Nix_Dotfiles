@@ -5,9 +5,6 @@
 { ... }:
 
 {
-  # Leaving this here in case of home-manager corruption:
-  programs.firefox.enable = true; 
-
   # Input Hardware Support
   services.libinput.enable = true;
 
@@ -21,11 +18,4 @@
     "flakes"
   ];
 
-  # Theme Support
-  stylix.enable = true;
-  stylix.autoEnable = false;
-  programs.dconf.enable = true;
-
-  # Wayland Support 
-  services.dbus.implementation = "broker";
 }

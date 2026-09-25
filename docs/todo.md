@@ -14,6 +14,7 @@
 * Would like to end dependency on UWSM
 * Enable power management
 ### Inconsistent UI
+* Keep showing workspace if empty but < current workspace
 * Save File Manager
 * Switch from gtk apps to tui apps launched via kitty
 * No brightnessctl
