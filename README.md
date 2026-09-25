@@ -1,5 +1,6 @@
 # Nix_Dot_Files
 I am likely going to regret this. 
+> **Warning:** This is nowhere near done. I would not advise anybody try to use these. I would look for either a more complete shell or just start from scratch before copying files that are in such a state of disarray. I am currently experimenting quite a bit. You have been warned. 
 
 ## Table of Contents
 - [README](README.md)

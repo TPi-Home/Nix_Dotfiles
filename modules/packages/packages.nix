@@ -69,8 +69,8 @@
     # Dependencies
     # --------------------------------------------------------------------------
     
-    gtk3
-    gtk4
+    #gtk3
+    #gtk4
 
     # --------------------------------------------------------------------------
     # Nix Tools (doubt I will install all of these, just reading documentation)
