@@ -5,8 +5,6 @@
 { config, ... }:
 
 {
-  gtk.enable = true;
-
   stylix = {
     enable = true;
     autoEnable = false;

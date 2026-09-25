@@ -26,13 +26,18 @@
             ./hosts/generic/hardware-configuration.nix
 
             stylix.nixosModules.stylix
-
             home-manager.nixosModules.home-manager
 
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.tyler = import ./home-manager/default.nix;
+
+              home-manager.users.tyler = {
+                imports = [
+                  stylix.homeModules.stylix
+                  ./home-manager/default.nix
+                ];
+              };
             }
           ];
         };

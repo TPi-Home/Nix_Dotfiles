@@ -23,7 +23,7 @@
     # ./pkg/dconf.nix
     ./pkg/fish.nix
     ./pkg/starship.nix
-    ./stylix/stylix.nix
+    ./stylix/default.nix
 
     # Browsers
     ./pkg/firefox.nix
