@@ -65,6 +65,7 @@
   # Networking
   # --------------------------------------------------------------------------
 
+  # PartOf=graphical-session.target
   programs.nm-applet.enable = true;
 
   # --------------------------------------------------------------------------
@@ -76,6 +77,10 @@
     enable = true;
     powerOnBoot = true;
   };
+
+
+  # PartOf=graphical-session.target
+  services.blueman.enable = true;
 
   # --------------------------------------------------------------------------
   # Wayland
@@ -124,7 +129,6 @@
 
     # Bluetooth
     bluetuith
-    blueman
 
     # Removable devices
     udiskie
