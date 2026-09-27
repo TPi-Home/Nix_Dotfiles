@@ -11,6 +11,7 @@
  * -------------------------------------------------------------------------- */
 
 @define-color black #111317;
+
 @define-color inactive #16181D;
 @define-color base #1A1D23;
 @define-color float #14161B;
@@ -21,19 +22,12 @@
 
 @define-color blue #50A4E9;
 @define-color bright-blue #5EB7FF;
-@define-color purple #CC83E3;
-@define-color bright-purple #DD97F1;
 
+@define-color white #E6E7EB;
 @define-color text #ADB0BB;
 @define-color text-dim #9B9FA9;
 @define-color text-muted #696C76;
 @define-color text-inactive #494D56;
-
-@define-color green #87C05F;
-@define-color yellow #DFAB25;
-@define-color orange #F5983A;
-@define-color red #FF838B;
-@define-color cyan #4AC2B8;
 
 
 /* --------------------------------------------------------------------------
@@ -52,9 +46,9 @@ window {
 
 button {
     background: @inactive;
-    color: @text-dim;
+    color: @text;
 
-    border: 2px solid alpha(@border, 0.70);
+    border: 2px solid alpha(@border, 0.60);
     border-radius: 0;
 
     margin: 8px;
@@ -67,15 +61,21 @@ button {
     transition:
         background-color 150ms ease,
         border-color 150ms ease,
-        color 150ms ease;
+        color 150ms ease,
+        box-shadow 150ms ease;
 }
+
+
+/* --------------------------------------------------------------------------
+ * Hover / Focus
+ * -------------------------------------------------------------------------- */
 
 button:hover,
 button:focus {
     background: @highlight;
-    color: @text;
+    color: @white;
 
-    border-color: alpha(@blue, 0.50);
+    border-color: alpha(@blue, 0.55);
 
     box-shadow:
         0 8px 26px alpha(@black, 0.35),
@@ -84,66 +84,17 @@ button:focus {
 
 
 /* --------------------------------------------------------------------------
- * Lock
+ * Active
  * -------------------------------------------------------------------------- */
 
-#lock:hover,
-#lock:focus {
-    color: @green;
-    border-color: alpha(@green, 0.60);
+button:active {
+    background: @selection;
+    color: @bright-blue;
+
+    border-color: @blue;
+
+    box-shadow:
+        0 6px 20px alpha(@blue, 0.15),
+        0 0 0 1px alpha(@blue, 0.08);
 }
 
-
-/* --------------------------------------------------------------------------
- * Logout
- * -------------------------------------------------------------------------- */
-
-#logout:hover,
-#logout:focus {
-    color: @yellow;
-    border-color: alpha(@yellow, 0.60);
-}
-
-
-/* --------------------------------------------------------------------------
- * Suspend
- * -------------------------------------------------------------------------- */
-
-#suspend:hover,
-#suspend:focus {
-    color: @cyan;
-    border-color: alpha(@cyan, 0.60);
-}
-
-
-/* --------------------------------------------------------------------------
- * Hibernate
- * -------------------------------------------------------------------------- */
-
-#hibernate:hover,
-#hibernate:focus {
-    color: @purple;
-    border-color: alpha(@purple, 0.60);
-}
-
-
-/* --------------------------------------------------------------------------
- * Shutdown
- * -------------------------------------------------------------------------- */
-
-#shutdown:hover,
-#shutdown:focus {
-    color: @red;
-    border-color: alpha(@red, 0.60);
-}
-
-
-/* --------------------------------------------------------------------------
- * Reboot
- * -------------------------------------------------------------------------- */
-
-#reboot:hover,
-#reboot:focus {
-    color: @orange;
-    border-color: alpha(@orange, 0.60);
-}

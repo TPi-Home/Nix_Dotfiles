@@ -35,6 +35,7 @@
     # Desktop
     ./sway/sway.nix
     ./sway/waybar.nix
+    ./pkg/wlogout.nix
 
     # Application Launcher
     ./pkg/fuzzel.nix
