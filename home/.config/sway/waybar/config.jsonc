@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 50,
+    "height": 40,
     "margin-top": 0,
     "margin-left": 0,
     "margin-right": 0,
@@ -79,15 +79,19 @@
     "network":
     {
         "interval": 5,
-        "format-wifi": "",
-        "format-ethernet": "  ",
-        "format-linked": "  ",
-        "format-disconnected": "  ",
+
+        "format-wifi": " {ifname}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-linked": "󰌷 {ifname}",
+        "format-disconnected": "󰖪",
+
         "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%\nInterface: {ifname}",
         "tooltip-format-ethernet": "Ethernet\n{ifname}\n{ipaddr}/{cidr}",
         "tooltip-format-disconnected": "Disconnected",
+
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "kitty -e nmtui"
+
+        "on-click": "nm-applet"
     },
 
     "pulseaudio":
@@ -113,7 +117,7 @@
             ]
         },
 
-        "on-click": "kitty -e wiremix"
+        "on-click": "pavucontrol"
     },
 
     "battery":

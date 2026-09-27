@@ -144,9 +144,9 @@
 /* Network */
 
 #network {
-    color: @blue;
+    color: @text;
     padding: 0 12px;
-    border: 2px solid alpha(@blue, 0.22);
+    border: 2px solid alpha(@text, 0.22);
 }
 
 #network:hover {
@@ -155,27 +155,27 @@
 }
 
 #network.disconnected {
-    color: @purple;
-    border-color: alpha(@purple, 0.35);
+    color: @text-muted;
+    border-color: alpha(@text-muted, 0.35);
 }
 
 
 /* Audio */
 
 #pulseaudio {
-    color: @purple;
+    color: @text;
     padding: 0 12px;
     border: 2px solid alpha(@purple, 0.22);
 }
 
 #pulseaudio:hover {
-    background: @highlight;
-    border-color: alpha(@purple, 0.50);
+    background: @text-muted;
+    border-color: alpha(@text-muted, 0.50);
 }
 
 #pulseaudio.muted {
     color: @text-muted;
-    border-color: alpha(@border, 0.45);
+    border-color: alpha(@text-muted, 0.45);
     opacity: 0.65;
 }
 
@@ -213,14 +213,14 @@
 /* Clock */
 
 #clock {
-    color: @bright-purple;
+    color: @text;
     padding: 0 14px;
-    border: 2px solid alpha(@purple, 0.24);
+    border: 2px solid alpha(@text, 0.24);
 }
 
 #clock:hover {
-    background: @highlight;
-    border-color: alpha(@purple, 0.50);
+    background: @text-muted;
+    border-color: alpha(@text-muted, 0.50);
 }
 
 /* Power Profile */
@@ -252,14 +252,14 @@
 /* Power Button */
 
 #custom-power {
-    color: @blue;
+    color: @purple;
     padding: 0 12px;
-    border: 2px solid alpha(@blue, 0.22);
+    border: 2px solid alpha(@purple, 0.22);
 }
 
 #custom-power:hover {
     background: @highlight;
-    border-color: alpha(@blue, 0.50);
+    border-color: alpha(@[purple], 0.50);
 }
 
 /* Tray */

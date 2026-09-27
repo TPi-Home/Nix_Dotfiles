@@ -1,0 +1,26 @@
+system: "base16"
+
+name: "AstroDark"
+
+author: "AstroNvim / AstroTheme"
+
+variant: "dark"
+
+palette:
+  base00: "#1A1D23" # Default background
+  base01: "#16181D" # Lighter/darker background
+  base02: "#1E222A" # Current line
+  base03: "#696C76" # Comments
+  base04: "#797D87" # Dark foreground 
+  base05: "#9B9FA9" # Default foreground
+  base06: "#ADB0BB" # Bright foreground
+  base07: "#E0E0EE" # Brightest foreground
+
+  base08: "#FF838B" # Red
+  base09: "#F5983A" # Orange
+  base0A: "#DFAB25" # Yellow
+  base0B: "#87C05F" # Green
+  base0C: "#4AC2B8" # Cyan
+  base0D: "#5EB7FF" # Blue / Accent
+  base0E: "#DD97F1" # Purple
+  base0F: "#EB8332" # Orange / alternate

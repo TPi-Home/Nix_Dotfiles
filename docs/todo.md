@@ -9,11 +9,9 @@
 **This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents. I would like to update the directory structure in the readme before I try to tackle breaking this document up.**
 ## Configuration Organization
 ### Performance Cleanups 
-* Alignment of windows and waybar
-* Electron apps bugging out in x11
-* Would like to end dependency on UWSM
-* Enable power management
+* Considering Cachy kernel
 ### Systemd
+* I need fewer "exec" and more systemd integration
 *
 ```  systemd.user.services.kanshi = {
     description = "Kanshi output autoconfig ";
@@ -32,17 +30,13 @@
   };``` 
   and rm exec from sway
 
-* may have to find a tty based setup so the session-*.scope that sway ends up in is not the same as the levels of network manager or display manager for example
-* what a mess this has become
 ### Inconsistent UI
 * Keep showing workspace if empty but < current workspace
-* Save File Manager
-* Switch from gtk apps to tui apps launched via kitty
 * No brightnessctl
-* Check shells for inspo
+* Astrodark theme for vscode
 * White text on waybar may be cleaner 
 * Scroll and mouse speed
-* Retro folder theme for thunar
+* Retro folder icon theme for thunar
 * 12 hr time and no tooltip, maybe white text, explore simple swaybar solution`
 ### Security
 * I need to setup some containers

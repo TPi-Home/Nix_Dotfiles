@@ -1,0 +1,149 @@
+* {
+    font-family: "Monaspace Neon NF", "Symbols Nerd Font";
+    font-size: 30px;
+    font-weight: 500;
+    border: none;
+    text-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+ * Palette
+ * -------------------------------------------------------------------------- */
+
+@define-color black #111317;
+@define-color inactive #16181D;
+@define-color base #1A1D23;
+@define-color float #14161B;
+@define-color current #1E222A;
+@define-color highlight #23272F;
+@define-color selection #26343F;
+@define-color border #3A3E47;
+
+@define-color blue #50A4E9;
+@define-color bright-blue #5EB7FF;
+@define-color purple #CC83E3;
+@define-color bright-purple #DD97F1;
+
+@define-color text #ADB0BB;
+@define-color text-dim #9B9FA9;
+@define-color text-muted #696C76;
+@define-color text-inactive #494D56;
+
+@define-color green #87C05F;
+@define-color yellow #DFAB25;
+@define-color orange #F5983A;
+@define-color red #FF838B;
+@define-color cyan #4AC2B8;
+
+
+/* --------------------------------------------------------------------------
+ * Window
+ * -------------------------------------------------------------------------- */
+
+window {
+    background: alpha(@black, 0.94);
+    color: @text;
+}
+
+
+/* --------------------------------------------------------------------------
+ * Buttons
+ * -------------------------------------------------------------------------- */
+
+button {
+    background: @inactive;
+    color: @text-dim;
+
+    border: 2px solid alpha(@border, 0.70);
+    border-radius: 0;
+
+    margin: 8px;
+    padding: 20px;
+
+    box-shadow:
+        0 6px 22px alpha(@black, 0.30),
+        inset 0 1px alpha(@text, 0.025);
+
+    transition:
+        background-color 150ms ease,
+        border-color 150ms ease,
+        color 150ms ease;
+}
+
+button:hover,
+button:focus {
+    background: @highlight;
+    color: @text;
+
+    border-color: alpha(@blue, 0.50);
+
+    box-shadow:
+        0 8px 26px alpha(@black, 0.35),
+        0 0 0 1px alpha(@blue, 0.035);
+}
+
+
+/* --------------------------------------------------------------------------
+ * Lock
+ * -------------------------------------------------------------------------- */
+
+#lock:hover,
+#lock:focus {
+    color: @green;
+    border-color: alpha(@green, 0.60);
+}
+
+
+/* --------------------------------------------------------------------------
+ * Logout
+ * -------------------------------------------------------------------------- */
+
+#logout:hover,
+#logout:focus {
+    color: @yellow;
+    border-color: alpha(@yellow, 0.60);
+}
+
+
+/* --------------------------------------------------------------------------
+ * Suspend
+ * -------------------------------------------------------------------------- */
+
+#suspend:hover,
+#suspend:focus {
+    color: @cyan;
+    border-color: alpha(@cyan, 0.60);
+}
+
+
+/* --------------------------------------------------------------------------
+ * Hibernate
+ * -------------------------------------------------------------------------- */
+
+#hibernate:hover,
+#hibernate:focus {
+    color: @purple;
+    border-color: alpha(@purple, 0.60);
+}
+
+
+/* --------------------------------------------------------------------------
+ * Shutdown
+ * -------------------------------------------------------------------------- */
+
+#shutdown:hover,
+#shutdown:focus {
+    color: @red;
+    border-color: alpha(@red, 0.60);
+}
+
+
+/* --------------------------------------------------------------------------
+ * Reboot
+ * -------------------------------------------------------------------------- */
+
+#reboot:hover,
+#reboot:focus {
+    color: @orange;
+    border-color: alpha(@orange, 0.60);
+}
