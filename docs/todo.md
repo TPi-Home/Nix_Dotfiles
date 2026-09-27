@@ -42,15 +42,9 @@
 * I need to setup some containers
 ### Misc
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
-* Need to finish default nix files used to tie modules together, specifically for:
-  1. Audio
-  2. WM
 * Deployment scripts and documentation scripts
 * Revision of network configuration, perhaps per machine
-* Add scaling to Chromium, may need to write a wrapper like was done for Unity
 * Enable swaylock
-* Finish Hyprland and Niri modules
-* Harden Systemd
 * Add support for cloud storage & mount at boot
 * All code should use a C-family/Microsoft-like formatting style where the language permits it
 * Increase mouse movement speed

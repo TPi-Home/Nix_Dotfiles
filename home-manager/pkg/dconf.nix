@@ -1,23 +1,30 @@
 { pkgs, ... }:
 
 {
-  gtk = 
+  gtk =
   {
     enable = true;
-    
-    gtk3.extraConfig = 
+
+    iconTheme =
+    {
+      name = "Vimix-doder-dark";
+      package = pkgs.vimix-icon-theme;
+    };
+
+    gtk3.extraConfig =
     {
       gtk-application-prefer-dark-theme = 1;
     };
-    gtk4.extraConfig = 
+
+    gtk4.extraConfig =
     {
       gtk-application-prefer-dark-theme = 1;
     };
   };
 
-  dconf.settings = 
+  dconf.settings =
   {
-    "org/gnome/desktop/interface" = 
+    "org/gnome/desktop/interface" =
     {
       color-scheme = "prefer-dark";
     };

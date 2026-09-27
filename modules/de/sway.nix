@@ -139,6 +139,7 @@
 
     # File Manager
     nnn
+    vimix-icon-theme
 
     # Misc
     procps
