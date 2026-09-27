@@ -24,7 +24,7 @@ vim.opt.smartcase = true
 
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 10000
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -44,31 +44,26 @@ vim.opt.confirm = true
 vim.opt.termguicolors = true
 
 -- ============================================================================
+-- WHICH-KEY
+-- ============================================================================
+-- Set up early so every plugin section below can register its own group and
+-- keymaps together via wk.add, right next to the plugin it belongs to.
+
+local wk = require("which-key")
+
+wk.setup()
+
+-- ============================================================================
 -- KEYMAPS
 -- ============================================================================
 
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- Window navigation.
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", {
-  desc = "Move to left window",
-})
-
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", {
-  desc = "Move to lower window",
-})
-
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", {
-  desc = "Move to upper window",
-})
-
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", {
-  desc = "Move to right window",
-})
-
--- Keep standard terminal escape behavior.
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
-  desc = "Exit terminal mode",
+wk.add({
+  { "<Esc>", "<cmd>nohlsearch<CR>", desc = "Clear search highlight" },
+  { "<C-h>", "<C-w><C-h>", desc = "Move to left window" },
+  { "<C-j>", "<C-w><C-j>", desc = "Move to lower window" },
+  { "<C-k>", "<C-w><C-k>", desc = "Move to upper window" },
+  { "<C-l>", "<C-w><C-l>", desc = "Move to right window" },
+  { "<Esc><Esc>", "<C-\\><C-n>", mode = "t", desc = "Exit terminal mode" },
 })
 
 -- ============================================================================
@@ -77,24 +72,25 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
 
 vim.diagnostic.config({
   severity_sort = true,
+
   float = {
     border = "rounded",
     source = "if_many",
   },
+
   underline = {
     severity = {
       min = vim.diagnostic.severity.WARN,
     },
   },
+
   virtual_text = true,
 })
 
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, {
-  desc = "Diagnostics quickfix list",
-})
-
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, {
-  desc = "Show diagnostic",
+wk.add({
+  { "<leader>q", group = "diagnostics", icon = "󰒡" },
+  { "<leader>qq", vim.diagnostic.setloclist, desc = "Diagnostics to location list" },
+  { "<leader>qd", vim.diagnostic.open_float, desc = "Show diagnostic (cursor)" },
 })
 
 -- ============================================================================
@@ -107,6 +103,7 @@ local augroup = vim.api.nvim_create_augroup("user-config", {
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup,
+
   callback = function()
     vim.hl.on_yank()
   end,
@@ -114,13 +111,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.api.nvim_create_autocmd("VimResized", {
   group = augroup,
+
   callback = function()
     vim.cmd("tabdo wincmd =")
   end,
 })
 
 -- ============================================================================
--- THEME
+-- ASTROTHEME
 -- ============================================================================
 
 require("astrotheme").setup({
@@ -135,7 +133,6 @@ require("astrotheme").setup({
     transparent = false,
     inactive = true,
     float = true,
-    neotree = true,
     border = true,
     title_invert = true,
     italic_comments = true,
@@ -145,36 +142,35 @@ require("astrotheme").setup({
   termguicolors = true,
   terminal_colors = true,
 
+  -- We manage plugins with Nix rather than lazy.nvim/packer.
+  -- Explicitly enable AstroTheme's integrations for the plugins we use.
   plugin_default = false,
 
   plugins = {
-    ["aerial"] = true,
-    ["blink-cmp"] = true,
-    ["gitsigns"] = true,
-    ["indent-blankline"] = true,
-    ["mini"] = true,
-    ["miniicons"] = true,
-    ["neo-tree"] = true,
+    ["aerial.nvim"] = true,
+    ["blink.cmp"] = true,
+    ["gitsigns.nvim"] = true,
+
+    ["mini.nvim"] = true,
+    ["mini.icons"] = true,
+
     ["nvim-dap-ui"] = true,
     ["nvim-web-devicons"] = true,
     ["nvim-window-picker"] = true,
-    ["telescope"] = true,
-    ["todo-comments"] = true,
-    ["which-key"] = true,
+
+    ["snacks.nvim"] = true,
+
+    ["todo-comments.nvim"] = true,
+    ["which-key.nvim"] = true,
   },
 
   highlights = {
-   global = {},
-   astrodark = {},
+    global = {},
+    astrodark = {},
   },
 })
 
 vim.cmd.colorscheme("astrodark")
--- ============================================================================
--- WHICH-KEY
--- ============================================================================
-
-require("which-key").setup()
 
 -- ============================================================================
 -- GUESS INDENT
@@ -191,75 +187,37 @@ require("gitsigns").setup({
     add = {
       text = "+",
     },
+
     change = {
       text = "~",
     },
+
     delete = {
       text = "_",
     },
+
     topdelete = {
       text = "‾",
     },
+
     changedelete = {
       text = "~",
     },
   },
 })
 
-vim.keymap.set("n", "]c", function()
-  require("gitsigns").next_hunk()
-end, {
-  desc = "Next git hunk",
-})
+wk.add({
+  { "]c", function() require("gitsigns").next_hunk() end, desc = "Next git hunk" },
+  { "[c", function() require("gitsigns").prev_hunk() end, desc = "Previous git hunk" },
 
-vim.keymap.set("n", "[c", function()
-  require("gitsigns").prev_hunk()
-end, {
-  desc = "Previous git hunk",
-})
-
-vim.keymap.set("n", "<leader>hs", function()
-  require("gitsigns").stage_hunk()
-end, {
-  desc = "Git stage hunk",
-})
-
-vim.keymap.set("n", "<leader>hr", function()
-  require("gitsigns").reset_hunk()
-end, {
-  desc = "Git reset hunk",
-})
-
-vim.keymap.set("n", "<leader>hS", function()
-  require("gitsigns").stage_buffer()
-end, {
-  desc = "Git stage buffer",
-})
-
-vim.keymap.set("n", "<leader>hR", function()
-  require("gitsigns").reset_buffer()
-end, {
-  desc = "Git reset buffer",
-})
-
-vim.keymap.set("n", "<leader>hp", function()
-  require("gitsigns").preview_hunk()
-end, {
-  desc = "Git preview hunk",
-})
-
-vim.keymap.set("n", "<leader>hb", function()
-  require("gitsigns").blame_line({
-    full = true,
-  })
-end, {
-  desc = "Git blame line",
-})
-
-vim.keymap.set("n", "<leader>hd", function()
-  require("gitsigns").diffthis()
-end, {
-  desc = "Git diff",
+  { "<leader>h", group = "git", icon = "󰊢" },
+  { "<leader>hs", function() require("gitsigns").stage_hunk() end, desc = "Stage hunk" },
+  { "<leader>hr", function() require("gitsigns").reset_hunk() end, desc = "Reset hunk" },
+  { "<leader>hS", function() require("gitsigns").stage_buffer() end, desc = "Stage buffer" },
+  { "<leader>hR", function() require("gitsigns").reset_buffer() end, desc = "Reset buffer" },
+  { "<leader>hp", function() require("gitsigns").preview_hunk() end, desc = "Preview hunk" },
+  { "<leader>hb", function() require("gitsigns").blame_line({ full = true }) end, desc = "Blame line" },
+  { "<leader>hd", function() require("gitsigns").diffthis() end, desc = "Diff this" },
 })
 
 -- ============================================================================
@@ -267,14 +225,6 @@ end, {
 -- ============================================================================
 
 require("todo-comments").setup()
-
-vim.keymap.set("n", "<leader>ft", function()
-  require("telescope.builtin").live_grep({
-    default_text = "TODO:",
-  })
-end, {
-  desc = "Find TODO comments",
-})
 
 -- ============================================================================
 -- MINI
@@ -285,6 +235,82 @@ require("mini.ai").setup()
 require("mini.surround").setup()
 
 -- ============================================================================
+-- SNACKS
+-- ============================================================================
+
+local Snacks = require("snacks")
+
+Snacks.setup({
+  bigfile = {
+    enabled = true,
+  },
+
+  indent = {
+    enabled = true,
+    char = "│",
+    only_scope = false,
+    only_current = false,
+  },
+
+  input = {
+    enabled = true,
+  },
+
+  notifier = {
+    enabled = true,
+    timeout = 3000,
+  },
+
+  quickfile = {
+    enabled = true,
+  },
+
+  scope = {
+    enabled = true,
+  },
+
+  words = {
+    enabled = true,
+  },
+})
+
+-- ============================================================================
+-- TELESCOPE
+-- ============================================================================
+
+local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+
+telescope.setup({
+  defaults = {
+    layout_strategy = "horizontal",
+    sorting_strategy = "ascending",
+
+    layout_config = {
+      prompt_position = "top",
+    },
+  },
+})
+
+pcall(telescope.load_extension, "fzf")
+pcall(telescope.load_extension, "ui-select")
+
+wk.add({
+  { "<leader>f", group = "find", icon = "󰍉" },
+
+  { "<leader><space>", builtin.find_files, desc = "Find files" },
+  { "<leader>ff", builtin.find_files, desc = "Find files" },
+  { "<leader>fg", builtin.live_grep, desc = "Grep" },
+  { "<leader>fb", builtin.buffers, desc = "Buffers" },
+  { "<leader>fr", builtin.oldfiles, desc = "Recent files" },
+  { "<leader>fh", builtin.help_tags, desc = "Help" },
+  { "<leader>fc", builtin.commands, desc = "Commands" },
+  { "<leader>fd", builtin.diagnostics, desc = "Diagnostics" },
+  { "<leader>fk", builtin.keymaps, desc = "Keymaps" },
+  { "<leader>fs", builtin.lsp_document_symbols, desc = "LSP symbols" },
+})
+
+-- ============================================================================
 -- NEO-TREE
 -- ============================================================================
 
@@ -292,11 +318,8 @@ require("neo-tree").setup({
   close_if_last_window = true,
 
   filesystem = {
-    follow_current_file = {
-      enabled = true,
-    },
-
     filtered_items = {
+      visible = true,
       hide_dotfiles = false,
       hide_gitignored = false,
     },
@@ -307,67 +330,13 @@ require("neo-tree").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", {
-  desc = "Toggle file explorer",
-})
-
-vim.keymap.set("n", "<leader>o", "<cmd>Neotree focus<CR>", {
-  desc = "Focus file explorer",
-})
-
--- ============================================================================
--- TELESCOPE
--- ============================================================================
-
-local telescope = require("telescope")
-
-telescope.setup({
-  extensions = {
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown(),
-    },
+wk.add({
+  {
+    "<leader>e",
+    "<cmd>Neotree toggle<CR>",
+    desc = "Explorer",
+    icon = "󰙅",
   },
-})
-
-pcall(telescope.load_extension, "fzf")
-pcall(telescope.load_extension, "ui-select")
-
-local builtin = require("telescope.builtin")
-
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {
-  desc = "Find files",
-})
-
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, {
-  desc = "Live grep",
-})
-
-vim.keymap.set("n", "<leader>fb", builtin.buffers, {
-  desc = "Find buffers",
-})
-
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, {
-  desc = "Find help",
-})
-
-vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {
-  desc = "Recent files",
-})
-
-vim.keymap.set("n", "<leader>fc", builtin.commands, {
-  desc = "Find commands",
-})
-
-vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {
-  desc = "Find diagnostics",
-})
-
-vim.keymap.set("n", "<leader>fk", builtin.keymaps, {
-  desc = "Find keymaps",
-})
-
-vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {
-  desc = "Find document symbols",
 })
 
 -- ============================================================================
@@ -383,22 +352,9 @@ require("aerial").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>cs", "<cmd>AerialToggle!<CR>", {
-  desc = "Toggle symbols",
-})
-
--- ============================================================================
--- INDENT BLANKLINE
--- ============================================================================
-
-require("ibl").setup({
-  indent = {
-    char = "│",
-  },
-
-  scope = {
-    enabled = true,
-  },
+wk.add({
+  { "<leader>c", group = "code", icon = "󰅩" },
+  { "<leader>cs", "<cmd>AerialToggle!<CR>", desc = "Toggle symbols" },
 })
 
 -- ============================================================================
@@ -447,34 +403,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
   }),
 
   callback = function(args)
-    local opts = {
-      buffer = args.buf,
-    }
-
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {
-      buffer = args.buf,
-      desc = "LSP rename",
-    })
-
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
-      buffer = args.buf,
-      desc = "LSP code action",
-    })
-
-    vim.keymap.set("n", "<leader>lf", function()
-      vim.lsp.buf.format({
-        async = true,
-      })
-    end, {
-      buffer = args.buf,
-      desc = "LSP format",
+    wk.add({
+      { "gd", vim.lsp.buf.definition, desc = "Goto definition", buffer = args.buf },
+      { "gD", vim.lsp.buf.declaration, desc = "Goto declaration", buffer = args.buf },
+      { "gr", vim.lsp.buf.references, desc = "Goto references", buffer = args.buf },
+      { "gi", vim.lsp.buf.implementation, desc = "Goto implementation", buffer = args.buf },
+      { "K", vim.lsp.buf.hover, desc = "Hover documentation", buffer = args.buf },
+      { "<leader>cr", vim.lsp.buf.rename, desc = "Rename symbol", buffer = args.buf },
+      { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action", buffer = args.buf },
     })
   end,
 })
@@ -526,13 +462,18 @@ require("conform").setup({
   },
 })
 
-vim.keymap.set({ "n", "v" }, "<leader>f", function()
-  require("conform").format({
-    async = true,
-    lsp_format = "fallback",
-  })
-end, {
-  desc = "Format buffer",
+wk.add({
+  {
+    "<leader>cf",
+    function()
+      require("conform").format({
+        async = true,
+        lsp_format = "fallback",
+      })
+    end,
+    mode = { "n", "v" },
+    desc = "Format buffer",
+  },
 })
 
 -- ============================================================================
@@ -583,18 +524,14 @@ require("nvim-ts-autotag").setup()
 
 require("toggleterm").setup({
   direction = "float",
-
   float_opts = {
     border = "single",
   },
 })
 
-vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<CR>", {
-  desc = "Toggle terminal",
-})
-
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
-  desc = "Exit terminal mode",
+wk.add({
+  { "<leader>t", group = "terminal", icon = "" },
+  { "<leader>tt", "<cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
 })
 
 -- ============================================================================
@@ -909,22 +846,11 @@ require("resession").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>ss", function()
-  require("resession").save()
-end, {
-  desc = "Save session",
-})
-
-vim.keymap.set("n", "<leader>sl", function()
-  require("resession").load()
-end, {
-  desc = "Load session",
-})
-
-vim.keymap.set("n", "<leader>sd", function()
-  require("resession").delete()
-end, {
-  desc = "Delete session",
+wk.add({
+  { "<leader>s", group = "session", icon = "󰆓" },
+  { "<leader>ss", function() require("resession").save() end, desc = "Save session" },
+  { "<leader>sl", function() require("resession").load() end, desc = "Load session" },
+  { "<leader>sd", function() require("resession").delete() end, desc = "Delete session" },
 })
 
 -- ============================================================================
@@ -948,42 +874,22 @@ dap.listeners.before.event_exited["dapui"] = function()
   dapui.close()
 end
 
-vim.keymap.set("n", "<F5>", dap.continue, {
-  desc = "Debug continue",
-})
+wk.add({
+  { "<F5>", dap.continue, desc = "Debug continue" },
+  { "<F10>", dap.step_over, desc = "Debug step over" },
+  { "<F11>", dap.step_into, desc = "Debug step into" },
+  { "<F12>", dap.step_out, desc = "Debug step out" },
 
-vim.keymap.set("n", "<F10>", dap.step_over, {
-  desc = "Debug step over",
-})
-
-vim.keymap.set("n", "<F11>", dap.step_into, {
-  desc = "Debug step into",
-})
-
-vim.keymap.set("n", "<F12>", dap.step_out, {
-  desc = "Debug step out",
-})
-
-vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, {
-  desc = "Debug breakpoint",
-})
-
-vim.keymap.set("n", "<leader>dB", function()
-  dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-end, {
-  desc = "Debug conditional breakpoint",
-})
-
-vim.keymap.set("n", "<leader>du", dapui.toggle, {
-  desc = "Debug UI",
-})
-
-vim.keymap.set("n", "<leader>dr", dap.repl.toggle, {
-  desc = "Debug REPL",
-})
-
-vim.keymap.set("n", "<leader>dx", dap.terminate, {
-  desc = "Debug terminate",
+  { "<leader>d", group = "debug", icon = "" },
+  { "<leader>db", dap.toggle_breakpoint, desc = "Toggle breakpoint" },
+  {
+    "<leader>dB",
+    function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
+    desc = "Conditional breakpoint",
+  },
+  { "<leader>du", dapui.toggle, desc = "Toggle debug UI" },
+  { "<leader>dr", dap.repl.toggle, desc = "Toggle REPL" },
+  { "<leader>dx", dap.terminate, desc = "Terminate" },
 })
 
 -- ============================================================================

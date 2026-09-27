@@ -58,6 +58,7 @@
 ### Wrappers For
 ---
 * Neovim
+  * Overlapping keybinds in eval
 
 ### UI to Finish
 ---
