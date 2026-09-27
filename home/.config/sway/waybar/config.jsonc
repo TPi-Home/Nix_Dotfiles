@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 50,
+    "height": 40,
     "margin-top": 0,
     "margin-left": 0,
     "margin-right": 0,
@@ -165,7 +165,7 @@
 
     "tray":
     {
-        "icon-size": 28,
+        "icon-size": 25,
         "spacing": 7
     }
 }

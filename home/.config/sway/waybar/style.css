@@ -1,14 +1,15 @@
 * {
-    font-family: "Monaspace Neon NF", "Symbols Nerd Font";
-    font-size: 30px;
-    font-weight: 500;
-    border: none;
-    text-shadow: none;
-}
+  font-family: "Monaspace Neon NF", "Symbols Nerd Font";
+  font-size: 25px;
+  font-weight: 500;
+  border: none;
+  text-shadow: none;
+  }
 
 /* --------------------------------------------------------------------------
- * Palette (Inspired by Astrodark)
- * -------------------------------------------------------------------------- */
+
+* Palette
+* -------------------------------------------------------------------------- */
 
 @define-color black #111317;
 @define-color inactive #16181D;
@@ -17,7 +18,6 @@
 @define-color current #1E222A;
 @define-color highlight #23272F;
 @define-color selection #26343F;
-
 @define-color border #3A3E47;
 
 @define-color blue #50A4E9;
@@ -36,95 +36,106 @@
 @define-color red #FF838B;
 @define-color cyan #4AC2B8;
 
-
 /* --------------------------------------------------------------------------
- * Bar
- * -------------------------------------------------------------------------- */
+
+* Bar
+* -------------------------------------------------------------------------- */
 
 #waybar {
-    background: alpha(@black, 0.94);
-    color: @text;
-    border: 2px solid alpha(@blue, 0.18);
-    border-radius: 0;
-    box-shadow:
-        0 18px 48px alpha(@black, 0.45),
-        0 0 0 1px alpha(@blue, 0.035);
+background: alpha(@black, 0.94);
+color: @text;
+
+
+border: 2px solid alpha(@border, 0.55);
+border-radius: 0;
+
+box-shadow:
+    0 18px 48px alpha(@black, 0.45),
+    0 0 0 1px alpha(@border, 0.035);
+
+
 }
 
-
 /* --------------------------------------------------------------------------
- * Workspaces
- * -------------------------------------------------------------------------- */
+
+* Workspaces
+* -------------------------------------------------------------------------- */
 
 #workspaces {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
+background: transparent;
+border: none;
+border-radius: 0;
+padding: 0;
+margin: 0;
 }
 
 #workspaces button {
-    background: transparent;
-    min-width: 140px;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    border: 1px solid alpha(@border, 0.55);
-    box-shadow: none;
+background: transparent;
+min-width: 140px;
+padding: 0;
+margin: 0;
+
+border-radius: 0;
+border: 1px solid alpha(@border, 0.55);
+box-shadow: none;
+
 }
 
 #workspaces button label {
-    color: @text-muted;
+color: @text-muted;
 }
 
 #workspaces button:hover {
-    background: @highlight;
-    border-color: alpha(@blue, 0.45);
+background: @highlight;
+border-color: alpha(@blue, 0.45);
 }
 
 #workspaces button:hover label {
-    color: @text;
+color: @text;
 }
 
 #workspaces button.empty label {
-    color: @text-inactive;
+color: @text-inactive;
 }
 
 #workspaces button.visible label {
-    color: @blue;
+color: @blue;
 }
 
 #workspaces button.persistent label {
-    color: @blue;
+color: @blue;
 }
 
 #workspaces button.focused {
-    background: @blue;
-    border-color: @blue;
-    box-shadow:
-        0 8px 26px alpha(@blue, 0.22),
-        0 4px 12px alpha(@black, 0.35);
+background: @blue;
+border-color: @blue;
+
+
+box-shadow:
+    0 8px 26px alpha(@blue, 0.22),
+    0 4px 12px alpha(@black, 0.35);
+
+
 }
 
 #workspaces button.focused label {
-    color: @black;
-    font-weight: bold;
+color: @black;
+font-weight: bold;
 }
 
 #workspaces button.urgent {
-    background: alpha(@purple, 0.80);
-    border-color: @purple;
+background: alpha(@purple, 0.80);
+border-color: @purple;
 }
 
 #workspaces button.urgent label {
-    color: @black;
+color: @black;
 }
 
-
 /* --------------------------------------------------------------------------
- * Right-side modules
- * -------------------------------------------------------------------------- */
+
+* Right-side modules
+* -------------------------------------------------------------------------- */
 
 #network,
 #pulseaudio,
@@ -133,175 +144,203 @@
 #power-profiles-daemon,
 #custom-power,
 #tray {
-    background: @inactive;
-    border-radius: 0;
-    box-shadow:
-        0 6px 22px alpha(@black, 0.30),
-        inset 0 1px alpha(@text, 0.025);
+background: @inactive;
+border-radius: 0;
+
+
+box-shadow:
+    0 6px 22px alpha(@black, 0.30),
+    inset 0 1px alpha(@text, 0.025);
+
+
 }
 
+/* --------------------------------------------------------------------------
 
-/* Network */
+* Network
+* -------------------------------------------------------------------------- */
 
 #network {
-    color: @text;
-    padding: 0 12px;
-    border: 2px solid alpha(@text, 0.22);
+color: @text;
+padding: 0 12px;
+border: 2px solid alpha(@border, 0.60);
 }
 
 #network:hover {
-    background: @highlight;
-    border-color: alpha(@blue, 0.50);
+background: @highlight;
+border-color: alpha(@border, 0.90);
 }
 
 #network.disconnected {
-    color: @text-muted;
-    border-color: alpha(@text-muted, 0.35);
+color: @text-muted;
+border-color: alpha(@text-muted, 0.35);
 }
 
+/* --------------------------------------------------------------------------
 
-/* Audio */
+* Audio
+* -------------------------------------------------------------------------- */
 
 #pulseaudio {
-    color: @text;
-    padding: 0 12px;
-    border: 2px solid alpha(@purple, 0.22);
+color: @text;
+padding: 0 12px;
+border: 2px solid alpha(@border, 0.60);
 }
 
 #pulseaudio:hover {
-    background: @text-muted;
-    border-color: alpha(@text-muted, 0.50);
+background: @highlight;
+border-color: alpha(@border, 0.90);
 }
 
 #pulseaudio.muted {
-    color: @text-muted;
-    border-color: alpha(@text-muted, 0.45);
-    opacity: 0.65;
+color: @text-muted;
+border-color: alpha(@text-muted, 0.45);
+opacity: 0.65;
 }
 
+/* --------------------------------------------------------------------------
 
-/* Battery */
+* Battery
+* -------------------------------------------------------------------------- */
 
 #battery {
-    color: @green;
-    padding: 0 12px;
-    border: 2px solid alpha(@green, 0.22);
+color: @text;
+padding: 0 12px;
+border: 2px solid alpha(@border, 0.60);
 }
 
 #battery:hover {
-    background: @highlight;
-    border-color: alpha(@green, 0.50);
+background: @highlight;
+border-color: alpha(@border, 0.90);
 }
 
 #battery.warning:not(.charging) {
-    color: @orange;
-    border-color: alpha(@orange, 0.35);
+color: @orange;
+border-color: alpha(@orange, 0.35);
 }
 
 #battery.critical:not(.charging) {
-    color: @red;
-    border-color: alpha(@red, 0.40);
+color: @red;
+border-color: alpha(@red, 0.40);
 }
 
 #battery.charging,
 #battery.plugged {
-    color: @green;
-    border-color: alpha(@green, 0.30);
+color: @green;
+border-color: alpha(@green, 0.30);
 }
 
+/* --------------------------------------------------------------------------
 
-/* Clock */
+* Clock
+* -------------------------------------------------------------------------- */
 
 #clock {
-    color: @text;
-    padding: 0 14px;
-    border: 2px solid alpha(@text, 0.24);
+color: @text;
+padding: 0 14px;
+border: 2px solid alpha(@border, 0.60);
 }
 
 #clock:hover {
-    background: @text-muted;
-    border-color: alpha(@text-muted, 0.50);
+background: @highlight;
+border-color: alpha(@border, 0.90);
 }
 
-/* Power Profile */
+/* --------------------------------------------------------------------------
+
+* Power Profile
+* -------------------------------------------------------------------------- */
 
 #power-profiles-daemon {
-    padding: 0 12px;
-    border: 2px solid alpha(@blue, 0.22);
+color: @text;
+padding: 0 12px;
+border: 2px solid alpha(@border, 0.60);
 }
 
 #power-profiles-daemon.performance {
-    color: @purple;
-    border-color: alpha(@blue, 0.35);
+color: @text;
+border-color: alpha(@border, 0.60);
 }
 
 #power-profiles-daemon.balanced {
-    color: @blue;
-    border-color: alpha(@border, 0.45);
+color: @text;
+border-color: alpha(@border, 0.60);
 }
 
 #power-profiles-daemon.power-saver {
-    color: @green;
-    border-color: alpha(@green, 0.30);
+color: @text;
+border-color: alpha(@border, 0.60);
 }
 
 #power-profiles-daemon:hover {
-    background: @highlight;
+background: @highlight;
+border-color: alpha(@border, 0.90);
 }
 
-/* Power Button */
+/* --------------------------------------------------------------------------
+
+* Power Button
+* -------------------------------------------------------------------------- */
 
 #custom-power {
-    color: @purple;
-    padding: 0 12px;
-    border: 2px solid alpha(@purple, 0.22);
+color: @text;
+padding: 0 12px;
+border: 2px solid alpha(@border, 0.60);
 }
 
 #custom-power:hover {
-    background: @highlight;
-    border-color: alpha(@[purple], 0.50);
+background: @highlight;
+border-color: alpha(@border, 0.90);
 }
 
-/* Tray */
+/* --------------------------------------------------------------------------
+
+* Tray
+* -------------------------------------------------------------------------- */
 
 #tray {
-    color: @blue;
-    padding: 0 10px;
-    border: 2px solid alpha(@blue, 0.20);
+color: @text;
+padding: 0 10px;
+border: 2px solid alpha(@border, 0.60);
 }
 
 #tray > .passive {
-    opacity: 0.55;
+opacity: 0.55;
 }
 
 #tray > .needs-attention {
-    color: @purple;
+color: @text;
 }
 
-
 /* --------------------------------------------------------------------------
- * Tooltips
- * -------------------------------------------------------------------------- */
+
+* Tooltips
+* -------------------------------------------------------------------------- */
 
 tooltip {
-    background: alpha(@float, 0.98);
-    color: @text;
-    border: 2px solid alpha(@blue, 0.22);
-    border-radius: 0;
-    box-shadow:
-        0 8px 24px alpha(@black, 0.45);
+background: alpha(@float, 0.98);
+color: @text;
+
+
+border: 2px solid alpha(@border, 0.65);
+border-radius: 0;
+
+box-shadow:
+    0 8px 24px alpha(@black, 0.45);
+
+
 }
 
 tooltip label {
-    color: @text;
-    padding: 5px 7px;
+color: @text;
+padding: 5px 7px;
 }
 
-
 /* --------------------------------------------------------------------------
- * Fullscreen
- * -------------------------------------------------------------------------- */
+
+* Fullscreen
+* -------------------------------------------------------------------------- */
 
 window#waybar.fullscreen {
-    background: transparent;
+background: transparent;
 }

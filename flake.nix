@@ -13,9 +13,21 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-wrapper-modules = {
+      url = "github:nix-community/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, stylix, home-manager, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    stylix,
+    home-manager,
+    nix-wrapper-modules,
+    ...
+  }:
     {
       nixosConfigurations = {
         generic = nixpkgs.lib.nixosSystem {
@@ -31,6 +43,10 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+
+              home-manager.extraSpecialArgs = {
+                inherit nix-wrapper-modules;
+              };
 
               home-manager.users.tyler = {
                 imports = [

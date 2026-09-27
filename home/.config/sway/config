@@ -56,7 +56,7 @@ set $menu fuzzel
 # ----------------------------------------------------------------------------
 
 exec dbus-update-activation-environment --systemd --all
-exec waybar
+exec_always waybar
 exec kanshi
 exec_always kanshictl reload
 exec mako
