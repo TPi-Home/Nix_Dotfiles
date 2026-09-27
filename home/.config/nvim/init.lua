@@ -123,8 +123,53 @@ vim.api.nvim_create_autocmd("VimResized", {
 -- THEME
 -- ============================================================================
 
-require("astrotheme").setup()
+require("astrotheme").setup({
+  palette = "astrodark",
 
+  background = {
+    light = "astrolight",
+    dark = "astrodark",
+  },
+
+  style = {
+    transparent = false,
+    inactive = true,
+    float = true,
+    neotree = true,
+    border = true,
+    title_invert = true,
+    italic_comments = true,
+    simple_syntax_colors = true,
+  },
+
+  termguicolors = true,
+  terminal_colors = true,
+
+  plugin_default = false,
+
+  plugins = {
+    ["aerial"] = true,
+    ["blink-cmp"] = true,
+    ["gitsigns"] = true,
+    ["indent-blankline"] = true,
+    ["mini"] = true,
+    ["miniicons"] = true,
+    ["neo-tree"] = true,
+    ["nvim-dap-ui"] = true,
+    ["nvim-web-devicons"] = true,
+    ["nvim-window-picker"] = true,
+    ["telescope"] = true,
+    ["todo-comments"] = true,
+    ["which-key"] = true,
+  },
+
+  highlights = {
+   global = {},
+   astrodark = {},
+  },
+})
+
+vim.cmd.colorscheme("astrodark")
 -- ============================================================================
 -- WHICH-KEY
 -- ============================================================================
@@ -538,6 +583,7 @@ require("nvim-ts-autotag").setup()
 
 require("toggleterm").setup({
   direction = "float",
+
   float_opts = {
     border = "single",
   },
@@ -556,31 +602,7 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {
 -- ============================================================================
 
 local conditions = require("heirline.conditions")
-local utils = require("heirline.utils")
-
-local colors = {
-  red = "#F8747E",
-  orange = "#EB8332",
-  yellow = "#D09214",
-  green = "#75AD47",
-  cyan = "#00B298",
-  blue = "#50A4E9",
-  purple = "#CC83E3",
-
-  bg = "#1A1D23",
-  bg_inactive = "#16181D",
-  statusline = "#111317",
-  float = "#14161B",
-  border = "#3A3E47",
-  current_line = "#1E222A",
-  selection = "#26343F",
-
-  text = "#9B9FA9",
-  text_active = "#ADB0BB",
-  text_inactive = "#494D56",
-  comment = "#696C76",
-  mute = "#595C66",
-}
+local c = require("astrotheme.palettes.astrodark")
 
 local Align = {
   provider = "%=",
@@ -606,7 +628,7 @@ local FileName = {
   end,
 
   hl = {
-    fg = colors.fg,
+    fg = c.ui.text_active,
     bold = true,
   },
 }
@@ -620,7 +642,7 @@ local FileFlags = {
     provider = " [+]",
 
     hl = {
-      fg = colors.yellow,
+      fg = c.ui.yellow,
     },
   },
 
@@ -632,7 +654,7 @@ local FileFlags = {
     provider = " [RO]",
 
     hl = {
-      fg = colors.red,
+      fg = c.ui.red,
     },
   },
 }
@@ -654,7 +676,7 @@ local Git = {
     end,
 
     hl = {
-      fg = colors.purple,
+      fg = c.ui.purple,
     },
   },
 
@@ -668,7 +690,7 @@ local Git = {
     end,
 
     hl = {
-      fg = colors.green,
+      fg = c.ui.green,
     },
   },
 
@@ -682,7 +704,7 @@ local Git = {
     end,
 
     hl = {
-      fg = colors.yellow,
+      fg = c.ui.yellow,
     },
   },
 
@@ -696,7 +718,7 @@ local Git = {
     end,
 
     hl = {
-      fg = colors.red,
+      fg = c.ui.red,
     },
   },
 }
@@ -732,7 +754,7 @@ local Diagnostics = {
     end,
 
     hl = {
-      fg = colors.red,
+      fg = c.ui.red,
     },
   },
 
@@ -746,7 +768,7 @@ local Diagnostics = {
     end,
 
     hl = {
-      fg = colors.yellow,
+      fg = c.ui.yellow,
     },
   },
 
@@ -760,7 +782,7 @@ local Diagnostics = {
     end,
 
     hl = {
-      fg = colors.blue,
+      fg = c.ui.blue,
     },
   },
 
@@ -774,7 +796,7 @@ local Diagnostics = {
     end,
 
     hl = {
-      fg = colors.cyan,
+      fg = c.ui.cyan,
     },
   },
 }
@@ -785,7 +807,7 @@ local FileType = {
   end,
 
   hl = {
-    fg = colors.blue,
+    fg = c.ui.blue,
   },
 }
 
@@ -793,7 +815,7 @@ local Position = {
   provider = "%l:%c",
 
   hl = {
-    fg = colors.fg,
+    fg = c.ui.text_active,
     bold = true,
   },
 }
@@ -818,14 +840,14 @@ local Mode = {
     },
 
     mode_colors = {
-      n = colors.blue,
-      i = colors.green,
-      v = colors.purple,
-      V = colors.purple,
-      ["\22"] = colors.purple,
-      c = colors.yellow,
-      R = colors.red,
-      t = colors.cyan,
+      n = c.ui.blue,
+      i = c.ui.green,
+      v = c.ui.purple,
+      V = c.ui.purple,
+      ["\22"] = c.ui.purple,
+      c = c.ui.yellow,
+      R = c.ui.red,
+      t = c.ui.cyan,
     },
   },
 
@@ -835,8 +857,8 @@ local Mode = {
 
   hl = function(self)
     return {
-      fg = colors.bg,
-      bg = self.mode_colors[self.mode] or colors.blue,
+      fg = c.ui.base,
+      bg = self.mode_colors[self.mode] or c.ui.blue,
       bold = true,
     }
   end,
@@ -860,7 +882,8 @@ require("heirline").setup({
   },
 
   opts = {
-    colors = colors,
+    colors = c.ui,
+
     disable_winbar_cb = function(args)
       return conditions.buffer_matches({
         buftype = {
@@ -873,7 +896,6 @@ require("heirline").setup({
     end,
   },
 })
-
 
 -- ============================================================================
 -- RESESSION
