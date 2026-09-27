@@ -56,19 +56,12 @@
 
 ### UI to Finish
 ---
-* DM:
-  * CSS
-  * Try TUI if GTK is problematic
-
-
 ## Dot File Documentation
 * Directory Structure on README.md needs updated
   * I could use a script for this
-  * 
 ## Nix Development Environment
 
-### Mis Development Tools
-
+### Misc Development Tools
 * Not really a development tool, but `npins` looks interesting 
 
 ### Flake 
@@ -77,20 +70,9 @@
 
 ## Desktop Environment / Window Manager Setup
 
-### GNOME Configuration
-
-| Configuration | |
-|---|---|
-| Manage GNOME settings with Home Manager | `dconf` perhaps could contradict this |
-| Manage GTK theme declaratively | `stylix`  or `home-manager` |
-| Manage icon theme declaratively | `stylix`  or `home-manager` | 
-| Manage cursor theme declaratively | `stylix` or `home-manager` |
-| Manage fonts declaratively | `stylix`  or `home-manager` |
-| Manage application-specific themes/configuration | `stylix` or `home-manager` | 
-
 ### Tiling
 
-| I should have for sway: | |
+| I will need for mangowm: | |
   |---|---|
   | a Wi-Fi GUI | `nm-applet` |
   | a Bluetooth GUI | `blueman` |

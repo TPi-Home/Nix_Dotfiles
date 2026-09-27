@@ -56,7 +56,7 @@ set $menu fuzzel
 # ----------------------------------------------------------------------------
 
 exec dbus-update-activation-environment --systemd --all
-exec_always waybar
+exec waybar
 exec kanshi
 exec_always kanshictl reload
 exec mako
@@ -78,7 +78,8 @@ input type:touchpad
 }
 
 input type:pointer {
-    pointer_accel 0.5
+    pointer_accel 0.7
+    accel_profile flat
 }
 
 # ----------------------------------------------------------------------------
