@@ -1,12 +1,8 @@
 # ============================================================================
 # Imports/Variables/State Version
 # ============================================================================
-
-{ ... }:
-
-{
+{...}: {
   imports = [
-
     # Misc
     ./pkg/packages.nix
 
@@ -42,7 +38,6 @@
 
     # Display Settings
     ./pkg/kanshi.nix
-
   ];
 
   home.username = "tyler";

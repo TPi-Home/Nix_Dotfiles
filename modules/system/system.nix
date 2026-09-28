@@ -1,10 +1,7 @@
 # ============================================================================
 # Nix System Core
 # ============================================================================
-
-{ ... }:
-
-{
+{...}: {
   # --------------------------------------------------------------------------
   # Hardware Management
   # --------------------------------------------------------------------------
@@ -15,16 +12,15 @@
   # --------------------------------------------------------------------------
   # Software Management
   # --------------------------------------------------------------------------
-  
+
   nixpkgs.config.allowUnfree = true;
   # services.flatpak.enable = true;
-  
+
   # --------------------------------------------------------------------------
   # Experimental Features Excluding Stylix and Home-Manager
   # --------------------------------------------------------------------------
 
-  nix.settings.experimental-features = 
-  [
+  nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
@@ -33,8 +29,7 @@
   # User Management (No user process can persist)
   # --------------------------------------------------------------------------
 
-  services.logind.settings.Login = 
-  {
+  services.logind.settings.Login = {
     KillUserProcesses = true;
   };
 
@@ -42,7 +37,7 @@
   # Storage/File System
   # --------------------------------------------------------------------------
 
-  services.gvfs.enable = true;     # Core virtual file system (needed for trash & USB mounts)
-  services.tumbler.enable = true;  # Generates image thumbnails in Thunar
-  services.udisks2.enable = true;  # Auto-mounts external storage
+  services.gvfs.enable = true; # Core virtual file system (needed for trash & USB mounts)
+  services.tumbler.enable = true; # Generates image thumbnails in Thunar
+  services.udisks2.enable = true; # Auto-mounts external storage
 }

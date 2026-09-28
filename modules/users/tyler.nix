@@ -1,19 +1,14 @@
 # ============================================================================
 # Tyler
 # ============================================================================
-
-{pkgs, ...}:
-
-{
+{pkgs, ...}: {
   programs.fish.enable = true;
-  users.users.tyler = 
-  {
+  users.users.tyler = {
     isNormalUser = true;
     description = "tyler";
     shell = pkgs.fish;
 
-    extraGroups = 
-    [
+    extraGroups = [
       "wheel"
       "networkmanager"
       "video"

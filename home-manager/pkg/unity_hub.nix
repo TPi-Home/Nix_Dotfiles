@@ -1,17 +1,12 @@
 # ============================================================================
 # Unity Hub
 # ============================================================================
-
-{ pkgs, ... }:
-
-{
-  home.packages = 
-  [
+{pkgs, ...}: {
+  home.packages = [
     pkgs.unityhub
   ];
 
-  xdg.desktopEntries.unityhub = 
-  {
+  xdg.desktopEntries.unityhub = {
     name = "Unity Hub";
     genericName = "Unity Project Manager";
     comment = "Manage Unity projects and installations";
@@ -22,13 +17,11 @@
 
     terminal = false;
 
-    categories = 
-    [
+    categories = [
       "Development"
     ];
 
-    mimeType = 
-    [
+    mimeType = [
       "x-scheme-handler/unityhub"
     ];
   };

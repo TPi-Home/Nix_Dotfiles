@@ -1,25 +1,19 @@
 # ============================================================================
 # Sway
 # ============================================================================
-
-{ pkgs, ... }:
-
-{
-  programs.sway = 
-  {
+{pkgs, ...}: {
+  programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
 
-    extraPackages = with pkgs; 
-    [
+    extraPackages = with pkgs; [
       swayidle
       swaylock
       swaybg
       swayfx
     ];
 
-    extraOptions = 
-    [
+    extraOptions = [
       "--unsupported-gpu"
     ];
   };
@@ -36,16 +30,15 @@
     ];
   };
 
-  programs.xfconf.enable = true;  # Saves Thunar's internal settings
-  services.gvfs.enable = true;     # Core virtual file system (needed for trash & USB mounts)
-  services.tumbler.enable = true;  # Generates image thumbnails in Thunar
+  programs.xfconf.enable = true; # Saves Thunar's internal settings
+  services.gvfs.enable = true; # Core virtual file system (needed for trash & USB mounts)
+  services.tumbler.enable = true; # Generates image thumbnails in Thunar
 
   # --------------------------------------------------------------------------
   # Waybar
   # --------------------------------------------------------------------------
 
-  systemd.user.services.waybar.path = with pkgs; 
-  [
+  systemd.user.services.waybar.path = with pkgs; [
     wlogout
     wleave
     pavucontrol
@@ -72,12 +65,10 @@
   # Bluetooth
   # --------------------------------------------------------------------------
 
-  hardware.bluetooth = 
-  {
+  hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
-
 
   # PartOf=graphical-session.target
   services.blueman.enable = true;
@@ -86,11 +77,10 @@
   # Wayland
   # --------------------------------------------------------------------------
 
-  xdg.portal = 
-  {
+  xdg.portal = {
     enable = true;
 
-    # Application -> XDG Desktop Portal -> wlroots portal backend -> 
+    # Application -> XDG Desktop Portal -> wlroots portal backend ->
     # PipeWire -> Back to Application
     wlr.enable = true;
   };
@@ -99,15 +89,13 @@
   # Security & Permissions
   # --------------------------------------------------------------------------
 
-  security.pam.services.swaylock = { };
-  
+  security.pam.services.swaylock = {};
 
   # --------------------------------------------------------------------------
   # Sway Runtime Utilities
   # --------------------------------------------------------------------------
 
-  environment.systemPackages = with pkgs; 
-  [
+  environment.systemPackages = with pkgs; [
     # Launcher
     fuzzel
 
@@ -145,5 +133,4 @@
     procps
     wlogout
   ];
-
 }

@@ -1,10 +1,11 @@
 # ============================================================================
 # Neovim
 # ============================================================================
-
-{ nix-wrapper-modules, pkgs, ... }:
-
 {
+  nix-wrapper-modules,
+  pkgs,
+  ...
+}: {
   imports = [
     (nix-wrapper-modules.lib.getInstallModule {
       name = "neovim";
@@ -40,7 +41,7 @@
       snacks = pkgs.vimPlugins.snacks-nvim;
 
       mini = pkgs.vimPlugins.mini-nvim;
-      
+
       # ----------------------------------------------------------------------
       # Telescope
       # ----------------------------------------------------------------------
@@ -71,7 +72,7 @@
       # ----------------------------------------------------------------------
       # UI
       # ----------------------------------------------------------------------
-      
+
       astrocore = pkgs.vimPlugins.astrocore;
       astroui = pkgs.vimPlugins.astroui;
       aerial = pkgs.vimPlugins.aerial-nvim;

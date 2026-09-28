@@ -27,36 +27,35 @@
     home-manager,
     nix-wrapper-modules,
     ...
-  }:
-    {
-      nixosConfigurations = {
-        generic = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+  }: {
+    nixosConfigurations = {
+      generic = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-          modules = [
-            ./modules/default.nix
-            ./hosts/generic/hardware-configuration.nix
+        modules = [
+          ./modules/default.nix
+          ./hosts/generic/hardware-configuration.nix
 
-            stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
 
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs = {
-                inherit nix-wrapper-modules;
-              };
+            home-manager.extraSpecialArgs = {
+              inherit nix-wrapper-modules;
+            };
 
-              home-manager.users.tyler = {
-                imports = [
-                  stylix.homeModules.stylix
-                  ./home-manager/default.nix
-                ];
-              };
-            }
-          ];
-        };
+            home-manager.users.tyler = {
+              imports = [
+                stylix.homeModules.stylix
+                ./home-manager/default.nix
+              ];
+            };
+          }
+        ];
       };
     };
+  };
 }

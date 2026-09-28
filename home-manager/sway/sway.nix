@@ -1,10 +1,7 @@
 # ============================================================================
 # Sway
 # ============================================================================
-
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   xdg.configFile."sway/config".source = ../../home/.config/sway/config;
 
   xdg.configFile."swaynag/config".text = ''
@@ -18,16 +15,14 @@
     edge=bottom
   '';
 
-  home.pointerCursor = 
-  {
+  home.pointerCursor = {
     enable = true;
     package = pkgs.adwaita-icon-theme;
     name = "Adwaita";
     size = 24;
   };
 
-  wayland.windowManager.sway = 
-  {
+  wayland.windowManager.sway = {
     xwayland = true;
 
     config = {

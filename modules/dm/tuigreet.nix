@@ -1,18 +1,16 @@
 # ============================================================================
 # TUIGreet
 # ============================================================================
-
-{ config, pkgs, ... }:
-
 {
-  services.greetd = 
-  {
+  config,
+  pkgs,
+  ...
+}: {
+  services.greetd = {
     enable = true;
 
-    settings = 
-    {
-      default_session = 
-      {
+    settings = {
+      default_session = {
         user = "greeter";
         command =
           "${pkgs.tuigreet}/bin/tuigreet "
@@ -45,9 +43,8 @@
     TTYVHangup = true;
     TTYVTDisallocate = true;
   };
-  
-  environment.systemPackages = with pkgs; 
-  [
+
+  environment.systemPackages = with pkgs; [
     tuigreet
   ];
 }

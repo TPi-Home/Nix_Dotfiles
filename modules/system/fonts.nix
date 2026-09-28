@@ -1,12 +1,8 @@
 # ============================================================================
 # Fonts
 # ============================================================================
-
-{ pkgs, ... }:
-
-{
-  fonts.packages = with pkgs; 
-  [
+{pkgs, ...}: {
+  fonts.packages = with pkgs; [
     # Nerd Fonts
     # nerd-fonts._3270
     # nerd-fonts.agave
@@ -77,9 +73,7 @@
 
     # Other Fonts
     corefonts
-
   ];
 
   fonts.fontDir.enable = true;
-  
 }

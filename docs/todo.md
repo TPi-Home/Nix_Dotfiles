@@ -10,24 +10,11 @@
 ## Configuration Organization
 ### Performance Cleanups 
 * Considering Cachy kernel
+* Need to set default apps
 ### Systemd
 * I need fewer "exec" and more systemd integration
 *
-```  systemd.user.services.kanshi = {
-    description = "Kanshi output autoconfig ";
-    wantedBy = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
-    environment = { XDG_CONFIG_HOME="/home/mschwaig/.config"; };
-    serviceConfig = {
-      # kanshi doesn't have an option to specifiy config file yet, so it looks
-      # at .config/kanshi/config
-      ExecStart = ''
-      ${pkgs.kanshi}/bin/kanshi
-      '';
-      RestartSec = 5;
-      Restart = "always";
-    };
-  };``` 
+
   and rm exec from sway
 
 ### Inconsistent UI
@@ -134,13 +121,8 @@ ___
 
 I would like to add support for Niri next. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
 
-Upon getting that all set up, `systemd-analyze security --no-pager greetd.service` seemed to indicate that my display manager had way more permissions than was necessary. I then had to sandbox the display manager and test its functionality with different limitations. This makes me want to review the source code, not because I think it is malicious at all, but because I believe there is much to be learned from it. If something breaks, it probably stems from my cap on the permissions granted to greetd, which means that the permissions granted were permissions that were needed. 
 
 ### GNOME Niceties I Miss
-
-* Hardware plug-and-play management / GUI tools
-* "Save as root" workflow for VS Code - no longer really needed with flakes and NixOS
-* Review other GNOME utilities currently relied upon before changing WM/compositor
 
 ---
 
@@ -192,3 +174,4 @@ Upon getting that all set up, `systemd-analyze security --no-pager greetd.servic
   };
 }
 ```
+See also: implementation.nix for misc stuff to try.
