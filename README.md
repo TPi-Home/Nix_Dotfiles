@@ -35,144 +35,87 @@ Madison has made some of my favorite wallpapers to use, many of which I have use
 To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.
 
 ```text
-Nix_Dotfiles/
-│
-├── flake.nix
+Nix_Dot_Files/
+├── docs
+│   ├── about.md
+│   ├── eval.md
+│   ├── implement.nix
+│   ├── sway.md
+│   ├── todo.md
+│   └── try
 ├── flake.lock
-│
-├── hosts/
-│   ├── desktop/
+├── flake.nix
+├── home
+├── home-manager
+│   ├── default.nix
+│   ├── pkg
+│   │   ├── chromium.nix
+│   │   ├── dconf.nix
+│   │   ├── firefox.nix
+│   │   ├── fish.nix
+│   │   ├── fuzzel.nix
+│   │   ├── git.nix
+│   │   ├── helix.nix
+│   │   ├── kanshi.nix
+│   │   ├── kitty.nix
+│   │   ├── nvim.nix
+│   │   ├── packages.nix
+│   │   ├── starship.nix
+│   │   ├── unity_hub.nix
+│   │   ├── vscode.nix
+│   │   └── wlogout.nix
+│   ├── stylix
+│   │   ├── default.nix
+│   │   └── include.nix
+│   └── sway
+│       ├── sway.nix
+│       └── waybar.nix
+├── hosts
+│   ├── desktop
 │   │   ├── default.nix
 │   │   └── hardware-configuration.nix
-│   │
-│   ├── laptop/
+│   ├── generic
 │   │   ├── default.nix
 │   │   └── hardware-configuration.nix
-│   │
-│   └── generic/
+│   └── laptop
 │       ├── default.nix
 │       └── hardware-configuration.nix
-│
-├── modules/
+├── LICENSE
+├── modules
+│   ├── audio
+│   │   └── audio.nix
+│   ├── de
+│   │   ├── mango.nix
+│   │   └── sway.nix
 │   ├── default.nix
-│   │
-│   ├── system/
-│   │   ├── system.nix
+│   ├── dm
+│   │   └── tuigreet.nix
+│   ├── graphics
+│   │   └── nvidia.nix
+│   ├── packages
+│   │   ├── gaming.nix
+│   │   └── packages.nix
+│   ├── system
 │   │   ├── boot.nix
 │   │   ├── fonts.nix
 │   │   ├── locale.nix
 │   │   ├── networking.nix
-│   │   └── security.nix
-│   │
-│   ├── audio/
-│   │   └── audio.nix
-│   │
-│   ├── dm/
-│   │   ├── gdm.nix
-│   │   ├── greetd.nix
-│   │   ├── ly.nix
-│   │   └── sddm.nix
-│   │
-│   ├── graphics/
-│   │   └── nvidia.nix
-│   │
-│   ├── de/
-│   │   ├── gnome.nix
-│   │   ├── hyprland.nix
-│   │   ├── niri.nix
-│   │   └── sway.nix
-│   │
-│   ├── packages/
-│   │   ├── packages.nix
-│   │   └── gaming.nix
-│   │
-│   └── users/
+│   │   ├── security.nix
+│   │   ├── session.nix
+│   │   └── system.nix
+│   └── users
 │       └── tyler.nix
-│
-├── home-manager/
-│   ├── default.nix
-│   ├── packages.nix
-│   ├── firefox.nix
-│   ├── fish.nix
-│   ├── zsh.nix
-│   ├── fuzzel.nix
-│   ├── git.nix
-│   ├── kitty.nix
-│   ├── nvim.nix
-│   ├── helix.nix
-│   ├── starship.nix
-│   ├── vscode.nix
-│   │
-│   ├── sway/
-│   │   ├── sway.nix
-│   │   └── waybar.nix
-│   │
-│   ├── hyprland/
-│   │   └── hyprland.nix
-│   │
-│   └── niri/
-│       └── niri.nix
-│
-├── home/
-│   └── .config/
-│       ├── Code/
-│       │   └── User/
-│       │       └── settings.json
-│       │
-│       ├── kitty/
-│       │   ├── kitty.conf
-│       │   └── themes/
-│       │       └── *.conf
-│       │
-│       ├── fuzzel/
-│       │   └── fuzzel.init
-|       |
-│       ├── sway/
-│       │   └── config
-│       │
-│       ├── waybar/
-│       │   └── style.css
-│       │
-│       ├── nvim/
-│       │   ├── init.lua
-│       │   ├── nvim-pack-lock.json
-│       │   ├── .stylua.toml
-│       │   ├── lua/
-│       │   │   ├── custom/
-│       │   │   │   └── plugins/
-│       │   │   │       └── init.lua
-│       │   │   └── kickstart/
-│       │   │       ├── health.lua
-│       │   │       └── plugins/
-│       │   │           ├── autopairs.lua
-│       │   │           ├── debug.lua
-│       │   │           ├── indent_line.lua
-│       │   │           ├── lint.lua
-│       │   │           └── neo-tree.lua
-│       │   └── .gitignore
-│       │
-│       └── starship.toml
-│
-├── scripts/
-│   ├── rebuild.sh
-│   ├── upgrade.sh
-│   ├── editglobalconf.sh
-│   └── trash.sh
-│
-├── docs/
-│   └── sway.md
-│
-├── imperative/
-│   ├── Setup_Example
-│   ├── What.md
-│   └── Why.md
-│
-│
 ├── README.md
-├── About.md
-├── ToDo.md
-├── LICENSE
-└── .gitignore
+├── reference
+│   ├── astrodark.lua
+│   └── Hilltopper.png
+├── scripts
+│   ├── editglobalconf.sh
+│   ├── rebuild.sh
+│   ├── security_check.sh
+│   ├── trash.sh
+│   └── upgrade.sh
+└── scrot.png
 ```
 **The Above Structure is a Work In Progress**
 ## Structure
