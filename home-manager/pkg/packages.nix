@@ -109,6 +109,8 @@
     thunderbird
     obsidian
     discord
+    libreoffice
+    librewolf
     
   ];
 }
