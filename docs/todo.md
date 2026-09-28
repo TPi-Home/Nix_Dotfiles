@@ -12,28 +12,21 @@
 * Considering Cachy kernel
 * Need to set default apps
 ### Systemd
-* I need fewer "exec" and more systemd integration
-*
-
-  and rm exec from sway
+* I need fewer "exec" and more systemd integration  and rm exec from sway
 
 ### Inconsistent UI
 * Keep showing workspace if empty but < current workspace
 * No brightnessctl
 * Astrodark theme for vscode
-* White text on waybar may be cleaner 
 * Scroll and mouse speed
-* Retro folder icon theme for thunar
-* 12 hr time and no tooltip, maybe white text, explore simple swaybar solution`
 ### Security
-* I need to setup some containers
 ### Misc
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
 * Deployment scripts and documentation scripts
 * Revision of network configuration, perhaps per machine
 * Enable swaylock
 * Add support for cloud storage & mount at boot
-* All code should use a C-family/Microsoft-like formatting style where the language permits it
+* All nix code should use alejandra formatter
 * Increase mouse movement speed
 
 ### Wrappers For
@@ -45,7 +38,6 @@
 ---
 ## Dot File Documentation
 * Directory Structure on README.md needs updated
-  * I could use a script for this
 ## Nix Development Environment
 
 ### Misc Development Tools
@@ -119,7 +111,7 @@ ___
 
 **NOTE: THIS IS A WORK IN PROGRESS**
 
-I would like to add support for Niri next. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
+I would like to add support for MangoWM next. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
 
 
 ### GNOME Niceties I Miss
@@ -134,8 +126,6 @@ I would like to add support for Niri next. Because I wrote some of this before I
 
 * Make a fastfetch weather widget
 * Make a UI tool that automatically populates .nix files from various types of configuration file languages for common tools 
-* Investigate automated dotfile migration tools
-* Investigate Home Manager modules/wrappers for commonly used applications
 * Investigate `xdg.configFile` / `home.file` for applications without Home Manager modules or extend my backup scripts to include those
 * Explore NixOS hardware configuration improvements, such as a hosts folder for different PCs
 * Explore declarative Flatpak management?

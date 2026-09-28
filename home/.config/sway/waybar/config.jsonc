@@ -20,9 +20,9 @@
     "modules-right":
     [
         "pulseaudio",
+        "battery",
         "memory",
         "network",
-        "battery",
         "power-profiles-daemon",
         "custom/power",
         "tray"
