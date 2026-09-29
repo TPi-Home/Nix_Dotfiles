@@ -49,6 +49,9 @@
     VISUAL = "code";
   };
 
+  # Override conf
+  # home-manager.backupFileExtension = "hm.OLD";
+
   fonts.fontconfig.enable = true;
 
   home.stateVersion = "26.11";
