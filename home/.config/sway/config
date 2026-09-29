@@ -61,6 +61,8 @@ exec kanshi
 exec_always kanshictl reload
 exec mako
 exec udiskie
+exec nm-applet
+exec blueman
 exec autotiling
 exec swayidle -w \
     timeout 300 'swaymsg "output * power off"' \
@@ -199,6 +201,8 @@ bindsym $mod+Mod1+l resize grow width 20px
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # ----------------------------------------------------------------------------
 # Wallpaper

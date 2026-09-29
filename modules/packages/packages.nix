@@ -11,12 +11,13 @@
     starship
     fzf
     fastfetch
-    btop
+    htop
+    atop
     direnv
     nvtopPackages.full
     proton-vpn
     taskwarrior3
-    zellij
+    tmux
     stow
 
     # --------------------------------------------------------------------------

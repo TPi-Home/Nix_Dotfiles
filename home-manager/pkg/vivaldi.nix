@@ -2,7 +2,7 @@
 # Vivaldi
 # ============================================================================
 {...}: {
-  programs.chromium = {
+  programs.vivaldi = {
     enable = true;
 
     commandLineArgs = [

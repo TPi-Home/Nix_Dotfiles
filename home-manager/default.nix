@@ -23,7 +23,7 @@
 
     # Browsers
     ./pkg/firefox.nix
-    ./pkg/chromium.nix
+    # ./pkg/chromium.nix
     ./pkg/vivaldi.nix
 
     # Game Dev

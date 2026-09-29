@@ -19,10 +19,9 @@
 
     "modules-right":
     [
-        "pulseaudio",
-        "memory",
-        "network",
         "power-profiles-daemon",
+        "memory",
+        "pulseaudio",
         "battery",
         "custom/power",
         "tray"
@@ -84,22 +83,21 @@
         "tooltip-format": "RAM: {used:0.1f} GiB / {total:0.1f} GiB"
     },
 
-    "network":
+    "backlight":
     {
-        "interval": 5,
+        "format": "{icon} {percent}%",
 
-        "format-wifi": " {ifname}",
-        "format-ethernet": "󰈀 {ifname}",
-        "format-linked": "󰌷 {ifname}",
-        "format-disconnected": "󰖪",
+        "format-icons":
+        [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ],
 
-        "tooltip-format-wifi": "{essid}\nSignal: {signalStrength}%\nInterface: {ifname}",
-        "tooltip-format-ethernet": "Ethernet\n{ifname}\n{ipaddr}/{cidr}",
-        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format": "Brightness: {percent}%",
 
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-
-        "on-click": "nm-applet"
+        "on-scroll-up": "brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-"
     },
 
     "pulseaudio":

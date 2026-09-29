@@ -83,6 +83,7 @@
     jq
     tree-sitter
     devenv
+    prettier
 
     # --------------------------------------------------------------------------
     # Game Development

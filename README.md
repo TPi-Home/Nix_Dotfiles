@@ -6,6 +6,8 @@ I am likely going to regret this.
 - [About](./docs/about.md)
 - [ToDo](./docs/todo.md)
 - [Sway](./docs/sway.md)
+- [Neovim](./docs/nvim.md)
+
 ---
 ## Use Case
 I have long wanted to experiment with different workflows in Linux. The problem with experimentation is obvious: dependencies, configurations, and general clutter from software you no longer use pile up the more you experiment. Enter Nix, which, for the sake of this discussion, can function almost atomically.

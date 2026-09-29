@@ -137,7 +137,6 @@ color: @black;
 * Right-side modules
 * -------------------------------------------------------------------------- */
 
-#network,
 #pulseaudio,
 #battery,
 #clock,
@@ -151,27 +150,6 @@ color: @black;
     box-shadow:
         0 6px 22px alpha(@black, 0.30),
         inset 0 1px alpha(@text, 0.025);
-}
-
-/* --------------------------------------------------------------------------
-
-* Network
-* -------------------------------------------------------------------------- */
-
-#network {
-color: @text;
-padding: 0 12px;
-border: 2px solid alpha(@border, 0.60);
-}
-
-#network:hover {
-background: @highlight;
-border-color: alpha(@border, 0.90);
-}
-
-#network.disconnected {
-color: @text-muted;
-border-color: alpha(@text-muted, 0.35);
 }
 
 /* --------------------------------------------------------------------------

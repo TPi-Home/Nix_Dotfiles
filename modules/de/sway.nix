@@ -35,17 +35,6 @@
   services.tumbler.enable = true; # Generates image thumbnails in Thunar
 
   # --------------------------------------------------------------------------
-  # Waybar
-  # --------------------------------------------------------------------------
-
-  systemd.user.services.waybar.path = with pkgs; [
-    wlogout
-    pavucontrol
-    pamixer
-    procps
-  ];
-
-  # --------------------------------------------------------------------------
   # Power
   # --------------------------------------------------------------------------
 
@@ -123,6 +112,9 @@
     # Removable devices
     udiskie
 
+    # Screen
+    brightnessctl
+
     # Audio
     wiremix
     pavucontrol
@@ -131,8 +123,7 @@
     nnn
     vimix-icon-theme
 
-    # Misc
-    procps
+    # Logout GUI
     wlogout
   ];
 }

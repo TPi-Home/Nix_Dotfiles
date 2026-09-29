@@ -5,14 +5,14 @@
 - [About](about.md)
 - [ToDo](todo.md)
 - [Sway](sway.md)
+- [Neovim](nvim.md)
+
 ---
 **This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents. I would like to update the directory structure in the readme before I try to tackle breaking this document up.**
 ## Configuration Organization
 ### Performance Cleanups 
 * Considering Cachy kernel
 * Need to set default apps
-### Systemd
-* I need fewer "exec" and more systemd integration  and rm exec from sway
 
 ### Inconsistent UI
 * Keep showing workspace if empty but < current workspace
@@ -22,30 +22,9 @@
 * Battery module doesn't fit
 ### Security
 ### Misc
-* Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
-* Deployment scripts and documentation scripts
-* Revision of network configuration, perhaps per machine
 * Enable swaylock
 * Add support for cloud storage & mount at boot
 * All nix code should use alejandra formatter
-
-
-### Wrappers For
----
-* Neovim
-  * Overlapping keybinds in eval
-
-### UI to Finish
----
-## Dot File Documentation
-* Directory Structure on README.md needs updated
-## Nix Development Environment
-
-### Misc Development Tools
-* Not really a development tool, but `npins` looks interesting 
-
-### Flake 
-* Try Doom Emacs
 ---
 
 ## Desktop Environment / Window Manager Setup

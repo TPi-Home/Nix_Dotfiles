@@ -5,6 +5,7 @@
 - [About](about.md)
 - [ToDo](todo.md)
 - [Sway](sway.md)
+- [Neovim](nvim.md)
 
 ## Components of a Sway Session
 * Wayland session
