@@ -31,6 +31,34 @@ Madison has made some of my favorite wallpapers to use, many of which I have use
 ### Color Scheme Credit
 **[AstroNvim's Astrodark](https://astronvim.com/)**
 
+## Install
+
+### **This is untested:**
+
+1. Install NixOS.
+
+2. Enable Nix Flakes.
+
+3. Clone the repository:
+
+```bash
+git clone https://github.com/TPi-Home/Nix_Dotfiles.git ~/Nix_Dot_Files
+```
+
+4. Copy your hardware configuration to the appropriate hardware configuration file in `~/Nix_Dot_Files`.
+
+5. Update the `default.nix` in the `modules` folder to reflect the location of your hardware configuration.
+
+6. Update the `users` file in `modules/users` to reflect your desired user setup. Update the home-manager environment to reflect your desired setup.
+
+7. Run:
+
+```bash
+cd ~/Nix_Dot_Files/scripts
+chmod +x upgrade.sh
+./upgrade.sh
+```
+
 
 ## Layout
 To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.

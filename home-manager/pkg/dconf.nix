@@ -3,7 +3,7 @@
     enable = true;
 
     iconTheme = {
-      name = "Vimix-doder-dark";
+      name = "Vimix-doder";
       package = pkgs.vimix-icon-theme;
     };
 
