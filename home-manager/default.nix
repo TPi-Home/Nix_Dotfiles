@@ -24,6 +24,7 @@
     # Browsers
     ./pkg/firefox.nix
     ./pkg/chromium.nix
+    ./pkg/vivaldi.nix
 
     # Game Dev
     ./pkg/unity_hub.nix

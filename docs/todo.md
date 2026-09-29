@@ -19,6 +19,7 @@
 * No brightnessctl
 * Astrodark theme for vscode
 * Scroll and mouse speed
+* Battery module doesn't fit
 ### Security
 ### Misc
 * Finish per-machine configurations if/when needed as well as hosts directory in dotfile folder
@@ -27,7 +28,7 @@
 * Enable swaylock
 * Add support for cloud storage & mount at boot
 * All nix code should use alejandra formatter
-* Increase mouse movement speed
+
 
 ### Wrappers For
 ---

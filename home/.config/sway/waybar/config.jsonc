@@ -20,10 +20,10 @@
     "modules-right":
     [
         "pulseaudio",
-        "battery",
         "memory",
         "network",
         "power-profiles-daemon",
+        "battery",
         "custom/power",
         "tray"
     ],
@@ -105,8 +105,8 @@
     "pulseaudio":
     {
         "scroll-step": 2,
-        "format": "{icon}",
-        "format-muted": "󰝟",
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 0%",
         "tooltip-format": "{desc}\nVolume: {volume}%",
 
         "format-icons":
@@ -161,7 +161,8 @@
 
     "clock":
     {
-        "format": "{:%I:%M %p}"
+        "format": "{:%I:%M %p}",
+        "tooltip": false
     },
 
     "custom/power": 

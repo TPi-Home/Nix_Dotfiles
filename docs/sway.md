@@ -109,23 +109,22 @@ systemd
   | idle handling | `swayidle` |
   | screen locking | `swaylock` |
   | audio control | `pavucontrol` |
-  | a file manager | cli |
   | screenshots | `grim` + `slurp` |
   | clipboard | `wl-clipboard` |
   | notifications | `swaync` |
   | authentication agent | `polkit_gnome` |
-  | Wayland portals | `xdg-desktop-portal-hyprland` |
+  | Wayland portals | `xdg-desktop-portal-wlr` |
   | a logout/power menu | `wlogout` |
   | a terminal | `kitty` |
   | a network backend | `NetworkManager` |
   | an audio backend | `PipeWire` + `WirePlumber` |
   | a secret/keyring service | `gnome-keyring` |
-  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
+  |themes | stylix controlled |
   |cursors|`Adwaita`|
-  |file manager| tui|
+  |file manager| tui & `thunar`|
 
 ### Keybindings
-NEEDS WORK
+* Need scratchpad bindings
 
 ## Wayland and Scaling/X11 Support in Sway
 

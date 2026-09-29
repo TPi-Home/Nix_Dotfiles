@@ -40,9 +40,7 @@
 
   systemd.user.services.waybar.path = with pkgs; [
     wlogout
-    wleave
     pavucontrol
-    waylogout
     pamixer
     procps
   ];
@@ -99,6 +97,9 @@
     # Launcher
     fuzzel
 
+    # Autotiling
+    autotiling
+
     # Status Bar
     waybar
 
@@ -117,6 +118,7 @@
 
     # Bluetooth
     bluetuith
+    blueman
 
     # Removable devices
     udiskie

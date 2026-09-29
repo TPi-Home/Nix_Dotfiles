@@ -213,19 +213,19 @@ border-color: alpha(@border, 0.90);
 }
 
 #battery.warning:not(.charging) {
-color: @orange;
-border-color: alpha(@orange, 0.35);
+color: @cyan;
+border-color: alpha(@border, 0.35);
 }
 
 #battery.critical:not(.charging) {
-color: @red;
-border-color: alpha(@red, 0.40);
+color: @purple;
+border-color: alpha(@border, 0.40);
 }
 
 #battery.charging,
 #battery.plugged {
-color: @green;
-border-color: alpha(@green, 0.30);
+color: @text;
+border-color: alpha(@border, 0.30);
 }
 
 /* --------------------------------------------------------------------------
@@ -234,15 +234,15 @@ border-color: alpha(@green, 0.30);
 * -------------------------------------------------------------------------- */
 
 #clock {
-color: @text;
+color: @purple;
 padding: 0 14px;
 border: 2px solid alpha(@border, 0.60);
 }
 
-#clock:hover {
+/* #clock:hover {
 background: @highlight;
 border-color: alpha(@border, 0.90);
-}
+} */
 
 /* --------------------------------------------------------------------------
 
