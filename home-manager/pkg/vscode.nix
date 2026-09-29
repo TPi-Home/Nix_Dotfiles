@@ -18,6 +18,7 @@
 
       # Misc
       streetsidesoftware.code-spell-checker
+      naumovs.color-highlight
 
       # --------------------------------------------------------------------------
       # C / C++

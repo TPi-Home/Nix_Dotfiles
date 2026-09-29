@@ -16,6 +16,7 @@
 * Keep showing workspace if empty but < current workspace
 * No brightnessctl
 * Astrodark theme for vscode
+* Show color for values in editor of choice
 * Scroll and mouse speed
 ### Security
 ### Misc
