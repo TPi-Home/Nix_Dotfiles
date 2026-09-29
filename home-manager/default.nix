@@ -13,7 +13,6 @@
     # Editors
     ./pkg/vscode.nix
     ./pkg/helix.nix
-    ./pkg/nvim.nix
 
     # Customization
     ./pkg/dconf.nix
