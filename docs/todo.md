@@ -5,10 +5,8 @@
 - [About](about.md)
 - [ToDo](todo.md)
 - [Sway](sway.md)
-- [Neovim](nvim.md)
 
 ---
-**This file has turned into documentation of things I have tried as well as ideas I have had in addition to a todo list. I will eventually break it into other documents. I would like to update the directory structure in the readme before I try to tackle breaking this document up.**
 ## Configuration Organization
 ### Performance Cleanups 
 * Considering Cachy kernel
@@ -19,7 +17,6 @@
 * No brightnessctl
 * Astrodark theme for vscode
 * Scroll and mouse speed
-* Battery module doesn't fit
 ### Security
 ### Misc
 * Enable swaylock
@@ -31,38 +28,38 @@
 
 ### Tiling
 
-| I will need for mangowm: | |
-  |---|---|
-  | a Wi-Fi GUI | `nm-applet` |
-  | a Bluetooth GUI | `blueman` |
-  | a supported display manager | `greetd` or TTY |
-  | a launcher | `wofi` / `rofi-wayland` |
-  | a status bar | `waybar` |
-  | a wallpaper tool | `swaybg` |
-  | a power/brightness tool | `brightnessctl` |
-  | idle handling | `swayidle` |
-  | screen locking | `swaylock` |
-  | audio control | `pavucontrol` |
-  | a file manager | cli |
-  | screenshots | `grim` + `slurp` |
-  | clipboard | move `wl-clipboard` from `nvim.nix` to a system module |
-  | notifications | `swaync` |
-  | authentication agent | `polkit_gnome` |
-  | Wayland portals | `xdg-desktop-portal-hyprland` |
-  | a logout/power menu | `wlogout` |
-  | a terminal | `kitty` |
-  | a network backend | `NetworkManager` |
-  | an audio backend | `PipeWire` + `WirePlumber` |
-  | a secret/keyring service | `gnome-keyring` |
-  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
-  |cursors|`Adwaita`|
-  |file manager| tui|
-  |wayland session mgmt|`uwsm`|
+| I will need for MangoWM | Package / tool |
+|---|---|
+| Wi-Fi GUI | `nm-applet` |
+| Bluetooth GUI | `blueman` |
+| Display manager | `greetd` / TTY |
+| Launcher | `fuzzel` |
+| Status bar | `mangobar` |
+| Wallpaper | `swaybg` |
+| Brightness | `brightnessctl` |
+| Idle handling | `swayidle` |
+| Screen locking | `swaylock` |
+| Audio control | `pavucontrol` |
+| File manager (CLI) | `nnn` / other TUI |
+| File manager (GUI) | `thunar` |
+| Screenshots | `grim` + `slurp` |
+| Clipboard | `wl-clipboard` + `wl-clip-persist` + `cliphist` |
+| Notifications | `swaync` |
+| Authentication agent | `gnome-polkit` |
+| Wayland portals | `xdg-desktop-portal` + `xdg-desktop-portal-wlr` |
+| Logout / power menu | `wlogout` |
+| Terminal | `kitty` |
+| Network backend | `NetworkManager` |
+| Audio backend | `PipeWire` + `WirePlumber` |
+| Secret / keyring service | `gnome-keyring` |
+| GTK/Qt theme configuration | stylix |
+| Cursor theme | `Adwaita` |
+| Night light / gamma | `wlsunset` |
 
 ___
 <br/>
 
-| I will need for hyprland: | |
+| I will need for hyprland | Package / tool |
   |---|---|
   | a Wi-Fi GUI | `nm-applet` |
   | a Bluetooth GUI | `blueman` |

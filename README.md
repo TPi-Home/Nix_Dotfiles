@@ -6,7 +6,6 @@ I am likely going to regret this.
 - [About](./docs/about.md)
 - [ToDo](./docs/todo.md)
 - [Sway](./docs/sway.md)
-- [Neovim](./docs/nvim.md)
 
 ---
 ## Use Case
@@ -40,11 +39,8 @@ To understand my thinking with this layout, I wanted apps that most people need 
 Nix_Dot_Files/
 ├── docs
 │   ├── about.md
-│   ├── eval.md
-│   ├── implement.nix
 │   ├── sway.md
-│   ├── todo.md
-│   └── try
+│   └── todo.md
 ├── flake.lock
 ├── flake.nix
 ├── home
