@@ -1,12 +1,13 @@
 # ============================================================================
 # Stylix Enable
 # ============================================================================
-{pkgs, ...}: {
+{ lib, pkgs, ... }: {
   stylix = {
     enable = true;
     autoEnable = false;
 
-    base16Scheme = ../../home/.config/stylix/astrodark.yaml;
+    base16Scheme = ../../home/.config/stylix/astrodark_gtk.yaml;
+    polarity = "dark";
 
     icons = {
       enable = true;
@@ -18,5 +19,10 @@
       gtk.enable = true;
       waybar.enable = false;
     };
+  };
+
+  gtk.theme = lib.mkForce {
+    package = pkgs.adw-gtk3;
+    name = "adw-gtk3-dark";
   };
 }

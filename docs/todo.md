@@ -18,6 +18,10 @@
 * Astrodark theme for vscode
 * Show color for values in editor of choice
 * Scroll and mouse speed
+* Unfocused window border is inconsistent 
+* Defaults? No default term?
+* Terminal isn't fallback software -> move to home manager.
+
 ### Security
 ### Misc
 * Enable swaylock

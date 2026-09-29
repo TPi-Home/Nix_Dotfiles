@@ -9,13 +9,13 @@
     # Terminal
     ./pkg/git.nix
     ./pkg/kitty.nix
+    ./pkg/ghostty.nix
 
     # Editors
     ./pkg/vscode.nix
     ./pkg/helix.nix
 
     # Customization
-    ./pkg/dconf.nix
     ./pkg/fish.nix
     ./pkg/starship.nix
     ./stylix/default.nix

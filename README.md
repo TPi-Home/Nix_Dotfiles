@@ -64,7 +64,6 @@ chmod +x upgrade.sh
 To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.
 
 ```text
-Nix_Dot_Files/
 ├── docs
 │   ├── about.md
 │   ├── implement.nix
@@ -77,7 +76,6 @@ Nix_Dot_Files/
 │   ├── default.nix
 │   ├── pkg
 │   │   ├── chromium.nix
-│   │   ├── dconf.nix
 │   │   ├── firefox.nix
 │   │   ├── fish.nix
 │   │   ├── fuzzel.nix
@@ -85,9 +83,10 @@ Nix_Dot_Files/
 │   │   ├── helix.nix
 │   │   ├── kanshi.nix
 │   │   ├── kitty.nix
-│   │   ├── nvim.nix
 │   │   ├── packages.nix
+│   │   ├── qutebrowser.nix
 │   │   ├── starship.nix
+│   │   ├── thunar.nix
 │   │   ├── unity_hub.nix
 │   │   ├── vivaldi.nix
 │   │   ├── vscode.nix
