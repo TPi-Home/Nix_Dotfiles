@@ -38,81 +38,83 @@ To understand my thinking with this layout, I wanted apps that most people need 
 ```text
 Nix_Dot_Files/
 ├── docs
-│   ├── about.md
-│   ├── sway.md
-│   └── todo.md
+│   ├── about.md
+│   ├── implement.nix
+│   ├── sway.md
+│   └── todo.md
 ├── flake.lock
 ├── flake.nix
 ├── home
 ├── home-manager
-│   ├── default.nix
-│   ├── pkg
-│   │   ├── chromium.nix
-│   │   ├── dconf.nix
-│   │   ├── firefox.nix
-│   │   ├── fish.nix
-│   │   ├── fuzzel.nix
-│   │   ├── git.nix
-│   │   ├── helix.nix
-│   │   ├── kanshi.nix
-│   │   ├── kitty.nix
-│   │   ├── nvim.nix
-│   │   ├── packages.nix
-│   │   ├── starship.nix
-│   │   ├── unity_hub.nix
-│   │   ├── vscode.nix
-│   │   └── wlogout.nix
-│   ├── stylix
-│   │   ├── default.nix
-│   │   └── include.nix
-│   └── sway
-│       ├── sway.nix
-│       └── waybar.nix
+│   ├── default.nix
+│   ├── pkg
+│   │   ├── chromium.nix
+│   │   ├── dconf.nix
+│   │   ├── firefox.nix
+│   │   ├── fish.nix
+│   │   ├── fuzzel.nix
+│   │   ├── git.nix
+│   │   ├── helix.nix
+│   │   ├── kanshi.nix
+│   │   ├── kitty.nix
+│   │   ├── nvim.nix
+│   │   ├── packages.nix
+│   │   ├── starship.nix
+│   │   ├── unity_hub.nix
+│   │   ├── vivaldi.nix
+│   │   ├── vscode.nix
+│   │   └── wlogout.nix
+│   ├── stylix
+│   │   ├── default.nix
+│   │   └── include.nix
+│   └── sway
+│       ├── sway.nix
+│       └── waybar.nix
 ├── hosts
-│   ├── desktop
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   ├── generic
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── laptop
-│       ├── default.nix
-│       └── hardware-configuration.nix
+│   ├── desktop
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   ├── generic
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop
+│       ├── default.nix
+│       └── hardware-configuration.nix
 ├── LICENSE
 ├── modules
-│   ├── audio
-│   │   └── audio.nix
-│   ├── de
-│   │   ├── mango.nix
-│   │   └── sway.nix
-│   ├── default.nix
-│   ├── dm
-│   │   └── tuigreet.nix
-│   ├── graphics
-│   │   └── nvidia.nix
-│   ├── packages
-│   │   ├── gaming.nix
-│   │   └── packages.nix
-│   ├── system
-│   │   ├── boot.nix
-│   │   ├── fonts.nix
-│   │   ├── locale.nix
-│   │   ├── networking.nix
-│   │   ├── security.nix
-│   │   ├── session.nix
-│   │   └── system.nix
-│   └── users
-│       └── tyler.nix
+│   ├── audio
+│   │   └── audio.nix
+│   ├── de
+│   │   ├── mango.nix
+│   │   └── sway.nix
+│   ├── default.nix
+│   ├── dm
+│   │   └── tuigreet.nix
+│   ├── graphics
+│   │   └── nvidia.nix
+│   ├── packages
+│   │   ├── gaming.nix
+│   │   └── packages.nix
+│   ├── system
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── locale.nix
+│   │   ├── networking.nix
+│   │   ├── security.nix
+│   │   ├── session.nix
+│   │   └── system.nix
+│   └── users
+│       └── tyler.nix
 ├── README.md
 ├── reference
-│   ├── astrodark.lua
-│   └── Hilltopper.png
+│   ├── astrodark.lua
+│   └── Hilltopper.png
 ├── scripts
-│   ├── editglobalconf.sh
-│   ├── rebuild.sh
-│   ├── security_check.sh
-│   ├── trash.sh
-│   └── upgrade.sh
+│   ├── editglobalconf.sh
+│   ├── rebuild.sh
+│   ├── security_check.sh
+│   ├── trash.sh
+│   └── upgrade.sh
 └── scrot.png
 ```
 **The Above Structure is a Work In Progress**
