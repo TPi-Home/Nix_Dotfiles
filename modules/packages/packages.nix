@@ -7,7 +7,6 @@
     # Shell / Terminal
     # --------------------------------------------------------------------------
 
-    kitty
     starship
     fzf
     fastfetch
@@ -15,7 +14,7 @@
     atop
     direnv
     nvtopPackages.full
-    proton-vpn
+    proton-vpn-cli
     taskwarrior3
     tmux
     stow
