@@ -30,9 +30,7 @@
     ];
   };
 
-  programs.xfconf.enable = true; # Saves Thunar's internal settings
   services.gvfs.enable = true; # Core virtual file system (needed for trash & USB mounts)
-  services.tumbler.enable = true; # Generates image thumbnails in Thunar
 
   # --------------------------------------------------------------------------
   # Power

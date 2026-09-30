@@ -8,7 +8,7 @@
   "chat.disableAIFeatures": true,
   "window.openFoldersInNewWindow": "off",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "One Dark Pro Night Flat",
   "terminal.integrated.shellIntegration.enabled": false,
 
   "editor.fontFamily": "'Monaspace Neon NF', monospace",

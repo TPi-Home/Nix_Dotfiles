@@ -11,7 +11,7 @@
       # --------------------------------------------------------------------------
 
       # Theme
-      github.github-vscode-theme
+      zhuangtongfa.material-theme
 
       # Icons
       pkief.material-icon-theme
