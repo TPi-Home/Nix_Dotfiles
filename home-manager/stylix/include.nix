@@ -16,7 +16,7 @@
     icons = {
       enable = true;
       package = pkgs.vimix-icon-theme;
-      dark = "Vimix-doder";
+      dark = "Vimix-black";
     };
 
     targets = {
