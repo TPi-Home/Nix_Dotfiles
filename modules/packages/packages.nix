@@ -14,7 +14,6 @@
     atop
     direnv
     nvtopPackages.full
-    proton-vpn-cli
     taskwarrior3
     tmux
     stow

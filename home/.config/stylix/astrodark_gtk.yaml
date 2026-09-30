@@ -12,15 +12,15 @@ palette:
   base02: "#1E222A" # Current line
   base03: "#696C76" # Comments
   base04: "#ADB0BB" # Dark foreground 
-  base05: "#E0E0EE" # Default foreground
+  base05: "#E0E0Ee" # Default foreground
   base06: "#ADB0BB" # Bright foreground
-  base07: "#E0E0EE" # Brightest foreground
+  base07: "#ADB0BB" # Brightest foreground
 
   base08: "#FF838B" # Red
   base09: "#F5983A" # Orange
   base0A: "#DFAB25" # Yellow
   base0B: "#87C05F" # Green
-  base0C: "#4AC2B8" # Cyan
-  base0D: "#50A4E9" # Blue / Accent
+  base0C: "#50A4E9" # 
+  base0D: "#5EB7FF" # Blue / Accent
   base0E: "#DD97F1" # Purple
   base0F: "#EB8332" # Orange / alternate

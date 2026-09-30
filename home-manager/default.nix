@@ -5,10 +5,6 @@
   imports = [
     # Misc
     ./pkg/packages.nix
-    
-    # Networking
-    # pkg/zerotier
-    ./pkg/vpn_gui.nix
 
     # Terminal
     ./pkg/git.nix
