@@ -9,7 +9,6 @@
     # Terminal
     ./pkg/git.nix
     ./pkg/kitty.nix
-    ./pkg/ghostty.nix
 
     # Editors
     ./pkg/vscode.nix
