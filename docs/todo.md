@@ -10,6 +10,7 @@
 ## Configuration Organization
 ### Fun
 Dwarf Fortress Hack added smooth motion!!!!
+Add CDDA to my flake. 
 ### Sway
 Autotiling is conflicting with window management: super + t
 
