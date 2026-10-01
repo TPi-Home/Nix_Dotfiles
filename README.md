@@ -18,8 +18,8 @@ The goal is to make it easier to try a different workflow without starting from 
 > **Warning:** This is primarily my goal, not a claim that this project is ready to be installed as a complete system, especially by beginners. It is still a work in progress and reflects my own experimentation with NixOS. It wasn't until I saw how easily Nix could be used to build a custom environment brick by brick that I realized how powerful it is as a tool for experimentation.
 
 ## Screenshots
-![Screenshot 2](scrot.png)
-
+![Screenshot 1](scrot.png)
+![Screenshot 2](scrot2.png)
 ## Credits
 
 ### Wallpaper Credit
@@ -65,83 +65,83 @@ To understand my thinking with this layout, I wanted apps that most people need 
 
 ```text
 ├── docs
-│   ├── about.md
-│   ├── implement.nix
-│   ├── sway.md
-│   └── todo.md
+│   ├── about.md
+│   ├── implement
+│   ├── implement.nix
+│   ├── sway.md
+│   └── todo.md
 ├── flake.lock
 ├── flake.nix
 ├── home
 ├── home-manager
-│   ├── default.nix
-│   ├── pkg
-│   │   ├── chromium.nix
-│   │   ├── firefox.nix
-│   │   ├── fish.nix
-│   │   ├── fuzzel.nix
-│   │   ├── git.nix
-│   │   ├── helix.nix
-│   │   ├── kanshi.nix
-│   │   ├── kitty.nix
-│   │   ├── packages.nix
-│   │   ├── qutebrowser.nix
-│   │   ├── starship.nix
-│   │   ├── thunar.nix
-│   │   ├── unity_hub.nix
-│   │   ├── vivaldi.nix
-│   │   ├── vscode.nix
-│   │   └── wlogout.nix
-│   ├── stylix
-│   │   ├── default.nix
-│   │   └── include.nix
-│   └── sway
-│       ├── sway.nix
-│       └── waybar.nix
+│   ├── default.nix
+│   ├── pkg
+│   │   ├── chromium.nix
+│   │   ├── firefox.nix
+│   │   ├── fish.nix
+│   │   ├── fuzzel.nix
+│   │   ├── git.nix
+│   │   ├── helix.nix
+│   │   ├── kanshi.nix
+│   │   ├── kitty.nix
+│   │   ├── packages.nix
+│   │   ├── qutebrowser.nix
+│   │   ├── starship.nix
+│   │   ├── unity_hub.nix
+│   │   ├── vivaldi.nix
+│   │   ├── vscode.nix
+│   │   └── wlogout.nix
+│   ├── stylix
+│   │   ├── default.nix
+│   │   └── include.nix
+│   └── sway
+│       ├── sway.nix
+│       └── waybar.nix
 ├── hosts
-│   ├── desktop
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   ├── generic
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── laptop
-│       ├── default.nix
-│       └── hardware-configuration.nix
+│   ├── desktop
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   ├── generic
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop
+│       ├── default.nix
+│       └── hardware-configuration.nix
 ├── LICENSE
 ├── modules
-│   ├── audio
-│   │   └── audio.nix
-│   ├── de
-│   │   ├── mango.nix
-│   │   └── sway.nix
-│   ├── default.nix
-│   ├── dm
-│   │   └── tuigreet.nix
-│   ├── graphics
-│   │   └── nvidia.nix
-│   ├── packages
-│   │   ├── gaming.nix
-│   │   └── packages.nix
-│   ├── system
-│   │   ├── boot.nix
-│   │   ├── fonts.nix
-│   │   ├── locale.nix
-│   │   ├── networking.nix
-│   │   ├── security.nix
-│   │   ├── session.nix
-│   │   └── system.nix
-│   └── users
-│       └── tyler.nix
+│   ├── audio
+│   │   └── audio.nix
+│   ├── de
+│   │   ├── mango.nix
+│   │   └── sway.nix
+│   ├── default.nix
+│   ├── dm
+│   │   └── tuigreet.nix
+│   ├── graphics
+│   │   └── nvidia.nix
+│   ├── packages
+│   │   ├── gaming.nix
+│   │   └── packages.nix
+│   ├── system
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── locale.nix
+│   │   ├── networking.nix
+│   │   ├── security.nix
+│   │   ├── session.nix
+│   │   └── system.nix
+│   └── users
+│       └── tyler.nix
 ├── README.md
 ├── reference
-│   ├── astrodark.lua
-│   └── Hilltopper.png
+│   ├── astrodark.lua
+│   └── Hilltopper.png
 ├── scripts
-│   ├── editglobalconf.sh
-│   ├── rebuild.sh
-│   ├── security_check.sh
-│   ├── trash.sh
-│   └── upgrade.sh
+│   ├── editglobalconf.sh
+│   ├── rebuild.sh
+│   ├── security_check.sh
+│   ├── trash.sh
+│   └── upgrade.sh
 └── scrot.png
 ```
 **The Above Structure is a Work In Progress**

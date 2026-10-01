@@ -8,9 +8,29 @@
 
 ---
 ## Configuration Organization
+### Sway
+Autotiling is conflicting with window management: super + t
+
+My short term fix:
+```
+# Press Super + Alt + A to start autotiling
+bindsym $mod+Mod1+a exec autotiling
+
+# Press Super + Alt + X to kill autotiling and return to pure i3/Sway behavior
+bindsym $mod+Mod1+x exec pkill -f autotiling
+```
+But I should use a toggle script:
+```
+# Toggle autotiling on and off with Super + Alt + T
+bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
+```
 ### Performance Cleanups 
 * Considering Cachy kernel
 * Need to set default apps
+* CCDA 
+* Copy from command output imperatively 
+* Kitty now has terminal custom shaders!! The future is now.
+* Remove either thunar or nemo
 
 ### Inconsistent UI
 * Keep showing workspace if empty but < current workspace
@@ -21,12 +41,16 @@
 * Unfocused window border is inconsistent 
 * Defaults? No default term?
 * Terminal isn't fallback software -> move to home manager.
+* Workspace char padding for large workspaces
 
 ### Security
 ### Misc
 * Enable swaylock
 * Add support for cloud storage & mount at boot
 * All nix code should use alejandra formatter
+
+### Unrelated to linux
+* JS Script works in chrome but not vivaldi 
 ---
 
 ## Desktop Environment / Window Manager Setup

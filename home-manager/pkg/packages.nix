@@ -84,6 +84,7 @@
     tree-sitter
     devenv
     prettier
+    gdu
 
     # --------------------------------------------------------------------------
     # Game Development
