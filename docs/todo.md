@@ -8,6 +8,8 @@
 
 ---
 ## Configuration Organization
+### Fun
+Dwarf Fortress Hack added smooth motion!!!!
 ### Sway
 Autotiling is conflicting with window management: super + t
 
