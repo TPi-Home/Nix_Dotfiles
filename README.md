@@ -64,84 +64,109 @@ chmod +x upgrade.sh
 To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.
 
 ```text
+Nix_Dot_Files
 ├── docs
-│   ├── about.md
-│   ├── implement
-│   ├── implement.nix
-│   ├── sway.md
-│   └── todo.md
+│   ├── about.md
+│   ├── implement
+│   ├── implement.nix
+│   ├── sway.md
+│   └── todo.md
 ├── flake.lock
 ├── flake.nix
+├── .gitignore
 ├── home
+│   └── .config
+│       ├── Code
+│       │   └── User
+│       │       └── settings.json
+│       ├── fuzzel
+│       │   └── fuzzel.ini
+│       ├── kitty
+│       │   ├── kitty.conf
+│       │   └── themes
+│       │       └── astrodark.conf
+│       ├── starship.toml
+│       ├── stylix
+│       │   ├── astrodark_gtk.yaml
+│       │   └── backup.yaml
+│       ├── sway
+│       │   ├── config
+│       │   └── waybar
+│       │       ├── config.jsonc
+│       │       └── style.css
+│       └── wlogout
+│           ├── config.json
+│           └── style.css
 ├── home-manager
-│   ├── default.nix
-│   ├── pkg
-│   │   ├── chromium.nix
-│   │   ├── firefox.nix
-│   │   ├── fish.nix
-│   │   ├── fuzzel.nix
-│   │   ├── git.nix
-│   │   ├── helix.nix
-│   │   ├── kanshi.nix
-│   │   ├── kitty.nix
-│   │   ├── packages.nix
-│   │   ├── qutebrowser.nix
-│   │   ├── starship.nix
-│   │   ├── unity_hub.nix
-│   │   ├── vivaldi.nix
-│   │   ├── vscode.nix
-│   │   └── wlogout.nix
-│   ├── stylix
-│   │   ├── default.nix
-│   │   └── include.nix
-│   └── sway
-│       ├── sway.nix
-│       └── waybar.nix
+│   ├── default.nix
+│   ├── pkg
+│   │   ├── chromium.nix
+│   │   ├── firefox.nix
+│   │   ├── fish.nix
+│   │   ├── fuzzel.nix
+│   │   ├── git.nix
+│   │   ├── helix.nix
+│   │   ├── kanshi.nix
+│   │   ├── kitty.nix
+│   │   ├── packages.nix
+│   │   ├── qutebrowser.nix
+│   │   ├── starship.nix
+│   │   ├── unity_hub.nix
+│   │   ├── vivaldi.nix
+│   │   ├── vscode.nix
+│   │   └── wlogout.nix
+│   ├── stylix
+│   │   ├── default.nix
+│   │   └── include.nix
+│   └── sway
+│       ├── sway.nix
+│       └── waybar.nix
 ├── hosts
-│   ├── desktop
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   ├── generic
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── laptop
-│       ├── default.nix
-│       └── hardware-configuration.nix
+│   ├── desktop
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   ├── generic
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop
+│       ├── default.nix
+│       └── hardware-configuration.nix
 ├── LICENSE
 ├── modules
-│   ├── audio
-│   │   └── audio.nix
-│   ├── de
-│   │   ├── mango.nix
-│   │   └── sway.nix
-│   ├── default.nix
-│   ├── dm
-│   │   └── tuigreet.nix
-│   ├── graphics
-│   │   └── nvidia.nix
-│   ├── packages
-│   │   ├── gaming.nix
-│   │   └── packages.nix
-│   ├── system
-│   │   ├── boot.nix
-│   │   ├── fonts.nix
-│   │   ├── locale.nix
-│   │   ├── networking.nix
-│   │   ├── security.nix
-│   │   ├── session.nix
-│   │   └── system.nix
-│   └── users
-│       └── tyler.nix
+│   ├── audio
+│   │   └── audio.nix
+│   ├── de
+│   │   ├── mango.nix
+│   │   └── sway.nix
+│   ├── default.nix
+│   ├── dm
+│   │   └── tuigreet.nix
+│   ├── graphics
+│   │   └── nvidia.nix
+│   ├── packages
+│   │   ├── gaming.nix
+│   │   └── packages.nix
+│   ├── system
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── locale.nix
+│   │   ├── networking.nix
+│   │   ├── security.nix
+│   │   ├── session.nix
+│   │   └── system.nix
+│   └── users
+│       └── tyler.nix
 ├── README.md
 ├── reference
-│   ├── astrodark.lua
-│   └── Hilltopper.png
+│   ├── astrodark.lua
+│   └── Hilltopper.png
 ├── scripts
-│   ├── editglobalconf.sh
-│   ├── rebuild.sh
-│   ├── security_check.sh
-│   ├── trash.sh
-│   └── upgrade.sh
+│   ├── editglobalconf.sh
+│   ├── rebuild.sh
+│   ├── security_check.sh
+│   ├── trash.sh
+│   └── upgrade.sh
+├── scrot2.png
 └── scrot.png
 ```
 **The Above Structure is a Work In Progress**
