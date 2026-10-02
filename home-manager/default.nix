@@ -18,6 +18,7 @@
     ./pkg/fish.nix
     ./pkg/starship.nix
     ./stylix/default.nix
+    ./stylix/dconf.nix
 
     # Browsers
     ./pkg/firefox.nix
@@ -46,10 +47,9 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "code";
+    GDK_DPI_SCALE = "1.4";
+    # GDK_SCALE = "1.4";
   };
-
-  # Override conf
-  # home-manager.backupFileExtension = "hm.OLD";
 
   fonts.fontconfig.enable = true;
 
