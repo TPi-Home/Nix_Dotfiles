@@ -107,6 +107,5 @@
     obsidian
     discord
     libreoffice
-    librewolf
   ];
 }

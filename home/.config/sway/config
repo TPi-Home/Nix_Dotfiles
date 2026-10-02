@@ -14,8 +14,8 @@ input type:keyboard xkb_numlock enabled
 
 font pango:Monaspace Neon NF 14
 
-default_border pixel 3
-default_floating_border pixel 3
+default_border normal 2
+default_floating_border normal 2
 smart_borders off
 titlebar_border_thickness 0
 
@@ -40,13 +40,13 @@ floating_modifier $mod
 
 # Format:               border      bg          text       indic       child_border
 client.focused          #50A4E9     #50A4E9     #111317    #5EB7FF     #50A4E9
-client.focused_inactive #CC83E3     #CC83E3     #111317    #DD97F1     #CC83E3
+client.focused_inactive #3A3E47     #16181D     #9B9FA9    #696C76     #3A3E47
 client.unfocused        #3A3E47     #16181D     #9B9FA9    #696C76     #3A3E47
-client.urgent           #F8747E     #F8747E     #111317    #FF838B     #F8747E
+client.urgent           #CC83E3     #CC83E3     #111317    #DD97F1     #CC83E3
 
 # ----------------------------------------------------------------------------
 # Applications
-# ----------------------------------------------------------------------------
+# -------------------------------------------------------------pixel---------------
 
 set $term kitty
 set $menu fuzzel
@@ -63,7 +63,6 @@ exec mako
 exec udiskie
 exec nm-applet
 exec blueman
-# exec autotiling
 exec swayidle -w \
     timeout 300 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"'
@@ -95,10 +94,10 @@ bindsym $mod+d exec $menu
 bindsym $mod+q kill
 
 # Press Super + Alt + A to start autotiling
-bindsym $mod+Mod1+a exec autotiling
+bindsym $mod+a exec autotiling
 
 # Press Super + Alt + X to kill autotiling and return to pure i3/Sway behavior
-bindsym $mod+Mod1+x exec pkill -f autotiling
+bindsym $mod+x exec pkill -f autotiling
 
 # ----------------------------------------------------------------------------
 # Notifications
@@ -180,16 +179,21 @@ bindsym $mod+Tab workspace back_and_forth
 
 bindsym $mod+b splith
 bindsym $mod+v splitv
-bindsym $mod+m layout tabbed
+bindsym $mod+m layout tabbed 
+bindsym $mod+e layout split
 bindsym $mod+t layout toggle split
+bindsym $mod+w layout stacking
 bindsym $mod+f fullscreen
 
 # ----------------------------------------------------------------------------
 # Floating
 # ----------------------------------------------------------------------------
 
-bindsym $mod+s floating toggle
-bindsym $mod+Shift+s focus mode_toggle
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+c floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+z focus mode_toggle
 
 # ----------------------------------------------------------------------------
 # Resize

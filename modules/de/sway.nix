@@ -31,7 +31,9 @@
   };
 
   services.gvfs.enable = true; # Core virtual file system (needed for trash & USB mounts)
-
+  services.tumbler.enable = true;
+  programs.xfconf.enable = true;
+  
   # --------------------------------------------------------------------------
   # Power
   # --------------------------------------------------------------------------
@@ -118,8 +120,6 @@
     pavucontrol
 
     # File Manager
-    nemo
-    nemo-fileroller
     nnn
     vimix-icon-theme
 

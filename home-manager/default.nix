@@ -25,6 +25,7 @@
     # ./pkg/chromium.nix
     ./pkg/vivaldi.nix
     ./pkg/qutebrowser.nix
+    ./pkg/librewolf.nix
 
     # Game Dev
     ./pkg/unity_hub.nix

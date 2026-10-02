@@ -42,6 +42,8 @@
     TTYReset = true;
     TTYVHangup = true;
     TTYVTDisallocate = true;
+    # You can comment this out on systems without numlock if your input gets broken at login. You can switch to TTY2 or TTY3 to get around it.
+    ExecStartPre = "${pkgs.bash}/bin/bash -c '${pkgs.kbd}/bin/setleds -D +num < /dev/tty1'";
   };
 
   environment.systemPackages = with pkgs; [
