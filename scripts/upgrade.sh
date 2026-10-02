@@ -1,2 +1,2 @@
-nix flake update
+nix flake update nixpkgs
 sudo nixos-rebuild switch --flake ~/Nix_Dot_Files#generic
