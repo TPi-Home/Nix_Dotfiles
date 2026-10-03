@@ -6,6 +6,7 @@ I am likely going to regret this.
 - [ToDo](./docs/todo.md)
 - [Sway](./docs/sway.md)
 - [Installation](./docs/installation.md)
+- [Mango](./docs/mango.md)
 
 ---
 ## Use Case

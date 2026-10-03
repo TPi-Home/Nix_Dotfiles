@@ -3,8 +3,10 @@
 ## Table of Contents
 - [README](../README.md)
 - [About](about.md)
-- [Sway](sway.md)
 - [Installation](installation.md)
+- [Sway](sway.md)
+- [Mango](mango.md)
+
 
 ---
 ## Configuration Organization
@@ -55,8 +57,8 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 * Enable swaylock
 * Add support for cloud storage & mount at boot
 * Add server conf
-### Unrelated to linux
-* JS Script works in chrome but not vivaldi 
+### Environment
+* sc for scim, vi for vim and vim for neovim
 ---
 
 ## Desktop Environment / Window Manager Setup

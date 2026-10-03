@@ -5,6 +5,7 @@
 - [About](about.md)
 - [ToDo](todo.md)
 - [Installation](installation.md)
+- [Mango](mango.md)
 
 ## Components of a Sway Session
 * Wayland session

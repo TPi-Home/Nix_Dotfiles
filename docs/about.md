@@ -3,8 +3,9 @@
 ## Table of Contents
 - [README](../README.md)
 - [ToDo](todo.md)
-- [Sway](sway.md)
 - [Installation](installation.md)
+- [Sway](sway.md)
+- [Mango](mango.md)
 
 ---
 

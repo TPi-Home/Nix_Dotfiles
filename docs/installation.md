@@ -2,8 +2,10 @@
 
 ## Table of Contents
 - [README](../README.md)
+- [About](about.md)
 - [ToDo](todo.md)
 - [Sway](sway.md)
+- [Mango](mango.md)
 
 ---
 

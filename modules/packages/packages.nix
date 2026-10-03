@@ -11,6 +11,7 @@
     fzf
     fastfetch
     htop
+    bottom
     atop
     direnv
     nvtopPackages.full
