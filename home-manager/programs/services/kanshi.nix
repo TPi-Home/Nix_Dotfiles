@@ -1,4 +1,7 @@
-{...}: {
+# ============================================================================
+# Fuzzel
+# ============================================================================
+{pkgs, ...}: {
   services.kanshi = {
     enable = true;
 
@@ -6,7 +9,6 @@
       {
         profile = {
           name = "desktop";
-
           outputs = [
             {
               criteria = "LG Electronics LG ULTRAGEAR 110NTRLAS678";
@@ -21,7 +23,6 @@
       {
         profile = {
           name = "laptop";
-
           outputs = [
             {
               criteria = "EDO EF10QBC64.C Unknown";
@@ -33,5 +34,22 @@
         };
       }
     ];
+  };
+
+  systemd.user.services.kanshi = {
+    description = "Kanshi output autoconfig";
+
+    wantedBy = ["graphical-session.target"];
+    partOf = ["graphical-session.target"];
+
+    environment = {
+      XDG_CONFIG_HOME = "/home/tyler/.config";
+    };
+
+    serviceConfig = {
+      ExecStart = "${pkgs.kanshi}/bin/kanshi";
+      Restart = "always";
+      RestartSec = 5;
+    };
   };
 }

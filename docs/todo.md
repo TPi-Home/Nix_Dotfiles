@@ -37,6 +37,7 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 
 ### Development Environment / Jobs
 * Weather in fastfetch or fetch?
+* Generate ./tree.sh @ startup
 
 ### Inconsistent UI
 * Keep showing workspace if empty but < current workspace
@@ -48,7 +49,7 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 * Defaults? No default term?
 * Terminal isn't fallback software -> move to home manager.
 * Workspace char padding for large workspaces
-
+* Mako config
 ### Security
 
 ### Documentation

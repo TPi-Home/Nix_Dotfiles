@@ -4,8 +4,8 @@ I am likely going to regret this.
 ## Table of Contents
 - [About](./docs/about.md)
 - [ToDo](./docs/todo.md)
-- [Sway](./docs/sway.md)
 - [Installation](./docs/installation.md)
+- [Sway](./docs/sway.md)
 - [Mango](./docs/mango.md)
 
 ---
@@ -32,8 +32,6 @@ Madison has made some of my favorite wallpapers to use, many of which I have use
 **[AstroNvim's Astrodark](https://astronvim.com/)**
 
 ## Layout
-To understand my thinking with this layout, I wanted apps that most people need to have a basic functional PC to be handled system wide while user specific software and configs were handled with home-manager. Most notably, I don't see a good reason to allow GUI applications to be installed system wide unless it is essential for a wayland window manager/display manager session. 
-For most situations, home manager having a nix file that points to a config file is the easiest way I have found to avoid my fighting with NixOS. 
 ```text
 Nix_Dot_Files
 ├── docs
@@ -182,11 +180,11 @@ For most situations, home manager having a nix file that points to a config file
 | **NixOS** | System | Base operating system | Flakes must be enabled |
 | **Home-Manager** | User | User-level configuration management | Declarative dotfiles and per-user settings |
 | **Stylix** | User | Unified theming across applications | Color scheme and wallpaper management |
-| **Sway** | User | Wayland window manager | Primary DE; configured in `home-manager/sway` |
+| **Sway** | User | Wayland window manager | Primary WM; configured in `home-manager/sway` and is functionally setup to be a complete DE|
 | **Alejandra** | System | Nix code formatter | Used for consistent code style across the project |
 
-## Hardware Support
-
+## Hardware Support 
+**Note: This is personal and hardware support should be checked via the NixOS wiki first.**
 This project has been tested on:
 
 - **GPUs:** NVIDIA (CUDA-capable), Intel integrated graphics

@@ -112,7 +112,7 @@ systemd
   | audio control | `pavucontrol` |
   | screenshots | `grim` + `slurp` |
   | clipboard | `wl-clipboard` |
-  | notifications | `swaync` |
+  | notifications | `mako` |
   | authentication agent | `polkit_gnome` |
   | Wayland portals | `xdg-desktop-portal-wlr` |
   | a logout/power menu | `wlogout` |
@@ -121,7 +121,7 @@ systemd
   | an audio backend | `PipeWire` + `WirePlumber` |
   | a secret/keyring service | `gnome-keyring` |
   |themes | stylix controlled |
-  |cursors|`Adwaita`|
+  |cursors|`Bibata`|
   |file manager| tui & `thunar`|
 
 ### Keybindings
