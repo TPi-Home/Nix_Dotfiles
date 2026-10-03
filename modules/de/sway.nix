@@ -33,7 +33,7 @@
   services.gvfs.enable = true; # Core virtual file system (needed for trash & USB mounts)
   services.tumbler.enable = true;
   programs.xfconf.enable = true;
-  
+
   # --------------------------------------------------------------------------
   # Power
   # --------------------------------------------------------------------------

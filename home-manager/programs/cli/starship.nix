@@ -7,7 +7,7 @@
     enableFishIntegration = true;
     enableBashIntegration = true;
     settings = builtins.fromTOML (
-      builtins.readFile ../../home/.config/starship.toml
+      builtins.readFile ../../../home/.config/starship.toml
     );
   };
 }

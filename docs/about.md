@@ -2,9 +2,9 @@
 
 ## Table of Contents
 - [README](../README.md)
-- [About](about.md)
 - [ToDo](todo.md)
 - [Sway](sway.md)
+- [Installation](installation.md)
 
 ---
 
@@ -37,6 +37,13 @@ Not everything can be managed declaratively. Software or configuration that is i
 * dynamic supported
 
 ## Setup Outside of Wayland
+## Code Style and Formatting
 
+All Nix files in this project are formatted with **Alejandra**. If you're contributing or modifying configurations, run:
+
+```bash
+cd ~/Nix_Dot_Files
+alejandra .
+```
 ### Flake Structure
 The `flake.nix` file largely points to `default.nix` for the system and user configurations, as well as the hardware configurations. 

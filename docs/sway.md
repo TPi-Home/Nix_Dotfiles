@@ -4,7 +4,7 @@
 - [README](../README.md)
 - [About](about.md)
 - [ToDo](todo.md)
-- [Sway](sway.md)
+- [Installation](installation.md)
 
 ## Components of a Sway Session
 * Wayland session

@@ -41,5 +41,5 @@
   };
 
   xdg.configFile."Code/User/settings.json".source =
-    ../../home/.config/Code/User/settings.json;
+    ../../../home/.config/Code/User/settings.json;
 }

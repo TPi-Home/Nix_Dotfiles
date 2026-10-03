@@ -5,6 +5,6 @@
   programs.kitty = {
     enable = true;
     enableGitIntegration = true;
-    extraConfig = builtins.readFile ../../home/.config/kitty/kitty.conf;
+    extraConfig = builtins.readFile ../../../home/.config/kitty/kitty.conf;
   };
 }

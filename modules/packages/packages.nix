@@ -55,6 +55,7 @@
     # like windirstat but in the terminal:
     ncdu
     sops
+    sc-im
 
     # --------------------------------------------------------------------------
     # Secrets

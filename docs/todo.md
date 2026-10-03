@@ -3,13 +3,13 @@
 ## Table of Contents
 - [README](../README.md)
 - [About](about.md)
-- [ToDo](todo.md)
 - [Sway](sway.md)
+- [Installation](installation.md)
 
 ---
 ## Configuration Organization
 ### Fun
-Add CDDA to my flake. 
+Add CDDA to my flake. Maybe Mango as well, depending on how far behind the nixos packages Mango is. 
 ### Sway
 Autotiling is conflicting with window management: super + t
 
@@ -28,11 +28,13 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 ```
 ### Performance Cleanups 
 * Considering Cachy kernel
-* Need to set default apps
+* Need to set default apps - MIME
 * CCDA 
 * Copy from command output imperatively 
 * Kitty now has terminal custom shaders!! The future is now.
-* Remove either thunar or nemo
+
+### Development Environment / Jobs
+* Weather in fastfetch or fetch?
 
 ### Inconsistent UI
 * Keep showing workspace if empty but < current workspace
@@ -46,11 +48,13 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 * Workspace char padding for large workspaces
 
 ### Security
+
+### Documentation
+* Installation documentation should be a separate file from the README file.
 ### Misc
 * Enable swaylock
 * Add support for cloud storage & mount at boot
-* All nix code should use alejandra formatter
-
+* Add server conf
 ### Unrelated to linux
 * JS Script works in chrome but not vivaldi 
 ---

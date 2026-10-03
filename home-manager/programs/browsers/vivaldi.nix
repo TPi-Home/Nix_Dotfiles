@@ -1,12 +1,12 @@
 # ============================================================================
-# Chromium
+# Vivaldi
 # ============================================================================
 {...}: {
-  programs.chromium = {
+  programs.vivaldi = {
     enable = true;
 
     commandLineArgs = [
-      "--force-device-scale-factor=1.5"
+      "--force-device-scale-factor=1.0"
     ];
 
     extensions = [

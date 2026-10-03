@@ -1,7 +1,9 @@
 # ============================================================================
-# Fuzzel
+# Ollama
 # ============================================================================
-{...}: {
-  home.file.".config/fuzzel/fuzzel.ini".source =
-    ../../home/.config/fuzzel/fuzzel.ini;
+{pkgs, ...}: {
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+  };
 }

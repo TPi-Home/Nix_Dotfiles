@@ -26,6 +26,7 @@
       generic = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
+        # Could point to /etc/nixos on a fresh install
         modules = [
           ./modules/default.nix
           ./hosts/generic/default.nix

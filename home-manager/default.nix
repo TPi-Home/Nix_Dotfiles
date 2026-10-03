@@ -4,42 +4,47 @@
 {...}: {
   imports = [
     # Misc
-    ./pkg/packages.nix
+    ./programs/misc/programs.nix
+    ./programs/misc/ollama.nix
+    ./programs/misc/obs.nix
 
-    # Terminal
-    ./pkg/git.nix
-    ./pkg/kitty.nix
+    # CLI
+    ./programs/cli/git.nix
+    ./programs/cli/fish.nix
+    ./programs/cli/starship.nix
+
+    # Terminals
+    ./programs/terminals/alacritty.nix
+    ./programs/terminals/kitty.nix
 
     # Editors
-    ./pkg/vscode.nix
-    ./pkg/helix.nix
+    ./programs/editors/vscode.nix
+    ./programs/editors/helix.nix
 
     # Customization
-    ./pkg/fish.nix
-    ./pkg/starship.nix
     ./stylix/default.nix
     ./stylix/dconf.nix
 
     # Browsers
-    ./pkg/firefox.nix
-    ./pkg/chromium.nix
-    ./pkg/vivaldi.nix
-    ./pkg/qutebrowser.nix
-    ./pkg/librewolf.nix
+    ./programs/browsers/firefox.nix
+    ./programs/browsers/chromium.nix
+    ./programs/browsers/vivaldi.nix
+    ./programs/browsers/qutebrowser.nix
+    ./programs/browsers/librewolf.nix
 
     # Game Dev
-    ./pkg/unity_hub.nix
+    ./programs/misc/unity_hub.nix
 
     # Desktop
     ./sway/sway.nix
     ./sway/waybar.nix
-    ./pkg/wlogout.nix
+    ./programs/services/wlogout.nix
 
     # Application Launcher
-    ./pkg/fuzzel.nix
+    ./programs/services/fuzzel.nix
 
     # Display Settings
-    ./pkg/kanshi.nix
+    ./programs/services/kanshi.nix
   ];
 
   home.username = "tyler";
@@ -48,7 +53,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "code";
-    GDK_DPI_SCALE = "1.4";
+    GDK_DPI_SCALE = "1.0";
     # GDK_SCALE = "1.4";
   };
 

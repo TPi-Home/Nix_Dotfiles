@@ -93,10 +93,10 @@ bindsym $mod+d exec $menu
 # bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
 
-# Press Super + Alt + A to start autotiling
+# Press Super + A to start autotiling
 bindsym $mod+a exec autotiling
 
-# Press Super + Alt + X to kill autotiling and return to pure i3/Sway behavior
+# Press Super + X to kill autotiling and return to pure i3/Sway behavior
 bindsym $mod+x exec pkill -f autotiling
 
 # ----------------------------------------------------------------------------

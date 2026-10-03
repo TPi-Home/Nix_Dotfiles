@@ -2,27 +2,26 @@
 I am likely going to regret this. 
 
 ## Table of Contents
-- [README](README.md)
 - [About](./docs/about.md)
 - [ToDo](./docs/todo.md)
 - [Sway](./docs/sway.md)
+- [Installation](./docs/installation.md)
 
 ---
 ## Use Case
+
 I have long wanted to experiment with different workflows in Linux. The problem with experimentation is obvious: dependencies, configurations, and general clutter from software you no longer use pile up the more you experiment. Enter Nix, which, for the sake of this discussion, can function almost atomically.
 
 This project aims to provide a modular, relatively unopinionated starting point where individual components can be enabled, disabled, replaced, or extended without committing to a particular desktop environment, editor, shell, or workflow.
 
-The goal is to make it easier to try a different workflow without starting from scratch or inheriting incompatible configuration. That was the position I found myself in when I started learning NixOS, and hopefully this can serve the same purpose for others. 
-
-> **Warning:** This is primarily my goal, not a claim that this project is ready to be installed as a complete system, especially by beginners. It is still a work in progress and reflects my own experimentation with NixOS. It wasn't until I saw how easily Nix could be used to build a custom environment brick by brick that I realized how powerful it is as a tool for experimentation.
+> **Warning:** This is primarily my personal setup and a work in progress. It reflects my own experimentation with NixOS and is not intended as a complete, production-ready system. Expect issues and review what you're enabling before deploying
 
 ## Screenshots
 ![Screenshot 1](scrot.png)
 ![Screenshot 2](scrot2.png)
 ## Credits
 
-### Wallpaper Credit
+### Visual Inspiration Credit
 Madison has made some of my favorite wallpapers to use, many of which I have used for years now. 
 
 **[Positron Dream](https://www.positrondream.com/about)**
@@ -31,44 +30,14 @@ Madison has made some of my favorite wallpapers to use, many of which I have use
 ### Color Scheme Credit
 **[AstroNvim's Astrodark](https://astronvim.com/)**
 
-## Install
-
-### **This is untested:**
-
-1. Install NixOS.
-
-2. Enable Nix Flakes.
-
-3. Clone the repository:
-
-```bash
-git clone https://github.com/TPi-Home/Nix_Dotfiles.git ~/Nix_Dot_Files
-```
-
-4. Copy your hardware configuration to the appropriate hardware configuration file in `~/Nix_Dot_Files`.
-
-5. Update the `default.nix` in the `modules` folder to reflect the location of your hardware configuration.
-
-6. Update the `users` file in `modules/users` to reflect your desired user setup. Update the home-manager environment to reflect your desired setup.
-
-7. Run:
-
-```bash
-cd ~/Nix_Dot_Files/scripts
-chmod +x upgrade.sh
-./upgrade.sh
-```
-
-
 ## Layout
-To understand my thinking with this layout, I wanted apps that most people need to have a working PC to be handled system wide while user specific software and configs were handled with home-manager.
-
+To understand my thinking with this layout, I wanted apps that most people need to have a basic functional PC to be handled system wide while user specific software and configs were handled with home-manager. Most notably, I don't see a good reason to allow GUI applications to be installed system wide unless it is essential for a wayland window manager/display manager session. 
+For most situations, home manager having a nix file that points to a config file is the easiest way I have found to avoid my fighting with NixOS. 
 ```text
 Nix_Dot_Files
 ├── docs
 │   ├── about.md
-│   ├── implement
-│   ├── implement.nix
+│   ├── installation.md
 │   ├── sway.md
 │   └── todo.md
 ├── flake.lock
@@ -99,23 +68,35 @@ Nix_Dot_Files
 │           └── style.css
 ├── home-manager
 │   ├── default.nix
-│   ├── pkg
-│   │   ├── chromium.nix
-│   │   ├── firefox.nix
-│   │   ├── fish.nix
-│   │   ├── fuzzel.nix
-│   │   ├── git.nix
-│   │   ├── helix.nix
-│   │   ├── kanshi.nix
-│   │   ├── kitty.nix
-│   │   ├── packages.nix
-│   │   ├── qutebrowser.nix
-│   │   ├── starship.nix
-│   │   ├── unity_hub.nix
-│   │   ├── vivaldi.nix
-│   │   ├── vscode.nix
-│   │   └── wlogout.nix
+│   ├── programs
+│   │   ├── browsers
+│   │   │   ├── chromium.nix
+│   │   │   ├── firefox.nix
+│   │   │   ├── librewolf.nix
+│   │   │   ├── qutebrowser.nix
+│   │   │   └── vivaldi.nix
+│   │   ├── cli
+│   │   │   ├── fish.nix
+│   │   │   ├── git.nix
+│   │   │   ├── starship.nix
+│   │   │   └── tmux.nix
+│   │   ├── editors
+│   │   │   ├── helix.nix
+│   │   │   └── vscode.nix
+│   │   ├── misc
+│   │   │   ├── obs.nix
+│   │   │   ├── ollama.nix
+│   │   │   ├── programs.nix
+│   │   │   └── unity_hub.nix
+│   │   ├── services
+│   │   │   ├── fuzzel.nix
+│   │   │   ├── kanshi.nix
+│   │   │   └── wlogout.nix
+│   │   └── terminals
+│   │       ├── alacritty.nix
+│   │       └── kitty.nix
 │   ├── stylix
+│   │   ├── dconf.nix
 │   │   ├── default.nix
 │   │   └── include.nix
 │   └── sway
@@ -124,13 +105,15 @@ Nix_Dot_Files
 ├── hosts
 │   ├── desktop
 │   │   ├── default.nix
+│   │   ├── desktop_specific.nix
 │   │   └── hardware-configuration.nix
 │   ├── generic
 │   │   ├── default.nix
 │   │   └── hardware-configuration.nix
 │   └── laptop
 │       ├── default.nix
-│       └── hardware-configuration.nix
+│       ├── hardware-configuration.nix
+│       └── laptop_specific.nix
 ├── LICENSE
 ├── modules
 │   ├── audio
@@ -162,59 +145,54 @@ Nix_Dot_Files
 │   └── Hilltopper.png
 ├── scripts
 │   ├── editglobalconf.sh
+│   ├── gen.sh
 │   ├── rebuild.sh
 │   ├── security_check.sh
 │   ├── trash.sh
+│   ├── tree.sh
 │   └── upgrade.sh
 ├── scrot2.png
 └── scrot.png
+37 directories, 82 files
+
 ```
-**The Above Structure is a Work In Progress**
 ## Structure
 
-### Separation of Responsibilities
+### Philosophy: Separation of Responsibilities
 
 | Directory | Purpose |
 |---|---|
-| `hosts/` | Things that differ between machines |
-| `modules/` | Reusable NixOS system configuration |
-| `home-manager/` | Home Manager declarations and user-level configuration |
-| `home/` | Actual application configuration files |
-| `scripts/` | Convenience/maintenance scripts |
-| `imperative/` | Non-declarative setup material and documentation |
-| `deprecated/` | Previous approaches retained for reference |
+| `hosts/` | Machine-specific configuration (desktop, laptop, etc.) |
+| `modules/` | Reusable NixOS system-level configuration blocks |
+| `home-manager/` | User-level programs and their NixOS integration |
+| `home/.config/` | Actual application configuration files (dotfiles) |
+| `scripts/` | Convenience scripts for system management |
+| `docs/` | Detailed documentation on specific topics |
+| `reference/` | Assets and reference material |
 
 ### Configuration flow
 
-```text
-flake.nix
-    │
-    ├── hosts/<machine>/
-    │       └── hardware-configuration.nix
-    │
-    ├── modules/
-    │       ├── system/
-    │       ├── networking/
-    │       ├── audio/
-    │       ├── nvidia/
-    │       ├── de/
-    │       └── ...
-    │
-    └── home-manager/
-            │
-            ├── packages.nix
-            ├── git.nix
-            ├── nvim.nix
-            ├── kitty.nix
-            ├── vscode.nix
-            └── ...
-                    │
-                    ▼
-                  home/
-                    └── .config/
-                          ├── nvim/
-                          ├── kitty/
-                          ├── Code/
-                          └── starship.toml
-```
-For most situations, home manager having a nix file that points to a config file is the easiest way I have found to avoid my fighting with NixOS. 
+For most situations, home manager having a nix file that points to a config file is the easiest way I have found to avoid my fighting with my operating system. Extra config being assigned by nix in nix lang is not somehow superior to just pointing nix to a config file in my opinion.
+
+## Notable Dependencies
+
+| Dependency | Level | Purpose | Notes |
+|---|---|---|---|
+| **NixOS** | System | Base operating system | Flakes must be enabled |
+| **Home-Manager** | User | User-level configuration management | Declarative dotfiles and per-user settings |
+| **Stylix** | User | Unified theming across applications | Color scheme and wallpaper management |
+| **Sway** | User | Wayland window manager | Primary DE; configured in `home-manager/sway` |
+| **Alejandra** | System | Nix code formatter | Used for consistent code style across the project |
+
+## Hardware Support
+
+This project has been tested on:
+
+- **GPUs:** NVIDIA (CUDA-capable), Intel integrated graphics
+- **CPUs:** AMD Ryzen, Intel Core, and their variants
+- **Form factors:** Desktop and laptop configurations
+
+This project has not been tested on:
+- **GPUs:** AMD (RDNA/RDNA2) - I could test it on my steam deck
+
+The modular structure in `modules/graphics` allows you to select the appropriate driver stack for your hardware.
