@@ -37,7 +37,7 @@
     # Desktop
     ./de/sway.nix
     ./de/mango.nix
-    ./waybar.nix
+    ./programs/services/waybar.nix
 
     # Session
     ./programs/services/wlogout.nix
