@@ -5,6 +5,9 @@
   wayland.windowManager.mango = {
     enable = true;
     systemd.enable = true;
+    systemd.variables = [
+      "XDG_DATA_DIRS"
+    ];
     settings = builtins.readFile ../../home/.config/mango/config.conf;
     autostart_sh = "systemctl --user reset-failed\nsystemctl --user start mango-session.target";
   };
