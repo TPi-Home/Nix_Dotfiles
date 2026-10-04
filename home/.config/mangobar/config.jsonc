@@ -54,7 +54,8 @@
 
   "custom/power-profile": {
     "exec": "case \"$(powerprofilesctl get)\" in performance) printf \"󰓅 performance\" ;; balanced) printf \"󰗑 balanced\" ;; power-saver) printf \"󰌪 power-saver\" ;; *) powerprofilesctl get ;; esac",
-    "interval": 2
+    "interval": 2,
+    "on-click": "case \"$(powerprofilesctl get)\" in performance) powerprofilesctl set balanced ;; balanced) powerprofilesctl set power-saver ;; power-saver) powerprofilesctl set performance ;; esac"
   },
 
   "clock": {
