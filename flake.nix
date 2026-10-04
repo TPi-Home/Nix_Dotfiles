@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mangobar = {
       url = "github:mangowm/mangobar";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +30,7 @@
     nixpkgs,
     stylix,
     home-manager,
+    mangowm,
     mangobar,
     ...
   }: {
@@ -38,6 +44,7 @@
           ./hosts/generic/default.nix
 
           stylix.nixosModules.stylix
+          mangowm.nixosModules.mango
           home-manager.nixosModules.home-manager
 
           {
