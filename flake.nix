@@ -54,6 +54,7 @@
             home-manager.users.tyler = {
               imports = [
                 stylix.homeModules.stylix
+                mangowm.hmModules.mango
                 mangobar.homeManagerModules.default
                 ./home-manager/default.nix
               ];
