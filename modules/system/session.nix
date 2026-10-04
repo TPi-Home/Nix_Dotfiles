@@ -79,7 +79,6 @@
     pavucontrol
     nnn
     vimix-icon-theme
-    wlogout
   ];
 
   # File System for Removable Media
