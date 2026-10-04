@@ -59,7 +59,15 @@
   environment.systemPackages = with pkgs; [
     fuzzel
     (waybar.overrideAttrs (old: {
+      src = fetchFromGitHub {
+        owner = "Alexays";
+        repo = "waybar";
+        rev = "6d60c8e02be67bb85bb9b1ea803f2fbcf0722002";
+        hash = "sha256-G6AcGuevhkYflQHhJq9GnLhEMgcI51Y6MYKBQvdRPDc=";
+      };
+      version = "0.15.0-unstable-2026-08-27";
       mesonFlags = old.mesonFlags ++ ["-Dmango=true"];
+      doInstallCheck = false;
     }))
     libnotify
     mako
