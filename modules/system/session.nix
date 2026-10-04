@@ -57,9 +57,7 @@
   # --------------------------------------------------------------------------
 
   environment.systemPackages = with pkgs; [
-    (waybar.overrideAttrs (old: {
-      mesonFlags = old.mesonFlags ++ ["-Dmango=true"];
-    }))
+    waybar
     libnotify
     mako
     grim
@@ -80,10 +78,6 @@
     vimix-icon-theme
   ];
 
-  # File System for Removable Media
-  environment.variables.GIO_EXTRA_MODULES = [
-    "${pkgs.gnome.gvfs}/lib/gio/modules"
-  ];
 
   # Theme Support
   programs.dconf.enable = true;
