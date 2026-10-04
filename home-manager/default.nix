@@ -35,8 +35,8 @@
     ./programs/misc/unity_hub.nix
 
     # Desktop
-    ./sway/sway.nix
-    ./mango/mango.nix
+    ./de/sway.nix
+    ./de/mango.nix
     ./waybar.nix
 
     # Session
