@@ -6,7 +6,7 @@
 }
 {
   "label": "logout",
-  "action": "loginctl terminate-user "$USER"",
+  "action": "loginctl terminate-user \"$USER\"",
   "text": "Logout",
   "keybind": "e"
 }
