@@ -57,7 +57,6 @@
   # --------------------------------------------------------------------------
 
   environment.systemPackages = with pkgs; [
-    fuzzel
     (waybar.overrideAttrs (old: {
       mesonFlags = old.mesonFlags ++ ["-Dmango=true"];
     }))
