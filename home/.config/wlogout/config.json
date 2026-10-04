@@ -1,41 +1,38 @@
-{
+[
+  {
     "label": "lock",
     "action": "swaylock -f",
     "text": "Lock",
     "keybind": "l"
-}
-
-{
+  },
+  {
     "label": "logout",
     "action": "loginctl terminate-session \"$XDG_SESSION_ID\"",
     "text": "Logout",
     "keybind": "e"
-}
-
-{
+  },
+  {
     "label": "suspend",
     "action": "systemctl suspend",
     "text": "Suspend",
     "keybind": "s"
-}
-
-{
+  },
+  {
     "label": "hibernate",
     "action": "systemctl hibernate",
     "text": "Hibernate",
     "keybind": "h"
-}
-
-{
+  },
+  {
     "label": "shutdown",
     "action": "systemctl poweroff",
     "text": "Shutdown",
     "keybind": "p"
-}
-
-{
+  },
+  {
     "label": "reboot",
     "action": "systemctl reboot",
     "text": "Reboot",
     "keybind": "r"
-}
+  }
+]
