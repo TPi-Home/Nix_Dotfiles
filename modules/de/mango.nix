@@ -6,7 +6,14 @@
   # Mango Wayland Compositor
   # --------------------------------------------------------------------------
 
-  programs.mango.enable = true;
+  programs.mango = {
+    enable = true;
+    addLoginEntry = true;
+  };
+
+  # --------------------------------------------------------------------------
+  # Mango Runtime Utilities
+  # --------------------------------------------------------------------------
 
   environment.systemPackages = with pkgs; [
     # Launcher
@@ -37,6 +44,11 @@
 
     # Screen
     brightnessctl
+    swaybg
+
+    # Idle / Lock
+    swayidle
+    swaylock
 
     # Audio
     wiremix
@@ -89,15 +101,6 @@
   };
 
   services.blueman.enable = true;
-
-  # --------------------------------------------------------------------------
-  # Wayland
-  # --------------------------------------------------------------------------
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-  };
 
   # --------------------------------------------------------------------------
   # Security & Permissions
