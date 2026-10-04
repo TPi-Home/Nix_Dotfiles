@@ -41,7 +41,7 @@
   services.mangobar = {
     enable = true;
     systemdTarget = "mango-session.target";
-    package = mangobar.packages.\${pkgs.system}.default.overrideAttrs (old: {
+    package = mangobar.packages.${pkgs.system}.default.overrideAttrs (old: {
       nativeBuildInputs = old.nativeBuildInputs ++ [ pkgs.makeWrapper ];
       buildInputs = old.buildInputs ++ [ pkgs.librsvg ];
       postFixup = (old.postFixup or "") + ''
