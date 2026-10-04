@@ -21,9 +21,9 @@
 @define-color text-inactive #494D56;
 
 #bar {
-  background-color: alpha(#111317, 0.94);
+  background-color: #111317;
   color: #ADB0BB;
-  border: 2px solid alpha(#3A3E47, 0.55);
+  border: 2px solid #3A3E47;
   border-radius: 0;
   padding: 0;
   margin: 0;
@@ -42,7 +42,7 @@
   padding: 0px 8px;
   margin: 0;
   border-radius: 0;
-  border: 1px solid alpha(#3A3E47, 0.55);
+  border: 1px solid #3A3E47;
 }
 
 #tags > *.active {
@@ -60,7 +60,7 @@
 }
 
 #tags > *.urgent {
-  background-color: alpha(#CC83E3, 0.80);
+  background-color: #CC83E3;
   color: #111317;
   border-color: #CC83E3;
 }
@@ -68,7 +68,7 @@
 #title {
   background-color: #16181D;
   color: #9B9FA9;
-  border: 2px solid alpha(#3A3E47, 0.60);
+  border: 2px solid #3A3E47;
   border-radius: 0;
   padding: 0px 12px;
   margin: 0;
@@ -83,7 +83,7 @@
 #tray {
   background-color: #16181D;
   color: #ADB0BB;
-  border: 2px solid alpha(#3A3E47, 0.60);
+  border: 2px solid #3A3E47;
   border-radius: 0;
   padding: 0px 12px;
   margin: 0;
@@ -96,7 +96,7 @@
 
 #volume.muted {
   color: #696C76;
-  border-color: alpha(#696C76, 0.45);
+  border-color: #696C76;
 }
 
 #custom-power {
