@@ -7,7 +7,7 @@
 
 {
     "label": "logout",
-    "action": "swaymsg exit",
+    "action": "loginctl terminate-session \"$XDG_SESSION_ID\"",
     "text": "Logout",
     "keybind": "e"
 }
