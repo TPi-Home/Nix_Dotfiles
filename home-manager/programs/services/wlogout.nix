@@ -1,7 +1,11 @@
 # ============================================================================
 # WLogout
 # ============================================================================
-{config, ...}: {
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    wlogout
+  ];
+
   home.file.".config/wlogout/layout".source =
     ../../../home/.config/wlogout/config.json;
 
