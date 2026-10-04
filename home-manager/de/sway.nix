@@ -17,6 +17,7 @@
 
   wayland.windowManager.sway = {
     xwayland = true;
+    systemd.enable = true;
 
     config = {
       output."eDP-2".scale = "1";
