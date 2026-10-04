@@ -9,6 +9,17 @@
     autostart_sh = "systemctl --user reset-failed\nsystemctl --user start mango-session.target";
   };
 
+  # Mango's session target is the compositor session entry point, but the
+  # upstream target only BindsTo graphical-session.target. Explicitly pull
+  # graphical-session.target in so services WantedBy that target, such as
+  # nm-applet, are started in a Mango session too.
+  systemd.user.targets.mango-session = {
+    Unit = {
+      Wants = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+    };
+  };
+
   systemd.user.services.mango-wallpaper = {
     Unit = {
       Description = "Mango wallpaper";
