@@ -1,10 +1,11 @@
 # ============================================================================
 # Mango
 # ============================================================================
-{config, pkgs, ...}: {
+{pkgs, ...}: {
   wayland.windowManager.mango = {
     enable = true;
     systemd.enable = true;
+    systemd.variables = [ "--all" ];
     settings = builtins.readFile ../../home/.config/mango/config.conf;
     autostart_sh = "systemctl --user reset-failed\nsystemctl --user start mango-session.target";
   };
@@ -42,10 +43,6 @@
     systemdTarget = "mango-session.target";
     configFile = ../../home/.config/mangobar/config.jsonc;
   };
-
-  systemd.user.services.mangobar.Service.Environment = [
-    "XDG_DATA_DIRS=${config.home.profileDirectory}/share:${config.xdg.dataHome}:/usr/local/share:/usr/share"
-  ];
 
   xdg.configFile."mangobar/style.css".source =
     ../../home/.config/mangobar/style.css;
