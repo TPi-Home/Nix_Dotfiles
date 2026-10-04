@@ -9,7 +9,7 @@
     Unit = {
       Description = "Mango compositor session";
       BindsTo = ["graphical-session.target"];
-      Wants = ["graphical-session-pre.target"];
+      Wants = ["graphical-session-pre.target" "graphical-session.target"];
       After = ["graphical-session-pre.target"];
     };
   };
