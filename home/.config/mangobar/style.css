@@ -1,0 +1,124 @@
+* {
+  font-family: "Monaspace Neon NF", "Symbols Nerd Font";
+  font-size: 25px;
+  font-weight: 500;
+}
+
+@define-color black #111317;
+@define-color inactive #16181D;
+@define-color base #1A1D23;
+@define-color float #14161B;
+@define-color highlight #23272F;
+@define-color border #3A3E47;
+
+@define-color blue #50A4E9;
+@define-color bright-blue #5EB7FF;
+@define-color purple #CC83E3;
+
+@define-color text #ADB0BB;
+@define-color text-dim #9B9FA9;
+@define-color text-muted #696C76;
+@define-color text-inactive #494D56;
+
+#bar {
+  background-color: alpha(#111317, 0.94);
+  color: #ADB0BB;
+  border: 2px solid alpha(#3A3E47, 0.55);
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#tags {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#tags > * {
+  color: #696C76;
+  background-color: transparent;
+  min-width: 40px;
+  padding: 0px 8px;
+  margin: 0;
+  border-radius: 0;
+  border: 1px solid alpha(#3A3E47, 0.55);
+}
+
+#tags > *.active {
+  background-color: #50A4E9;
+  color: #111317;
+  border-color: #50A4E9;
+}
+
+#tags > *.occupied {
+  color: #ADB0BB;
+}
+
+#tags > *.empty {
+  color: #494D56;
+}
+
+#tags > *.urgent {
+  background-color: alpha(#CC83E3, 0.80);
+  color: #111317;
+  border-color: #CC83E3;
+}
+
+#title {
+  background-color: #16181D;
+  color: #9B9FA9;
+  border: 2px solid alpha(#3A3E47, 0.60);
+  border-radius: 0;
+  padding: 0px 12px;
+  margin: 0;
+}
+
+#volume,
+#battery,
+#clock,
+#mem,
+#custom-power-profile,
+#custom-power,
+#tray {
+  background-color: #16181D;
+  color: #ADB0BB;
+  border: 2px solid alpha(#3A3E47, 0.60);
+  border-radius: 0;
+  padding: 0px 12px;
+  margin: 0;
+}
+
+#clock {
+  color: #CC83E3;
+  padding: 0px 14px;
+}
+
+#volume.muted {
+  color: #696C76;
+  border-color: alpha(#696C76, 0.45);
+}
+
+#custom-power {
+  padding: 0px 12px;
+}
+
+#tray {
+  padding: 0px 10px;
+}
+
+menu {
+  background-color: #14161B;
+  color: #ADB0BB;
+  border: 2px solid #3A3E47;
+  border-radius: 0;
+}
+
+menuitem {
+  color: #ADB0BB;
+}
+
+menuitem:hover {
+  background-color: #23272F;
+  color: #ADB0BB;
+}
