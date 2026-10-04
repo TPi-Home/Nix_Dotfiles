@@ -4,5 +4,6 @@
 {...}: {
   imports = [
     ./include.nix
+    ./dconf.nix
   ];
 }

@@ -26,7 +26,8 @@
 
     # Desktop / WM
     ./de/sway.nix
-
+    ./de/mango.nix
+    
     # Software that is not directly enabled
     ./packages/packages.nix
 

@@ -23,7 +23,6 @@
 
     # Customization
     ./stylix/default.nix
-    ./stylix/dconf.nix
 
     # Browsers
     ./programs/browsers/firefox.nix
@@ -38,6 +37,10 @@
     # Desktop
     ./sway/sway.nix
     ./sway/waybar.nix
+    ./mango/mango.nix
+    ./mango/waybar.nix
+    
+    # Session 
     ./programs/services/wlogout.nix
 
     # Application Launcher
