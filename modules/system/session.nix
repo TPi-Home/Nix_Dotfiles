@@ -9,6 +9,14 @@
   # --------------------------------------------------------------------------
   # Wayland
   # --------------------------------------------------------------------------
+  
+  xdg.portal = {
+    enable = true;
+
+    # Application -> XDG Desktop Portal -> wlroots portal backend ->
+    # PipeWire -> Back to Application
+    wlr.enable = true;
+  };
 
   environment.sessionVariables = {
     SWAY_UNSUPPORTED_GPU = "1";

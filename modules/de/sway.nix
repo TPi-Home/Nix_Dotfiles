@@ -61,18 +61,6 @@
   services.blueman.enable = true;
 
   # --------------------------------------------------------------------------
-  # Wayland
-  # --------------------------------------------------------------------------
-
-  xdg.portal = {
-    enable = true;
-
-    # Application -> XDG Desktop Portal -> wlroots portal backend ->
-    # PipeWire -> Back to Application
-    wlr.enable = true;
-  };
-
-  # --------------------------------------------------------------------------
   # Security & Permissions
   # --------------------------------------------------------------------------
 
