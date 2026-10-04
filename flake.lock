@@ -160,6 +160,26 @@
         "type": "github"
       }
     },
+    "mangobar": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789539144,
+        "narHash": "sha256-ot38vZg59h24Cv1OYRzF9ktEr115wm+5umCAycsNShA=",
+        "owner": "mangowm",
+        "repo": "mangobar",
+        "rev": "84f25a77706c31b49b865d08bc5429ca61115971",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mangowm",
+        "repo": "mangobar",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1790822859,
@@ -204,6 +224,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "mangobar": "mangobar",
         "nixpkgs": "nixpkgs",
         "stylix": "stylix"
       }
