@@ -7,7 +7,6 @@
 
   services.mangobar = {
     enable = true;
-    systemdTarget = "mango-session.target";
     configFile = ../../home/.config/mangobar/config.jsonc;
   };
 
