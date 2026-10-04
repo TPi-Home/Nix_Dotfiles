@@ -58,7 +58,7 @@
   },
 
   "clock": {
-    "format": "{:%I:%M %p}"
+    "format": "{:L%I:%M %p}"
   },
 
   "custom/power": {
