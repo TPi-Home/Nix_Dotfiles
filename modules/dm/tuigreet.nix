@@ -31,7 +31,8 @@
       };
     };
   };
-
+  
+  security.pam.services.greetd.enableGnomeKeyring = true;
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
 

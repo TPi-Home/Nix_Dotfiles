@@ -52,6 +52,7 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
+  # I believe this will try to boot with both and one should just fail
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
