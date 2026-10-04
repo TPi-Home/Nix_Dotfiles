@@ -58,7 +58,9 @@
 
   environment.systemPackages = with pkgs; [
     fuzzel
-    waybar
+    (waybar.overrideAttrs (old: {
+      mesonFlags = old.mesonFlags ++ ["-Dmango=true"];
+    }))
     libnotify
     mako
     grim
