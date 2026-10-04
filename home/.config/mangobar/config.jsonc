@@ -34,7 +34,7 @@
   },
 
   "custom/memory": {
-    "exec": "sh -c 'free -b | awk \'/^Mem:/ {printf "󰍛 %.1fG", ($2-$7)/1024/1024/1024}\''",
+    "exec": "free -b | awk '/^Mem:/ {printf \"󰍛 %.1fG\", ($2-$7)/1024/1024/1024}'",
     "interval": 2
   },
 
@@ -53,7 +53,7 @@
   },
 
   "custom/power-profile": {
-    "exec": "sh -c 'case "$(powerprofilesctl get)" in performance) printf "󰓅 performance" ;; balanced) printf "󰗑 balanced" ;; power-saver) printf "󰌪 power-saver" ;; *) powerprofilesctl get ;; esac'",
+    "exec": "case \"$(powerprofilesctl get)\" in performance) printf \"󰓅 performance\" ;; balanced) printf \"󰗑 balanced\" ;; power-saver) printf \"󰌪 power-saver\" ;; *) powerprofilesctl get ;; esac",
     "interval": 2
   },
 
@@ -63,7 +63,7 @@
 
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout"
+    "on-click": "wlogout --protocol layer-shell"
   },
 
   "tray": {
