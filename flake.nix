@@ -13,6 +13,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mangobar = {
+      url = "github:mangowm/mangobar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -20,6 +25,7 @@
     nixpkgs,
     stylix,
     home-manager,
+    mangobar,
     ...
   }: {
     nixosConfigurations = {
@@ -41,6 +47,7 @@
             home-manager.users.tyler = {
               imports = [
                 stylix.homeModules.stylix
+                mangobar.homeManagerModules.default
                 ./home-manager/default.nix
               ];
             };
