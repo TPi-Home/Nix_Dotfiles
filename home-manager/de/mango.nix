@@ -2,16 +2,11 @@
 # Mango
 # ============================================================================
 {pkgs, ...}: {
-  xdg.configFile."mango/config.conf".source =
-    ../../home/.config/mango/config.conf;
-
-  systemd.user.targets.mango-session = {
-    Unit = {
-      Description = "Mango compositor session";
-      BindsTo = ["graphical-session.target"];
-      Wants = ["graphical-session-pre.target"];
-      After = ["graphical-session-pre.target"];
-    };
+  wayland.windowManager.mango = {
+    enable = true;
+    systemd.enable = true;
+    settings = builtins.readFile ../../home/.config/mango/config.conf;
+    autostart_sh = "";
   };
 
   systemd.user.services.mango-wallpaper = {
