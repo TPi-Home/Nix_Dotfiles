@@ -53,9 +53,9 @@
   },
 
   "custom/power-profile": {
-    "exec": "case \"$(powerprofilesctl get)\" in performance) printf \"󰓅 performance\" ;; balanced) printf \"󰗑 balanced\" ;; power-saver) printf \"󰌪 power-saver\" ;; *) powerprofilesctl get ;; esac",
+    "exec": "case \"$(/run/current-system/sw/bin/powerprofilesctl get)\" in performance) printf \"󰓅 performance\" ;; balanced) printf \"󰗑 balanced\" ;; power-saver) printf \"󰌪 power-saver\" ;; *) /run/current-system/sw/bin/powerprofilesctl get ;; esac",
     "interval": 2,
-    "on-click": "case \"$(powerprofilesctl get)\" in performance) powerprofilesctl set balanced ;; balanced) powerprofilesctl set power-saver ;; power-saver) powerprofilesctl set performance ;; esac"
+    "on-click": "case \"$(/run/current-system/sw/bin/powerprofilesctl get)\" in performance) /run/current-system/sw/bin/powerprofilesctl set balanced ;; balanced) /run/current-system/sw/bin/powerprofilesctl set power-saver ;; power-saver) /run/current-system/sw/bin/powerprofilesctl set performance ;; esac"
   },
 
   "clock": {
