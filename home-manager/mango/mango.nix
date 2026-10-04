@@ -15,7 +15,7 @@
     style = ../../home/.config/mango/waybar/style.css;
   };
 
-  xdg.configFile."waybar/config.jsonc".source =
+  xdg.configFile."waybar/config".source =
     ../../home/.config/mango/waybar/config.jsonc;
 
   home.pointerCursor = {
