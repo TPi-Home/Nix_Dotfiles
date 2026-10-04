@@ -1,7 +1,7 @@
 # ============================================================================
 # Mango
 # ============================================================================
-{pkgs, ...}: {
+{config, mangobar, pkgs, ...}: {
   wayland.windowManager.mango = {
     enable = true;
     systemd.enable = true;
@@ -41,6 +41,15 @@
   services.mangobar = {
     enable = true;
     systemdTarget = "mango-session.target";
+    package = mangobar.packages.\${pkgs.system}.default.overrideAttrs (old: {
+      nativeBuildInputs = old.nativeBuildInputs ++ [ pkgs.makeWrapper ];
+      buildInputs = old.buildInputs ++ [ pkgs.librsvg ];
+      postFixup = (old.postFixup or "") + ''
+        wrapProgram "$out/bin/mangobar" \
+          --set GDK_PIXBUF_MODULE_FILE "${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache" \
+          --prefix XDG_DATA_DIRS : "${config.home.profileDirectory}/share"
+      '';
+    });
     configFile = ../../home/.config/mangobar/config.jsonc;
   };
 
