@@ -6,7 +6,7 @@
     enable = true;
     systemd.enable = true;
     settings = builtins.readFile ../../home/.config/mango/config.conf;
-    autostart_sh = "";
+    autostart_sh = "systemctl --user reset-failed\nsystemctl --user start mango-session.target";
   };
 
   systemd.user.services.mango-wallpaper = {
