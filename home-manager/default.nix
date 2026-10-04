@@ -36,11 +36,10 @@
 
     # Desktop
     ./sway/sway.nix
-    ./sway/waybar.nix
     ./mango/mango.nix
-    ./mango/waybar.nix
-    
-    # Session 
+    ./waybar.nix
+
+    # Session
     ./programs/services/wlogout.nix
 
     # Application Launcher
