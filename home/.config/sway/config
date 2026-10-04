@@ -57,7 +57,6 @@ set $menu fuzzel
 
 exec dbus-update-activation-environment --systemd --all
 exec waybar
-exec kanshi
 exec mako
 exec udiskie
 exec nm-applet
