@@ -6,10 +6,7 @@
   # Mango Wayland Compositor
   # --------------------------------------------------------------------------
 
-  programs.mango = {
-    enable = true;
-    addLoginEntry = true;
-  };
+  programs.mango.enable = true;
 
   # --------------------------------------------------------------------------
   # Mango Runtime Utilities
