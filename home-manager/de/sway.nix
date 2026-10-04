@@ -1,7 +1,7 @@
 # ============================================================================
 # Sway
 # ============================================================================
-{pkgs, ...}: {
+{...}: {
   xdg.configFile."sway/config".source = ../../home/.config/sway/config;
 
   xdg.configFile."swaynag/config".text = ''
@@ -14,16 +14,6 @@
     button-text=161718
     edge=bottom
   '';
-
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
-  };
-
-  services.polkit-gnome.enable = true;
-
 
   wayland.windowManager.sway = {
     xwayland = true;
