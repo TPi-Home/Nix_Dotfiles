@@ -5,7 +5,6 @@
 - [About](about.md)
 - [Installation](installation.md)
 - [Sway](sway.md)
-- [Mango](mango.md)
 
 
 ---
@@ -126,7 +125,7 @@ ___
 
 **NOTE: THIS IS A WORK IN PROGRESS**
 
-I would like to add support for MangoWM next. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
+I would like to add support for MangoWM and Niri also. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
 
 
 ### GNOME Niceties I Miss

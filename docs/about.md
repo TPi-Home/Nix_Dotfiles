@@ -5,7 +5,6 @@
 - [ToDo](todo.md)
 - [Installation](installation.md)
 - [Sway](sway.md)
-- [Mango](mango.md)
 
 ---
 

@@ -5,7 +5,6 @@
 - [About](about.md)
 - [ToDo](todo.md)
 - [Sway](sway.md)
-- [Mango](mango.md)
 
 ---
 
