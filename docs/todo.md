@@ -51,7 +51,7 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 * Workspace char padding for large workspaces
 * Mako config
 ### Security
-
+* Change time between asking for sudo password
 ### Documentation
 * Installation documentation should be a separate file from the README file.
 ### Misc
