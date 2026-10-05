@@ -6,7 +6,6 @@ I am likely going to regret this.
 - [ToDo](./docs/todo.md)
 - [Installation](./docs/installation.md)
 - [Sway](./docs/sway.md)
-- [Mango](./docs/mango.md)
 
 ---
 ## Use Case
@@ -36,6 +35,7 @@ Madison has made some of my favorite wallpapers to use, many of which I have use
 Nix_Dot_Files
 ├── docs
 │   ├── about.md
+│   ├── implement.nix
 │   ├── installation.md
 │   ├── sway.md
 │   └── todo.md
@@ -118,7 +118,6 @@ Nix_Dot_Files
 │   ├── audio
 │   │   └── audio.nix
 │   ├── de
-│   │   ├── mango.nix
 │   │   └── sway.nix
 │   ├── default.nix
 │   ├── dm
@@ -152,6 +151,7 @@ Nix_Dot_Files
 │   └── upgrade.sh
 ├── scrot2.png
 └── scrot.png
+
 37 directories, 82 files
 
 ```

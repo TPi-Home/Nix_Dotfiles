@@ -56,6 +56,7 @@ set $menu fuzzel
 # ----------------------------------------------------------------------------
 
 exec dbus-update-activation-environment --systemd --all
+exec_always kanshi
 exec waybar
 exec mako
 exec udiskie
@@ -90,6 +91,11 @@ bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
 # bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
+
+# ----------------------------------------------------------------------------
+# Autotiling
+# ----------------------------------------------------------------------------
+
 
 # Press Super + A to start autotiling
 bindsym $mod+a exec autotiling
