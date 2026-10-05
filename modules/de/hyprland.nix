@@ -1,38 +1,31 @@
 # ============================================================================
-# Sway
+# Hyprland
 # ============================================================================
-{pkgs, ...}: {
-  programs.sway = {
+
+{ pkgs, ... }:
+
+{
+  # --------------------------------------------------------------------------
+  # Hyprland
+  # --------------------------------------------------------------------------
+
+  programs.hyprland = {
     enable = true;
-    wrapperFeatures.gtk = true;
-
-    extraPackages = with pkgs; [
-      swayidle
-      swaylock
-      swaybg
-      swayfx
-    ];
-
-    extraOptions = [
-      "--unsupported-gpu"
-    ];
+    xwayland.enable = true;
   };
 
   # --------------------------------------------------------------------------
-  # Thunar & File System Backends
+  # Waybar
   # --------------------------------------------------------------------------
 
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs; [
-      thunar-archive-plugin
-      thunar-volman
-    ];
-  };
-
-  services.gvfs.enable = true; # Core virtual file system (needed for trash & USB mounts)
-  services.tumbler.enable = true;
-  programs.xfconf.enable = true;
+  systemd.user.services.waybar.path = with pkgs; [
+    wlogout
+    wleave
+    pavucontrol
+    waylogout
+    pamixer
+    procps
+  ];
 
   # --------------------------------------------------------------------------
   # Power
@@ -45,39 +38,44 @@
   # Networking
   # --------------------------------------------------------------------------
 
-  # PartOf=graphical-session.target
   programs.nm-applet.enable = true;
 
   # --------------------------------------------------------------------------
   # Bluetooth
   # --------------------------------------------------------------------------
 
-  hardware.bluetooth = {
+  hardware.bluetooth = 
+  {
     enable = true;
     powerOnBoot = true;
   };
 
-  # PartOf=graphical-session.target
-  services.blueman.enable = true;
-
   # --------------------------------------------------------------------------
-  # Security & Permissions
+  # Wayland
   # --------------------------------------------------------------------------
 
-  security.pam.services.swaylock = {};
+  xdg.portal = 
+  {
+    enable = true;
+    wlr.enable = true;
+  };
 
   # --------------------------------------------------------------------------
-  # Sway Runtime Utilities
+  # Security
   # --------------------------------------------------------------------------
 
-  environment.systemPackages = with pkgs; [
+  security.pam.services.hyprlock = { };
+
+  # --------------------------------------------------------------------------
+  # Hyprland Runtime Utilities
+  # --------------------------------------------------------------------------
+
+  environment.systemPackages = with pkgs; 
+  [
     # Launcher
     fuzzel
 
-    # Autotiling
-    autotiling
-
-    # Status Bar
+    # Bar
     waybar
 
     # Notifications
@@ -89,27 +87,41 @@
     slurp
     swappy
     grimblast
+    
+    # Wallpaper
+    hyprpaper
 
     # Clipboard
     wl-clipboard
 
-    # Bluetooth
-    bluetuith
-    blueman
+    # Color Selection
+    hyprpicker
+
+    # Lighting
+    hyprsunset
 
     # Removable devices
     udiskie
 
-    # Screen
-    brightnessctl
+    # Bluetooth GUI
+    blueman
+
+    # Idle / lock
+    hypridle
+    hyprlock
 
     # Audio
     wiremix
     pavucontrol
 
-    # File Manager
+    # TUI File Manager
     nnn
-    vimix-icon-theme
-
+    
   ];
+
+  # --------------------------------------------------------------------------
+  # Storage
+  # --------------------------------------------------------------------------
+
+  services.udisks2.enable = true;
 }

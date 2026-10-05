@@ -37,7 +37,7 @@
 
     # Desktop
     ./sway/sway.nix
-    ./sway/waybar.nix
+    ./waybar/waybar.nix
     ./programs/services/wlogout.nix
 
     # Application Launcher
