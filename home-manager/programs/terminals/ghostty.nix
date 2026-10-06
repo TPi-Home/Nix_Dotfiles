@@ -1,10 +1,18 @@
 # ============================================================================
 # Ghostty
 # ============================================================================
-{...}: {
+{pkgs, ...}: {
   programs.ghostty = {
     enable = true;
     enableFishIntegration = true;
+
+    # Ghostty and ncurses both provide this terminfo entry. Keep the ncurses
+    # copy so Home Manager's buildEnv does not see two files at the same path.
+    package = pkgs.ghostty.overrideAttrs (old: {
+      postInstall = (old.postInstall or "") + ''
+        rm -f $out/share/terminfo/g/ghostty
+      '';
+    });
 
     settings = {
       # Theme
