@@ -62,9 +62,10 @@ exec mako
 exec udiskie
 exec nm-applet
 exec blueman
-exec swayidle -w \
-    timeout 300 'swaymsg "output * power off"' \
+exec_always swayidle -w \
+    timeout 60 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"'
+    
 
 # ----------------------------------------------------------------------------
 # Input
