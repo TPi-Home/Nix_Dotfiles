@@ -43,7 +43,7 @@
       ];
 
       # Window
-      background-opacity = 0.85;
+      background-opacity = 1.0;
       window-save-state = "never";
       window-width = 1280;
       window-height = 800;
