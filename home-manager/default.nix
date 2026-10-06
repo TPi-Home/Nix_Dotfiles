@@ -16,6 +16,7 @@
     # Terminals
     ./programs/terminals/alacritty.nix
     ./programs/terminals/kitty.nix
+    ./programs/terminals/ghostty.nix
 
     # Editors
     ./programs/editors/vscode.nix
