@@ -19,9 +19,19 @@
     enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
-    size = 24;
+    size = 36;
   };
 
+  wayland.windowManager.sway = {
+    config = {
+      seat = {
+        "*" = {
+          xcursor_theme = "Bibata-Modern-Ice 36";
+        };
+      };
+    };
+  };
+  
   services.polkit-gnome.enable = true;
 
 

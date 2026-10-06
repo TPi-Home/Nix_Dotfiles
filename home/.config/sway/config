@@ -29,10 +29,10 @@ floating_modifier $mod
 #exec_always xwayland-satellite :1
 
 # ----------------------------------------------------------------------------
-# Cursor (Should be handled by home-manager)
+# Cursor
 # ----------------------------------------------------------------------------
 
-# seat seat0 xcursor_theme Adwaita 36
+seat seat0 xcursor_theme Bibata-Modern-Ice 36
 
 # ----------------------------------------------------------------------------
 # Colors - AstroDark
@@ -74,12 +74,12 @@ input type:touchpad
 {
     dwt enabled
     tap enabled
-    natural_scroll enabled
+    natural_scroll disabled
     middle_emulation enabled
 }
 
 input type:pointer {
-    pointer_accel 0.7
+    pointer_accel 0.0
     accel_profile flat
 }
 
