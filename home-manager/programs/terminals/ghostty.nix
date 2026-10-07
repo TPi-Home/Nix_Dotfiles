@@ -16,7 +16,7 @@
 
     settings = {
       # Theme
-      background = "#1A1D23";
+      background = "#111317";
       foreground = "#ADB0BB";
       cursor-color = "#5EB7FF";
 
@@ -39,11 +39,11 @@
         "12=#5EB7FF"
         "13=#DD97F1"
         "14=#4AC2B8"
-        "15=#ADB0BB"
+        "15=#E0E0Ee"
       ];
 
       # Window
-      background-opacity = 1.0;
+      background-opacity = .9;
       window-save-state = "never";
       window-width = 1280;
       window-height = 800;

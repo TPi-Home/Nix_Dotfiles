@@ -86,6 +86,8 @@ The graphical session is launched inside a systemd user scope:
 
 The scope provides a cgroup boundary for the processes launched as part of that command. It is **not a UWSM-style compositor/session manager** and does not mean that systemd owns the complete graphical session lifecycle.
 
+Uncomment out `kanshi.nix` if you want this to be true:
+```
 The user service manager separately manages graphical-session services such as Kanshi:
 
     systemd --user
@@ -103,7 +105,7 @@ Kanshi is configured as a Home Manager user service and is attached to `graphica
     └── kanshi.service
 
 This allows Kanshi to start automatically with the graphical session rather than requiring an `exec_always kanshictl reload` in Sway.
-
+```
 ### Home Manager
 
 **Owns the user-level graphical environment**
