@@ -6,7 +6,7 @@
     enable = true;
 
     commandLineArgs = [
-      "--force-device-scale-factor=1.0"
+      "--force-device-scale-factor=1.4"
     ];
 
     extensions = [
