@@ -169,9 +169,6 @@ hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mod .. " + S", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + M", hl.dsp.group.toggle())
 
--- ----------------------------------------------------------------------------
--- Layout
--- ----------------------------------------------------------------------------
 
 local function set_layout(layout)
     local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
