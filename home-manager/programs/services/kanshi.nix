@@ -1,7 +1,4 @@
 # ============================================================================
-# Fuzzel
-# ============================================================================
-# ============================================================================
 # Kanshi
 # ============================================================================
 {pkgs, ...}: {
@@ -15,28 +12,24 @@
     }
   '';
 
-  home.packages = [
-    pkgs.kanshi
-  ];
+  systemd.user.services.kanshi = {
+    Unit = {
+      Description = "Kanshi output autoconfig";
+      PartOf = ["graphical-session.target"];
+      After = ["graphical-session-pre.target"];
+    };
 
-#  systemd.user.services.kanshi = {
-#    Unit = {
-#      Description = "Kanshi output autoconfig";
-#      PartOf = ["graphical-session.target"];
-#      After = ["graphical-session-pre.target"];
-#    };
-#
-#    Service = {
-#      ExecStart = "${pkgs.kanshi}/bin/kanshi";
-#      Restart = "always";
-#      RestartSec = 1;
-#      Environment = [
-#        "XDG_CONFIG_HOME=%h/.config"
-#      ];
-#    };
-#
-#    Install = {
-#      WantedBy = ["graphical-session.target"];
-#    };
-#  };
+    Service = {
+      ExecStart = "${pkgs.kanshi}/bin/kanshi";
+      Restart = "always";
+      RestartSec = 1;
+      Environment = [
+        "XDG_CONFIG_HOME=%h/.config"
+      ];
+    };
+
+    Install = {
+      WantedBy = ["graphical-session.target"];
+    };
+  };
 }
