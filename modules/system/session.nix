@@ -95,7 +95,7 @@
     # Wallpaper
     hyprpaper
     swaybg
-    sway-contrib.grimshot
+
 
     # Clipboard
     wl-clipboard
@@ -106,6 +106,9 @@
     # Lighting
     hyprsunset
 
+    # Screen
+    brightnessctl
+
     # Removable devices
     udiskie
 
@@ -113,10 +116,7 @@
     blueman
 
     # Idle / lock
-    hypridle
-    hyprlock
-    swayidle
-    swaylock
+    waylock
 
     # Audio
     wiremix

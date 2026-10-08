@@ -67,49 +67,10 @@
   security.pam.services.swaylock = {};
 
   # --------------------------------------------------------------------------
-  # Sway Runtime Utilities
+  # Sway Runtime Utilities (now in session.nix)
   # --------------------------------------------------------------------------
 
   environment.systemPackages = with pkgs; [
-    # Launcher
-    fuzzel
-
-    # Autotiling
-    autotiling
-
-    # Status Bar
-    waybar
-
-    # Notifications
-    libnotify
-    mako
-
-    # Screenshots
-    grim
-    slurp
-    swappy
-    grimblast
-
-    # Clipboard
-    wl-clipboard
-
-    # Bluetooth
-    bluetuith
-    blueman
-
-    # Removable devices
-    udiskie
-
-    # Screen
-    brightnessctl
-
-    # Audio
-    wiremix
-    pavucontrol
-
-    # File Manager
-    nnn
-    vimix-icon-theme
 
   ];
 }
