@@ -24,9 +24,8 @@
       };
     };
   };
-  
-  services.polkit-gnome.enable = true;
 
+  services.polkit-gnome.enable = true;
 
   wayland.windowManager.sway = {
     xwayland = true;

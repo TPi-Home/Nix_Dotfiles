@@ -30,7 +30,7 @@
     name = "adw-gtk3-dark";
   };
 
-    home.pointerCursor = {
+  home.pointerCursor = {
     enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";

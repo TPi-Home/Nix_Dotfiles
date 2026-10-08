@@ -57,7 +57,7 @@
     VISUAL = "code";
     GDK_DPI_SCALE = "1.0";
     # GDK_SCALE = "1.4";
-    QT_SCALE_FACTOR=1.5;
+    QT_SCALE_FACTOR = 1.5;
   };
 
   fonts.fontconfig.enable = true;
