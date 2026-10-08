@@ -1,20 +1,13 @@
 # ============================================================================
 # Hyprland
 # ============================================================================
-{pkgs, ...}: {
-  xdg.configFile."hypr/hyprland.conf".source =
-    ../../home/.config/hypr/hyprland.conf;
-
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 36;
-  };
+{...}: {
+  xdg.configFile."hypr/hyprland.lua".source =
+    ../../home/.config/hypr/hyprland.lua;
 
   wayland.windowManager.hyprland = {
     enable = true;
-    configType = "hyprlang";
+    configType = "lua";
     xwayland.enable = true;
   };
 
