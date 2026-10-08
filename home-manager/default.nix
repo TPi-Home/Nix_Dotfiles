@@ -28,10 +28,10 @@
 
     # Browsers
     ./programs/browsers/firefox.nix
-    ./programs/browsers/chromium.nix
+    # ./programs/browsers/chromium.nix
     ./programs/browsers/vivaldi.nix
     ./programs/browsers/qutebrowser.nix
-    ./programs/browsers/librewolf.nix
+    # ./programs/browsers/librewolf.nix
 
     # Game Dev
     ./programs/misc/unity_hub.nix
