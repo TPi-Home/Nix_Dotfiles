@@ -56,7 +56,8 @@ set $menu fuzzel
 # ----------------------------------------------------------------------------
 
 exec dbus-update-activation-environment --systemd --all
-exec waybar -c ~/.config/waybar/sway.jsonc -s ~/.config/waybar/style.css
+exec_always kanshi
+exec waybar
 exec waybar
 exec mako
 exec udiskie
