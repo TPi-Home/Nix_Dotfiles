@@ -79,6 +79,7 @@ hl.env("NIXOS_OZONE_WL", "1")
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+    hl.exec_cmd("kanshi")
     hl.exec_cmd("waybar -c ~/.config/waybar/hyprland.jsonc -s ~/.config/waybar/style.css")
     hl.exec_cmd("mako")
     hl.exec_cmd("udiskie")
