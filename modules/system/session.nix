@@ -21,8 +21,15 @@
       xdg-desktop-portal-wlr
     ];
 
+    config.hyprland = {
+      default = [
+        "hyprland"
+        "gtk"
+      ];
+    };
+
     # Keep the pre-1.17 portal selection behavior explicitly.
-    config.common.default = "*";
+    # config.common.default = "*";
   };
 
   environment.sessionVariables = {
