@@ -170,6 +170,69 @@ hl.bind(mod .. " + S", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + M", hl.dsp.group.toggle())
 
 -- ----------------------------------------------------------------------------
+-- Layout
+-- ----------------------------------------------------------------------------
+
+local function set_layout(layout)
+    local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+
+    if not workspace then
+        return
+    end
+
+    if workspace.special then
+        hl.workspace_rule({
+            workspace = tostring(workspace.name),
+            layout = layout,
+        })
+    else
+        hl.workspace_rule({
+            workspace = tostring(workspace.id),
+            layout = layout,
+        })
+    end
+end
+
+-- Switch the current workspace to a specific layout.
+hl.bind(mod .. " + SHIFT + D", function()
+    set_layout("dwindle")
+end)
+
+hl.bind(mod .. " + SHIFT + M", function()
+    set_layout("master")
+end)
+
+hl.bind(mod .. " + SHIFT + S", function()
+    set_layout("scrolling")
+end)
+
+hl.bind(mod .. " + SHIFT + O", function()
+    set_layout("monocle")
+end)
+
+-- Cycle through the built-in layouts:
+-- dwindle -> master -> scrolling -> monocle -> dwindle
+hl.bind(mod .. " + TAB", function()
+    local layouts = { "dwindle", "master", "scrolling", "monocle" }
+    local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+
+    if not workspace then
+        return
+    end
+
+    local next_layout = layouts[1]
+
+    for i = 1, #layouts do
+        if layouts[i] == workspace.tiled_layout then
+            next_layout = layouts[(i % #layouts) + 1]
+            break
+        end
+    end
+
+    set_layout(next_layout)
+end)
+
+-- ----------------------------------------------------------------------------
 -- Media
 -- ----------------------------------------------------------------------------
 
