@@ -58,6 +58,10 @@ hl.config({
     dwindle = {
         preserve_split = true,
     },
+
+    animations = {
+        enabled = false,
+    },
 })
 
 -- ----------------------------------------------------------------------------
