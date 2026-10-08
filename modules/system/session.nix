@@ -30,14 +30,6 @@
   # Waybar
   # --------------------------------------------------------------------------
 
-  systemd.user.services.waybar.path = with pkgs; [
-    wlogout
-    wleave
-    pavucontrol
-    waylogout
-    pamixer
-    procps
-  ];
 
   
   # --------------------------------------------------------------------------
