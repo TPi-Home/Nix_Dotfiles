@@ -43,6 +43,7 @@ hl.config({
 
     input = {
         kb_layout = "us",
+        kb_options = "numlock",
         follow_mouse = 1,
         accel_profile = "flat",
         sensitivity = 0.0,
