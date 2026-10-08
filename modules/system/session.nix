@@ -96,7 +96,6 @@
     hyprpaper
     swaybg
 
-
     # Clipboard
     wl-clipboard
 
@@ -114,6 +113,9 @@
 
     # Bluetooth GUI
     blueman
+
+    # Logout
+    wlogout
 
     # Idle / lock
     waylock
