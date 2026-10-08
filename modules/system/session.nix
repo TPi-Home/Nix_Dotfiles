@@ -15,7 +15,11 @@
 
     # Application -> XDG Desktop Portal -> wlroots portal backend ->
     # PipeWire -> Back to Application
-    wlr.enable = true;
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
 
     # Keep the pre-1.17 portal selection behavior explicitly.
     config.common.default = "*";
