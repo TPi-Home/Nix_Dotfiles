@@ -26,6 +26,7 @@
 
     # Desktop / WM
     ./de/sway.nix
+    ./de/hyprland.nix
 
     # Software that is not directly enabled
     ./packages/packages.nix
