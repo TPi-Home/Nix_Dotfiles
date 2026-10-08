@@ -16,6 +16,9 @@
     # Application -> XDG Desktop Portal -> wlroots portal backend ->
     # PipeWire -> Back to Application
     wlr.enable = true;
+
+    # Keep the pre-1.17 portal selection behavior explicitly.
+    config.common.default = "*";
   };
 
   environment.sessionVariables = {
