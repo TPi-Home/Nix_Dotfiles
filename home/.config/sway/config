@@ -46,7 +46,7 @@ client.urgent           #CC83E3     #CC83E3     #111317    #DD97F1     #CC83E3
 
 # ----------------------------------------------------------------------------
 # Applications
-# -------------------------------------------------------------pixel---------------
+# ----------------------------------------------------------------------------
 
 set $term ghostty
 set $menu fuzzel
@@ -57,7 +57,6 @@ set $menu fuzzel
 
 exec dbus-update-activation-environment --systemd --all
 exec_always kanshi
-exec waybar
 exec waybar
 exec mako
 exec udiskie
