@@ -166,7 +166,7 @@ end
 hl.bind(mod .. " + B", hl.dsp.layout("togglesplit"))
 hl.bind(mod .. " + V", hl.dsp.window.pseudo())
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mod .. " + C", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod .. " + S", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + M", hl.dsp.group.toggle())
 
 -- ----------------------------------------------------------------------------
