@@ -2,12 +2,12 @@
 # Hyprland
 # ============================================================================
 {...}: {
-  xdg.configFile."hypr/hyprland.lua".source =
-    ../../home/.config/hypr/hyprland.lua;
-
   wayland.windowManager.hyprland = {
     enable = true;
+    package = null;
     configType = "lua";
+    extraConfig = builtins.readFile ../../home/.config/hypr/hyprland.lua;
+    systemd.enable = false;
     xwayland.enable = true;
   };
 
