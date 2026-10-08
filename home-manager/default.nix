@@ -5,7 +5,7 @@
   imports = [
     # Misc
     ./programs/misc/programs.nix
-    ./programs/misc/ollama.nix
+    # ./programs/misc/ollama.nix
     ./programs/misc/obs.nix
 
     # CLI
@@ -14,8 +14,8 @@
     ./programs/cli/starship.nix
 
     # Terminals
-    ./programs/terminals/alacritty.nix
-    ./programs/terminals/kitty.nix
+    # ./programs/terminals/alacritty.nix
+    # ./programs/terminals/kitty.nix
     ./programs/terminals/ghostty.nix
 
     # Editors
@@ -56,6 +56,7 @@
     VISUAL = "code";
     GDK_DPI_SCALE = "1.0";
     # GDK_SCALE = "1.4";
+    QT_SCALE_FACTOR=1.5;
   };
 
   fonts.fontconfig.enable = true;

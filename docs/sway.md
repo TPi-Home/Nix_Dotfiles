@@ -142,6 +142,7 @@ Home Manager is responsible for configuring the user's graphical environment, wh
 - Launching Sway-specific processes
 
 Sway does **not** own display profile management. Kanshi handles display configuration.
+Actually, it currently does, but that's because I was getting some journalctl errors. I would like to fix this. 
 
 ### Kanshi
 
