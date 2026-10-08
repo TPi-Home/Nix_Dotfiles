@@ -117,7 +117,6 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -")
 -- Lock / Logout
 -- ----------------------------------------------------------------------------
 
-hl.bind(mod .. " + SHIFT + L", hl.dsp.exec_cmd("waylock"))
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("systemctl --user stop wayland-session.scope"))
 
 -- ----------------------------------------------------------------------------
