@@ -110,6 +110,7 @@ hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("makoctl dismiss"))
 -- ----------------------------------------------------------------------------
 
 hl.bind(mod .. " + SHIFT + P", hl.dsp.exec_cmd("grim - | swappy -f -"))
+hl.bind(mod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
 
 -- ----------------------------------------------------------------------------
