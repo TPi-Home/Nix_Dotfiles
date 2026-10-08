@@ -18,6 +18,9 @@ hl.config({
             inactive_border = 0xff3a3e47,
         },
         layout = "dwindle",
+    },
+
+    binds = {
         workspace_back_and_forth = 1,
     },
 
