@@ -104,7 +104,7 @@ The current config uses:
 - Touchpad tap-to-click enabled, natural scrolling disabled, disable-while-typing enabled, and middle-button emulation enabled
 - Laptop output `eDP-2` at preferred mode, automatic position, and scale 1.0
 
-The config also sets `NIXOS_OZONE_WL=1` for Electron/Chromium-based applications.
+The config also sets `NIXOS_OZONE_WL=1` for Electron/Chromium-based applications. The wallpaper startup command uses the absolute path `/home/tyler/Pictures/Hilltopper.png`, so it must be changed on systems where the image is stored elsewhere.
 
 ## Keybindings
 
