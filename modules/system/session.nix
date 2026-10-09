@@ -13,23 +13,17 @@
   xdg.portal = {
     enable = true;
 
-    # Application -> XDG Desktop Portal -> wlroots portal backend ->
-    # PipeWire -> Back to Application
-
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland
     ];
 
-    config.hyprland = {
-      default = [
-        "hyprland"
-        "gtk"
-      ];
+    # Sway set by default
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
     };
-
-    # Keep the pre-1.17 portal selection behavior explicitly.
-    # config.common.default = "*";
   };
 
   environment.sessionVariables = {
