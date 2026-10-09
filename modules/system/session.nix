@@ -2,6 +2,24 @@
 # Session Setup
 # ============================================================================
 {pkgs, ...}: {
+
+  # ============================================================================
+  # Power
+  # ============================================================================
+
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "suspend";
+    HandleLidSwitchDocked = "ignore";
+  };
+
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "yes";
+    AllowHibernation = "no";
+    AllowHybridSleep = "no";
+    AllowSuspendThenHibernate = "no";
+  };
+  
   # ============================================================================
   # TTY
   # ============================================================================
