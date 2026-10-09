@@ -38,7 +38,8 @@
 
     # Desktop
     ./sway/sway.nix
-    ./sway/waybar.nix
+    ./hyprland/hyprland.nix
+    ./waybar/waybar.nix
     ./programs/services/wlogout.nix
 
     # Application Launcher
@@ -48,6 +49,12 @@
     ./programs/services/kanshi.nix
   ];
 
+  xdg.portal.config = {
+    common.default = ["gtk"];
+    sway.default = ["wlr" "gtk"];
+    hyprland.default = ["hyprland" "gtk"];
+  };
+
   home.username = "tyler";
   home.homeDirectory = "/home/tyler";
 
@@ -56,7 +63,7 @@
     VISUAL = "code";
     GDK_DPI_SCALE = "1.0";
     # GDK_SCALE = "1.4";
-    QT_SCALE_FACTOR=1.5;
+    QT_SCALE_FACTOR = 1.5;
   };
 
   fonts.fontconfig.enable = true;

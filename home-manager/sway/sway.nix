@@ -15,13 +15,6 @@
     edge=bottom
   '';
 
-  home.pointerCursor = {
-    enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 36;
-  };
-
   wayland.windowManager.sway = {
     config = {
       seat = {
@@ -31,9 +24,8 @@
       };
     };
   };
-  
-  services.polkit-gnome.enable = true;
 
+  services.polkit-gnome.enable = true;
 
   wayland.windowManager.sway = {
     xwayland = true;

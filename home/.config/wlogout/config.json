@@ -1,13 +1,13 @@
 {
     "label": "lock",
-    "action": "swaylock -f",
+    "action": "waylock",
     "text": "Lock",
     "keybind": "l"
 }
 
 {
     "label": "logout",
-    "action": "swaymsg exit",
+    "action": "systemctl --user stop wayland-session.scope",
     "text": "Logout",
     "keybind": "e"
 }

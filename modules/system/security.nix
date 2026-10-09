@@ -10,6 +10,6 @@
     #  Extra Security Packages
     # --------------------------------------------------------------------------
     bubblewrap
-    polkit_gnome
+    hyprpolkitagent
   ];
 }

@@ -10,6 +10,7 @@
     ./system/locale.nix
     ./system/networking.nix
     ./system/fonts.nix
+    ./system/session.nix
 
     # Users
     ./users/tyler.nix
@@ -26,6 +27,7 @@
 
     # Desktop / WM
     ./de/sway.nix
+    ./de/hyprland.nix
 
     # Software that is not directly enabled
     ./packages/packages.nix

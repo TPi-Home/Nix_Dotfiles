@@ -46,7 +46,7 @@ client.urgent           #CC83E3     #CC83E3     #111317    #DD97F1     #CC83E3
 
 # ----------------------------------------------------------------------------
 # Applications
-# -------------------------------------------------------------pixel---------------
+# ----------------------------------------------------------------------------
 
 set $term ghostty
 set $menu fuzzel
@@ -92,17 +92,6 @@ bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
 # bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
-
-# ----------------------------------------------------------------------------
-# Autotiling
-# ----------------------------------------------------------------------------
-
-
-# Press Super + A to start autotiling
-bindsym $mod+a exec autotiling
-
-# Press Super + X to kill autotiling and return to pure i3/Sway behavior
-bindsym $mod+x exec pkill -f autotiling
 
 # ----------------------------------------------------------------------------
 # Notifications
