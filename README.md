@@ -55,7 +55,7 @@ The repository includes:
 - `modules/`: NixOS system modules, including both Sway and Hyprland session definitions
 - `home-manager/`: user-level program and desktop configuration
 - `home/.config/`: application configuration files
-- `hosts/`: generic, desktop, and laptop machine profiles
+- `hosts/`: generic, desktop, and laptop host configurations; the current flake output is `generic`
 - `scripts/`: rebuild, upgrade, cleanup, and helper scripts
 - `reference/`: theme references and other assets
 
