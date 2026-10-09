@@ -48,16 +48,7 @@ Madison has made some of my favorite wallpapers to use, many of which I have use
 - [AstroNvim's Astrodark](https://astronvim.com/)
 
 ## Layout
-
-The repository includes:
-
-- `docs/`: project, installation, and window-manager documentation
-- `modules/`: NixOS system modules, including both Sway and Hyprland session definitions
-- `home-manager/`: user-level program and desktop configuration
-- `home/.config/`: application configuration files
-- `hosts/`: generic, desktop, and laptop host configurations; the current flake output is `generic`
-- `scripts/`: rebuild, upgrade, cleanup, and helper scripts
-- `reference/`: theme references and other assets
+```text
 Nix_Dot_Files
 ├── docs
 │   ├── about.md
@@ -193,8 +184,17 @@ Nix_Dot_Files
     └── tasks.json
 
 42 directories, 91 files
+```
 ## Structure
+The repository includes:
 
+- `docs/`: project, installation, and window-manager documentation
+- `modules/`: NixOS system modules, including both Sway and Hyprland session definitions
+- `home-manager/`: user-level program and desktop configuration
+- `home/.config/`: application configuration files
+- `hosts/`: generic, desktop, and laptop host configurations; the current flake output is `generic`
+- `scripts/`: rebuild, upgrade, cleanup, and helper scripts
+- `reference/`: theme references and other assets
 ### Philosophy: Separation of Responsibilities
 
 | Directory | Purpose |
