@@ -76,7 +76,7 @@ alejandra .
 
 ## Flake Structure
 
-`flake.nix` defines the NixOS `generic` configuration and imports the system modules, Stylix, and Home Manager. The machine-specific configuration is selected from `hosts/generic/`; desktop and laptop host configurations are also present.
+`flake.nix` currently defines the NixOS `generic` output and imports the system modules, Stylix, and Home Manager. It selects `hosts/generic/`; desktop and laptop host configurations are present in the repository but are not separate outputs in the current flake.
 
 ## Build Tools
 
