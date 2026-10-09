@@ -128,7 +128,7 @@ The source of truth is `home/.config/sway/config`. The main bindings include:
 | `Super+Shift+1..0` | Move window to workspaces 1..10 |
 | `Super+B` / `Super+V` | Split horizontally / vertically |
 | `Super+M` / `Super+W` | Tabbed / stacking layout |
-| `Super+E` | Toggle split layout |
+| `Super+E` | Set split layout |
 | `Super+T` | Toggle split orientation |
 | `Super+F` | Toggle fullscreen |
 | `Super+C` | Toggle floating |
