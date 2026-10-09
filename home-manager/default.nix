@@ -48,11 +48,11 @@
     # Display Settings
     ./programs/services/kanshi.nix
   ];
-  
+
   xdg.portal.config = {
-    common.default = [ "gtk" ];
-    sway.default = [ "wlr" "gtk" ];
-    hyprland.default = [ "hyprland" "gtk" ];
+    common.default = ["gtk"];
+    sway.default = ["wlr" "gtk"];
+    hyprland.default = ["hyprland" "gtk"];
   };
 
   home.username = "tyler";
