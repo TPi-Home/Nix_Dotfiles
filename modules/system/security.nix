@@ -10,6 +10,5 @@
     #  Extra Security Packages
     # --------------------------------------------------------------------------
     bubblewrap
-    hyprpolkitagent
   ];
 }

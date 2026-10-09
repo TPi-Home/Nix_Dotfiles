@@ -21,7 +21,7 @@ hl.config({
     },
 
     binds = {
-        workspace_back_and_forth = 1,
+        workspace_back_and_forth = 0,
     },
 
     decoration = {
@@ -127,14 +127,39 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -")
 
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("systemctl --user stop wayland-session.scope"))
 
+
 -- ----------------------------------------------------------------------------
 -- Focus
 -- ----------------------------------------------------------------------------
 
-hl.bind(mod .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mod .. " + J", hl.dsp.focus({ direction = "down" }))
-hl.bind(mod .. " + K", hl.dsp.focus({ direction = "up" }))
-hl.bind(mod .. " + L", hl.dsp.focus({ direction = "right" }))
+local function focus_direction(direction)
+    local workspace = hl.get_active_special_workspace() or hl.get_active_workspace()
+
+    if workspace and workspace.tiled_layout == "scrolling" then
+        local directions = {
+            h = "focus l",
+            j = "focus d",
+            k = "focus u",
+            l = "focus r",
+        }
+
+        hl.dispatch(hl.dsp.layout(directions[direction]))
+    else
+        local directions = {
+            h = "left",
+            j = "down",
+            k = "up",
+            l = "right",
+        }
+
+        hl.dispatch(hl.dsp.focus({ direction = directions[direction] }))
+    end
+end
+
+hl.bind(mod .. " + H", function() focus_direction("h") end)
+hl.bind(mod .. " + J", function() focus_direction("j") end)
+hl.bind(mod .. " + K", function() focus_direction("k") end)
+hl.bind(mod .. " + L", function() focus_direction("l") end)
 
 -- ----------------------------------------------------------------------------
 -- Move Windows
