@@ -15,4 +15,28 @@
   home.packages = [
     pkgs.kanshi
   ];
+
+  # Revisit systemd-managed Kanshi startup. Kept disabled while compositor
+  # startup is used, so this does not create a second Kanshi process.
+  #
+  # systemd.user.services.kanshi = {
+  #   Unit = {
+  #     Description = "Kanshi output autoconfig";
+  #     PartOf = ["graphical-session.target"];
+  #     After = ["graphical-session-pre.target"];
+  #   };
+  #
+  #   Service = {
+  #     ExecStart = "${pkgs.kanshi}/bin/kanshi";
+  #     Restart = "always";
+  #     RestartSec = 1;
+  #     Environment = [
+  #       "XDG_CONFIG_HOME=%h/.config"
+  #     ];
+  #   };
+  #
+  #   Install = {
+  #     WantedBy = ["graphical-session.target"];
+  #   };
+  # };
 }
