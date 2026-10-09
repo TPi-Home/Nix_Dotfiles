@@ -40,14 +40,6 @@
     ];
   };
 
-  xdg.configFile = {
-    "Code/User/settings.json".source =
-      ../../../home/.config/Code/User/settings.json;
-
-    "Code/User/keybindings.json".source =
-      ../../../home/.config/Code/User/keybindings.json;
-
-    "Code/User/tasks.json".source =
-      ../../../home/.config/Code/User/tasks.json;
-  };
+  xdg.configFile."Code/User/settings.json".source =
+    ../../../home/.config/Code/User/settings.json;
 }
