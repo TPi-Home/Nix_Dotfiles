@@ -29,12 +29,38 @@
         "tray"
     ],
 
-    "hyprland/workspaces":
-    {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name}",
-        "sort-by-number": true
+        "format": "{windows}",
+        "sort-by-number": true,
+        "on-click": "activate",
+
+        "window-rewrite-default": "",
+
+        "window-rewrite": {
+            "class<firefox>": "󰈹",
+            "class<kitty>": "󰄛",
+            "class<Code>": "󰨞",
+            "class<code>": "󰨞",
+            "class<discord>": "󰙯",
+            "class<signal>": "󰭻",
+            "class<Signal>": "󰭻",
+            "class<thunderbird>": "󰇮",
+            "class<vlc>": "󰕼",
+            "class<obsidian>": "󰠮",
+            "class<gimp>": "󰏘",
+            "class<qbittorrent>": "󰇚",
+            "class<org.qbittorrent.qBittorrent>": "󰇚",
+            "class<steam>": "󰓓",
+            "class<Steam>": "󰓓",
+            "class<spotify>": "󰓇",
+            "class<emacs>": "󰰮",
+            "class<Alacritty>": "󰄛",
+            "class<foot>": "󰆍"
+        },
+
+        "format-window-separator": "  "
     },
 
     "memory": {

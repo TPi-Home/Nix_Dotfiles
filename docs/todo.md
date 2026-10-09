@@ -10,6 +10,8 @@
 
 ---
 ## Configuration Organization
+### Flake
+* Upstream waybar for mango and hyprland lua compat
 ### Fun
 Add CDDA to my flake. Maybe Mango as well, depending on how far behind the nixos packages Mango is. 
 ### Performance Cleanups 
