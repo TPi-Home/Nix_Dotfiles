@@ -11,7 +11,7 @@
       # --------------------------------------------------------------------------
 
       # Theme
-      zhuangtongfang.material-theme
+      zhuangtongfa.material-theme
 
       # Icons
       pkief.material-icon-theme
