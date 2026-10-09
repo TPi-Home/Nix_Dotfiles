@@ -1,8 +1,0 @@
-[
-  {
-    "key": "f5",
-    "command": "workbench.action.tasks.runTask",
-    "args": "Upgrade NixOS",
-    "when": "editorTextFocus && resourcePath =~ /Nix_Dot_Files/"
-  }
-]
