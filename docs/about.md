@@ -69,3 +69,10 @@ alejandra .
 ```
 ### Flake Structure
 The `flake.nix` file largely points to `default.nix` for the system and user configurations, as well as the hardware configurations. 
+
+### Build Tools
+There is a task set to run inside the vscode config managed by home-manager. When you hit f5 to build, the following is ran:
+```nix
+nix flake update nixpkgs
+sudo nixos-rebuild switch --flake ~/Nix_Dot_Files#generic
+```
