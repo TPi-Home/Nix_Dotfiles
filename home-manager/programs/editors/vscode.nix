@@ -11,7 +11,7 @@
       # --------------------------------------------------------------------------
 
       # Theme
-      zhuangtongfa.material-theme
+      zhuangtongfang.material-theme
 
       # Icons
       pkief.material-icon-theme
@@ -42,4 +42,7 @@
 
   xdg.configFile."Code/User/settings.json".source =
     ../../../home/.config/Code/User/settings.json;
+
+  xdg.configFile."Code/User/keybindings.json".source =
+    ../../../home/.config/Code/User/keybindings.json;
 }
