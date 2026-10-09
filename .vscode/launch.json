@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Upgrade NixOS",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bash \"${workspaceFolder}/scripts/upgrade.sh\"",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
