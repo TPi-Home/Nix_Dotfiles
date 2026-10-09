@@ -58,7 +58,141 @@ The repository includes:
 - `hosts/`: generic, desktop, and laptop host configurations; the current flake output is `generic`
 - `scripts/`: rebuild, upgrade, cleanup, and helper scripts
 - `reference/`: theme references and other assets
+Nix_Dot_Files
+├── docs
+│   ├── about.md
+│   ├── hyprland.md
+│   ├── implement.nix
+│   ├── installation.md
+│   ├── sway.md
+│   └── todo.md
+├── flake.lock
+├── flake.nix
+├── .gitignore
+├── home
+│   └── .config
+│       ├── Code
+│       │   └── User
+│       │       └── settings.json
+│       ├── fuzzel
+│       │   └── fuzzel.ini
+│       ├── hypr
+│       │   └── hyprland.lua
+│       ├── kitty
+│       │   ├── kitty.conf
+│       │   └── themes
+│       │       └── astrodark.conf
+│       ├── starship.toml
+│       ├── stylix
+│       │   ├── astrodark_gtk.yaml
+│       │   └── backup.yaml
+│       ├── sway
+│       │   └── config
+│       ├── waybar
+│       │   ├── config.jsonc
+│       │   ├── hyprland.jsonc
+│       │   ├── style.css
+│       │   └── sway.jsonc
+│       └── wlogout
+│           ├── config.json
+│           └── style.css
+├── home-manager
+│   ├── default.nix
+│   ├── hyprland
+│   │   └── hyprland.nix
+│   ├── programs
+│   │   ├── browsers
+│   │   │   ├── chromium.nix
+│   │   │   ├── firefox.nix
+│   │   │   ├── librewolf.nix
+│   │   │   ├── qutebrowser.nix
+│   │   │   └── vivaldi.nix
+│   │   ├── cli
+│   │   │   ├── fish.nix
+│   │   │   ├── git.nix
+│   │   │   ├── starship.nix
+│   │   │   └── tmux.nix
+│   │   ├── editors
+│   │   │   ├── helix.nix
+│   │   │   └── vscode.nix
+│   │   ├── misc
+│   │   │   ├── obs.nix
+│   │   │   ├── ollama.nix
+│   │   │   ├── programs.nix
+│   │   │   └── unity_hub.nix
+│   │   ├── services
+│   │   │   ├── fuzzel.nix
+│   │   │   ├── kanshi.nix
+│   │   │   └── wlogout.nix
+│   │   └── terminals
+│   │       ├── alacritty.nix
+│   │       ├── ghostty.nix
+│   │       └── kitty.nix
+│   ├── scaling
+│   │   ├── desktop.nix
+│   │   └── laptop.nix
+│   ├── stylix
+│   │   ├── dconf.nix
+│   │   ├── default.nix
+│   │   └── include.nix
+│   ├── sway
+│   │   └── sway.nix
+│   └── waybar
+│       └── waybar.nix
+├── hosts
+│   ├── desktop
+│   │   ├── default.nix
+│   │   ├── desktop_specific.nix
+│   │   └── hardware-configuration.nix
+│   ├── generic
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop
+│       ├── default.nix
+│       ├── hardware-configuration.nix
+│       └── laptop_specific.nix
+├── LICENSE
+├── modules
+│   ├── audio
+│   │   └── audio.nix
+│   ├── de
+│   │   ├── hyprland.nix
+│   │   └── sway.nix
+│   ├── default.nix
+│   ├── dm
+│   │   └── tuigreet.nix
+│   ├── graphics
+│   │   └── nvidia.nix
+│   ├── packages
+│   │   ├── gaming.nix
+│   │   └── packages.nix
+│   ├── system
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── locale.nix
+│   │   ├── networking.nix
+│   │   ├── security.nix
+│   │   ├── session.nix
+│   │   └── system.nix
+│   └── users
+│       └── tyler.nix
+├── README.md
+├── reference
+│   ├── astrodark.lua
+│   └── Hilltopper.png
+├── scripts
+│   ├── gen.sh
+│   ├── rebuild.sh
+│   ├── security_check.sh
+│   ├── trash.sh
+│   ├── tree.sh
+│   └── upgrade.sh
+├── scrot2.png
+├── scrot.png
+└── .vscode
+    └── tasks.json
 
+42 directories, 91 files
 ## Structure
 
 ### Philosophy: Separation of Responsibilities
