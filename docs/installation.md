@@ -25,8 +25,8 @@ cd ~/Nix_Dot_Files
 
 ## Configure
 
-1. Review the host configuration under `hosts/` and choose the appropriate machine configuration.
-2. Review hardware configuration files and ensure the flake points to the correct configuration for your machine.
+1. The current flake exposes only the `generic` NixOS output, which imports `hosts/generic/`. The `hosts/desktop/` and `hosts/laptop/` directories exist, but are not separate outputs in `flake.nix` yet.
+2. Review the hardware configuration files and ensure the selected host imports the correct hardware configuration for your machine.
 3. Update the user configuration under `modules/users/` and Home Manager settings to reflect your username and home directory.
 4. Review the selected Wayland session and the settings in [Sway](sway.md) or [Hyprland](hyprland.md). Both are currently configured in this repository.
 
