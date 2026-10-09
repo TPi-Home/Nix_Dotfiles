@@ -5,6 +5,7 @@
 - [About](about.md)
 - [Installation](installation.md)
 - [Sway](sway.md)
+- [Hyprland](./docs/hyprland.md)
 
 
 ---

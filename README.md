@@ -6,6 +6,7 @@ I am likely going to regret this.
 - [ToDo](./docs/todo.md)
 - [Installation](./docs/installation.md)
 - [Sway](./docs/sway.md)
+- [Hyprland](./docs/hyprland.md)
 
 ---
 ## Use Case
@@ -19,6 +20,9 @@ This project aims to provide a modular, relatively unopinionated starting point 
 ## Screenshots
 ![Screenshot 1](scrot.png)
 ![Screenshot 2](scrot2.png)
+I mainly use sway, but with exciting new window managers and tooling being released I may want to experiment. This is the perfect setup for doing so. 
+
+It seems that the hyprland module on NixOS enables UWSM by default, but I coded in the systemd solution before I caught that.
 ## Credits
 
 ### Visual Inspiration Credit
@@ -34,125 +38,137 @@ Madison has made some of my favorite wallpapers to use, many of which I have use
 ```text
 Nix_Dot_Files
 ├── docs
-│   ├── about.md
-│   ├── implement.nix
-│   ├── installation.md
-│   ├── sway.md
-│   └── todo.md
+│   ├── about.md
+│   ├── hyprland.md
+│   ├── implement.nix
+│   ├── installation.md
+│   ├── sway.md
+│   └── todo.md
 ├── flake.lock
 ├── flake.nix
 ├── .gitignore
 ├── home
-│   └── .config
-│       ├── Code
-│       │   └── User
-│       │       └── settings.json
-│       ├── fuzzel
-│       │   └── fuzzel.ini
-│       ├── kitty
-│       │   ├── kitty.conf
-│       │   └── themes
-│       │       └── astrodark.conf
-│       ├── starship.toml
-│       ├── stylix
-│       │   ├── astrodark_gtk.yaml
-│       │   └── backup.yaml
-│       ├── sway
-│       │   ├── config
-│       │   └── waybar
-│       │       ├── config.jsonc
-│       │       └── style.css
-│       └── wlogout
-│           ├── config.json
-│           └── style.css
+│   └── .config
+│       ├── Code
+│       │   └── User
+│       │       └── settings.json
+│       ├── fuzzel
+│       │   └── fuzzel.ini
+│       ├── hypr
+│       │   └── hyprland.lua
+│       ├── kitty
+│       │   ├── kitty.conf
+│       │   └── themes
+│       │       └── astrodark.conf
+│       ├── starship.toml
+│       ├── stylix
+│       │   ├── astrodark_gtk.yaml
+│       │   └── backup.yaml
+│       ├── sway
+│       │   └── config
+│       ├── waybar
+│       │   ├── config.jsonc
+│       │   ├── hyprland.jsonc
+│       │   ├── style.css
+│       │   └── sway.jsonc
+│       └── wlogout
+│           ├── config.json
+│           └── style.css
 ├── home-manager
-│   ├── default.nix
-│   ├── programs
-│   │   ├── browsers
-│   │   │   ├── chromium.nix
-│   │   │   ├── firefox.nix
-│   │   │   ├── librewolf.nix
-│   │   │   ├── qutebrowser.nix
-│   │   │   └── vivaldi.nix
-│   │   ├── cli
-│   │   │   ├── fish.nix
-│   │   │   ├── git.nix
-│   │   │   ├── starship.nix
-│   │   │   └── tmux.nix
-│   │   ├── editors
-│   │   │   ├── helix.nix
-│   │   │   └── vscode.nix
-│   │   ├── misc
-│   │   │   ├── obs.nix
-│   │   │   ├── ollama.nix
-│   │   │   ├── programs.nix
-│   │   │   └── unity_hub.nix
-│   │   ├── services
-│   │   │   ├── fuzzel.nix
-│   │   │   ├── kanshi.nix
-│   │   │   └── wlogout.nix
-│   │   └── terminals
-│   │       ├── alacritty.nix
-│   │       └── kitty.nix
-│   ├── stylix
-│   │   ├── dconf.nix
-│   │   ├── default.nix
-│   │   └── include.nix
-│   └── sway
-│       ├── sway.nix
-│       └── waybar.nix
+│   ├── default.nix
+│   ├── hyprland
+│   │   └── hyprland.nix
+│   ├── programs
+│   │   ├── browsers
+│   │   │   ├── chromium.nix
+│   │   │   ├── firefox.nix
+│   │   │   ├── librewolf.nix
+│   │   │   ├── qutebrowser.nix
+│   │   │   └── vivaldi.nix
+│   │   ├── cli
+│   │   │   ├── fish.nix
+│   │   │   ├── git.nix
+│   │   │   ├── starship.nix
+│   │   │   └── tmux.nix
+│   │   ├── editors
+│   │   │   ├── helix.nix
+│   │   │   └── vscode.nix
+│   │   ├── misc
+│   │   │   ├── obs.nix
+│   │   │   ├── ollama.nix
+│   │   │   ├── programs.nix
+│   │   │   └── unity_hub.nix
+│   │   ├── services
+│   │   │   ├── fuzzel.nix
+│   │   │   ├── kanshi.nix
+│   │   │   └── wlogout.nix
+│   │   └── terminals
+│   │       ├── alacritty.nix
+│   │       ├── ghostty.nix
+│   │       └── kitty.nix
+│   ├── scaling
+│   │   ├── desktop.nix
+│   │   └── laptop.nix
+│   ├── stylix
+│   │   ├── dconf.nix
+│   │   ├── default.nix
+│   │   └── include.nix
+│   ├── sway
+│   │   └── sway.nix
+│   └── waybar
+│       └── waybar.nix
 ├── hosts
-│   ├── desktop
-│   │   ├── default.nix
-│   │   ├── desktop_specific.nix
-│   │   └── hardware-configuration.nix
-│   ├── generic
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── laptop
-│       ├── default.nix
-│       ├── hardware-configuration.nix
-│       └── laptop_specific.nix
+│   ├── desktop
+│   │   ├── default.nix
+│   │   ├── desktop_specific.nix
+│   │   └── hardware-configuration.nix
+│   ├── generic
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop
+│       ├── default.nix
+│       ├── hardware-configuration.nix
+│       └── laptop_specific.nix
 ├── LICENSE
 ├── modules
-│   ├── audio
-│   │   └── audio.nix
-│   ├── de
-│   │   └── sway.nix
-│   ├── default.nix
-│   ├── dm
-│   │   └── tuigreet.nix
-│   ├── graphics
-│   │   └── nvidia.nix
-│   ├── packages
-│   │   ├── gaming.nix
-│   │   └── packages.nix
-│   ├── system
-│   │   ├── boot.nix
-│   │   ├── fonts.nix
-│   │   ├── locale.nix
-│   │   ├── networking.nix
-│   │   ├── security.nix
-│   │   ├── session.nix
-│   │   └── system.nix
-│   └── users
-│       └── tyler.nix
+│   ├── audio
+│   │   └── audio.nix
+│   ├── de
+│   │   ├── hyprland.nix
+│   │   └── sway.nix
+│   ├── default.nix
+│   ├── dm
+│   │   └── tuigreet.nix
+│   ├── graphics
+│   │   └── nvidia.nix
+│   ├── packages
+│   │   ├── gaming.nix
+│   │   └── packages.nix
+│   ├── system
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── locale.nix
+│   │   ├── networking.nix
+│   │   ├── security.nix
+│   │   ├── session.nix
+│   │   └── system.nix
+│   └── users
+│       └── tyler.nix
 ├── README.md
 ├── reference
-│   ├── astrodark.lua
-│   └── Hilltopper.png
+│   ├── astrodark.lua
+│   └── Hilltopper.png
 ├── scripts
-│   ├── editglobalconf.sh
-│   ├── gen.sh
-│   ├── rebuild.sh
-│   ├── security_check.sh
-│   ├── trash.sh
-│   ├── tree.sh
-│   └── upgrade.sh
+│   ├── gen.sh
+│   ├── rebuild.sh
+│   ├── security_check.sh
+│   ├── trash.sh
+│   ├── tree.sh
+│   └── upgrade.sh
 ├── scrot2.png
 └── scrot.png
 
-37 directories, 82 files
+41 directories, 90 files
 
 ```
 ## Structure

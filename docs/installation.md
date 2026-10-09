@@ -5,6 +5,7 @@
 - [About](about.md)
 - [ToDo](todo.md)
 - [Sway](sway.md)
+- [Hyprland](./docs/hyprland.md)
 
 ---
 
