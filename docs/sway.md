@@ -1,262 +1,159 @@
 # Sway Setup
 
 ## Table of Contents
+
 - [README](../README.md)
 - [About](about.md)
 - [ToDo](todo.md)
 - [Installation](installation.md)
-- [Hyprland](./docs/hyprland.md)
+- [Hyprland](hyprland.md)
+
+---
+
+## Overview
+
+Sway is the primary window-manager configuration in this repository. Hyprland is also configured as an alternative session; both are available from the `greetd`/`tuigreet` session selector.
+
+Sway's configuration is primarily a regular config file managed by Home Manager:
+
+- `home/.config/sway/config`
+- `home-manager/sway/sway.nix`
+- `modules/de/sway.nix`
+
+The system-level module installs Sway and its runtime dependencies. Home Manager links the config file and sets Home Manager-specific options.
 
 ## Components of a Sway Session
-* Wayland session
-* XWayland
-* D-Bus session
-    * sync environment on startup
-* systemd --user
-    * Receives Sway environment
-* XDG:
-    * desktop portals
-        * file chooser
-        * open url
-        * settings
-        * secret
-        * print
-        * notifications
-        * remote desktops
-        * screen cast/shot
-    * MIME/default applications
-    * config/data/cache dirs
-* GTK
-* Qt
 
-## Ownership
+- Wayland session and XWayland
+- D-Bus session environment synchronization
+- `systemd --user` and the `wayland-session.scope` launched by tuigreet
+- XDG desktop portals, MIME/default applications, and user config/data/cache directories
+- GTK and Qt support
+- Compositor-launched utilities such as Kanshi, Waybar, Mako, and swayidle
+
+## Session Startup and Ownership
 
 ### NixOS
 
-**Owns the system-level configuration**
-- Boot and kernel
-- Hardware and NVIDIA
-- Networking
-- Audio / PipeWire
-- Bluetooth
-- System fonts
-- System packages
-- Users
-- Security / PAM
-- XDG portals
-- greetd
+NixOS owns system-level configuration and dependencies:
+
+- Boot, kernel, hardware, and NVIDIA support
+- Networking, audio/PipeWire, Bluetooth, and power services
+- Fonts, system packages, users, security/PAM, and D-Bus
+- XDG portal infrastructure and `greetd`
 - Sway installation and runtime dependencies
 
-**Files**
-- `modules/system/`
-- `modules/graphics/`
-- `modules/audio/`
-- `modules/packages/`
-- `modules/users/`
-- `modules/dm/`
-- `modules/de/sway.nix`
+Relevant files include `modules/system/`, `modules/graphics/`, `modules/audio/`, `modules/packages/`, `modules/users/`, `modules/dm/tuigreet.nix`, and `modules/de/sway.nix`.
 
 ### greetd / tuigreet
 
-**Owns login and session selection**
-- Login interface
-- Authentication
-- Session selection
-- Selecting the Wayland session from its `.desktop` entry
-- Starting the selected session
-- Returning to the login interface after the graphical session exits
+`greetd` provides the login service and `tuigreet` presents the text-based session selector. The selected Wayland session is launched through:
 
-**File**
-- `modules/dm/tuigreet.nix`
+```sh
+systemd-run --user --scope --unit=wayland-session
+```
 
-The selected Wayland session is launched by tuigreet through:
-
-    systemd-run --user --scope --unit=wayland-session
-
-greetd / tuigreet therefore starts the graphical session, but it does not manage the lifetime of individual applications within that session.
+The selected compositor runs inside `wayland-session.scope`. The wrapper is a systemd user scope, not UWSM and not a separate systemd service that owns Sway's lifecycle.
 
 ### systemd --user
 
-**Provides the user service manager and process supervision**
+The user service manager provides user services and scopes. The graphical session starts approximately as follows:
 
-The graphical session is launched inside a systemd user scope:
-
-    systemd --user
-    └── wayland-session.scope
+```text
+greetd
+└── tuigreet
+    └── systemd-run --user --scope --unit=wayland-session
         └── Sway
-
-The scope provides a cgroup boundary for the processes launched as part of that command. It is **not a UWSM-style compositor/session manager** and does not mean that systemd owns the complete graphical session lifecycle.
-
-Uncomment out `kanshi.nix` if you want this to be true:
+            ├── Waybar
+            ├── Mako
+            ├── Kanshi
+            └── other compositor-launched applications
 ```
-The user service manager separately manages graphical-session services such as Kanshi:
 
-    systemd --user
-    ├── wayland-session.scope
-    │   └── Sway
-    │       ├── Waybar
-    │       ├── Firefox
-    │       └── Kitty
-    │
-    └── kanshi.service
+Sway starts these utilities from its config. Kanshi is **not currently enabled as a systemd user service**. A commented-out service definition remains in `home-manager/programs/services/kanshi.nix` for reconsideration; do not describe Kanshi as systemd-managed unless that definition is intentionally enabled.
 
-Kanshi is configured as a Home Manager user service and is attached to `graphical-session.target`:
-
-    graphical-session.target
-    └── kanshi.service
-
-This allows Kanshi to start automatically with the graphical session rather than requiring an `exec_always kanshictl reload` in Sway.
-```
 ### Home Manager
 
-**Owns the user-level graphical environment**
-- Sway configuration
-- Waybar configuration
-- Kanshi configuration and user service
-- Fuzzel
-- wlogout
-- User applications
-- User environment variables
-- User fonts/font configuration
-- GTK user configuration
-- Stylix user configuration
-- Browser configuration
-- Terminal configuration
-- Editor configuration
+Home Manager owns user-level application and desktop configuration:
 
-**Files**
-- `home-manager/`
-- `home/`
+- Sway config and Sway-specific options
+- Waybar config/style and Kanshi output profiles
+- Fuzzel and wlogout config
+- User applications, browser and terminal settings, editor settings, GTK configuration, and Stylix user configuration
 
-Home Manager is responsible for configuring the user's graphical environment, while NixOS handles the system-level services and dependencies required to provide it.
+Relevant files include `home-manager/sway/sway.nix`, `home-manager/waybar/waybar.nix`, `home-manager/programs/services/kanshi.nix`, `home/`, and `home/.config/`.
 
 ### Sway
 
-**Owns the compositor/window-management layer**
-- Wayland compositor
-- Window management
-- Workspaces
-- Keybindings
-- Input configuration
-- Window rules
-- Sway-specific output configuration
-- Launching Sway-specific processes
-
-Sway does **not** own display profile management. Kanshi handles display configuration.
-Actually, it currently does, but that's because I was getting some journalctl errors. I would like to fix this. 
+Sway owns compositor behavior: window management, workspaces, keybindings, input settings, window borders, and compositor-specific startup commands. The active config is `home/.config/sway/config`.
 
 ### Kanshi
 
-**Owns dynamic display configuration**
-- Detecting connected/disconnected outputs
-- Selecting the appropriate output profile
-- Applying display modes
-- Applying output positions
-- Applying output scaling
+Kanshi applies the display profiles declared in `home-manager/programs/services/kanshi.nix`. At present, Sway launches it with `exec_always kanshi`; this is compositor-managed startup, not the commented-out systemd service. The profiles currently describe the desktop LG Ultragear display and the laptop eDP panel.
 
-Kanshi runs as a systemd user service attached to `graphical-session.target`.
-
-### Auxiliary graphical services
-
-These services provide functionality around the compositor rather than being part of Sway itself:
+## Auxiliary Graphical Components
 
 | Function | Component |
 |---|---|
-| Wi-Fi GUI | `nm-applet` |
-| Bluetooth GUI | `blueman` |
+| Wi-Fi tray | `nm-applet` |
+| Bluetooth tray | `blueman` |
 | Launcher | `fuzzel` |
 | Status bar | `waybar` |
 | Wallpaper | `swaybg` |
-| Power/brightness | `brightnessctl` |
-| Idle handling | `swayidle` |
-| Screen locking | `swaylock` |
+| Idle / display power | `swayidle` |
+| Screen locking | `swaylock` package available; lock binding/workflow may need finishing |
 | Audio control | `pavucontrol` |
-| Screenshots | `grim` + `slurp` |
+| Screenshots | `grim`, `slurp`, and `swappy` |
 | Clipboard | `wl-clipboard` |
 | Notifications | `mako` |
-| Authentication agent | `polkit_gnome` |
-| Wayland portals | `xdg-desktop-portal-wlr` |
-| Logout/power menu | `wlogout` |
-| Terminal | `kitty` |
-| Display management | `kanshi` |
+| Authentication agent | `polkit-gnome` |
+| Logout / power menu | `wlogout` |
+| Terminal | `ghostty` |
+| Display profiles | `kanshi` |
 
-### System services used by the graphical session
+System services such as NetworkManager, PipeWire/WirePlumber, Bluetooth, UPower, power-profiles-daemon, polkit, and XDG portals are configured at the NixOS level.
 
-These remain system-level services managed by NixOS:
+## Keybindings
 
-| Function | Component |
+The source of truth is `home/.config/sway/config`. The main bindings include:
+
+| Binding | Action |
 |---|---|
-| Network backend | `NetworkManager` |
-| Audio backend | `PipeWire` + `WirePlumber` |
-| Bluetooth backend | `bluetooth` |
-| Power management | `upower` + `power-profiles-daemon` |
-| Authentication / authorization | `polkit` |
-| Portals | `xdg-desktop-portal` |
+| `Super+Enter` | Open Ghostty |
+| `Super+D` | Open Fuzzel |
+| `Super+Q` | Close focused window |
+| `Super+H/J/K/L` | Focus left/down/up/right |
+| `Super+Shift+H/J/K/L` | Move window left/down/up/right |
+| `Super+1..0` | Switch to workspaces 1..10 |
+| `Super+Shift+1..0` | Move window to workspaces 1..10 |
+| `Super+B` / `Super+V` | Split horizontally / vertically |
+| `Super+M` / `Super+W` | Tabbed / stacking layout |
+| `Super+E` | Toggle split layout |
+| `Super+T` | Toggle split orientation |
+| `Super+F` | Toggle fullscreen |
+| `Super+C` | Toggle floating |
+| `Super+Z` | Toggle focus between tiling and floating |
+| `Super+Tab` | Switch to the previous workspace |
+| `Super+Shift+C` | Reload Sway config |
+| `Super+Shift+R` | Restart Sway |
+| `Super+Shift+E` | Show logout prompt |
 
-### Configuration ownership summary
+Media keys adjust volume with `wpctl` and brightness with `brightnessctl`. `Super+Shift+P` captures the screen to Swappy; `Shift+Print` selects a region first.
 
-    NixOS
-    ├── Hardware / kernel / NVIDIA
-    ├── NetworkManager
-    ├── PipeWire / WirePlumber
-    ├── Bluetooth
-    ├── Power management
-    ├── polkit / PAM
-    ├── XDG portal infrastructure
-    ├── greetd / tuigreet
-    └── Sway package + runtime dependencies
+## Wayland Scaling and Display Compatibility
 
-    greetd / tuigreet
-    └── Starts the selected Wayland session
-        └── systemd-run --user --scope --unit=wayland-session
-            └── Sway
+Sway output scaling is set to 1.0 so applications can manage their own scaling where possible. This is especially relevant on high-DPI displays, where Wayland and XWayland applications may respond to scaling settings differently.
 
-    systemd --user
-    ├── wayland-session.scope
-    │   └── Sway
-    │
-    └── graphical-session.target
-        └── kanshi.service
+Use the following to inspect connected outputs:
 
-    Home Manager
-    ├── Sway configuration
-    ├── Waybar
-    ├── Kanshi configuration
-    ├── Fuzzel
-    ├── wlogout
-    ├── User applications
-    └── User configuration
+```sh
+swaymsg -t get_outputs
+```
 
-### Keybindings
-* Need scratchpad bindings
+The display profiles live in `home-manager/programs/services/kanshi.nix`. They currently specify 3440x1440 at 160 Hz for the desktop monitor and 2560x1600 at 165 Hz for the laptop panel, both at scale 1.0. Check the actual output name and supported mode on each machine before changing a profile.
 
-## Wayland and Scaling/X11 Support in Sway
+The Waybar config used by Sway is `home/.config/waybar/config.jsonc`, and its shared style is `home/.config/waybar/style.css`.
 
-### Sway Scaling
----
+### XWayland and Games
 
-Enabled with scaling set to 1 for maximum compatibility. This is important for highdpi users to take note of as all scaling is handled per app. Not every app has a way of handling this via a config file that can be declared with home-manager, meaning you may need to write a wrapper for it.
-
-### Display Compatibility
----
-
-I am having Kanshi handle my display management. To get your monitor's display information, run `swaymsg -t get_outputs`. You can then use the information printed to the terminal to manage `kanshi.nix.` I would like to eventually have a script automate this. Kanshi should handle every bit of display management, but I am not 100% sure of this yet.
-
-#### Kanshi Example
----
-    outputs = [
-        {
-            criteria = "LG Electronics LG ULTRAGEAR 110NTRLAS678";
-            mode = "3440x1440@160Hz";
-            position = "0,0";
-            scale = 1;
-        }
-    ];
----
-
-### Steam
----
-
-X11 apps can't really be scaled separately from Wayland, so the easiest way I have found to manage scaling with a high dpi display is by keeping the scaling in sway at 1 via `output * scale 1` in the Sway configuration file, then manually scaling the apps and desktop components to the degree I desire.
-
-`xwayland-satellite` can be enabled for an extra x11/gaming compatibility option. Xwayland must first be disabled in the home manager's `sway.nix` file, then xwayland-satellite needs to be enabled in that same file and executed from the Sway config file.
+XWayland applications may need application-specific scaling. The repository also has an experimental `xwayland-satellite` path commented out in the Sway config; enabling it requires coordinating the related options in `home-manager/sway/sway.nix`. It is not enabled by default.
