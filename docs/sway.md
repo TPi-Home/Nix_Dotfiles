@@ -70,7 +70,7 @@ greetd
             └── other compositor-launched applications
 ```
 
-Sway starts these utilities from its config. Kanshi is **not currently enabled as a systemd user service**. A commented-out service definition remains in `home-manager/programs/services/kanshi.nix` for reconsideration; do not describe Kanshi as systemd-managed unless that definition is intentionally enabled.
+Sway starts these utilities from its config. Kanshi is currently launched directly by the compositor. A commented-out service definition remains in `home-manager/programs/services/kanshi.nix` for reconsideration.
 
 ### Home Manager
 

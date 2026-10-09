@@ -12,7 +12,7 @@
 
 ## Overview
 
-Hyprland is configured as an alternative, experimental Wayland session alongside Sway. Both are enabled in the NixOS and Home Manager module imports, and the session can be selected through `greetd`/`tuigreet`. This documentation describes the configuration present in the repository, not a claim that Hyprland is the default session.
+Hyprland is configured as an alternative Wayland session alongside Sway. Both are enabled in the NixOS and Home Manager module imports, and the session can be selected through `greetd`/`tuigreet`. Hyprland should never use the UWSM with this setup. I understand this is contrary to the nixpkgs default settings for the package when enabled, but I am managing the session with systemd. This documentation describes the configuration present in the repository, not a claim that Hyprland is the default session.
 
 Hyprland uses its Lua configuration at `home/.config/hypr/hyprland.lua`. Home Manager reads that file through `home-manager/hyprland/hyprland.nix`; the system-level module is `modules/de/hyprland.nix`.
 
@@ -74,7 +74,7 @@ greetd
             └── swaybg
 ```
 
-Hyprland starts the listed utilities in the `hyprland.start` event handler. Kanshi is currently launched directly by the compositor. Its separate systemd user service definition in `home-manager/programs/services/kanshi.nix` is commented out and is not active.
+Hyprland starts the listed utilities in the `hyprland.start` event handler. Kanshi is currently launched directly by the compositor. A commented-out service definition remains in `home-manager/programs/services/kanshi.nix` for reconsideration.
 
 ### Home Manager
 
