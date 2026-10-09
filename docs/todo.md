@@ -12,28 +12,11 @@
 ## Configuration Organization
 ### Fun
 Add CDDA to my flake. Maybe Mango as well, depending on how far behind the nixos packages Mango is. 
-### Sway
-Autotiling is conflicting with window management: super + t
-
-My short term fix:
-```
-# Press Super + Alt + A to start autotiling
-bindsym $mod+Mod1+a exec autotiling
-
-# Press Super + Alt + X to kill autotiling and return to pure i3/Sway behavior
-bindsym $mod+Mod1+x exec pkill -f autotiling
-```
-But I should use a toggle script:
-```
-# Toggle autotiling on and off with Super + Alt + T
-bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
-```
 ### Performance Cleanups 
 * Considering Cachy kernel
 * Need to set default apps - MIME
-* CCDA 
 * Copy from command output imperatively 
-* Kitty now has terminal custom shaders!! The future is now.
+* hyprshaders, finish hypr documentation
 
 ### Development Environment / Jobs
 * Weather in fastfetch or fetch?
@@ -65,7 +48,7 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 ## Desktop Environment / Window Manager Setup
 
 ### Tiling
-
+**This Section is Very Inaccurate Currently**
 | I will need for MangoWM | Package / tool |
 |---|---|
 | Wi-Fi GUI | `nm-applet` |
@@ -97,7 +80,7 @@ bindsym $mod+Mod1+t exec pkill -f autotiling || autotiling
 ___
 <br/>
 
-| I will need for hyprland | Package / tool |
+| I will need for Niri | Package / tool |
   |---|---|
   | a Wi-Fi GUI | `nm-applet` |
   | a Bluetooth GUI | `blueman` |
