@@ -13,9 +13,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+    };
   };
 
-  outputs = {
+  outputs = inputs@{
     self,
     nixpkgs,
     stylix,
@@ -25,6 +29,7 @@
     nixosConfigurations = {
       generic = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
 
         # Could point to /etc/nixos on a fresh install
         modules = [
@@ -37,6 +42,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
 
             home-manager.users.tyler = {
               imports = [
