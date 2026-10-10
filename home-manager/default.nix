@@ -1,7 +1,7 @@
 # ============================================================================
 # Imports/Variables/State Version
 # ============================================================================
-{...}: {
+{inputs, ...}: {
   imports = [
     # Misc
     ./programs/misc/programs.nix
@@ -35,6 +35,7 @@
 
     # Game Dev
     ./programs/misc/unity_hub.nix
+    inputs.noctalia.homeModules.default
 
     # Desktop
     ./sway/sway.nix
@@ -48,6 +49,11 @@
     # Display Settings
     ./programs/services/kanshi.nix
   ];
+
+  programs.noctalia = {
+    enable = true;
+    settings.shell.corner_radius_scale = 0;
+  };
 
   xdg.portal.config = {
     common.default = ["gtk"];
