@@ -19,7 +19,7 @@
 * Considering Cachy kernel, only with a binary cache I trust
 * Copy from command output imperatively 
 * hyprshaders, finish hypr documentation
-
+* Considering Noctalia. I can migrate my current systemd graphical session management to it quite easily. I could set up a nice lockscreen, display manager. I would replace wlogout, waybar, waylock, etc. 
 ### Development Environment / Jobs
 * Weather in fastfetch or fetch?
 
