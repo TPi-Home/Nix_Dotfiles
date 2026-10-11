@@ -22,7 +22,7 @@
 {
     "label": "hibernate",
     "action": "systemctl hibernate",
-    "text": "Hibernate",
+    "text": "Hibernate (Not Configured)",
     "keybind": "h"
 }
 

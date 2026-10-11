@@ -12,27 +12,21 @@
 ## Configuration Organization
 ### Flake
 * Upstream waybar for mango and hyprland lua compat
-### Fun
-Add CDDA to my flake. Maybe Mango as well, depending on how far behind the nixos packages Mango is. 
+### Important
+* Defaults? No default term? - MIME
+* UUID for bootloader: 73fcb2d3-96f9-44e5-b2ea-5fbda1bcfa50 (Windows)
 ### Performance Cleanups 
-* Considering Cachy kernel
-* Need to set default apps - MIME
+* Considering Cachy kernel, only with a binary cache I trust
 * Copy from command output imperatively 
 * hyprshaders, finish hypr documentation
 
 ### Development Environment / Jobs
 * Weather in fastfetch or fetch?
-* Generate ./tree.sh @ startup
 
 ### Inconsistent UI
+* hyprland fonts/colors need to match
+* update home mgr and bootloader and install nh
 * Keep showing workspace if empty but < current workspace
-* No brightnessctl
-* Astrodark theme for vscode
-* Show color for values in editor of choice
-* Scroll and mouse speed
-* Unfocused window border is inconsistent 
-* Defaults? No default term?
-* Terminal isn't fallback software -> move to home manager.
 * Workspace char padding for large workspaces
 * Mako config
 ### Security

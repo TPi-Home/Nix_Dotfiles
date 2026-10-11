@@ -12,7 +12,7 @@ set $mod Mod4
 
 input type:keyboard xkb_numlock enabled
 
-font pango:Monaspace Neon NF 14
+font pango:Ubuntu Sans 14
 
 default_border normal 2
 default_floating_border normal 2
@@ -63,7 +63,7 @@ exec udiskie
 exec nm-applet
 exec blueman
 exec_always swayidle -w \
-    timeout 60 'swaymsg "output * power off"' \
+    timeout 300 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"'
     
 
