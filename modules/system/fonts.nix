@@ -52,7 +52,7 @@
     # nerd-fonts.monofur
     # nerd-fonts.monoid
     # nerd-fonts.mononoki
-    # nerd-fonts.noto
+    nerd-fonts.noto
     # nerd-fonts.open-dyslexic
     # nerd-fonts.overpass
     # nerd-fonts.profont
@@ -65,14 +65,15 @@
     nerd-fonts.symbols-only
     # nerd-fonts.terminess-ttf
     # nerd-fonts.tinos
-    # nerd-fonts.ubuntu
-    # nerd-fonts.ubuntu-mono
-    # nerd-fonts.ubuntu-sans
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
+    nerd-fonts.ubuntu-sans
     # nerd-fonts.victor-mono
     # nerd-fonts.zed-mono
 
     # Other Fonts
     corefonts
+    
   ];
 
   fonts.fontDir.enable = true;
