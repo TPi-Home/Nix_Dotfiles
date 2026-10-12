@@ -47,6 +47,9 @@
 
     # Display Settings
     ./programs/services/kanshi.nix
+
+    # Defaults
+    ./programs/mime.nix
   ];
 
   xdg.portal.config = {

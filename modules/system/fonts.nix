@@ -73,7 +73,6 @@
 
     # Other Fonts
     corefonts
-    
   ];
 
   fonts.fontDir.enable = true;
