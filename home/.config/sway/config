@@ -212,7 +212,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 # Wallpaper
 # ----------------------------------------------------------------------------
 
-output * bg /home/tyler/Pictures/Hilltopper.png fill
+output * bg /home/tyler/Nix_Dot_Files/reference/Hilltopper.png fill
 
 # ----------------------------------------------------------------------------
 # Easy Enable
