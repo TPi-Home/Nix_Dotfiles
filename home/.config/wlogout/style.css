@@ -2,16 +2,12 @@
     font-family: "Ubuntu Sans", "Symbols Nerd Font";
     font-size: 30px;
     font-weight: 500;
-    border: none;
     text-shadow: none;
 }
 
-/* --------------------------------------------------------------------------
- * Palette
- * -------------------------------------------------------------------------- */
+/* Palette */
 
 @define-color black #111317;
-
 @define-color inactive #16181D;
 @define-color base #1A1D23;
 @define-color float #14161B;
@@ -29,49 +25,37 @@
 @define-color text-muted #696C76;
 @define-color text-inactive #494D56;
 
-
-/* --------------------------------------------------------------------------
- * Window
- * -------------------------------------------------------------------------- */
+/* Window */
 
 window {
     background: alpha(@black, 0.94);
     color: @text;
 }
 
-
-/* --------------------------------------------------------------------------
- * Buttons
- * -------------------------------------------------------------------------- */
+/* Buttons */
 
 button {
     background: @inactive;
     color: @text;
 
-    box-sizing: border-box;
     min-width: 180px;
     min-height: 140px;
+
+    margin: 12px;
+    padding: 0;
 
     border: 2px solid alpha(@border, 0.60);
     border-radius: 0;
 
-    margin: 8px;
-    padding: 20px;
-
-    box-shadow:
-        0 6px 22px alpha(@black, 0.30),
-        inset 0 1px alpha(@text, 0.025);
+    box-shadow: none;
 
     transition:
         background-color 150ms ease,
         border-color 150ms ease,
-        color 150ms ease,
-        box-shadow 150ms ease;
+        color 150ms ease;
 }
 
-/* --------------------------------------------------------------------------
- * Hover / Focus
- * -------------------------------------------------------------------------- */
+/* Hover / Focus */
 
 button:hover,
 button:focus {
@@ -79,25 +63,19 @@ button:focus {
     color: @white;
 
     border-color: alpha(@blue, 0.55);
+    border-radius: 0;
 
-    box-shadow:
-        0 8px 26px alpha(@black, 0.35),
-        0 0 0 1px alpha(@blue, 0.035);
+    box-shadow: none;
 }
 
-
-/* --------------------------------------------------------------------------
- * Active
- * -------------------------------------------------------------------------- */
+/* Active */
 
 button:active {
     background: @selection;
     color: @bright-blue;
 
     border-color: @blue;
+    border-radius: 0;
 
-    box-shadow:
-        0 6px 20px alpha(@blue, 0.15),
-        0 0 0 1px alpha(@blue, 0.08);
+    box-shadow: none;
 }
-
