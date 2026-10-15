@@ -169,7 +169,7 @@
     {
         "format": "⏻",
         "tooltip": false,
-        "on-click": "wlogout --protocol layer-shell"
+        "on-click": "wlogout --protocol layer-shell --buttons-per-row 3"
     },
 
     "tray":

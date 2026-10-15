@@ -21,7 +21,7 @@
       "application/json" = ["code.desktop"];
       "application/x-shellscript" = ["code.desktop"];
 
-      # Images
+      # Images (need desktop app)
       "image/png" = ["imv.desktop"];
       "image/jpeg" = ["imv.desktop"];
       "image/webp" = ["imv.desktop"];
