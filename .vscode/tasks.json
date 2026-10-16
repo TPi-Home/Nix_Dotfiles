@@ -5,7 +5,7 @@
       "id": "nixosHost",
       "type": "pickString",
       "description": "Which NixOS host should this task target?",
-      "options": ["desktop", "laptop", "generic"],
+      "options": ["desktop", "laptop", "generic"]
     }
   ],
   "tasks": [
