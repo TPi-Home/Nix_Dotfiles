@@ -13,6 +13,7 @@
     ./programs/cli/git.nix
     ./programs/cli/fish.nix
     ./programs/cli/starship.nix
+    ./programs/cli/tmux.nix
 
     # Terminals
     ./programs/terminals/ghostty.nix
@@ -52,7 +53,6 @@
 
   programs.noctalia.enable = true;
 
-  # Shared AstroDark palette for all host configurations.
   xdg.configFile."noctalia/palettes/AstroDark.json".source =
     ../home/.config/noctalia/palettes/AstroDark.json;
 
