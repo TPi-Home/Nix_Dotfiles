@@ -17,7 +17,7 @@ hl.config({
             active_border = 0xff50a4e9,
             inactive_border = 0xff3a3e47,
         },
-        layout = "dwindle",
+        layout = "master",
     },
 
     binds = {
@@ -60,7 +60,7 @@ hl.config({
     },
 
     animations = {
-        enabled = false,
+        enabled = true,
     },
 })
 
@@ -89,24 +89,26 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
     hl.exec_cmd("kanshi")
     hl.exec_cmd("udiskie")
+    hl.exec_cmd("noctalia")
 end)
+
 
 -- ----------------------------------------------------------------------------
 -- Applications
 -- ----------------------------------------------------------------------------
 
+local ipc = "noctalia msg "
 local terminal = "ghostty"
-local menu = "fuzzel"
 
 hl.bind(mod .. " + RETURN", hl.dsp.exec_cmd(terminal))
-hl.bind(mod .. " + D", hl.dsp.exec_cmd(menu))
+hl.bind(mod .. " + D", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mod .. " + Q", hl.dsp.window.close())
 
 -- ----------------------------------------------------------------------------
 -- Notifications
 -- ----------------------------------------------------------------------------
 
-hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("makoctl dismiss"))
+-- hl.bind("CTRL + SPACE", hl.dsp.exec_cmd("makoctl dismiss"))
 
 -- ----------------------------------------------------------------------------
 -- Screenshots
@@ -190,7 +192,7 @@ end
 hl.bind(mod .. " + B", hl.dsp.layout("togglesplit"))
 hl.bind(mod .. " + V", hl.dsp.window.pseudo())
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
-hl.bind(mod .. " + S", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mod .. " + C", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + M", hl.dsp.group.toggle())
 
 

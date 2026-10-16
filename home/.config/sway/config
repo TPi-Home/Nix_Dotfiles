@@ -64,9 +64,7 @@ set $term ghostty
 exec dbus-update-activation-environment --systemd --all
 exec_always kanshi
 exec noctalia
-exec mako
 exec udiskie
-exec blueman    
 
 # ----------------------------------------------------------------------------
 # Input

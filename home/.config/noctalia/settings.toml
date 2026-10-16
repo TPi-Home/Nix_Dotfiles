@@ -7,7 +7,7 @@ files = ["palettes/"]
 ui_scale = 1.5
 
 [bar.default]
-background_opacity = 0.9
+background_opacity = 0.85
 end = [
   "tray",
   "notifications",
