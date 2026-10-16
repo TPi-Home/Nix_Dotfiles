@@ -29,7 +29,7 @@ The system-level module installs Sway and its runtime dependencies. Home Manager
 - `systemd --user` and the `wayland-session.scope` launched by tuigreet
 - XDG desktop portals, MIME/default applications, and user config/data/cache directories
 - GTK and Qt support
-- Compositor-launched utilities such as Kanshi, Waybar, Mako, and swayidle
+- Compositor-launched utilities such as Noctalia
 
 ## Session Startup and Ownership
 
@@ -64,10 +64,7 @@ greetd
 └── tuigreet
     └── systemd-run --user --scope --unit=wayland-session
         └── Sway
-            ├── Waybar
-            ├── Mako
-            ├── Kanshi
-            └── other compositor-launched applications
+            └── Noctalia
 ```
 
 Sway starts these utilities from its config. Kanshi is currently launched directly by the compositor. A commented-out service definition remains in `home-manager/programs/services/kanshi.nix` for reconsideration.
@@ -77,8 +74,8 @@ Sway starts these utilities from its config. Kanshi is currently launched direct
 Home Manager owns user-level application and desktop configuration:
 
 - Sway config and Sway-specific options
-- Waybar config/style and Kanshi output profiles
-- Fuzzel and wlogout config
+- Kanshi output profiles
+- Noctalia
 - User applications, browser and terminal settings, editor settings, GTK configuration, and Stylix user configuration
 
 Relevant files include `home-manager/sway/sway.nix`, `home-manager/waybar/waybar.nix`, `home-manager/programs/services/kanshi.nix`, `home/`, and `home/.config/`.
@@ -95,19 +92,19 @@ Kanshi applies the display profiles declared in `home-manager/programs/services/
 
 | Function | Component |
 |---|---|
-| Wi-Fi tray | `nm-applet` |
-| Bluetooth tray | `blueman` |
-| Launcher | `fuzzel` |
-| Status bar | `waybar` |
-| Wallpaper | `swaybg` |
-| Idle / display power | `swayidle` |
-| Screen locking | `swaylock` package available; lock binding/workflow may need finishing |
-| Audio control | `pavucontrol` |
+| Wi-Fi tray | `Noctalia` |
+| Bluetooth tray | `Noctalia` |
+| Launcher | `Noctalia` |
+| Status bar | `Noctalia` |
+| Wallpaper | `Noctalia` |
+| Idle / display power | `Noctalia` |
+| Screen locking | `Noctalia`|
+| Audio control | `Noctalia` |
 | Screenshots | `grim`, `slurp`, and `swappy` |
 | Clipboard | `wl-clipboard` |
-| Notifications | `mako` |
+| Notifications | `Noctalia` |
 | Authentication agent | `polkit-gnome` |
-| Logout / power menu | `wlogout` |
+| Logout / power menu | `Noctalia` |
 | Terminal | `ghostty` |
 | Display profiles | `kanshi` |
 

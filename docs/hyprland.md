@@ -66,12 +66,8 @@ greetd
 └── tuigreet
     └── systemd-run --user --scope --unit=wayland-session
         └── Hyprland
-            ├── Waybar
-            ├── Mako
-            ├── Kanshi
-            ├── udiskie
-            ├── nm-applet / blueman
-            └── swaybg
+            └── Noctalia
+
 ```
 
 Hyprland starts the listed utilities in the `hyprland.start` event handler. Kanshi is currently launched directly by the compositor. A commented-out service definition remains in `home-manager/programs/services/kanshi.nix` for reconsideration.
@@ -81,12 +77,9 @@ Hyprland starts the listed utilities in the `hyprland.start` event handler. Kans
 Home Manager manages the Lua config and user-level graphical setup:
 
 - Hyprland configuration options and Lua config loading
-- Waybar's Hyprland-specific workspace config and shared CSS
 - Kanshi display profiles
-- Fuzzel and wlogout configuration
+- Noctalia
 - User applications, terminal/browser/editor settings, GTK configuration, and Stylix user configuration
-
-Relevant files include `home-manager/hyprland/hyprland.nix`, `home-manager/waybar/waybar.nix`, `home-manager/programs/services/kanshi.nix`, `home/`, and `home/.config/`.
 
 The Home Manager Hyprland module sets `package = null`, `configType = "lua"`, `systemd.enable = false`, and `xwayland.enable = true`. It loads `home/.config/hypr/hyprland.lua` as the extra config.
 
@@ -113,7 +106,7 @@ The source of truth is `home/.config/hypr/hyprland.lua`. The main bindings inclu
 | Binding | Action |
 |---|---|
 | `Super+Enter` | Open Ghostty |
-| `Super+D` | Open Fuzzel |
+| `Super+D` | Open Noctalia Launcher |
 | `Super+Q` | Close focused window |
 | `Super+H/J/K/L` | Focus left/down/up/right; scrolling layout uses its layout-specific focus directions |
 | `Super+Shift+H/J/K/L` | Move window left/down/up/right |
@@ -151,23 +144,21 @@ Hyprland's explicit monitor rule targets `eDP-2`, using its preferred mode, auto
 
 If monitor configuration appears to conflict, check both the explicit `hl.monitor` rule and Kanshi's profiles. Inspect actual output names and supported modes before editing either configuration.
 
-The Hyprland-specific Waybar config is `home/.config/waybar/hyprland.jsonc`; shared styling is in `home/.config/waybar/style.css`.
-
 ## Shared Graphical Services
 
 | Function | Component |
 |---|---|
-| Launcher | `fuzzel` |
-| Status bar | `waybar` |
-| Notifications | `mako` |
-| Wallpaper | `swaybg` |
+| Launcher | `Noctalia` |
+| Status bar | `Noctalia` |
+| Notifications | `Noctalia` |
+| Wallpaper | `Noctalia` |
 | Dynamic display profiles | `kanshi` |
 | Removable-device management | `udiskie` |
-| Wi-Fi tray | `nm-applet` |
-| Bluetooth tray | `blueman` |
+| Wi-Fi tray | `Noctalia` |
+| Bluetooth tray | `Noctalia` |
 | Screenshots | `grim`, `slurp`, and `swappy` |
 | Clipboard | `wl-clipboard` |
-| Audio control | `pavucontrol` |
-| Logout / power menu | `wlogout` |
+| Audio control | `Noctalia` |
+| Logout / power menu | `Noctalia` |
 
 These are shared utilities rather than Hyprland-native components. In this configuration, Hyprland's startup event launches several of them directly.

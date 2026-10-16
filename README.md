@@ -31,7 +31,7 @@ The window-manager-specific setup is documented separately:
 
 ## Screenshots
 
-![Screenshot 1](scrot.png)
+![Screenshot 1](scrot1.png)
 ![Screenshot 2](scrot2.png)
 
 ## Credits
