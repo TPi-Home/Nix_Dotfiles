@@ -12,7 +12,6 @@
     direnv
     nvtopPackages.full
     taskwarrior3
-    stow
 
     # Editors (for TTY fallback only at system level)
     vim
