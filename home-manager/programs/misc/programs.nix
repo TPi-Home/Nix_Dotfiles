@@ -33,6 +33,7 @@
 
     # Rust
     rustup
+    rust-analyzer
 
     # .NET / C#
     dotnet-sdk
