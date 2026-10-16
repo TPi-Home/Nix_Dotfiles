@@ -35,12 +35,6 @@
       xdg-desktop-portal-wlr
       xdg-desktop-portal-hyprland
     ];
-
-    # Sway set by default
-    config = {
-      common.default = ["gtk"];
-      hyprland.default = ["hyprland" "gtk"];
-    };
   };
 
   environment.sessionVariables = {
