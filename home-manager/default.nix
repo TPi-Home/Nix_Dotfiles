@@ -6,7 +6,7 @@
     # Misc
     ./programs/misc/programs.nix
     # ./programs/misc/ollama.nix
-    ./programs/misc/obs.nix
+    # ./programs/misc/obs.nix
 
     # CLI
     ./programs/cli/git.nix
@@ -14,8 +14,7 @@
     ./programs/cli/starship.nix
 
     # Terminals
-    # ./programs/terminals/alacritty.nix
-    # ./programs/terminals/kitty.nix
+
     ./programs/terminals/ghostty.nix
 
     # Editors
@@ -28,10 +27,8 @@
 
     # Browsers
     ./programs/browsers/firefox.nix
-    # ./programs/browsers/chromium.nix
-    ./programs/browsers/vivaldi.nix
+    ./programs/browsers/helium.nix
     ./programs/browsers/qutebrowser.nix
-    # ./programs/browsers/librewolf.nix
 
     # Game Dev
     ./programs/misc/unity_hub.nix
@@ -39,11 +36,6 @@
     # Desktop
     ./sway/sway.nix
     ./hyprland/hyprland.nix
-    ./programs/services/waybar.nix
-    ./programs/services/wlogout.nix
-
-    # Application Launcher
-    ./programs/services/fuzzel.nix
 
     # Display Settings
     ./programs/services/kanshi.nix
