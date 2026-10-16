@@ -51,7 +51,14 @@
     hyprland.default = ["hyprland" "gtk"];
   };
 
-  programs.noctalia.enable = true;
+  programs.noctalia = {
+    enable = true;
+
+    # Keep one shared config; host modules override only scaling values.
+    settings = builtins.fromTOML (
+      builtins.readFile ../home/.config/noctalia/settings.toml
+    );
+  };
 
   # AstroDark palette for Noctalia
   xdg.configFile."noctalia/palettes/AstroDark.json".source =
@@ -64,9 +71,6 @@
     EDITOR = "nvim";
     VISUAL = "code";
     GDK_DPI_SCALE = "1.0";
-    # GDK_SCALE = "1.4";
-    QT_SCALE_FACTOR = 1.5;
-    QT_DPI_SCALE = "1.5";
   };
 
   fonts.fontconfig.enable = true;
