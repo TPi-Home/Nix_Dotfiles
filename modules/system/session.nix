@@ -64,51 +64,28 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
-  programs.nm-applet.enable = true;
 
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
 
-  services.blueman.enable = true;
-
-  # PAM authentication for screen lockersgi
-  security.pam.services.waylock = {};
-
   # ----------------------------------------------------------------------------
   # Shared Wayland Desktop Utilities
   # ----------------------------------------------------------------------------
 
   environment.systemPackages = with pkgs; [
-    # Launcher
-    fuzzel
-
-    # Bar
-    waybar
-
-    # Notifications
-    libnotify
-    mako
-
     # Screenshots
     grim
     slurp
     swappy
     grimblast
 
-    # Wallpaper
-    hyprpaper
-    swaybg
-
     # Clipboard
     wl-clipboard
 
     # Color Selection
     hyprpicker
-
-    # Lighting
-    hyprsunset
 
     # Screen
     brightnessctl
@@ -118,12 +95,6 @@
 
     # Bluetooth GUI
     blueman
-
-    # Logout
-    wlogout
-
-    # Idle / lock
-    waylock
 
     # Audio
     wiremix
