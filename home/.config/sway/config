@@ -63,7 +63,7 @@ set $menu fuzzel
 
 exec dbus-update-activation-environment --systemd --all
 exec_always kanshi
-exec waybar -c ~/.config/waybar/sway.jsonc
+exec noctalia
 exec mako
 exec udiskie
 exec nm-applet
