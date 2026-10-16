@@ -22,9 +22,15 @@
       "application/x-shellscript" = ["code.desktop"];
 
       # Images
-      "image/png" = ["firefox.desktop"];
+      "image/avif" = ["firefox.desktop"];
+      "image/bmp" = ["firefox.desktop"];
+      "image/gif" = ["firefox.desktop"];
       "image/jpeg" = ["firefox.desktop"];
+      "image/png" = ["firefox.desktop"];
+      "image/svg+xml" = ["firefox.desktop"];
+      "image/tiff" = ["firefox.desktop"];
       "image/webp" = ["firefox.desktop"];
+      "image/x-icon" = ["firefox.desktop"];
     };
   };
 
