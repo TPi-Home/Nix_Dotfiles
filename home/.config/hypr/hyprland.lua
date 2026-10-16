@@ -64,16 +64,7 @@ hl.config({
     },
 })
 
--- ----------------------------------------------------------------------------
--- Monitor
--- ----------------------------------------------------------------------------
-
-hl.monitor({
-    output = "eDP-2",
-    mode = "preferred",
-    position = "auto",
-    scale = 1,
-})
+-- Monitor layout and scale are configured by the host-specific Kanshi profile.
 
 -- ----------------------------------------------------------------------------
 -- Environment
