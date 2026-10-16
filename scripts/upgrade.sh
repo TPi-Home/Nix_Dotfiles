@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+host="${1:-}"
 
-nix flake update nixpkgs
-sudo nixos-rebuild switch --flake "${repo_root}#generic"
+case "$host" in
+  desktop|laptop|generic) ;;
+  *)
+    printf 'Usage: %s {desktop|laptop|generic}\n' "$0" >&2
+    exit 2
+    ;;
+esac
+
+cd "$repo_root"
+
+nix flake update nixpkgs --flake "$repo_root"
+sudo nixos-rebuild switch --flake "${repo_root}#${host}"
