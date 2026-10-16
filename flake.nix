@@ -44,6 +44,7 @@
                 stylix.homeModules.stylix
                 ./home-manager/default.nix
                 (./home-manager/noctalia + "/${host}.nix")
+                (./home-manager/kanshi + "/${host}.nix")
               ];
             };
           }
