@@ -1,12 +1,6 @@
 {
-  # Preserve the current scaling as the fallback for generic hosts.
-  programs.noctalia.settings = {
-    accessibility.ui_scale = 1.5;
-    bar.default.scale = 1.5;
-    notification.scale = 1.5;
-    osd.scale = 1.5;
-    widget.clock.font_scale = 1.5;
-  };
+  # Portable fallback without assumptions about a particular output name.
+  programs.noctalia.settings = ../../home/.config/noctalia/hosts/generic.toml;
 
   home.sessionVariables = {
     QT_SCALE_FACTOR = "1.5";
