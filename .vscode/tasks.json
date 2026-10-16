@@ -6,7 +6,6 @@
       "type": "pickString",
       "description": "Which NixOS host should this task target?",
       "options": ["desktop", "laptop", "generic"],
-      "default": "desktop"
     }
   ],
   "tasks": [
