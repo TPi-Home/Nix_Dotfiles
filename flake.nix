@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +17,7 @@
     };
   };
 
-  outputs = {
+  outputs = inputs@{
     self,
     nixpkgs,
     stylix,
@@ -35,6 +37,7 @@
           home-manager.nixosModules.home-manager
 
           {
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
