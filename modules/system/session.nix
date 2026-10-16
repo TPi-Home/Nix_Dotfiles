@@ -49,8 +49,6 @@
     ];
   };
 
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
   programs.xfconf.enable = true;
 
   services.upower.enable = true;
