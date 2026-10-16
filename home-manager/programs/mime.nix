@@ -1,7 +1,7 @@
 # ============================================================================
 # Default Applications
 # ============================================================================
-{pkgs, ...}: {
+{...}: {
   xdg.mimeApps = {
     enable = true;
 
@@ -13,7 +13,7 @@
       "x-scheme-handler/https" = ["firefox.desktop"];
 
       # PDF documents
-      "application/pdf" = ["org.gnome.Evince.desktop"];
+      "application/pdf" = ["org.kde.okular.desktop"];
 
       # Text and source files
       "text/plain" = ["code.desktop"];
@@ -21,10 +21,10 @@
       "application/json" = ["code.desktop"];
       "application/x-shellscript" = ["code.desktop"];
 
-      # Images (need desktop app)
-      "image/png" = ["imv.desktop"];
-      "image/jpeg" = ["imv.desktop"];
-      "image/webp" = ["imv.desktop"];
+      # Images
+      "image/png" = ["firefox.desktop"];
+      "image/jpeg" = ["firefox.desktop"];
+      "image/webp" = ["firefox.desktop"];
     };
   };
 
