@@ -1,8 +1,9 @@
 # ============================================================================
 # Imports/Variables/State Version
 # ============================================================================
-{...}: {
+{inputs, ...}: {
   imports = [
+    inputs.noctalia.homeModules.default
     # Misc
     ./programs/misc/programs.nix
     # ./programs/misc/ollama.nix
@@ -49,6 +50,8 @@
     sway.default = ["wlr" "gtk"];
     hyprland.default = ["hyprland" "gtk"];
   };
+
+  programs.noctalia.enable = true;
 
   home.username = "tyler";
   home.homeDirectory = "/home/tyler";
