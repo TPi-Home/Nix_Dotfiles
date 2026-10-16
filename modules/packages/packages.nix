@@ -16,7 +16,6 @@
     direnv
     nvtopPackages.full
     taskwarrior3
-    tmux
     stow
 
     # --------------------------------------------------------------------------
@@ -53,7 +52,6 @@
     tree
     man-db
     man-pages
-    # like windirstat but in the terminal:
     ncdu
     sops
     sc-im
@@ -65,49 +63,27 @@
     libsecret
 
     # --------------------------------------------------------------------------
-    # Dependencies
+    # Nix Tools
     # --------------------------------------------------------------------------
 
-    #gtk3
-    #gtk4
-
-    # --------------------------------------------------------------------------
-    # Nix Tools (doubt I will install all of these, just reading documentation)
-    # --------------------------------------------------------------------------
-
-    # nix code formatter:
     alejandra
-    # search nix packages:
     nix-search-tv
-    # simply run a binary:
     comma
-    # visualiz and cleanup gc-roots:
     nix-du
     angrr
-    # check for nix anti-patterns:
     statix
-    # nix diff:
     nvd
-    # nix deps:
     nix-tree
-    # what I wish I knew about when building bash scripts to rebuild:
-    # nixos-cli
-    # auto enter env upon "cd dir" if I understand correctly:
     direnv
-    # if I ever write derivations:
     nix-output-monitor
-    # channel history:
     npc
-    # run binaries
     steam-run
 
     # --------------------------------------------------------------------------
     # VM/ISO Tools
     # --------------------------------------------------------------------------
 
-    # VM
     distrobox
-    # ISO
     caligula
   ];
 }
