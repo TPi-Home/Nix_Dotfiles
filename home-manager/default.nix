@@ -15,7 +15,6 @@
     ./programs/cli/starship.nix
 
     # Terminals
-
     ./programs/terminals/ghostty.nix
 
     # Editors
@@ -51,16 +50,9 @@
     hyprland.default = ["hyprland" "gtk"];
   };
 
-  programs.noctalia = {
-    enable = true;
+  programs.noctalia.enable = true;
 
-    # Keep one shared config; host modules override only scaling values.
-    settings = builtins.fromTOML (
-      builtins.readFile ../home/.config/noctalia/settings.toml
-    );
-  };
-
-  # AstroDark palette for Noctalia
+  # Shared AstroDark palette for all host configurations.
   xdg.configFile."noctalia/palettes/AstroDark.json".source =
     ../home/.config/noctalia/palettes/AstroDark.json;
 
