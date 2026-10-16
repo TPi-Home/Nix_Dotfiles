@@ -73,7 +73,7 @@
 
   services.blueman.enable = true;
 
-  # PAM authentication for screen lockers
+  # PAM authentication for screen lockersgi
   security.pam.services.waylock = {};
 
   # ----------------------------------------------------------------------------

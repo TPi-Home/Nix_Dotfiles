@@ -28,8 +28,8 @@
 
     # Browsers
     ./programs/browsers/firefox.nix
-    ./programs/browsers/helium.nix
     ./programs/browsers/qutebrowser.nix
+    ./programs/browsers/vivaldi.nix
 
     # Game Dev
     ./programs/misc/unity_hub.nix
@@ -66,6 +66,7 @@
     GDK_DPI_SCALE = "1.0";
     # GDK_SCALE = "1.4";
     QT_SCALE_FACTOR = 1.5;
+    QT_DPI_SCALE = "1.5";
   };
 
   fonts.fontconfig.enable = true;

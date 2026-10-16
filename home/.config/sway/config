@@ -54,8 +54,8 @@ client.urgent           #CC83E3     #CC83E3     #111317    #DD97F1     #CC83E3
 # Applications
 # ----------------------------------------------------------------------------
 
+set $ipc noctalia msg
 set $term ghostty
-set $menu fuzzel
 
 # ----------------------------------------------------------------------------
 # Startup
@@ -95,7 +95,7 @@ input type:pointer {
 # ----------------------------------------------------------------------------
 
 bindsym $mod+Return exec $term
-bindsym $mod+d exec $menu
+bindsym $mod+d exec $ipc panel-toggle launcher
 # bindsym $mod+d exec rofi -show drun
 bindsym $mod+q kill
 
