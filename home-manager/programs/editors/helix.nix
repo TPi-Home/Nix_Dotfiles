@@ -5,11 +5,10 @@
   programs.helix = {
     enable = true;
 
-    # 1. Install LSPs and Formatters exclusively for Helix
     extraPackages = with pkgs; [
+      rustfmt
     ];
 
-    # 2. Map languages to their respective formatters and settings
     languages = {
       language = [
         {
@@ -53,19 +52,15 @@
         }
       ];
 
-      # 3. Optional: Fine-tune specific Language Server Behaviors
       language-server = {
-        # Configure rust-analyzer to use clippy on save
         rust-analyzer.config.check = {
           command = "clippy";
         };
 
-        # Configure nixd to resolve target system configurations
         nixd.settings.nixpkgs.expr = "import <nixpkgs> { }";
       };
     };
 
-    # Core Editor Adjustments
     settings = {
       theme = "astrodark";
       editor = {
@@ -74,30 +69,27 @@
       };
     };
 
-    # Custom Themes
     themes = {
       astrodark = {
-        # --- Base16 Palette Definition ---
-        "palette" = {
-          base00 = "#1A1D23"; # Default background
-          base01 = "#16181D"; # Lighter/darker background
-          base02 = "#1E222A"; # Selection / Line background
-          base03 = "#696C76"; # Comments / Non-text
-          base04 = "#797D87"; # Dark foreground
-          base05 = "#9B9FA9"; # Default foreground
-          base06 = "#ADB0BB"; # Bright foreground
-          base07 = "#E0E0EE"; # Brightest foreground
-          base08 = "#FF838B"; # Red (Variables, tags)
-          base09 = "#F5983A"; # Orange (Integers, constants)
-          base0A = "#DFAB25"; # Yellow (Classes, types)
-          base0B = "#87C05F"; # Green (Strings)
-          base0C = "#4AC2B8"; # Cyan (Regex, escape chars)
-          base0D = "#5EB7FF"; # Blue (Functions, headings)
-          base0E = "#DD97F1"; # Purple (Keywords, imports)
-          base0F = "#EB8332"; # Deprecated / Alternate
+        palette = {
+          base00 = "#1A1D23";
+          base01 = "#16181D";
+          base02 = "#1E222A";
+          base03 = "#696C76";
+          base04 = "#797D87";
+          base05 = "#9B9FA9";
+          base06 = "#ADB0BB";
+          base07 = "#E0E0EE";
+          base08 = "#FF838B";
+          base09 = "#F5983A";
+          base0A = "#DFAB25";
+          base0B = "#87C05F";
+          base0C = "#4AC2B8";
+          base0D = "#5EB7FF";
+          base0E = "#DD97F1";
+          base0F = "#EB8332";
         };
 
-        # --- Standard Base16 to Helix Scopes Mapping ---
         "ui.background" = {bg = "base00";};
         "ui.text" = {fg = "base05";};
         "ui.cursor" = {
@@ -135,8 +127,6 @@
           bg = "base01";
           fg = "base06";
         };
-
-        # --- Base16 Syntax Highlighting ---
         "comment" = {
           fg = "base03";
           modifiers = ["italic"];
@@ -157,8 +147,6 @@
           fg = "base08";
           modifiers = ["italic"];
         };
-
-        # --- Markup ---
         "markup.heading" = {
           fg = "base0D";
           modifiers = ["bold"];
@@ -172,8 +160,6 @@
         };
         "markup.link.text" = {fg = "base0E";};
         "markup.quote" = {fg = "base03";};
-
-        # --- Diagnostics ---
         "diagnostic.error" = {
           underline = {
             color = "base08";
@@ -198,10 +184,10 @@
             style = "curl";
           };
         };
-        "warning" = "base09";
-        "error" = "base08";
-        "info" = "base0D";
-        "hint" = "base0C";
+        warning = "base09";
+        error = "base08";
+        info = "base0D";
+        hint = "base0C";
       };
     };
   };
