@@ -18,26 +18,24 @@
   };
 
   outputs = inputs@{
-    self,
     nixpkgs,
     stylix,
     home-manager,
     ...
-  }: {
-    nixosConfigurations = {
-      generic = nixpkgs.lib.nixosSystem {
+  }: let
+    mkHost = host:
+      nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        # Could point to /etc/nixos on a fresh install
         modules = [
           ./modules/default.nix
-          ./hosts/generic/default.nix
+          (./hosts + "/${host}/default.nix")
 
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
 
           {
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
@@ -45,11 +43,17 @@
               imports = [
                 stylix.homeModules.stylix
                 ./home-manager/default.nix
+                (./home-manager/noctalia + "/${host}.nix")
               ];
             };
           }
         ];
       };
+  in {
+    nixosConfigurations = {
+      generic = mkHost "generic";
+      desktop = mkHost "desktop";
+      laptop = mkHost "laptop";
     };
   };
 }
