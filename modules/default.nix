@@ -19,7 +19,6 @@
     ./packages/gaming.nix
 
     # Hardware / services
-    ./graphics/nvidia.nix
     ./audio/audio.nix
 
     # Display Manager
