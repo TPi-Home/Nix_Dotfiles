@@ -16,12 +16,4 @@
   '';
 
   services.polkit-gnome.enable = true;
-
-  wayland.windowManager.sway = {
-    xwayland = true;
-
-    config = {
-      seat."*".xcursor_theme = "Bibata-Modern-Ice 36";
-    };
-  };
 }
