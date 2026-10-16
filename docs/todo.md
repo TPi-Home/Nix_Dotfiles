@@ -19,24 +19,16 @@
 * Considering Cachy kernel, only with a binary cache I trust
 * Copy from command output imperatively 
 * hyprshaders, finish hypr documentation
-* Considering Noctalia. I can migrate my current systemd graphical session management to it quite easily. I could set up a nice lockscreen, display manager. I would replace wlogout, waybar, waylock, etc. 
 ### Development Environment / Jobs
 * Weather in fastfetch or fetch?
 
 ### Inconsistent UI
-* hyprland fonts/colors need to match
 * update home mgr and bootloader and install nh
-* Keep showing workspace if empty but < current workspace
-* Workspace char padding for large workspaces
-* Mako config
+* full screen apps assigned as floating windows need to account for noctalia bar
 ### Security
 
-### Documentation
-* Installation documentation should be a separate file from the README file.
 ### Misc
-* Enable swaylock
 * Add support for cloud storage & mount at boot
-* Add server conf
 ### Environment
 * sc for scim, vi for vim and vim for neovim
 ---
@@ -106,9 +98,6 @@ ___
 **NOTE: THIS IS A WORK IN PROGRESS**
 
 I would like to add support for MangoWM and Niri also. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
-
-
-### GNOME Niceties I Miss
 
 ---
 
