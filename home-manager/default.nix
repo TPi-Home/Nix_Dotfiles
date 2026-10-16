@@ -53,6 +53,10 @@
 
   programs.noctalia.enable = true;
 
+  # AstroDark palette for Noctalia
+  xdg.configFile."noctalia/palettes/AstroDark.json".source =
+    ../home/.config/noctalia/palettes/AstroDark.json;
+
   home.username = "tyler";
   home.homeDirectory = "/home/tyler";
 
