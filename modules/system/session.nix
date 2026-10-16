@@ -20,12 +20,8 @@
   };
 
   # ============================================================================
-  # TTY
+  # TTY / Wayland
   # ============================================================================
-
-  # ----------------------------------------------------------------------------
-  # Wayland
-  # ----------------------------------------------------------------------------
 
   xdg.portal = {
     enable = true;
@@ -38,10 +34,6 @@
   };
 
   environment.sessionVariables = {
-    SWAY_UNSUPPORTED_GPU = "1";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
 
@@ -64,7 +56,6 @@
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -75,41 +66,21 @@
   # ----------------------------------------------------------------------------
 
   environment.systemPackages = with pkgs; [
-    # Screenshots
     grim
     slurp
     swappy
     grimblast
-
-    # Clipboard
     wl-clipboard
-
-    # Color Selection
     hyprpicker
-
-    # Screen
     brightnessctl
-
-    # Removable devices
     udiskie
-
-    # Bluetooth GUI
     blueman
-
-    # Audio
     wiremix
     pavucontrol
-
-    # TUI File Manager
     nnn
-
-    # Thunar Extras
     vimix-icon-theme
   ];
 
-  # Theme Support
   programs.dconf.enable = true;
-
-  # Message Broker
   services.dbus.implementation = "broker";
 }
