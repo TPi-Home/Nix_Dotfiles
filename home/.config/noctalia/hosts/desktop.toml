@@ -1,0 +1,122 @@
+config_version = 15
+
+[include]
+files = ["palettes/"]
+
+[accessibility]
+ui_scale = 1
+
+[bar.default]
+background_opacity = 0.85
+end = [
+  "tray",
+  "notifications",
+  "clipboard",
+  "network",
+  "bluetooth",
+  "volume",
+  "brightness",
+  "battery",
+  "control-center",
+  "session",
+]
+font_family = "UbuntuSans NF"
+margin_ends = 0
+radius_bottom_left = 0
+radius_bottom_right = 0
+radius_top_left = 0
+radius_top_right = 0
+scale = 1
+thickness = 50
+widget_spacing = 10
+
+[idle]
+behavior_order = ["lock", "screen-off", "lock-and-suspend"]
+pre_action_fade_seconds = 0
+
+[idle.behavior.lock]
+action = "lock"
+enabled = true
+timeout = 300.0
+
+[idle.behavior.lock-and-suspend]
+action = "lock_and_suspend"
+enabled = false
+timeout = 600.0
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 360.0
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = ["lockscreen-login-box@DP-1"]
+
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+box_height = 196.0
+box_width = 810.0
+cx = 1720.0
+cy = 1258.0
+output = "DP-1"
+placement_height = 1440.0
+placement_width = 3440.0
+rotation = 0.0
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+background_color = "surface_variant"
+background_opacity = 0.88
+background_radius = 12.0
+center_password_text = false
+input_opacity = 1.0
+input_radius = 6.0
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_password_reveal = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
+
+[notification]
+scale = 1
+
+[osd]
+scale = 1
+
+[osd.kinds]
+nightlight = false
+
+[shell]
+font_family = "UbuntuSans NF"
+
+[shell.panel]
+control_center_placement = "attached"
+transparency_mode = "glass"
+
+[wallpaper]
+directory = "/home/tyler/Nix_Dot_Files/reference"
+fill_mode = "fit"
+
+[wallpaper.default]
+path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
+
+[wallpaper.last]
+path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
+
+[widget.clock]
+font_scale = 1
+font_weight = 700
+
+[widget.workspaces]
+active_pill_size = 2.5
+inactive_pill_size = 1.5
