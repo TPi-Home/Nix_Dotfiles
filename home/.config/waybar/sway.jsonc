@@ -165,12 +165,20 @@
         "tooltip": false
     },
 
-    "custom/power": 
-    {
+    "custom/power": {
         "format": "⏻",
         "tooltip": false,
-        "on-click": "wlogout --protocol layer-shell --buttons-per-row 3"
+        "menu": "on-click",
+        "menu-file": "/home/tyler/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "lock": "waylock",
+            "suspend": "systemctl suspend",
+            "logout": "swaymsg exit",
+            "reboot": "systemctl reboot",
+            "shutdown": "systemctl poweroff"
+        }
     },
+
 
     "tray":
     {

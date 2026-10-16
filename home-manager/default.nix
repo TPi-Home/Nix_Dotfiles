@@ -39,7 +39,7 @@
     # Desktop
     ./sway/sway.nix
     ./hyprland/hyprland.nix
-    ./waybar/waybar.nix
+    ./programs/services/waybar.nix
     ./programs/services/wlogout.nix
 
     # Application Launcher
