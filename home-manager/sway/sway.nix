@@ -1,7 +1,7 @@
 # ============================================================================
 # Sway
 # ============================================================================
-{pkgs, ...}: {
+{...}: {
   xdg.configFile."sway/config".source = ../../home/.config/sway/config;
 
   xdg.configFile."swaynag/config".text = ''
@@ -15,23 +15,13 @@
     edge=bottom
   '';
 
-  wayland.windowManager.sway = {
-    config = {
-      seat = {
-        "*" = {
-          xcursor_theme = "Bibata-Modern-Ice 36";
-        };
-      };
-    };
-  };
-
   services.polkit-gnome.enable = true;
 
   wayland.windowManager.sway = {
     xwayland = true;
 
     config = {
-      output."eDP-2".scale = "1";
+      seat."*".xcursor_theme = "Bibata-Modern-Ice 36";
     };
   };
 }
