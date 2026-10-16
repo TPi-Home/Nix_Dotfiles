@@ -74,8 +74,6 @@
   services.blueman.enable = true;
 
   # PAM authentication for screen lockers
-  # security.pam.services.swaylock = {};
-  # security.pam.services.hyprlock = {};
   security.pam.services.waylock = {};
 
   # ----------------------------------------------------------------------------
