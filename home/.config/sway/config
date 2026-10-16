@@ -31,8 +31,8 @@ gaps outer 0
 focus_follows_mouse yes
 floating_modifier $mod
 
-# X11 Compatibility Tool: (must visit /home-manager/sway/sway.nix to change 2 other lines)
-#exec_always xwayland-satellite :1
+# X11 Compatibility Tool:
+#exec xwayland-satellite :1
 
 # ----------------------------------------------------------------------------
 # Cursor
@@ -62,7 +62,7 @@ set $term ghostty
 # ----------------------------------------------------------------------------
 
 exec dbus-update-activation-environment --systemd --all
-exec_always kanshi
+exec kanshi
 exec noctalia
 exec udiskie
 
@@ -181,10 +181,7 @@ bindsym $mod+f fullscreen
 # Floating
 # ----------------------------------------------------------------------------
 
-# Toggle the current focus between tiling and floating mode
 bindsym $mod+c floating toggle
-
-# Swap focus between the tiling area and the floating area
 bindsym $mod+z focus mode_toggle
 
 # ----------------------------------------------------------------------------
