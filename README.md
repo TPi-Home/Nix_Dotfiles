@@ -83,7 +83,10 @@ Nix_Dot_Files
 ├── home-manager
 │   ├── default.nix
 │   ├── hyprland
-│   │   └── hyprland.nix
+│   │   ├── desktop.nix
+│   │   ├── generic.nix
+│   │   ├── hyprland.nix
+│   │   └── laptop.nix
 │   ├── kanshi
 │   │   ├── desktop.nix
 │   │   ├── generic.nix
@@ -120,6 +123,9 @@ Nix_Dot_Files
 │   │   ├── default.nix
 │   │   └── include.nix
 │   └── sway
+│       ├── desktop.nix
+│       ├── generic.nix
+│       ├── laptop.nix
 │       └── sway.nix
 ├── hosts
 │   ├── desktop
@@ -172,7 +178,7 @@ Nix_Dot_Files
 └── .vscode
     └── tasks.json
 
-40 directories, 83 files
+40 directories, 88 files
 
 ```
 ## Structure

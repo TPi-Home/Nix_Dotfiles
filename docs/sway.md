@@ -117,7 +117,7 @@ The source of truth is `home/.config/sway/config`. The main bindings include:
 | Binding | Action |
 |---|---|
 | `Super+Enter` | Open Ghostty |
-| `Super+D` | Open Fuzzel |
+| `Super+D` | Open Noctalia Launcher |
 | `Super+Q` | Close focused window |
 | `Super+H/J/K/L` | Focus left/down/up/right |
 | `Super+Shift+H/J/K/L` | Move window left/down/up/right |

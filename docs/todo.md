@@ -39,23 +39,23 @@
 | I will need for MangoWM | Package / tool |
 |---|---|
 | Wi-Fi GUI | `nm-applet` |
-| Bluetooth GUI | `blueman` |
+| Bluetooth GUI | `Noctalia` |
 | Display manager | `greetd` / TTY |
-| Launcher | `noctalia` |
-| Status bar | `noctalia` |
-| Wallpaper | `noctalia` |
+| Launcher | `Noctalia` |
+| Status bar | `Noctalia` |
+| Wallpaper | `Noctalia` |
 | Brightness | `brightnessctl` |
-| Idle handling | `noctalia` |
-| Screen locking | `noctalia` |
-| Audio control | `noctalia` |
+| Idle handling | `Noctalia` |
+| Screen locking | `Noctalia` |
+| Audio control | `Noctalia` |
 | File manager (CLI) | `nnn` / other TUI |
 | File manager (GUI) | `thunar` |
 | Screenshots | `grim` + `slurp` |
-| Clipboard | `wl-clipboard` + `noctalia` |
-| Notifications | `noctalia` |
+| Clipboard | `wl-clipboard` + `Noctalia` |
+| Notifications | `Noctalia` |
 | Authentication agent | `gnome-polkit` |
 | Wayland portals | `xdg-desktop-portal` + `xdg-desktop-portal-wlr` |
-| Logout / power menu | `noctalia` |
+| Logout / power menu | `Noctalia` |
 | Terminal | `ghostty` |
 | Network backend | `NetworkManager` |
 | Audio backend | `PipeWire` + `WirePlumber` |
@@ -69,27 +69,27 @@ ___
 
 | I will need for Niri | Package / tool |
   |---|---|
-  | a Wi-Fi GUI | `noctalia` |
-  | a Bluetooth GUI | `noctalia` |
+  | a Wi-Fi GUI | `Noctalia` |
+  | a Bluetooth GUI | `Noctalia` |
   | a supported display manager | `greetd` or TTY |
-  | a launcher | `noctalia` |
-  | a status bar | `noctalia` |
-  | a wallpaper tool | `noctalia` |
+  | a launcher | `Noctalia` |
+  | a status bar | `Noctalia` |
+  | a wallpaper tool | `Noctalia` |
   | a power/brightness tool | `brightnessctl` |
-  | idle handling | `noctalia` |
-  | screen locking | `noctalia` |
-  | audio control | `noctalia` |
+  | idle handling | `Noctalia` |
+  | screen locking | `Noctalia` |
+  | audio control | `Noctalia` |
   | screenshots | `hyprshot` |
   | clipboard | move `wl-clipboard` from `nvim.nix` to a system module |
-  | notifications | `noctalia` |
+  | notifications | `Noctalia` |
   | authentication agent | `polkit_gnome` |
   | Wayland portals | `xdg-desktop-portal-hyprland` |
-  | a logout/power menu | `noctalia` |
+  | a logout/power menu | `Noctalia` |
   | a terminal | `ghostty` |
   | a network backend | `NetworkManager` |
   | an audio backend | `PipeWire` + `WirePlumber` |
   | a secret/keyring service | `gnome-keyring` |
-  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt, `noctalia`|
+  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt, `Noctalia`|
   |file manager| `thunar`|
 
 **NOTE: THIS IS A WORK IN PROGRESS**

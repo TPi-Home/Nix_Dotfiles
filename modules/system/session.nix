@@ -72,9 +72,7 @@
     hyprpicker
     brightnessctl
     udiskie
-    blueman
     wiremix
-    pavucontrol
     nnn
     vimix-icon-theme
   ];
