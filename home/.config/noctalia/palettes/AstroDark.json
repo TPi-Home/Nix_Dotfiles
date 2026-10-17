@@ -3,9 +3,9 @@
   "dark": {
     "mPrimary": "#5EB7FF",
     "mOnPrimary": "#1A1D23",
-    "mSecondary": "#4AC2B8",
+    "mSecondary": "#DD97F1",
     "mOnSecondary": "#1A1D23",
-    "mTertiary": "#DD97F1",
+    "mTertiary": "#4AC2B8",
     "mOnTertiary": "#1A1D23",
     "mError": "#FF838B",
     "mOnError": "#1A1D23",

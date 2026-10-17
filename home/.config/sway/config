@@ -62,7 +62,7 @@ set $term ghostty
 # ----------------------------------------------------------------------------
 
 exec dbus-update-activation-environment --systemd --all
-exec kanshi
+exec_always kanshi
 exec noctalia
 exec udiskie
 

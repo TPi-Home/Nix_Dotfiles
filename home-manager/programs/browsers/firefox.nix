@@ -50,7 +50,7 @@
 
       settings = {
         "layout.css.devPixelsPerPx" = "1.4";
-        "browser.nova.enabled" = false;
+        # "browser.nova.enabled" = false;
       };
     };
   };
