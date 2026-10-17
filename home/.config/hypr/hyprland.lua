@@ -64,7 +64,7 @@ hl.config({
     },
 })
 
--- Monitor layout and scale are configured by the host-specific Kanshi profile.
+-- Host-specific monitor scale is configured by home-manager/hyprland/<host>.nix.
 
 -- ----------------------------------------------------------------------------
 -- Startup
@@ -72,7 +72,6 @@ hl.config({
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --systemd --all")
-    hl.exec_cmd("kanshi")
     hl.exec_cmd("udiskie")
     hl.exec_cmd("noctalia")
 end)
