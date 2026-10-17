@@ -4,7 +4,7 @@ config_version = 15
 files = ["/home/tyler/Nix_Dot_Files/home/.config/noctalia/palettes/"]
 
 [accessibility]
-ui_scale = 1.25
+ui_scale = 1.0
 
 [bar.default]
 background_opacity = 0.85
@@ -27,7 +27,7 @@ radius_bottom_right = 0
 radius_top_left = 0
 radius_top_right = 0
 scale = 1.25
-thickness = 50
+thickness = 40
 widget_spacing = 10
 
 [idle]
