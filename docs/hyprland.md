@@ -12,153 +12,112 @@
 
 ## Overview
 
-Hyprland is configured as an alternative Wayland session alongside Sway. Both are enabled in the NixOS and Home Manager module imports, and the session can be selected through `greetd`/`tuigreet`. Hyprland should never use the UWSM with this setup. I understand this is contrary to the nixpkgs default settings for the package when enabled, but I am managing the session with systemd. This documentation describes the configuration present in the repository, not a claim that Hyprland is the default session.
+Hyprland is an experimental alternative Wayland session alongside Sway. Both are enabled and selectable through greetd/tuigreet. Hyprland is configured without UWSM, and Home Manager's Hyprland systemd integration is disabled because the compositor is launched inside the `wayland-session.scope` user scope.
 
-Hyprland uses its Lua configuration at `home/.config/hypr/hyprland.lua`. Home Manager reads that file through `home-manager/hyprland/hyprland.nix`; the system-level module is `modules/de/hyprland.nix`.
+The shared Lua configuration is `home/.config/hypr/hyprland.lua`, loaded by `home-manager/hyprland/hyprland.nix`. System-level setup lives in `modules/de/hyprland.nix`; host-specific monitor and cursor settings live in `home-manager/hyprland/<host>.nix`.
 
-## Components of a Hyprland Session
+## Session startup and ownership
 
-- Hyprland Wayland compositor with XWayland enabled
-- D-Bus environment synchronization on compositor startup
-- `systemd --user` and the `wayland-session.scope` launched by tuigreet
-- XDG desktop portals, including the Hyprland portal
-- Noctalia
-- Shared applications and configuration managed through Home Manager
+NixOS manages system services and compositor installation. greetd/tuigreet launches the selected session using:
 
-## Session Startup and Ownership
-
-### NixOS
-
-NixOS owns the system-level configuration and dependencies:
-
-- Boot, kernel, hardware, and NVIDIA support
-- Networking, PipeWire/audio, Bluetooth, and power services
-- Fonts, system packages, users, security/PAM, and D-Bus
-- XDG portal infrastructure and `greetd`
-- Hyprland installation and runtime dependencies
-
-Relevant files include `modules/system/`, `modules/graphics/`, `modules/audio/`, `modules/packages/`, `modules/users/`, `modules/dm/tuigreet.nix`, and `modules/de/hyprland.nix`.
-
-The system module sets:
-
-- `programs.hyprland.enable = true`
-- `programs.hyprland.xwayland.enable = true`
-- `programs.hyprland.withUWSM = false`
-
-The session deliberately does not use UWSM.
-
-### greetd / tuigreet
-
-`greetd` provides the login service and `tuigreet` provides the text-based session selector. The selected Wayland session is launched through:
-
-```sh
+~~~sh
 systemd-run --user --scope --unit=wayland-session
-```
-
-The selected compositor runs inside `wayland-session.scope`. This is a systemd user scope, not UWSM and not a systemd service that independently manages the compositor.
-
-### systemd --user
+~~~
 
 The startup flow is:
 
-```text
+~~~text
 greetd
 └── tuigreet
     └── systemd-run --user --scope --unit=wayland-session
         └── Hyprland
-            └── Noctalia
+            ├── Noctalia
+            └── udiskie
+~~~
 
-```
+Hyprland synchronizes the D-Bus activation environment and launches Noctalia and udiskie from the `hyprland.start` handler. It does **not** launch Kanshi; its monitor rule is applied by the host-specific Hyprland module.
 
-Hyprland starts the listed utilities in the `hyprland.start` event handler. Kanshi is currently launched directly by the compositor. A commented-out service definition remains in `home-manager/programs/services/kanshi.nix` for reconsideration.
+Home Manager configures the Lua file, cursor, Noctalia, and user applications. The Hyprland module sets `package = null`, `configType = "lua"`, `systemd.enable = false`, and `xwayland.enable = true`.
 
-### Home Manager
+## Appearance and input
 
-Home Manager manages the Lua config and user-level graphical setup:
+The shared config currently uses:
 
-- Hyprland configuration options and Lua config loading
-- Kanshi display profiles
-- Noctalia
-- User applications, terminal/browser/editor settings, GTK configuration, and Stylix user configuration
-
-The Home Manager Hyprland module sets `package = null`, `configType = "lua"`, `systemd.enable = false`, and `xwayland.enable = true`. It loads `home/.config/hypr/hyprland.lua` as the extra config.
-
-## Appearance and Input
-
-The current config uses:
-
-- Dwindle as the default layout
+- Master as the initial tiling layout
 - Zero inner and outer gaps
 - Two-pixel borders: blue active border (`#50A4E9`) and gray inactive border (`#3A3E47`)
-- Square corners, no shadows, no blur, and no window opacity changes
-- Animations disabled
+- Square corners, no shadows, no blur, and full opacity for active and inactive windows
+- Animations enabled
 - Num Lock enabled by default
 - US keyboard layout and flat pointer acceleration
 - Touchpad tap-to-click enabled, natural scrolling disabled, disable-while-typing enabled, and middle-button emulation enabled
-- Laptop output `eDP-2` at preferred mode, automatic position, and scale 1.0
+- XWayland enabled
 
-The config also sets `NIXOS_OZONE_WL=1` for Electron/Chromium-based applications. The wallpaper startup command uses the absolute path `/home/tyler/Pictures/Hilltopper.png`, so it must be changed on systems where the image is stored elsewhere.
+Noctalia owns the wallpaper, bar, launcher, notifications, and desktop controls. Its host TOML files use paths under `/home/tyler/Nix_Dot_Files`, so update those paths if the checkout is somewhere else.
 
 ## Keybindings
 
-The source of truth is `home/.config/hypr/hyprland.lua`. The main bindings include:
+The source of truth is `home/.config/hypr/hyprland.lua`.
 
 | Binding | Action |
 |---|---|
-| `Super+Enter` | Open Ghostty |
-| `Super+D` | Open Noctalia Launcher |
-| `Super+Q` | Close focused window |
-| `Super+H/J/K/L` | Focus left/down/up/right; scrolling layout uses its layout-specific focus directions |
-| `Super+Shift+H/J/K/L` | Move window left/down/up/right |
-| `Super+1..0` | Switch to workspaces 1..10 |
-| `Super+Shift+1..0` | Move window to workspaces 1..10 without following |
-| `Super+B` | Toggle split |
-| `Super+V` | Toggle pseudo mode |
-| `Super+F` | Toggle fullscreen |
-| `Super+S` | Toggle floating |
-| `Super+M` | Toggle group |
-| `Super+Shift+D` | Set dwindle layout |
-| `Super+Shift+M` | Set master layout |
-| `Super+Shift+S` | Set scrolling layout |
-| `Super+Shift+O` | Set monocle layout |
-| `Super+Tab` | Cycle dwindle, master, scrolling, and monocle layouts |
-| `Super+Shift+C` | Reload Hyprland |
-| `Super+Shift+E` | Stop `wayland-session.scope` and end the session |
+| Super+Enter | Open Ghostty |
+| Super+D | Toggle the Noctalia launcher |
+| Super+Q | Close the focused window |
+| Super+H/J/K/L | Focus in the matching direction; scrolling layout uses layout-specific focus directions |
+| Super+Shift+H/J/K/L | Move the window left/down/up/right |
+| Super+1…0 | Switch to workspaces 1…10 |
+| Super+Shift+1…0 | Move the window to workspaces 1…10 without following |
+| Super+B | Toggle split |
+| Super+V | Toggle pseudo mode |
+| Super+F | Toggle fullscreen |
+| Super+C | Toggle floating |
+| Super+M | Toggle group |
+| Super+Shift+D | Set Dwindle layout |
+| Super+Shift+M | Set Master layout |
+| Super+Shift+S | Set Scrolling layout |
+| Super+Shift+O | Set Monocle layout |
+| Super+Tab | Cycle Dwindle, Master, Scrolling, and Monocle layouts |
+| Super+Shift+C | Reload Hyprland |
+| Super+Shift+P | Capture the screen to Swappy |
+| Shift+Print | Select a region and capture to Swappy |
+| Super+Shift+E | Stop `wayland-session.scope` and end the session |
 
-Media keys adjust volume with `wpctl` and brightness with `brightnessctl`. `Super+Shift+P` captures the screen to Swappy; `Shift+Print` selects a region first. `Ctrl+Space` dismisses the current Mako notification.
+Media keys adjust volume with `wpctl` and brightness with `brightnessctl`.
 
 ## Layouts
 
-The config supports Hyprland's built-in layouts via workspace rules:
+The initial layout is Master. The other configured options are Dwindle, Scrolling, and Monocle. Use the dedicated Super+Shift bindings to choose a layout directly, or Super+Tab to cycle through the layouts. These are configured in the Lua file; this setup does not depend on a separate layout plugin.
 
-- **Dwindle:** spiral layout kinda
-- **Master:** default layout: master/stacking arrangement
-- **Scrolling:** scrolling tiling layout
-- **Monocle:** one tiled window at a time
+## Host-specific display scaling and cursors
 
-Use `Super+Tab` to cycle through these layouts or the `Super+Shift` bindings above to choose one directly. Layout behavior is configured in the Lua file; this is not an external plugin setup.
+The monitor rule is defined separately for each host:
 
-## Display and Scaling
+| Host | Monitor | Mode | Position | Scale | Cursor size |
+|---|---|---|---|---:|---:|
+| `desktop` | LG Ultragear | 3440×1440 at 160 Hz | 0,0 | 1.0 | 24 |
+| `laptop` | EDO eDP panel | 2560×1600 at 165 Hz | 0,0 | 1.5 | 36 |
+| `generic` | No monitor forced | Default compositor behavior | Automatic | Not forced | 36 |
 
-Hyprland's explicit monitor rule targets `eDP-2`, using its preferred mode, automatic position, and scale 1. Kanshi is also launched at compositor startup and applies the profiles in `home-manager/programs/services/kanshi.nix`, which currently describe the desktop LG Ultragear at 3440x1440@160 and the laptop panel at 2560x1600@165, both at scales fitting of the set displays.
+The values live in `home-manager/hyprland/desktop.nix`, `laptop.nix`, and `generic.nix`. The shared Lua file deliberately contains no fixed monitor rule, so it can be reused across the host outputs.
 
-If monitor configuration appears to conflict, check both the explicit `hl.monitor` rule and Kanshi's profiles. Inspect actual output names and supported modes before editing either configuration.
+Inspect live monitors with:
 
-## Shared Graphical Services
+~~~sh
+hyprctl monitors
+~~~
+
+Output scale, cursor size, Noctalia UI scale, and app scale are separate settings. The host-specific Noctalia module configures GTK, Qt, Firefox, Vivaldi, and Unity Hub app scaling. Current Noctalia UI/bar scale is 1.25 on desktop and 1.5 on laptop and generic. These Noctalia settings are in `home/.config/noctalia/hosts/`.
+
+## Shared graphical utilities
 
 | Function | Component |
 |---|---|
-| Launcher | `Noctalia` |
-| Status bar | `Noctalia` |
-| Notifications | `Noctalia` |
-| Wallpaper | `Noctalia` |
-| Dynamic display profiles | `kanshi` |
-| Removable-device management | `udiskie` |
-| Wi-Fi tray | `Noctalia` |
-| Bluetooth tray | `Noctalia` |
-| Screenshots | `grim`, `slurp`, and `swappy` |
-| Clipboard | `wl-clipboard` |
-| Audio control | `Noctalia` |
-| Logout / power menu | `Noctalia` |
+| Bar, launcher, notifications, lock screen, wallpaper, and controls | Noctalia |
+| Authentication agent | polkit-gnome |
+| Removable-device handling | udiskie |
+| Screenshots | grim, slurp, and swappy |
+| Clipboard | wl-clipboard |
+| Terminal | Ghostty |
 
-These are shared utilities rather than Hyprland-native components. In this configuration, Hyprland's startup event launches several of them directly.
+These are shared user-level utilities rather than Hyprland-native components. System services such as NetworkManager, PipeWire/WirePlumber, Bluetooth, power-profiles-daemon, polkit, and XDG portals are managed by NixOS modules.
