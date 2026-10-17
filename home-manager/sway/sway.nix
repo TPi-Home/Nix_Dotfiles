@@ -2,8 +2,6 @@
 # Sway
 # ============================================================================
 {...}: {
-  xdg.configFile."sway/config".source = ../../home/.config/sway/config;
-
   xdg.configFile."swaynag/config".text = ''
     [logout]
     background=161718
