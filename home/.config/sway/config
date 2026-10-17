@@ -38,7 +38,7 @@ floating_modifier $mod
 # Cursor
 # ----------------------------------------------------------------------------
 
-seat seat0 xcursor_theme Bibata-Modern-Ice 24
+seat seat0 xcursor_theme Bibata-Modern-Ice @CURSOR_SIZE@
 
 # ----------------------------------------------------------------------------
 # Colors - AstroDark
@@ -70,7 +70,7 @@ exec udiskie
 # Input
 # ----------------------------------------------------------------------------
 
-input type:touchpad 
+input type:touchpad
 {
     dwt enabled
     tap enabled
@@ -171,7 +171,7 @@ bindsym $mod+Tab workspace back_and_forth
 
 bindsym $mod+b splith
 bindsym $mod+v splitv
-bindsym $mod+m layout tabbed 
+bindsym $mod+m layout tabbed
 bindsym $mod+e layout split
 bindsym $mod+t layout toggle split
 bindsym $mod+w layout stacking
