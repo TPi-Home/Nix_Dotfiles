@@ -49,7 +49,6 @@
       path = "d4wf0d9o.default";
 
       settings = {
-        "layout.css.devPixelsPerPx" = "1.4";
         # "browser.nova.enabled" = false;
       };
     };
