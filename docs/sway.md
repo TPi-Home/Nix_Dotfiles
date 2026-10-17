@@ -78,7 +78,7 @@ Home Manager owns user-level application and desktop configuration:
 - Noctalia
 - User applications, browser and terminal settings, editor settings, GTK configuration, and Stylix user configuration
 
-Relevant files include `home-manager/sway/sway.nix`, `home-manager/waybar/waybar.nix`, `home-manager/programs/services/kanshi.nix`, `home/`, and `home/.config/`.
+Relevant files include `home-manager/sway/sway.nix`, `home-manager/noctalia/host.nix`, `home-manager/programs/services/kanshi.nix`, `home/`, and `home/.config/`.
 
 ### Sway
 
@@ -149,7 +149,6 @@ swaymsg -t get_outputs
 
 The display profiles live in `home-manager/programs/services/kanshi.nix`. They currently specify 3440x1440 at 160 Hz for the desktop monitor and 2560x1600 at 165 Hz for the laptop panel, both at scale 1.0. Check the actual output name and supported mode on each machine before changing a profile.
 
-The Waybar config used by Sway is `home/.config/waybar/config.jsonc`, and its shared style is `home/.config/waybar/style.css`.
 
 ### XWayland and Games
 

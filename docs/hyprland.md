@@ -22,7 +22,7 @@ Hyprland uses its Lua configuration at `home/.config/hypr/hyprland.lua`. Home Ma
 - D-Bus environment synchronization on compositor startup
 - `systemd --user` and the `wayland-session.scope` launched by tuigreet
 - XDG desktop portals, including the Hyprland portal
-- Waybar, Kanshi, Mako, udiskie, network and Bluetooth tray applets, and swaybg, started from the Hyprland Lua config
+- Noctalia
 - Shared applications and configuration managed through Home Manager
 
 ## Session Startup and Ownership

@@ -10,11 +10,8 @@
 
 ---
 ## Configuration Organization
-### Flake
-* Upstream waybar for mango and hyprland lua compat
 ### Important
 * Defaults? No default term? - MIME
-* UUID for bootloader: 73fcb2d3-96f9-44e5-b2ea-5fbda1bcfa50 (Windows)
 ### Performance Cleanups 
 * Considering Cachy kernel, only with a binary cache I trust
 * Copy from command output imperatively 
@@ -28,9 +25,9 @@
 ### Security
 
 ### Misc
-* Add support for cloud storage & mount at boot
+* Add support for cloud storage & mount at boot, pi zero ftp
 ### Environment
-* sc for scim, vi for vim and vim for neovim
+* Alias: sc for scim, vi for vim and vim for neovim
 ---
 
 ## Desktop Environment / Window Manager Setup
@@ -42,58 +39,56 @@
 | Wi-Fi GUI | `nm-applet` |
 | Bluetooth GUI | `blueman` |
 | Display manager | `greetd` / TTY |
-| Launcher | `fuzzel` |
-| Status bar | `mangobar` |
-| Wallpaper | `swaybg` |
+| Launcher | `noctalia` |
+| Status bar | `noctalia` |
+| Wallpaper | `noctalia` |
 | Brightness | `brightnessctl` |
-| Idle handling | `swayidle` |
-| Screen locking | `swaylock` |
-| Audio control | `pavucontrol` |
+| Idle handling | `noctalia` |
+| Screen locking | `noctalia` |
+| Audio control | `noctalia` |
 | File manager (CLI) | `nnn` / other TUI |
 | File manager (GUI) | `thunar` |
 | Screenshots | `grim` + `slurp` |
-| Clipboard | `wl-clipboard` + `wl-clip-persist` + `cliphist` |
-| Notifications | `swaync` |
+| Clipboard | `wl-clipboard` + `noctalia` |
+| Notifications | `noctalia` |
 | Authentication agent | `gnome-polkit` |
 | Wayland portals | `xdg-desktop-portal` + `xdg-desktop-portal-wlr` |
-| Logout / power menu | `wlogout` |
-| Terminal | `kitty` |
+| Logout / power menu | `noctalia` |
+| Terminal | `ghostty` |
 | Network backend | `NetworkManager` |
 | Audio backend | `PipeWire` + `WirePlumber` |
 | Secret / keyring service | `gnome-keyring` |
 | GTK/Qt theme configuration | stylix |
-| Cursor theme | `Adwaita` |
 | Night light / gamma | `wlsunset` |
+ |file manager| `thunar`|
 
 ___
 <br/>
 
 | I will need for Niri | Package / tool |
   |---|---|
-  | a Wi-Fi GUI | `nm-applet` |
-  | a Bluetooth GUI | `blueman` |
+  | a Wi-Fi GUI | `noctalia` |
+  | a Bluetooth GUI | `noctalia` |
   | a supported display manager | `greetd` or TTY |
-  | a launcher | `wofi` / `rofi-wayland` |
-  | a status bar | `waybar` |
-  | a wallpaper tool | `hyprpaper` |
+  | a launcher | `noctalia` |
+  | a status bar | `noctalia` |
+  | a wallpaper tool | `noctalia` |
   | a power/brightness tool | `brightnessctl` |
-  | idle handling | `hypridle` |
-  | screen locking | `hyprlock` |
-  | audio control | `pavucontrol` |
+  | idle handling | `noctalia` |
+  | screen locking | `noctalia` |
+  | audio control | `noctalia` |
   | screenshots | `hyprshot` |
   | clipboard | move `wl-clipboard` from `nvim.nix` to a system module |
-  | notifications | `mako` / `swaync` |
+  | notifications | `noctalia` |
   | authentication agent | `polkit_gnome` |
   | Wayland portals | `xdg-desktop-portal-hyprland` |
-  | a logout/power menu | `wlogout` |
-  | a terminal | `kitty` |
+  | a logout/power menu | `noctalia` |
+  | a terminal | `ghostty` |
   | a network backend | `NetworkManager` |
   | an audio backend | `PipeWire` + `WirePlumber` |
   | a secret/keyring service | `gnome-keyring` |
-  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt|
-  |cursors|`Adwaita`|
-  |file manager| tui|
-  |wayland session mgmt|`uwsm` if not built in|
+  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt, `noctalia`|
+  |file manager| `thunar`|
 
 **NOTE: THIS IS A WORK IN PROGRESS**
 
@@ -101,22 +96,6 @@ I would like to add support for MangoWM and Niri also. Because I wrote some of t
 
 ---
 
-## Networking / VPN
-
----
-
-## Future / Exploration
-
-* Make a fastfetch weather widget
-* Make a UI tool that automatically populates .nix files from various types of configuration file languages for common tools 
-* Investigate `xdg.configFile` / `home.file` for applications without Home Manager modules or extend my backup scripts to include those
-* Explore NixOS hardware configuration improvements, such as a hosts folder for different PCs
-* Explore declarative Flatpak management?
-* Explore declarative GNOME extensions?
-* Explore impermanence / separating persistent data from system configuration
-* Explore secrets management
-* Explore automated rebuilding/updating workflows
-* Need to abandon gtk/qt theme elements like icon folder that I am not using
 
 ## For If I Ever Learn Rust
 ```

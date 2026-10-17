@@ -65,37 +65,36 @@ Nix_Dot_Files
 │       ├── Code
 │       │   └── User
 │       │       └── settings.json
-│       ├── fuzzel
-│       │   └── fuzzel.ini
 │       ├── hypr
 │       │   └── hyprland.lua
-│       ├── kitty
-│       │   ├── kitty.conf
-│       │   └── themes
-│       │       └── astrodark.conf
+│       ├── noctalia
+│       │   ├── hosts
+│       │   │   ├── desktop.toml
+│       │   │   ├── generic.toml
+│       │   │   └── laptop.toml
+│       │   └── palettes
+│       │       └── AstroDark.json
 │       ├── starship.toml
 │       ├── stylix
 │       │   ├── astrodark_gtk.yaml
 │       │   └── backup.yaml
-│       ├── sway
-│       │   └── config
-│       ├── waybar
-│       │   ├── config.jsonc
-│       │   ├── hyprland.jsonc
-│       │   ├── style.css
-│       │   └── sway.jsonc
-│       └── wlogout
-│           ├── config.json
-│           └── style.css
+│       └── sway
+│           └── config
 ├── home-manager
 │   ├── default.nix
 │   ├── hyprland
 │   │   └── hyprland.nix
+│   ├── kanshi
+│   │   ├── desktop.nix
+│   │   ├── generic.nix
+│   │   └── laptop.nix
+│   ├── noctalia
+│   │   ├── desktop.nix
+│   │   ├── generic.nix
+│   │   └── laptop.nix
 │   ├── programs
 │   │   ├── browsers
-│   │   │   ├── chromium.nix
 │   │   │   ├── firefox.nix
-│   │   │   ├── librewolf.nix
 │   │   │   ├── qutebrowser.nix
 │   │   │   └── vivaldi.nix
 │   │   ├── cli
@@ -106,42 +105,32 @@ Nix_Dot_Files
 │   │   ├── editors
 │   │   │   ├── helix.nix
 │   │   │   └── vscode.nix
+│   │   ├── mime.nix
 │   │   ├── misc
 │   │   │   ├── obs.nix
 │   │   │   ├── ollama.nix
 │   │   │   ├── programs.nix
 │   │   │   └── unity_hub.nix
 │   │   ├── services
-│   │   │   ├── fuzzel.nix
-│   │   │   ├── kanshi.nix
-│   │   │   └── wlogout.nix
+│   │   │   └── kanshi.nix
 │   │   └── terminals
-│   │       ├── alacritty.nix
-│   │       ├── ghostty.nix
-│   │       └── kitty.nix
-│   ├── scaling
-│   │   ├── desktop.nix
-│   │   └── laptop.nix
+│   │       └── ghostty.nix
 │   ├── stylix
 │   │   ├── dconf.nix
 │   │   ├── default.nix
 │   │   └── include.nix
-│   ├── sway
-│   │   └── sway.nix
-│   └── waybar
-│       └── waybar.nix
+│   └── sway
+│       └── sway.nix
 ├── hosts
 │   ├── desktop
 │   │   ├── default.nix
-│   │   ├── desktop_specific.nix
 │   │   └── hardware-configuration.nix
 │   ├── generic
 │   │   ├── default.nix
 │   │   └── hardware-configuration.nix
 │   └── laptop
 │       ├── default.nix
-│       ├── hardware-configuration.nix
-│       └── laptop_specific.nix
+│       └── hardware-configuration.nix
 ├── LICENSE
 ├── modules
 │   ├── audio
@@ -178,12 +167,13 @@ Nix_Dot_Files
 │   ├── trash.sh
 │   ├── tree.sh
 │   └── upgrade.sh
+├── scrot1.png
 ├── scrot2.png
-├── scrot.png
 └── .vscode
     └── tasks.json
 
-42 directories, 91 files
+40 directories, 83 files
+
 ```
 ## Structure
 The repository includes:

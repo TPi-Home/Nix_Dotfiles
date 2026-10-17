@@ -21,7 +21,6 @@
 
     targets = {
       gtk.enable = true;
-      waybar.enable = false;
     };
   };
 
