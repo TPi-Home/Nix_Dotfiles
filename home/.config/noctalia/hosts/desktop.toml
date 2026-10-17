@@ -7,7 +7,7 @@ files = ["/home/tyler/Nix_Dot_Files/home/.config/noctalia/palettes/"]
 ui_scale = 1.25
 
 [bar.default]
-background_opacity = 0.9
+background_opacity = 0.85
 end = [
   "tray",
   "notifications",
