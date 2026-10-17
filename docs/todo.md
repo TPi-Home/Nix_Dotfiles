@@ -10,6 +10,8 @@
 
 ---
 ## Configuration Organization
+### Docs
+* host specific wm configs and update documentation then update tree
 ### Important
 * Defaults? No default term? - MIME
 ### Performance Cleanups 

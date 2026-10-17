@@ -76,19 +76,5 @@ alejandra .
 
 ## Flake Structure
 
-`flake.nix` currently defines the NixOS `generic` output and imports the system modules, Stylix, and Home Manager. It selects `hosts/generic/`; desktop and laptop host configurations are present in the repository but are not separate outputs in the current flake.
+`flake.nix` currently defines NixOS host outputs and imports the system modules, Stylix, and Home Manager.
 
-## Build Tools
-
-The VS Code build task runs:
-
-```sh
-nix flake update nixpkgs
-sudo nixos-rebuild switch --flake ~/Nix_Dot_Files#generic
-```
-
-The first command updates the locked `nixpkgs` input, so this task updates dependencies as well as rebuilding. For a rebuild without updating the lock file, use:
-
-```sh
-sudo nixos-rebuild switch --flake ~/Nix_Dot_Files#generic
-```

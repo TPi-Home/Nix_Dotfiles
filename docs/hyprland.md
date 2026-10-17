@@ -131,8 +131,8 @@ Media keys adjust volume with `wpctl` and brightness with `brightnessctl`. `Supe
 
 The config supports Hyprland's built-in layouts via workspace rules:
 
-- **Dwindle:** default layout
-- **Master:** master/stacking arrangement
+- **Dwindle:** spiral layout kinda
+- **Master:** default layout: master/stacking arrangement
 - **Scrolling:** scrolling tiling layout
 - **Monocle:** one tiled window at a time
 
@@ -140,7 +140,7 @@ Use `Super+Tab` to cycle through these layouts or the `Super+Shift` bindings abo
 
 ## Display and Scaling
 
-Hyprland's explicit monitor rule targets `eDP-2`, using its preferred mode, automatic position, and scale 1. Kanshi is also launched at compositor startup and applies the profiles in `home-manager/programs/services/kanshi.nix`, which currently describe the desktop LG Ultragear at 3440x1440@160 and the laptop panel at 2560x1600@165, both at scale 1.0.
+Hyprland's explicit monitor rule targets `eDP-2`, using its preferred mode, automatic position, and scale 1. Kanshi is also launched at compositor startup and applies the profiles in `home-manager/programs/services/kanshi.nix`, which currently describe the desktop LG Ultragear at 3440x1440@160 and the laptop panel at 2560x1600@165, both at scales fitting of the set displays.
 
 If monitor configuration appears to conflict, check both the explicit `hl.monitor` rule and Kanshi's profiles. Inspect actual output names and supported modes before editing either configuration.
 
