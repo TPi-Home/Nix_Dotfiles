@@ -62,7 +62,6 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "code";
-    GDK_DPI_SCALE = "1.0";
   };
 
   fonts.fontconfig.enable = true;

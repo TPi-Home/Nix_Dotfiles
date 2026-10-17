@@ -105,7 +105,7 @@ transparency_mode = "solid"
 
 [wallpaper]
 directory = "/home/tyler/Nix_Dot_Files/reference"
-fill_mode = "stretch"
+fill_mode = "span"
 
 [wallpaper.default]
 path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
