@@ -49,6 +49,10 @@ action = "screen_off"
 enabled = true
 timeout = 360.0
 
+[lockscreen]
+transition = [ "zoom" ]
+transition_duration = 1000.0
+
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
@@ -106,6 +110,9 @@ transparency_mode = "solid"
 [wallpaper]
 directory = "/home/tyler/Nix_Dot_Files/reference"
 fill_mode = "span"
+transition = [ "fade" ]
+transition_duration = 1000.0
+transition_on_startup = true
 
 [wallpaper.default]
 path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
@@ -120,3 +127,8 @@ font_weight = 700
 [widget.workspaces]
 active_pill_size = 2.5
 inactive_pill_size = 1.5
+
+[theme]
+custom_palette = "AstroDark"
+source = "custom"
+
