@@ -45,6 +45,8 @@
                 ./home-manager/default.nix
                 (./home-manager/noctalia + "/${host}.nix")
                 (./home-manager/kanshi + "/${host}.nix")
+                (./home-manager/sway + "/${host}.nix")
+                (./home-manager/hyprland + "/${host}.nix")
               ];
             };
           }
