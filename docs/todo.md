@@ -1,131 +1,36 @@
 # NixOS / Dotfiles To-Do
 
 ## Table of Contents
+
 - [README](../README.md)
 - [About](about.md)
 - [Installation](installation.md)
 - [Sway](sway.md)
 - [Hyprland](hyprland.md)
 
-
----
-## Configuration Organization
-### Docs
-* host specific wm configs and update documentation then update tree
-### Important
-* Defaults? No default term? - MIME
-### Performance Cleanups 
-* Considering Cachy kernel, only with a binary cache I trust
-* Copy from command output imperatively 
-* hyprshaders, finish hypr documentation
-### Development Environment / Jobs
-* Weather in fastfetch or fetch?
-
-### Inconsistent UI
-* update home mgr and bootloader and install nh
-* full screen apps assigned as floating windows need to account for noctalia bar
-### Security
-
-### Misc
-* Add support for cloud storage & mount at boot, pi zero ftp
-### Environment
-* Alias: sc for scim, vi for vim and vim for neovim
 ---
 
-## Desktop Environment / Window Manager Setup
+## Validation and maintenance
 
-### Tiling
-**This Section is Very Inaccurate Currently**
-| I will need for MangoWM | Package / tool |
-|---|---|
-| Wi-Fi GUI | `nm-applet` |
-| Bluetooth GUI | `Noctalia` |
-| Display manager | `greetd` / TTY |
-| Launcher | `Noctalia` |
-| Status bar | `Noctalia` |
-| Wallpaper | `Noctalia` |
-| Brightness | `brightnessctl` |
-| Idle handling | `Noctalia` |
-| Screen locking | `Noctalia` |
-| Audio control | `Noctalia` |
-| File manager (CLI) | `nnn` / other TUI |
-| File manager (GUI) | `thunar` |
-| Screenshots | `grim` + `slurp` |
-| Clipboard | `wl-clipboard` + `Noctalia` |
-| Notifications | `Noctalia` |
-| Authentication agent | `gnome-polkit` |
-| Wayland portals | `xdg-desktop-portal` + `xdg-desktop-portal-wlr` |
-| Logout / power menu | `Noctalia` |
-| Terminal | `ghostty` |
-| Network backend | `NetworkManager` |
-| Audio backend | `PipeWire` + `WirePlumber` |
-| Secret / keyring service | `gnome-keyring` |
-| GTK/Qt theme configuration | stylix |
-| Night light / gamma | `wlsunset` |
- |file manager| `thunar`|
+- [ ] Test each flake output with the intended physical machine: desktop, laptop, and generic.
+- [ ] Test a clean installation procedure; it has not yet been validated end to end.
+- [ ] Verify output names, modes, monitor scaling, pointer-cursor sizes, and application scaling in both Sway and Hyprland after a rebuild.
+- [ ] Review the Hyprland host-specific monitor rule and startup behavior on the actual desktop and laptop hardware.
+- [ ] Continue investigating suspend/resume reliability on the NVIDIA desktop.
+- [ ] Review Home Manager and bootloader update workflow; consider adding `nh`.
+- [ ] Check fullscreen/floating behavior around the Noctalia bar.
 
-___
-<br/>
+## Potential improvements
 
-| I will need for Niri | Package / tool |
-  |---|---|
-  | a Wi-Fi GUI | `Noctalia` |
-  | a Bluetooth GUI | `Noctalia` |
-  | a supported display manager | `greetd` or TTY |
-  | a launcher | `Noctalia` |
-  | a status bar | `Noctalia` |
-  | a wallpaper tool | `Noctalia` |
-  | a power/brightness tool | `brightnessctl` |
-  | idle handling | `Noctalia` |
-  | screen locking | `Noctalia` |
-  | audio control | `Noctalia` |
-  | screenshots | `hyprshot` |
-  | clipboard | move `wl-clipboard` from `nvim.nix` to a system module |
-  | notifications | `Noctalia` |
-  | authentication agent | `polkit_gnome` |
-  | Wayland portals | `xdg-desktop-portal-hyprland` |
-  | a logout/power menu | `Noctalia` |
-  | a terminal | `ghostty` |
-  | a network backend | `NetworkManager` |
-  | an audio backend | `PipeWire` + `WirePlumber` |
-  | a secret/keyring service | `gnome-keyring` |
-  |themes |`nwg-look` for gtk and `hyprqt6engine` for qt, `Noctalia`|
-  |file manager| `thunar`|
+- Consider the Cachy kernel only if a trusted binary cache is available and the benefit is clear.
+- Explore cloud-storage mounting and a file-transfer service for the Pi Zero.
+- Consider whether weather information belongs in Fastfetch or another fetch tool.
+- Add and test the planned shell aliases: `sc` for scim, `vi` for vim, and `vim` for Neovim.
 
-**NOTE: THIS IS A WORK IN PROGRESS**
+## Future experiments
 
-I would like to add support for MangoWM and Niri also. Because I wrote some of this before I decided to piece it together, it is now incomplete because of various things I have learned. For example, finding a gui greeter/display manager/login manager/whateveryoucallit that doesn't use a border radius is nearly impossible. I want my login screen to match my desktop environment or window management session. So I gave up on gui greeters and found a tui greeter that works with greeted. 
+MangoWM and Niri are ideas for future experimentation, not currently configured sessions in this repository. Any future compositor should reuse the existing separation between NixOS system modules, Home Manager host-specific settings, and application config files rather than copying the older component tables from this file.
 
----
+## Notes
 
-
-## For If I Ever Learn Rust
-```
-{
-  description = "My configuration";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs = { nixpkgs, rust-overlay, ... }: {
-    nixosConfigurations = {
-      hostname = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix # Your system configuration.
-          ({ pkgs, ... }: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-          })
-        ];
-      };
-    };
-  };
-}
-```
-See also: implementation.nix for misc stuff to try.
+`docs/implement.nix` is an old Kanshi service example, not an active module. The current Kanshi package/profile setup is in `home-manager/programs/services/kanshi.nix` and `home-manager/kanshi/`; Sway launches Kanshi directly from its config.
