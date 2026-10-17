@@ -10,96 +10,87 @@
 
 ---
 
+## Before you begin
+
+**This guide has not been fully tested on a clean installation.** It describes this personal configuration, not a generic NixOS installer.
+
+The flake currently targets `x86_64-linux`. Install NixOS first and make sure flakes are available to the Nix CLI. This repository enables `nix-command` and `flakes` in the system configuration, but the existing installation must be able to evaluate the flake before that configuration is applied.
+
+The current user configuration is specific to the user `tyler` and home directory `/home/tyler`. Noctalia config files also use absolute paths under `/home/tyler/Nix_Dot_Files`. The examples below use that path intentionally. If your username or checkout path differs, update the relevant user and Noctalia path settings before rebuilding.
+
 ## Clone
 
-**Important: This installation guide is not fully tested on a fresh installation.**
+To reproduce the branch this guide describes:
 
-1. Install NixOS.
-2. Enable Nix flakes.
-3. Clone the repository:
-
-```sh
-git clone https://github.com/TPi-Home/Nix_Dotfiles.git ~/Nix_Dot_Files
+~~~sh
+git clone --branch noctalia_master https://github.com/TPi-Home/Nix_Dotfiles.git ~/Nix_Dot_Files
 cd ~/Nix_Dot_Files
-```
+~~~
 
-## Configure
+If you use a different branch, confirm that its configuration and documentation match before proceeding.
 
-1. Select the appropriate host configuration: `desktop`, `laptop`, or `generic`. These correspond to the outputs defined in `flake.nix`.
-2. Review the hardware configuration files and ensure the selected host uses the correct hardware configuration for your machine.
-3. Update the user configuration under `modules/users/` and Home Manager settings to reflect your username and home directory.
-4. Review the selected Wayland session and the settings in [Sway](sway.md) or [Hyprland](hyprland.md). Check the host-specific configuration before rebuilding.
+## Configure the target host
 
-Do not blindly copy the current machine's hardware configuration to another computer.
+Choose exactly one matching flake output: `desktop`, `laptop`, or `generic`. The script does not detect your hardware automatically.
 
-## Rebuild the System
+1. Review `hosts/<host>/default.nix` and `hosts/<host>/hardware-configuration.nix`. The desktop and laptop definitions import NVIDIA support. Do not reuse the repository's hardware configuration on another machine without checking disk identifiers, filesystems, boot devices, and detected hardware.
+2. Compare the selected hardware file with the configuration generated on the target machine, usually `/etc/nixos/hardware-configuration.nix`. Adapt the host-specific file as needed before the first rebuild.
+3. Review `modules/users/tyler.nix`, `home-manager/default.nix`, and the absolute paths in `home/.config/noctalia/hosts/*.toml` if your user or checkout directory differs.
+4. Review the chosen session and display settings in [Sway](sway.md) or [Hyprland](hyprland.md). Per-host display, cursor, Noctalia, and application scaling are configured under `home-manager/`.
+5. Make a backup of your existing system configuration and ensure you can recover from a failed graphical session using a TTY.
 
-From the repository root, run the rebuild script with your selected host:
+The `system.stateVersion` and `home.stateVersion` values are compatibility settings, not package-version selectors. Do not change them simply to update NixOS or Home Manager.
 
-```sh
+## Rebuild NixOS
+
+From the repository root, run the rebuild helper with the host that matches the machine:
+
+~~~sh
 ./scripts/rebuild.sh desktop
-```
+~~~
 
-Replace `desktop` with `laptop` or `generic` as appropriate.
+Replace `desktop` with `laptop` or `generic` as appropriate. The script validates the argument and runs `nixos-rebuild switch --flake <repo-root>#<host>`.
 
-Alternatively, run `nixos-rebuild` directly:
+You can also run the rebuild directly:
 
-```sh
+~~~sh
 sudo nixos-rebuild switch --flake ~/Nix_Dot_Files#desktop
-```
+~~~
 
-The `scripts/rebuild.sh` helper validates the host name and rebuilds the selected configuration.
+Check the evaluation and review any errors before relying on the resulting system. The generic output does not force a particular monitor rule, but it still uses the repository's shared user and application setup.
 
 ## Upgrade NixOS
 
-To update the `nixpkgs` flake input and rebuild the selected host, run:
+To update the nixpkgs input and rebuild the selected host:
 
-```sh
+~~~sh
 ./scripts/upgrade.sh desktop
-```
+~~~
 
-Replace `desktop` with `laptop` or `generic` as appropriate.
+Replace `desktop` with `laptop` or `generic`. This helper updates the `nixpkgs` flake input, then rebuilds the selected output. It does not intentionally update every other flake input.
 
-Review the resulting `flake.lock` changes before committing them.
+Review the changes to `flake.lock` before committing them. If an upgrade fails, use the usual NixOS generation rollback/recovery process rather than repeatedly changing unrelated configuration.
 
-## VS Code Build Tasks
+## VS Code build tasks
 
-The repository includes VS Code build tasks for upgrading or rebuilding NixOS. Both tasks prompt you to select the target host: `desktop`, `laptop`, or `generic`.
+The repository includes VS Code tasks for both scripts. With the repository open as a workspace:
 
 ### Upgrade NixOS
 
-Press **Ctrl+Shift+B** to run the default build task, **Upgrade NixOS (choose host)**.
-
-1. Select the host you want to upgrade.
-2. The task runs `scripts/upgrade.sh` for that host.
-3. The script updates the `nixpkgs` flake input and rebuilds the selected NixOS configuration.
-
-Review the `flake.lock` changes after upgrading before committing them.
+Press Ctrl+Shift+B to run the default task, **Upgrade NixOS (choose host)**. Select `desktop`, `laptop`, or `generic`. It runs `scripts/upgrade.sh` in the integrated terminal.
 
 ### Rebuild NixOS
 
-To rebuild without updating the flake input first:
+Open **Terminal → Run Build Task**, then select **Rebuild NixOS (choose host)** and the target host. This runs `scripts/rebuild.sh` without updating the flake input first.
 
-1. Open **Terminal → Run Build Task** in VS Code.
-2. Select **Rebuild NixOS (choose host)**.
-3. Select `desktop`, `laptop`, or `generic`.
+## Cleanup scripts
 
-This task runs `scripts/rebuild.sh` for the selected host.
+Review each script before running it, especially before deleting generations that you may need for rollback.
 
-Both tasks run in VS Code's integrated terminal and use the repository workspace as their working directory.
-
-## Clean the Nix Store
-
-Review what the cleanup script does before running it:
-
-```sh
+~~~sh
 ./scripts/trash.sh
-```
-
-## Remove Old Generations
-
-Review the script before running it; it removes older generations:
-
-```sh
 ./scripts/gen.sh
-```
+~~~
+
+- `trash.sh` runs `nix-collect-garbage` to collect store paths that are no longer reachable.
+- `gen.sh` removes system-profile generations older than the five newest ones. It does not run garbage collection itself; read its message and decide whether you also want to collect old generations and store paths.
