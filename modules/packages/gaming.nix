@@ -22,11 +22,5 @@
     # Games from Nix Pkgs
     # --------------------------------------------------------------------------
 
-    # I can probably start helping maintain this if it doesn't update soon
-    (pkgs.cataclysm-dda.overrideAttrs (old: {
-      env.NIX_CFLAGS_COMPILE =
-        (old.env.NIX_CFLAGS_COMPILE or "")
-        + " -Wno-error=sfinae-incomplete";
-    }))
   ];
 }
