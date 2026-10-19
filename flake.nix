@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = inputs@{
+  outputs = inputs @ {
     nixpkgs,
     stylix,
     home-manager,

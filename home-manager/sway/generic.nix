@@ -4,7 +4,7 @@
 
   xdg.configFile."sway/config".text =
     builtins.replaceStrings
-      ["@CURSOR_SIZE@"]
-      ["36"]
-      (builtins.readFile ../../home/.config/sway/config);
+    ["@CURSOR_SIZE@"]
+    ["36"]
+    (builtins.readFile ../../home/.config/sway/config);
 }

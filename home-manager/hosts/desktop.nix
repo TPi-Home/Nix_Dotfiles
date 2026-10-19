@@ -5,8 +5,7 @@
 
   programs.firefox.profiles.default.settings."layout.css.devPixelsPerPx" = "1.0";
 
-  xdg.desktopEntries.unityhub.exec =
-    "${pkgs.unityhub}/opt/unityhub/unityhub --force-device-scale-factor=1.0 %U";
+  xdg.desktopEntries.unityhub.exec = "${pkgs.unityhub}/opt/unityhub/unityhub --force-device-scale-factor=1.0 %U";
 
   home.pointerCursor.size = 24;
 

@@ -28,7 +28,7 @@ See the separate [Sway documentation](./docs/sway.md) and [Hyprland documentatio
 
 ## Host-specific display settings
 
-The flake defines three NixOS outputs: `desktop`, `laptop`, and `generic`. I would like to set up `generic` to eventually auto-populate Kanshi and Noctalia settings based off parsing vga setting output in a bash script or user input.
+The flake defines three NixOS outputs: `desktop`, `laptop`, and `generic`. I would like to set up `generic` to eventually auto-populate scaling, cursor size, Kanshi, and Noctalia settings based off parsing vga specs in a bash script or user input.
 
 | Host | Output | Sway output scale | Hyprland output scale | Cursor size | Noctalia UI/bar scale |
 |---|---|---:|---:|---:|---:|
@@ -36,7 +36,7 @@ The flake defines three NixOS outputs: `desktop`, `laptop`, and `generic`. I wou
 | `laptop` | EDO eDP panel, 2560×1600 at 165 Hz | 1.5 | 1.5 | 30 | 1.5 |
 | `generic` | No output assumed | No host profile | No forced monitor rule | 36 | 1.0 |
 
-These are separate controls. Output scaling, pointer-cursor size, Noctalia's shell scaling, and per-application scaling are configured independently. Host settings live under `home-manager/{sway,hyprland,kanshi,noctalia}/` and `hosts/{host}`; application config files live under `home/.config/`. Read the session documentation before changing these values.
+These are separate controls. Output scaling, pointer-cursor size, Noctalia's shell scaling, and per-application scaling are configured independently. Host settings live under `home-manager/{sway,hyprland,kanshi,noctalia}/`, `home-manager/{host}`, and `hosts/{host}`; application config files live under `home/.config/`. Read the session documentation before changing these values.
 
 ## Screenshots
 
@@ -82,6 +82,9 @@ Nix_Dot_Files/
 │           └── config
 ├── home-manager
 │   ├── default.nix
+│   ├── hosts
+│   │   ├── desktop.nix
+│   │   └── laptop.nix
 │   ├── hyprland
 │   │   ├── desktop.nix
 │   │   ├── generic.nix
@@ -179,7 +182,7 @@ Nix_Dot_Files/
 └── .vscode
     └── tasks.json
 
-40 directories, 89 files
+41 directories, 91 files
 ```
 
 ## Separation of responsibilities

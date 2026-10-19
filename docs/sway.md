@@ -96,7 +96,7 @@ Host settings are split by responsibility:
 - `home-manager/kanshi/desktop.nix` sets the desktop output to 3440×1440 at 160 Hz, position 0,0, scale 1.0.
 - `home-manager/kanshi/laptop.nix` sets the laptop panel to 2560×1600 at 165 Hz, position 0,0, scale 1.5.
 - `home-manager/kanshi/generic.nix` does not assume an output name or mode.
-- `home-manager/sway/<host>.nix` sets the pointer-cursor size and substitutes the same value into the Sway config: 24 for desktop, 36 for laptop and generic.
+- `home-manager/sway/<host>.nix` sets the pointer-cursor size and substitutes the same value into the Sway config: 24 for desktop, 30 for laptop and generic.
 - Sway runs `exec_always kanshi`; the output profile is configured in the host-specific Kanshi file, not in the base Sway config.
 
 Inspect detected outputs on the current session with:

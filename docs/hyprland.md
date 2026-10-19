@@ -96,7 +96,7 @@ The monitor rule is defined separately for each host:
 | Host | Monitor | Mode | Position | Scale | Cursor size |
 |---|---|---|---|---:|---:|
 | `desktop` | LG Ultragear | 3440×1440 at 160 Hz | 0,0 | 1.0 | 24 |
-| `laptop` | EDO eDP panel | 2560×1600 at 165 Hz | 0,0 | 1.5 | 36 |
+| `laptop` | EDO eDP panel | 2560×1600 at 165 Hz | 0,0 | 1.5 | 30 |
 | `generic` | No monitor forced | Default compositor behavior | Automatic | Not forced | 36 |
 
 The values live in `home-manager/hyprland/desktop.nix`, `laptop.nix`, and `generic.nix`. The shared Lua file deliberately contains no fixed monitor rule, so it can be reused across the host outputs.
@@ -107,7 +107,7 @@ Inspect live monitors with:
 hyprctl monitors
 ~~~
 
-Output scale, cursor size, Noctalia UI scale, and app scale are separate settings. The host-specific Noctalia module configures GTK, Qt, Firefox, Vivaldi, and Unity Hub app scaling. Current Noctalia UI/bar scale is 1.25 on desktop and 1.5 on laptop and generic. These Noctalia settings are in `home/.config/noctalia/hosts/`.
+Output scale, cursor size, Noctalia UI scale, and app scale are separate settings. The host-specific Noctalia module configures GTK, Qt, Firefox, Vivaldi, and Unity Hub app scaling. Current Noctalia UI/bar scale is 1 on desktop and 1.25 on laptop and generic. These Noctalia settings are in `home/.config/noctalia/hosts/`.
 
 ## Shared graphical utilities
 
