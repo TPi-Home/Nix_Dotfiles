@@ -9,7 +9,6 @@
   home.packages = with pkgs; [
     # TUI
     fetch
-    smbclient-ng
     foot
 
     # Version Control

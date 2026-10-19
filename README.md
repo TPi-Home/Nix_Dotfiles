@@ -42,6 +42,7 @@ These are separate controls. Output scaling, pointer-cursor size, Noctalia's she
 
 ![Screenshot 1](scrot1.png)
 ![Screenshot 2](scrot2.png)
+![Screenshot 3](scrot3.png)
 
 ## Repository structure
 
@@ -174,10 +175,11 @@ Nix_Dot_Files/
 │   └── upgrade.sh
 ├── scrot1.png
 ├── scrot2.png
+├── scrot3.png
 └── .vscode
     └── tasks.json
 
-40 directories, 88 files
+40 directories, 89 files
 ```
 
 ## Separation of responsibilities
