@@ -4,7 +4,7 @@ config_version = 15
 files = ["/home/tyler/Nix_Dot_Files/home/.config/noctalia/palettes/"]
 
 [accessibility]
-ui_scale = 1.5
+ui_scale = 1.25
 
 [bar.default]
 background_opacity = 0.85
@@ -27,7 +27,7 @@ radius_bottom_right = 0
 radius_top_left = 0
 radius_top_right = 0
 scale = 1.5
-thickness = 50
+thickness = 45
 widget_spacing = 10
 
 [idle]
@@ -98,6 +98,7 @@ nightlight = false
 
 [shell]
 font_family = "UbuntuSans NF"
+scale = 1.5
 
 [shell.panel]
 control_center_placement = "attached"
@@ -114,9 +115,15 @@ path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
 path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
 
 [widget.clock]
-font_scale = 1.5
+font_scale = 1.25
 font_weight = 700
 
 [widget.workspaces]
 active_pill_size = 2.5
+empty_color = "secondary"
 inactive_pill_size = 1.5
+occupied_color = "secondary"
+
+[theme]
+custom_palette = "AstroDark"
+source = "custom"

@@ -28,15 +28,15 @@ See the separate [Sway documentation](./docs/sway.md) and [Hyprland documentatio
 
 ## Host-specific display settings
 
-The flake defines three NixOS outputs: `desktop`, `laptop`, and `generic`. Select the matching host explicitly when rebuilding; the configuration does not detect which machine you are on.
+The flake defines three NixOS outputs: `desktop`, `laptop`, and `generic`. I would like to set up `generic` to eventually auto-populate Kanshi and Noctalia settings based off parsing vga setting output in a bash script or user input.
 
 | Host | Output | Sway output scale | Hyprland output scale | Cursor size | Noctalia UI/bar scale |
 |---|---|---:|---:|---:|---:|
 | `desktop` | LG Ultragear, 3440×1440 at 160 Hz | 1.0 | 1.0 | 24 | 1.25 |
-| `laptop` | EDO eDP panel, 2560×1600 at 165 Hz | 1.5 | 1.5 | 36 | 1.5 |
-| `generic` | No output assumed | No host profile | No forced monitor rule | 36 | 1.5 |
+| `laptop` | EDO eDP panel, 2560×1600 at 165 Hz | 1.5 | 1.5 | 30 | 1.5 |
+| `generic` | No output assumed | No host profile | No forced monitor rule | 36 | 1.0 |
 
-These are separate controls. Output scaling, pointer-cursor size, Noctalia's shell scaling, and per-application scaling are configured independently. Host settings live under `home-manager/{sway,hyprland,kanshi,noctalia}/`; application config files live under `home/.config/`. Read the session documentation before changing these values.
+These are separate controls. Output scaling, pointer-cursor size, Noctalia's shell scaling, and per-application scaling are configured independently. Host settings live under `home-manager/{sway,hyprland,kanshi,noctalia}/` and `hosts/{host}`; application config files live under `home/.config/`. Read the session documentation before changing these values.
 
 ## Screenshots
 
