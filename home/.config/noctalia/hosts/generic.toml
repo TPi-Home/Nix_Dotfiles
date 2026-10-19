@@ -92,3 +92,9 @@ font_weight = 700
 [widget.workspaces]
 active_pill_size = 2.5
 inactive_pill_size = 1.5
+
+[location]
+auto_locate = true
+
+[weather]
+unit = "imperial"

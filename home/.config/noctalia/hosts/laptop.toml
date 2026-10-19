@@ -102,7 +102,7 @@ scale = 1.5
 
 [shell.panel]
 control_center_placement = "attached"
-transparency_mode = "glass"
+transparency_mode = "solid"
 
 [wallpaper]
 directory = "/home/tyler/Nix_Dot_Files/reference"
@@ -127,3 +127,9 @@ occupied_color = "secondary"
 [theme]
 custom_palette = "AstroDark"
 source = "custom"
+
+[location]
+auto_locate = true
+
+[weather]
+unit = "imperial"

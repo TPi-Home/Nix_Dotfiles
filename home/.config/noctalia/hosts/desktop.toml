@@ -132,3 +132,8 @@ inactive_pill_size = 1.5
 custom_palette = "AstroDark"
 source = "custom"
 
+[location]
+auto_locate = true
+
+[weather]
+unit = "imperial"
