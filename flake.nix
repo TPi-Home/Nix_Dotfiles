@@ -47,6 +47,7 @@
                 (./home-manager/kanshi + "/${host}.nix")
                 (./home-manager/sway + "/${host}.nix")
                 (./home-manager/hyprland + "/${host}.nix")
+                (./home-manager/hosts + "/${host}.nix")
               ];
             };
           }
