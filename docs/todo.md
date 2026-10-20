@@ -19,6 +19,7 @@
 - [ ] Continue investigating suspend/resume reliability on the NVIDIA desktop.
 - [ ] Review Home Manager and bootloader update workflow; consider adding `nh`.
 - [ ] Check fullscreen/floating behavior around the Noctalia bar.
+- [ ] Add performance mode toggle to bar
 
 ## Potential improvements
 
