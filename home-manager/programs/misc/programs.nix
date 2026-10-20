@@ -93,7 +93,7 @@
     # Game Development
     tiled
     aseprite
-    godot-mono
+    #godot-mono
 
     # GUI Applications
     gimp
