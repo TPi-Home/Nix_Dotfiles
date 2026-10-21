@@ -12,36 +12,62 @@
 
 ## Overview
 
-Hyprland is an experimental alternative Wayland session alongside Sway. Both are enabled and selectable through greetd/tuigreet. Hyprland is configured without UWSM, and Home Manager's Hyprland systemd integration is disabled because the compositor is launched inside the `wayland-session.scope` user scope.
+Hyprland is an experimental alternative Wayland session alongside Sway. Both are enabled and selectable through greetd/tuigreet.
 
-The shared Lua configuration is `home/.config/hypr/hyprland.lua`, loaded by `home-manager/hyprland/hyprland.nix`. System-level setup lives in `modules/de/hyprland.nix`; host-specific monitor and cursor settings live in `home-manager/hyprland/<host>.nix`.
+Hyprland is configured without UWSM. Home Manager's Hyprland systemd integration is disabled because the compositor is launched inside the `wayland-session.scope` user scope.
+
+The configuration is divided into:
+
+- `home/.config/hypr/hyprland.lua`: Shared Hyprland configuration, keybindings, appearance, and startup.
+- `home-manager/hyprland/hyprland.nix`: Home Manager integration and cursor environment variables.
+- `modules/de/hyprland.nix`: System-level Hyprland configuration.
+- `home-manager/kanshi/<host>.nix`: Host-specific display resolution, refresh rate, position, and scaling.
+- `home-manager/hosts/<host>.nix`: Host-specific cursor sizes and application scaling.
+
+Hyprland and Sway share Kanshi for display management, eliminating the need for separate Hyprland monitor configurations.
 
 ## Session startup and ownership
 
 NixOS manages system services and compositor installation. greetd/tuigreet launches the selected session using:
 
-~~~sh
+```sh
 systemd-run --user --scope --unit=wayland-session
-~~~
+```
 
 The startup flow is:
 
-~~~text
+```text
 greetd
 └── tuigreet
     └── systemd-run --user --scope --unit=wayland-session
         └── Hyprland
             ├── Noctalia
-            └── udiskie
-~~~
+            ├── udiskie
+            └── Kanshi
+```
 
-Hyprland synchronizes the D-Bus activation environment and launches Noctalia and udiskie from the `hyprland.start` handler. It does **not** launch Kanshi; its monitor rule is applied by the host-specific Hyprland module.
+Hyprland synchronizes the D-Bus activation environment and launches Noctalia, udiskie, and Kanshi from the `hyprland.start` handler.
 
-Home Manager configures the Lua file, cursor, Noctalia, and user applications. The Hyprland module sets `package = null`, `configType = "lua"`, `systemd.enable = false`, and `xwayland.enable = true`.
+Kanshi applies the appropriate host-specific display profile, provided the compositor supports the required Wayland output-management protocol.
+
+Home Manager configures the Lua file, cursor, Noctalia, and user applications.
+
+The Hyprland module sets:
+
+```nix
+wayland.windowManager.hyprland = {
+  enable = true;
+  package = null;
+  configType = "lua";
+  extraConfig = builtins.readFile ../../home/.config/hypr/hyprland.lua;
+  systemd.enable = false;
+  xwayland.enable = true;
+};
+```
 
 ## Appearance and input
 
-The shared config currently uses:
+The shared configuration currently uses:
 
 - Dwindle as the initial tiling layout
 - Zero inner and outer gaps
@@ -51,9 +77,11 @@ The shared config currently uses:
 - Num Lock enabled by default
 - US keyboard layout and flat pointer acceleration
 - Touchpad tap-to-click enabled, natural scrolling disabled, disable-while-typing enabled, and middle-button emulation enabled
-- XWayland enabled
+- XWayland enabled with `force_zero_scaling = true`
 
-Noctalia owns the wallpaper, bar, launcher, notifications, and desktop controls. Its host TOML files use paths under `/home/tyler/Nix_Dot_Files`, so update those paths if the checkout is somewhere else.
+Noctalia owns the wallpaper, bar, launcher, notifications, and desktop controls.
+
+Its host TOML files use paths under `/home/tyler/Nix_Dot_Files`, so update those paths if the checkout is somewhere else.
 
 ## Keybindings
 
@@ -87,32 +115,147 @@ Media keys adjust volume with `wpctl` and brightness with `brightnessctl`.
 
 ## Layouts
 
-The initial layout is Master. The other configured options are Dwindle, Scrolling, and Monocle. Use the dedicated Super+Shift bindings to choose a layout directly, or Super+Tab to cycle through the layouts. These are configured in the Lua file; this setup does not depend on a separate layout plugin.
+The initial layout is **Dwindle**. The other configured options are Master, Scrolling, and Monocle.
 
-## Host-specific display scaling and cursors
+Use the dedicated Super+Shift bindings to choose a layout directly, or Super+Tab to cycle through:
 
-The monitor rule is defined separately for each host:
+```text
+Dwindle → Master → Scrolling → Monocle → Dwindle
+```
 
-| Host | Monitor | Mode | Position | Scale | Cursor size |
-|---|---|---|---|---:|---:|
-| `desktop` | LG Ultragear | 3440×1440 at 160 Hz | 0,0 | 1.0 | 24 |
-| `laptop` | EDO eDP panel | 2560×1600 at 165 Hz | 0,0 | 1.5 | 30 |
-| `generic` | No monitor forced | Default compositor behavior | Automatic | Not forced | 36 |
+These are configured in the Lua file. This setup does not depend on a separate layout plugin.
 
-The values live in `home-manager/hyprland/desktop.nix`, `laptop.nix`, and `generic.nix`. The shared Lua file deliberately contains no fixed monitor rule, so it can be reused across the host outputs.
+## Display management with Kanshi
 
-Inspect live monitors with:
+Hyprland and Sway share the same host-specific Kanshi configurations.
 
-~~~sh
+Kanshi manages:
+
+- Monitor identification
+- Resolution
+- Refresh rate
+- Position
+- Display scaling
+
+The configurations are stored in:
+
+```text
+home-manager/kanshi/
+├── desktop.nix
+├── laptop.nix
+└── generic.nix
+```
+
+The host-specific Kanshi modules are imported through `flake.nix`.
+
+Hyprland does not define its own host-specific monitor rules. Instead, Kanshi is launched from the shared Lua configuration:
+
+```lua
+hl.on("hyprland.start", function()
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+    hl.exec_cmd("udiskie")
+    hl.exec_cmd("noctalia")
+    hl.exec_cmd("kanshi")
+end)
+```
+
+This allows display settings to be shared between both compositors without maintaining duplicate monitor configurations.
+
+### Host-specific display settings
+
+| Host | Monitor | Resolution | Refresh rate | Scale |
+|---|---|---|---|---|
+| `desktop` | LG Ultragear | 3440×1440 | 160 Hz | 1.0 |
+| `laptop` | EDO EF10QBC64.C | 2560×1600 | 165 Hz | 1.25 |
+| `generic` | Automatically detected | Compositor default | Compositor default | Not forced |
+
+These values are defined in `home-manager/kanshi/<host>.nix`.
+
+Inspect active monitor settings with:
+
+```sh
 hyprctl monitors
-~~~
+```
 
-Output scale, cursor size, Noctalia UI scale, and app scale are separate settings. The host-specific Noctalia module configures GTK, Qt, Firefox, Vivaldi, and Unity Hub app scaling. Current Noctalia UI/bar scale is 1 on desktop and 1.25 on laptop and generic. These Noctalia settings are in `home/.config/noctalia/hosts/`.
+Kanshi can be started manually for troubleshooting:
+
+```sh
+kanshi
+```
+
+The active display configuration should reflect the matching Kanshi profile when the compositor supports its output-management protocol.
+
+## Cursor configuration
+
+Cursor sizes are defined through Home Manager rather than separate Hyprland host modules.
+
+The host-specific settings live in:
+
+```text
+home-manager/hosts/
+├── desktop.nix
+├── laptop.nix
+└── generic.nix
+```
+
+Current cursor sizes:
+
+| Host | Cursor size |
+|---|---:|
+| `desktop` | 24 |
+| `laptop` | 30 |
+| `generic` | 36 |
+
+The shared Hyprland Home Manager module derives cursor environment variables from `home.pointerCursor.size`:
+
+```nix
+{ config, ... }: {
+  home.sessionVariables = {
+    XCURSOR_SIZE = toString config.home.pointerCursor.size;
+    HYPRCURSOR_SIZE = toString config.home.pointerCursor.size;
+  };
+}
+```
+
+The cursor theme is `Bibata-Modern-Ice`, configured through Home Manager.
+
+Sway retains its host-specific modules because its configuration uses `builtins.replaceStrings` to inject the cursor size into the shared Sway configuration.
+
+This keeps cursor sizes consistent between compositors without duplicating values in Hyprland-specific host files.
+
+## Application and interface scaling
+
+Display scaling, cursor size, Noctalia UI scaling, and application scaling are separate settings.
+
+The configuration separates these responsibilities:
+
+| Setting | Managed by |
+|---|---|
+| Display resolution and refresh rate | Kanshi |
+| Display scaling | Kanshi |
+| Cursor theme and size | Home Manager |
+| Noctalia UI and bar scaling | Noctalia host configuration |
+| Firefox scaling | Home Manager host configuration |
+| Vivaldi scaling | Home Manager host configuration |
+| Unity Hub scaling | Home Manager host configuration |
+| GTK and Qt scaling | Home Manager host configuration |
+
+Noctalia host settings are stored in:
+
+```text
+home/.config/noctalia/hosts/
+├── desktop.toml
+├── laptop.toml
+└── generic.toml
+```
+
+These allow interface scaling to differ by host independently of the compositor.
 
 ## Shared graphical utilities
 
 | Function | Component |
 |---|---|
+| Display management | Kanshi |
 | Bar, launcher, notifications, lock screen, wallpaper, and controls | Noctalia |
 | Authentication agent | polkit-gnome |
 | Removable-device handling | udiskie |
@@ -120,4 +263,6 @@ Output scale, cursor size, Noctalia UI scale, and app scale are separate setting
 | Clipboard | wl-clipboard |
 | Terminal | Ghostty |
 
-These are shared user-level utilities rather than Hyprland-native components. System services such as NetworkManager, PipeWire/WirePlumber, Bluetooth, power-profiles-daemon, polkit, and XDG portals are managed by NixOS modules.
+These are shared user-level utilities rather than Hyprland-native components.
+
+System services such as NetworkManager, PipeWire/WirePlumber, Bluetooth, power-profiles-daemon, polkit, and XDG portals are managed by NixOS modules.

@@ -49,7 +49,6 @@
                   (./home-manager/noctalia + "/${host}.nix")
                   (./home-manager/kanshi + "/${host}.nix")
                   (./home-manager/sway + "/${host}.nix")
-                  (./home-manager/hyprland + "/${host}.nix")
                   (./home-manager/hosts + "/${host}.nix")
                 ];
               };
@@ -58,6 +57,8 @@
         };
     in
     {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
+
       nixosConfigurations = {
         generic = mkHost "generic";
         desktop = mkHost "desktop";
