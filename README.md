@@ -211,7 +211,7 @@ The flake imports the shared modules and then the selected host's hardware and H
 | Noctalia | Desktop shell, bar, launcher, notifications, lock screen, and controls |
 | Kanshi | Host-specific output profiles for Sway |
 | greetd / tuigreet | TTY-based login and session selection |
-| Alejandra | Nix formatter |
+| Nix Fmt | Nix formatter |
 
 NixOS owns core services, hardware, system packages, users, security, and the Wayland session infrastructure. Home Manager owns most applications and user-level configuration. Both NixOS and Home Manager state versions are set in the configuration; do not change them merely to update packages.
 

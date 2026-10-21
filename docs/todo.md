@@ -15,10 +15,13 @@
 - [ ] Test each flake output with the intended physical machine: desktop, laptop, and generic.
 - [ ] Test a clean installation procedure; it has not yet been validated end to end.
 - [ ] Verify output names, modes, monitor scaling, pointer-cursor sizes, and application scaling in both Sway and Hyprland after a rebuild.
-- [ ] Review the Hyprland host-specific monitor rule and startup behavior on the actual desktop and laptop hardware.
+- [ ] Review the Hyprland host-specific monitor rule and startup behavior on the actual desktop and laptop hardware. Also fix floating windows out of bounds.
 - [ ] Continue investigating suspend/resume reliability on the NVIDIA desktop.
 - [ ] Review Home Manager and bootloader update workflow; consider adding `nh`.
 - [ ] Check fullscreen/floating behavior around the Noctalia bar.
+- [ ] Add nix-ld
+- [ ] Add nh and implement with flake
+- [ ] Open terminal here doesn't work
 - [ ] Add performance mode toggle to bar
 
 ## Potential improvements

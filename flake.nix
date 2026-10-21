@@ -17,47 +17,51 @@
     };
   };
 
-  outputs = inputs @ {
-    nixpkgs,
-    stylix,
-    home-manager,
-    ...
-  }: let
-    mkHost = host:
-      nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+  outputs =
+    inputs@{
+      nixpkgs,
+      stylix,
+      home-manager,
+      ...
+    }:
+    let
+      mkHost =
+        host:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
 
-        modules = [
-          ./modules/default.nix
-          (./hosts + "/${host}/default.nix")
+          modules = [
+            ./modules/default.nix
+            (./hosts + "/${host}/default.nix")
 
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
 
-          {
-            home-manager.extraSpecialArgs = {inherit inputs;};
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            {
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
 
-            home-manager.users.tyler = {
-              imports = [
-                stylix.homeModules.stylix
-                ./home-manager/default.nix
-                (./home-manager/noctalia + "/${host}.nix")
-                (./home-manager/kanshi + "/${host}.nix")
-                (./home-manager/sway + "/${host}.nix")
-                (./home-manager/hyprland + "/${host}.nix")
-                (./home-manager/hosts + "/${host}.nix")
-              ];
-            };
-          }
-        ];
+              home-manager.users.tyler = {
+                imports = [
+                  stylix.homeModules.stylix
+                  ./home-manager/default.nix
+                  (./home-manager/noctalia + "/${host}.nix")
+                  (./home-manager/kanshi + "/${host}.nix")
+                  (./home-manager/sway + "/${host}.nix")
+                  (./home-manager/hyprland + "/${host}.nix")
+                  (./home-manager/hosts + "/${host}.nix")
+                ];
+              };
+            }
+          ];
+        };
+    in
+    {
+      nixosConfigurations = {
+        generic = mkHost "generic";
+        desktop = mkHost "desktop";
+        laptop = mkHost "laptop";
       };
-  in {
-    nixosConfigurations = {
-      generic = mkHost "generic";
-      desktop = mkHost "desktop";
-      laptop = mkHost "laptop";
     };
-  };
 }

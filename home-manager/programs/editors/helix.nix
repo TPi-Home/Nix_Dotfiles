@@ -1,7 +1,7 @@
 # ============================================================================
 # Helix
 # ============================================================================
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.helix = {
     enable = true;
 
@@ -14,24 +14,30 @@
         {
           name = "nix";
           auto-format = true;
-          formatter = {command = "alejandra";};
+          formatter = {
+            command = "nixfmt";
+          };
         }
         {
           name = "rust";
           auto-format = true;
-          formatter = {command = "rustfmt";};
+          formatter = {
+            command = "rustfmt";
+          };
         }
         {
           name = "cpp";
           auto-format = true;
-          formatter = {command = "clang-format";};
+          formatter = {
+            command = "clang-format";
+          };
         }
         {
           name = "json";
           auto-format = true;
           formatter = {
             command = "vscode-json-language-server";
-            args = ["--stdio"];
+            args = [ "--stdio" ];
           };
         }
         {
@@ -39,7 +45,10 @@
           auto-format = true;
           formatter = {
             command = "taplo";
-            args = ["fmt" "-"];
+            args = [
+              "fmt"
+              "-"
+            ];
           };
         }
         {
@@ -47,7 +56,7 @@
           auto-format = true;
           formatter = {
             command = "stylua";
-            args = ["-"];
+            args = [ "-" ];
           };
         }
       ];
@@ -90,21 +99,29 @@
           base0F = "#EB8332";
         };
 
-        "ui.background" = {bg = "base00";};
-        "ui.text" = {fg = "base05";};
+        "ui.background" = {
+          bg = "base00";
+        };
+        "ui.text" = {
+          fg = "base05";
+        };
         "ui.cursor" = {
           fg = "base00";
           bg = "base05";
         };
         "ui.cursor.match" = {
           fg = "base0A";
-          modifiers = ["bold"];
+          modifiers = [ "bold" ];
         };
-        "ui.selection" = {bg = "base02";};
-        "ui.linenr" = {fg = "base03";};
+        "ui.selection" = {
+          bg = "base02";
+        };
+        "ui.linenr" = {
+          fg = "base03";
+        };
         "ui.linenr.selected" = {
           fg = "base0D";
-          modifiers = ["bold"];
+          modifiers = [ "bold" ];
         };
         "ui.statusline" = {
           fg = "base04";
@@ -122,44 +139,82 @@
           fg = "base01";
           bg = "base0D";
         };
-        "ui.window" = {fg = "base02";};
+        "ui.window" = {
+          fg = "base02";
+        };
         "ui.help" = {
           bg = "base01";
           fg = "base06";
         };
         "comment" = {
           fg = "base03";
-          modifiers = ["italic"];
+          modifiers = [ "italic" ];
         };
-        "constant" = {fg = "base09";};
-        "constant.character.escape" = {fg = "base0C";};
-        "constructor" = {fg = "base0D";};
-        "function" = {fg = "base0D";};
-        "function.macro" = {fg = "base0C";};
-        "keyword" = {fg = "base0E";};
-        "label" = {fg = "base0C";};
-        "operator" = {fg = "base05";};
-        "string" = {fg = "base0B";};
-        "type" = {fg = "base0A";};
-        "variable" = {fg = "base05";};
-        "variable.builtin" = {fg = "base08";};
+        "constant" = {
+          fg = "base09";
+        };
+        "constant.character.escape" = {
+          fg = "base0C";
+        };
+        "constructor" = {
+          fg = "base0D";
+        };
+        "function" = {
+          fg = "base0D";
+        };
+        "function.macro" = {
+          fg = "base0C";
+        };
+        "keyword" = {
+          fg = "base0E";
+        };
+        "label" = {
+          fg = "base0C";
+        };
+        "operator" = {
+          fg = "base05";
+        };
+        "string" = {
+          fg = "base0B";
+        };
+        "type" = {
+          fg = "base0A";
+        };
+        "variable" = {
+          fg = "base05";
+        };
+        "variable.builtin" = {
+          fg = "base08";
+        };
         "variable.parameter" = {
           fg = "base08";
-          modifiers = ["italic"];
+          modifiers = [ "italic" ];
         };
         "markup.heading" = {
           fg = "base0D";
-          modifiers = ["bold"];
+          modifiers = [ "bold" ];
         };
-        "markup.list" = {fg = "base08";};
-        "markup.bold" = {modifiers = ["bold"];};
-        "markup.italic" = {modifiers = ["italic"];};
+        "markup.list" = {
+          fg = "base08";
+        };
+        "markup.bold" = {
+          modifiers = [ "bold" ];
+        };
+        "markup.italic" = {
+          modifiers = [ "italic" ];
+        };
         "markup.link.url" = {
           fg = "base09";
-          underline = {style = "line";};
+          underline = {
+            style = "line";
+          };
         };
-        "markup.link.text" = {fg = "base0E";};
-        "markup.quote" = {fg = "base03";};
+        "markup.link.text" = {
+          fg = "base0E";
+        };
+        "markup.quote" = {
+          fg = "base03";
+        };
         "diagnostic.error" = {
           underline = {
             color = "base08";

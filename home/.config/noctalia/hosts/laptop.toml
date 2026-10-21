@@ -41,13 +41,17 @@ timeout = 300.0
 
 [idle.behavior.lock-and-suspend]
 action = "lock_and_suspend"
-enabled = false
+enabled = true
 timeout = 600.0
 
 [idle.behavior.screen-off]
 action = "screen_off"
-enabled = true
+enabled = false
 timeout = 360.0
+
+[lockscreen]
+transition = [ "zoom" ]
+transition_duration = 1000.0
 
 [lockscreen_widgets]
 enabled = false
@@ -107,6 +111,9 @@ transparency_mode = "solid"
 [wallpaper]
 directory = "/home/tyler/Nix_Dot_Files/reference"
 fill_mode = "span"
+transition = [ "fade" ]
+transition_duration = 1000.0
+transition_on_startup = true
 
 [wallpaper.default]
 path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"

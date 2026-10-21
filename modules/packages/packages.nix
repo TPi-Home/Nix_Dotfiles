@@ -1,7 +1,10 @@
 # ============================================================================
 # Packages (This should be made more granular)
 # ============================================================================
-{pkgs, ...}: {
+{ pkgs, ... }: {
+
+  programs.nix-ld.enable = true;
+
   environment.systemPackages = with pkgs; [
     # Shell / Terminal
     fzf
@@ -43,7 +46,6 @@
     libsecret
 
     # Nix Tools
-    alejandra
     nix-search-tv
     comma
     nix-du

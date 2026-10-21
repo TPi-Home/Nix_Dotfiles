@@ -5,7 +5,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     # TUI
     fetch
@@ -93,7 +94,6 @@
     # Game Development
     tiled
     aseprite
-    #godot-mono
 
     # GUI Applications
     gimp

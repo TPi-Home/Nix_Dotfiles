@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.vivaldi.commandLineArgs = [
     "--force-device-scale-factor=1.25"
   ];

@@ -48,7 +48,7 @@ The greetd setup enables Num Lock before displaying the login screen. If that ca
 
 ## Code style and formatting
 
-Nix files in this project are formatted with Alejandra. From the repository root, run:
+Nix files in this project are formatted with Nix Fmt. From the repository root, run:
 
 ~~~sh
 alejandra .

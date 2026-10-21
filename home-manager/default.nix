@@ -1,7 +1,7 @@
 # ============================================================================
 # Imports/Variables/State Version
 # ============================================================================
-{inputs, ...}: {
+{ inputs, ... }: {
   imports = [
     inputs.noctalia.homeModules.default
     # Misc
@@ -46,9 +46,15 @@
   ];
 
   xdg.portal.config = {
-    common.default = ["gtk"];
-    sway.default = ["wlr" "gtk"];
-    hyprland.default = ["hyprland" "gtk"];
+    common.default = [ "gtk" ];
+    sway.default = [
+      "wlr"
+      "gtk"
+    ];
+    hyprland.default = [
+      "hyprland"
+      "gtk"
+    ];
   };
 
   programs.noctalia.enable = true;

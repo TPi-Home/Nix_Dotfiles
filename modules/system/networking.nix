@@ -1,9 +1,14 @@
 # ============================================================================
 # Networking
 # ============================================================================
-{pkgs, ...}: {
+{ pkgs, ... }: {
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
+
+  networking.networkmanager.wifi = {
+    macAddress = "stable";
+    scanRandMacAddress = true;
+  };
 
   services.zerotierone = {
     enable = true;

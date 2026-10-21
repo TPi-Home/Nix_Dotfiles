@@ -1,7 +1,7 @@
 # ============================================================================
 # VSCode
 # ============================================================================
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.vscode = {
     enable = true;
 
@@ -40,6 +40,5 @@
     ];
   };
 
-  xdg.configFile."Code/User/settings.json".source =
-    ../../../home/.config/Code/User/settings.json;
+  xdg.configFile."Code/User/settings.json".source = ../../../home/.config/Code/User/settings.json;
 }
