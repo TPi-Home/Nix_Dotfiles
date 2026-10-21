@@ -3,7 +3,8 @@
 # ============================================================================
 { pkgs, ... }: {
 
-  programs.nix-ld.enable = true;
+  # Steam Run is easier
+  # programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
     # Shell / Terminal

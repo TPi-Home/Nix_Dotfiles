@@ -10,14 +10,13 @@ ui_scale = 1.0
 background_opacity = 0.85
 end = [
   "tray",
+  "power_profile",
   "notifications",
   "clipboard",
-  "network",
   "bluetooth",
   "volume",
   "brightness",
-  "battery",
-  "control-center",
+  "network",
   "session",
 ]
 font_family = "UbuntuSans NF"

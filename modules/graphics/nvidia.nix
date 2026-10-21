@@ -4,13 +4,13 @@
 # ============================================================================
 { config, lib, pkgs, ... }:
 
-#let
-#  nvidiaSmiCompat = pkgs.writeShellScriptBin "nvidia-smi" ''
-#    exec ${pkgs.coreutils}/bin/env \
-#      LD_LIBRARY_PATH=/run/opengl-driver/lib \
-#      ${config.hardware.nvidia.package.bin}/origBin/nvidia-smi "$@"
-#  '';
-#in
+let
+  nvidiaSmiCompat = pkgs.writeShellScriptBin "nvidia-smi" ''
+    exec ${pkgs.coreutils}/bin/env \
+      LD_LIBRARY_PATH=/run/opengl-driver/lib \
+      ${config.hardware.nvidia.package.bin}/origBin/nvidia-smi "$@"
+  '';
+in
 {
   services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -27,9 +27,9 @@
     enable32Bit = true;
   };
 
-  # environment.systemPackages = [
-  #  (lib.hiPrio nvidiaSmiCompat)
-  # ];
+   environment.systemPackages = [
+    (lib.hiPrio nvidiaSmiCompat)
+   ];
 
   environment.sessionVariables = {
     SWAY_UNSUPPORTED_GPU = "1";
