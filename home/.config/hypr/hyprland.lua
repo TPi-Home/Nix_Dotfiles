@@ -12,7 +12,7 @@ hl.config({
     general = {
         gaps_in = 0,
         gaps_out = 0,
-        border_size = 2,
+        border_size = 3,
         col = {
             active_border = 0xff50a4e9,
             inactive_border = 0xff3a3e47,
@@ -44,7 +44,7 @@ hl.config({
     input = {
         kb_layout = "us",
         numlock_by_default = true,
-        follow_mouse = 1,
+        follow_mouse = 0,
         accel_profile = "flat",
         sensitivity = 0.0,
         touchpad = {
@@ -120,6 +120,19 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -")
 -- ----------------------------------------------------------------------------
 
 hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("systemctl --user stop wayland-session.scope"))
+
+-- ----------------------------------------------------------------------------
+-- Smart Borders
+-- ----------------------------------------------------------------------------
+
+hl.window_rule({
+    name = "smart-borders",
+    match = {
+        float = false,
+        workspace = "w[tv1]",
+    },
+    border_size = 0,
+})
 
 
 -- ----------------------------------------------------------------------------
