@@ -59,7 +59,7 @@
     steam-run
 
     # VM/ISO Tools
-    distrobox
-    caligula
+    pkgs.qemu_kvm
+    
   ];
 }

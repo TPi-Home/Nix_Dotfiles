@@ -22,7 +22,6 @@
 - [ ] Add nix-ld
 - [ ] Add nh and implement with flake
 - [ ] Open terminal here doesn't work
-- [ ] Add performance mode toggle to bar
 
 ## Potential improvements
 

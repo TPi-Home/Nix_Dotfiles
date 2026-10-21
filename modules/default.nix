@@ -12,6 +12,7 @@
     ./system/networking.nix
     ./system/fonts.nix
     ./system/session.nix
+    ./system/nh.nix
 
     # Users
     ./users/tyler.nix

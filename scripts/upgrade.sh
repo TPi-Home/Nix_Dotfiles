@@ -16,4 +16,4 @@ esac
 cd "$repo_root"
 
 nix flake update
-sudo nixos-rebuild switch --flake "${repo_root}#${host}"
+nh os switch "$repo_root" --hostname "$host"
