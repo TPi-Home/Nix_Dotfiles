@@ -52,138 +52,140 @@ The tree below shows the main configuration paths rather than enumerating every 
 ```text
 Nix_Dot_Files/
 ├── docs
-│   ├── about.md
-│   ├── hyprland.md
-│   ├── implement.nix
-│   ├── installation.md
-│   ├── sway.md
-│   └── todo.md
+│   ├── about.md
+│   ├── hyprland.md
+│   ├── installation.md
+│   ├── sway.md
+│   ├── tmux.md
+│   └── todo.md
 ├── flake.lock
 ├── flake.nix
 ├── .gitignore
 ├── home
-│   └── .config
-│       ├── Code
-│       │   └── User
-│       │       └── settings.json
-│       ├── hypr
-│       │   └── hyprland.lua
-│       ├── noctalia
-│       │   ├── hosts
-│       │   │   ├── desktop.toml
-│       │   │   ├── generic.toml
-│       │   │   └── laptop.toml
-│       │   └── palettes
-│       │       └── AstroDark.json
-│       ├── starship.toml
-│       ├── stylix
-│       │   ├── astrodark_gtk.yaml
-│       │   └── backup.yaml
-│       └── sway
-│           └── config
+│   └── .config
+│       ├── Code
+│       │   └── User
+│       │       └── settings.json
+│       ├── hypr
+│       │   └── hyprland.lua
+│       ├── noctalia
+│       │   ├── hosts
+│       │   │   ├── desktop.toml
+│       │   │   ├── generic.toml
+│       │   │   └── laptop.toml
+│       │   └── palettes
+│       │       └── AstroDark.json
+│       ├── starship.toml
+│       ├── stylix
+│       │   ├── astrodark_gtk.yaml
+│       │   └── backup.yaml
+│       └── sway
+│           └── config
 ├── home-manager
-│   ├── default.nix
-│   ├── hosts
-│   │   ├── desktop.nix
-│   │   └── laptop.nix
-│   ├── hyprland
-│   │   ├── desktop.nix
-│   │   ├── generic.nix
-│   │   ├── hyprland.nix
-│   │   └── laptop.nix
-│   ├── kanshi
-│   │   ├── desktop.nix
-│   │   ├── generic.nix
-│   │   └── laptop.nix
-│   ├── noctalia
-│   │   ├── desktop.nix
-│   │   ├── generic.nix
-│   │   └── laptop.nix
-│   ├── programs
-│   │   ├── browsers
-│   │   │   ├── firefox.nix
-│   │   │   ├── qutebrowser.nix
-│   │   │   └── vivaldi.nix
-│   │   ├── cli
-│   │   │   ├── fish.nix
-│   │   │   ├── git.nix
-│   │   │   ├── starship.nix
-│   │   │   └── tmux.nix
-│   │   ├── editors
-│   │   │   ├── helix.nix
-│   │   │   └── vscode.nix
-│   │   ├── mime.nix
-│   │   ├── misc
-│   │   │   ├── obs.nix
-│   │   │   ├── ollama.nix
-│   │   │   ├── programs.nix
-│   │   │   └── unity_hub.nix
-│   │   ├── services
-│   │   │   └── kanshi.nix
-│   │   └── terminals
-│   │       └── ghostty.nix
-│   ├── stylix
-│   │   ├── dconf.nix
-│   │   ├── default.nix
-│   │   └── include.nix
-│   └── sway
-│       ├── desktop.nix
-│       ├── generic.nix
-│       ├── laptop.nix
-│       └── sway.nix
+│   ├── default.nix
+│   ├── hosts
+│   │   ├── desktop.nix
+│   │   └── laptop.nix
+│   ├── hyprland
+│   │   └── hyprland.nix
+│   ├── kanshi
+│   │   ├── desktop.nix
+│   │   ├── generic.nix
+│   │   └── laptop.nix
+│   ├── noctalia
+│   │   ├── desktop.nix
+│   │   ├── generic.nix
+│   │   └── laptop.nix
+│   ├── programs
+│   │   ├── browsers
+│   │   │   ├── firefox.nix
+│   │   │   ├── qutebrowser.nix
+│   │   │   └── vivaldi.nix
+│   │   ├── cli
+│   │   │   ├── fish.nix
+│   │   │   ├── git.nix
+│   │   │   ├── starship.nix
+│   │   │   └── tmux.nix
+│   │   ├── editors
+│   │   │   ├── helix.nix
+│   │   │   └── vscode.nix
+│   │   ├── mime.nix
+│   │   ├── misc
+│   │   │   ├── obs.nix
+│   │   │   ├── ollama.nix
+│   │   │   ├── programs.nix
+│   │   │   └── unity_hub.nix
+│   │   ├── services
+│   │   │   └── kanshi.nix
+│   │   └── terminals
+│   │       └── ghostty.nix
+│   ├── stylix
+│   │   ├── dconf.nix
+│   │   ├── default.nix
+│   │   └── include.nix
+│   └── sway
+│       ├── desktop.nix
+│       ├── generic.nix
+│       ├── laptop.nix
+│       └── sway.nix
 ├── hosts
-│   ├── desktop
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   ├── generic
-│   │   ├── default.nix
-│   │   └── hardware-configuration.nix
-│   └── laptop
-│       ├── default.nix
-│       └── hardware-configuration.nix
+│   ├── desktop
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   ├── generic
+│   │   ├── default.nix
+│   │   └── hardware-configuration.nix
+│   └── laptop
+│       ├── default.nix
+│       └── hardware-configuration.nix
 ├── LICENSE
 ├── modules
-│   ├── audio
-│   │   └── audio.nix
-│   ├── de
-│   │   ├── hyprland.nix
-│   │   └── sway.nix
-│   ├── default.nix
-│   ├── dm
-│   │   └── tuigreet.nix
-│   ├── graphics
-│   │   └── nvidia.nix
-│   ├── packages
-│   │   ├── gaming.nix
-│   │   └── packages.nix
-│   ├── system
-│   │   ├── boot.nix
-│   │   ├── fonts.nix
-│   │   ├── locale.nix
-│   │   ├── networking.nix
-│   │   ├── security.nix
-│   │   ├── session.nix
-│   │   └── system.nix
-│   └── users
-│       └── tyler.nix
+│   ├── audio
+│   │   └── audio.nix
+│   ├── de
+│   │   ├── hyprland.nix
+│   │   └── sway.nix
+│   ├── default.nix
+│   ├── dm
+│   │   └── tuigreet.nix
+│   ├── graphics
+│   │   └── nvidia.nix
+│   ├── packages
+│   │   ├── gaming.nix
+│   │   └── packages.nix
+│   ├── system
+│   │   ├── boot.nix
+│   │   ├── fonts.nix
+│   │   ├── locale.nix
+│   │   ├── networking.nix
+│   │   ├── nh.nix
+│   │   ├── security.nix
+│   │   ├── session.nix
+│   │   └── system.nix
+│   └── users
+│       └── tyler.nix
 ├── README.md
 ├── reference
-│   ├── astrodark.lua
-│   └── Hilltopper.png
+│   ├── astrodark.lua
+│   └── Hilltopper.png
 ├── scripts
-│   ├── gen.sh
-│   ├── rebuild.sh
-│   ├── security_check.sh
-│   ├── trash.sh
-│   ├── tree.sh
-│   └── upgrade.sh
+│   ├── generic_config.sh
+│   ├── gen.sh
+│   ├── nixpkgs.sh
+│   ├── rebuildnh.sh
+│   ├── rebuild.sh
+│   ├── security_check.sh
+│   ├── trash.sh
+│   ├── tree.sh
+│   └── upgrade.sh
 ├── scrot1.png
 ├── scrot2.png
 ├── scrot3.png
 └── .vscode
     └── tasks.json
 
-41 directories, 91 files
+41 directories, 92 files
+
 ```
 
 ## Separation of responsibilities

@@ -60,6 +60,6 @@
 
     # VM/ISO Tools
     pkgs.qemu_kvm
-    
+
   ];
 }
