@@ -43,7 +43,7 @@ Home Manager configures the Lua file, cursor, Noctalia, and user applications. T
 
 The shared config currently uses:
 
-- Master as the initial tiling layout
+- Dwindle as the initial tiling layout
 - Zero inner and outer gaps
 - Two-pixel borders: blue active border (`#50A4E9`) and gray inactive border (`#3A3E47`)
 - Square corners, no shadows, no blur, and full opacity for active and inactive windows

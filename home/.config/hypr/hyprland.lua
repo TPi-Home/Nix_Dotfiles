@@ -17,7 +17,7 @@ hl.config({
             active_border = 0xff50a4e9,
             inactive_border = 0xff3a3e47,
         },
-        layout = "master",
+        layout = "dwindle",
     },
 
     binds = {
@@ -57,13 +57,25 @@ hl.config({
 
     dwindle = {
         preserve_split = true,
+        force_split = 2,
     },
 
     animations = {
         enabled = true,
     },
+
+    xwayland = {
+        force_zero_scaling = true,
+    },
+    
 })
 
+hl.window_rule({
+    match = {
+        float = true,
+    },
+    center = true,
+})
 -- Host-specific monitor scale is configured by home-manager/hyprland/<host>.nix.
 
 -- ----------------------------------------------------------------------------
