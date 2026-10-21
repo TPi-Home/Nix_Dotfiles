@@ -7,6 +7,7 @@
 - [ToDo](todo.md)
 - [Installation](installation.md)
 - [Hyprland](hyprland.md)
+- [Tmux](tmux.md)
 
 ---
 

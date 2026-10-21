@@ -1,7 +1,13 @@
 # Tmux Setup
 
 ## Table of Contents
+- [About](./docs/about.md)
+- [ToDo](./docs/todo.md)
+- [Installation](./docs/installation.md)
+- [Sway](./docs/sway.md)
+- [Hyprland](./docs/hyprland.md)
 
+### On This Page
 - [Overview](#overview)
 - [Starting Tmux](#starting-tmux)
 - [Sessions](#sessions)

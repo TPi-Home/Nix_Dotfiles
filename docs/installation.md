@@ -7,6 +7,7 @@
 - [ToDo](todo.md)
 - [Sway](sway.md)
 - [Hyprland](hyprland.md)
+- [Tmux](tmux.md)
 
 ---
 

@@ -9,6 +9,7 @@ I am likely going to regret this.
 - [Installation](./docs/installation.md)
 - [Sway](./docs/sway.md)
 - [Hyprland](./docs/hyprland.md)
+- [Tmux](./docs/tmux.md)
 
 ---
 

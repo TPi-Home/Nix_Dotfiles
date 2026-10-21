@@ -7,6 +7,7 @@
 - [ToDo](todo.md)
 - [Installation](installation.md)
 - [Sway](sway.md)
+- [Tmux](tmux.md)
 
 ---
 
