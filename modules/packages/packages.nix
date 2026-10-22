@@ -21,7 +21,7 @@
     vim
     emacs
     neovim
-    kakoune
+    
 
     # Graphics / Vulkan
     vulkan-tools
@@ -40,23 +40,22 @@
     man-db
     man-pages
     ncdu
-    sops
     sc-im
+    onedrive
 
     # Secrets
     libsecret
 
     # Nix Tools
-    nix-search-tv
     comma
-    nix-du
     angrr
     statix
-    nvd
     nix-tree
-    nix-output-monitor
     npc
     steam-run
+
+    # Misc 
+    graphviz
 
     # VM/ISO Tools
     pkgs.qemu_kvm

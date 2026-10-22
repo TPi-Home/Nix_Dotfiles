@@ -2,6 +2,26 @@
 # Fonts
 # ============================================================================
 { pkgs, ... }: {
+
+  fonts.fontconfig.enable = true;
+
+  fonts.fontconfig.defaultFonts = {
+    monospace = [
+      "Monaspace Neon"
+      "Symbols Nerd Font Mono"
+    ];
+
+    sansSerif = [
+      "Ubuntu Sans"
+      "Symbols Nerd Font Mono"
+    ];
+
+    serif = [
+      "Noto Serif"
+      "Symbols Nerd Font Mono"
+    ];
+  };
+
   fonts.packages = with pkgs; [
     # Nerd Fonts
     # nerd-fonts._3270
@@ -12,8 +32,8 @@
     # nerd-fonts.bigblue-terminal
     # nerd-fonts.bitstream-vera-sans-mono
     # nerd-fonts.blex-mono
-    nerd-fonts.caskaydia-cove
-    nerd-fonts.caskaydia-mono
+    # nerd-fonts.caskaydia-cove
+    # nerd-fonts.caskaydia-mono
     # nerd-fonts.code-new-roman
     # nerd-fonts.comic-shanns-mono
     # nerd-fonts.commit-mono
@@ -47,7 +67,7 @@
     # nerd-fonts.liberation
     # nerd-fonts.lilex
     # nerd-fonts.martian-mono
-    nerd-fonts.meslo-lg
+    # nerd-fonts.meslo-lg
     nerd-fonts.monaspace
     # nerd-fonts.monofur
     # nerd-fonts.monoid
@@ -73,6 +93,9 @@
 
     # Other Fonts
     corefonts
+    ubuntu-sans
+    ubuntu-classic
+    noto-fonts
   ];
 
   fonts.fontDir.enable = true;

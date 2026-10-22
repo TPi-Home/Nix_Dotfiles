@@ -70,7 +70,7 @@
     VISUAL = "code";
   };
 
-  fonts.fontconfig.enable = true;
+  
 
   home.stateVersion = "26.11";
 }
