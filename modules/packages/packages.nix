@@ -34,6 +34,7 @@
     zip
     p7zip
     rsync
+    fuse3
     rclone
     file
     tree
@@ -41,7 +42,6 @@
     man-pages
     ncdu
     sc-im
-    onedrive
 
     # Secrets
     libsecret

@@ -3,25 +3,6 @@
 # ============================================================================
 { pkgs, ... }: {
 
-  fonts.fontconfig.enable = true;
-
-  fonts.fontconfig.defaultFonts = {
-    monospace = [
-      "Monaspace Neon"
-      "Symbols Nerd Font Mono"
-    ];
-
-    sansSerif = [
-      "Ubuntu Sans"
-      "Symbols Nerd Font Mono"
-    ];
-
-    serif = [
-      "Noto Serif"
-      "Symbols Nerd Font Mono"
-    ];
-  };
-
   fonts.packages = with pkgs; [
     # Nerd Fonts
     # nerd-fonts._3270
