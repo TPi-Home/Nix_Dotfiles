@@ -10,6 +10,9 @@
     scanRandMacAddress = true;
   };
 
+  # Switch over to this
+  services.tailscale.enable = false;
+
   services.zerotierone = {
     enable = true;
   };

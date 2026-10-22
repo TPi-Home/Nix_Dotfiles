@@ -42,6 +42,9 @@
     man-pages
     ncdu
     sc-im
+    
+    # Dependencies
+    zlib
 
     # Secrets
     libsecret
@@ -57,8 +60,11 @@
     # Misc 
     graphviz
 
-    # VM/ISO Tools
+    # VM/ISO
     pkgs.qemu_kvm
 
+    # Server/Android Tools
+    simg2img
+    android-tools
   ];
 }
