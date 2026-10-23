@@ -13,5 +13,5 @@
     edge=bottom
   '';
 
-  services.polkit-gnome.enable = true;
+  wayland.windowManager.sway.systemd.enable = true;
 }

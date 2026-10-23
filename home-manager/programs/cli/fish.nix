@@ -17,7 +17,7 @@
     '';
 
     shellAliases = {
-      ddgr = "ddgr --colors eDngxy";
+      emacs = "emacs -nw";
     };
   };
 }

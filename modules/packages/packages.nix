@@ -19,7 +19,6 @@
 
     # Editors (for TTY fallback only at system level)
     vim
-    emacs
     neovim
     
 

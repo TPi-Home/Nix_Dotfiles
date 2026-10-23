@@ -6,6 +6,9 @@
     enable = true;
 
     defaultApplications = {
+      # File Manager
+      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
+
       # Web browser
       "text/html" = [ "firefox.desktop" ];
       "application/xhtml+xml" = [ "firefox.desktop" ];
@@ -33,8 +36,4 @@
       "image/x-icon" = [ "firefox.desktop" ];
     };
   };
-
-  xdg.configFile."xfce4/helpers.rc".text = ''
-    TerminalEmulator=ghostty
-  '';
 }

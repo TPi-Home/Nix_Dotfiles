@@ -7,7 +7,7 @@
     package = null;
     configType = "lua";
     extraConfig = builtins.readFile ../../home/.config/hypr/hyprland.lua;
-    systemd.enable = false;
+    systemd.enable = true;
     xwayland.enable = true;
   };
 
@@ -15,6 +15,4 @@
     XCURSOR_SIZE = toString config.home.pointerCursor.size;
     HYPRCURSOR_SIZE = toString config.home.pointerCursor.size;
   };
-
-  services.polkit-gnome.enable = true;
 }

@@ -41,20 +41,8 @@
   # Shared Desktop Services
   # ----------------------------------------------------------------------------
 
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs; [
-      thunar-archive-plugin
-      thunar-volman
-      file-roller
-    ];
-  };
-
-  programs.xfconf.enable = true;
-
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
-
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -65,6 +53,9 @@
   # ----------------------------------------------------------------------------
 
   environment.systemPackages = with pkgs; [
+    kanshi
+    nautilus
+    file-roller
     grim
     slurp
     swappy

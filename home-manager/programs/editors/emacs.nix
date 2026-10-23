@@ -1,8 +1,9 @@
 # ============================================================================
-# Imports/Variables/State Version
+# Emacs
 # ============================================================================
-{ ... }: {
-  imports = [
-    ./include.nix
-  ];
+{ pkgs, ... }: {
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs-pgtk;
+  };
 }

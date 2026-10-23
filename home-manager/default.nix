@@ -21,10 +21,10 @@
     # Editors
     ./programs/editors/vscode.nix
     ./programs/editors/helix.nix
+    ./programs/editors/emacs.nix
 
-    # Customization
-    ./stylix/default.nix
-    ./misc/dconf.nix
+    # Config
+    ./config/default.nix
 
     # Browsers
     ./programs/browsers/firefox.nix
@@ -38,39 +38,7 @@
     ./sway/sway.nix
     ./hyprland/hyprland.nix
     ./noctalia/noctalia.nix
-
-    # Display Settings
-    ./programs/services/kanshi.nix
-
-    # Defaults
-    ./programs/mime.nix
   ];
-
-  xdg.portal.config = {
-    common.default = [ "gtk" ];
-    sway.default = [
-      "wlr"
-      "gtk"
-    ];
-    hyprland.default = [
-      "hyprland"
-      "gtk"
-    ];
-  };
-
-  home.username = "tyler";
-  home.homeDirectory = "/home/tyler";
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "code";
-  };
-
-  home.sessionPath = [
-    "$HOME/.config/emacs/bin"
-  ]
-
-  fonts.fontconfig.enable = true;
-
+  
   home.stateVersion = "26.11";
 }

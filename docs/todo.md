@@ -23,7 +23,12 @@
 - [ ] Add nix-ld
 - [ ] Add nh and implement with flake
 - [ ] Open terminal here doesn't work
-
+- [ ] Startup:
+```
+rclone mount OneDrive: ~/OneDrive \
+        --vfs-cache-mode writes \
+        --daemon
+```
 ## Potential improvements
 
 - Consider the Cachy kernel only if a trusted binary cache is available and the benefit is clear.

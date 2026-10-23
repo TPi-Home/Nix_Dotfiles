@@ -21,6 +21,7 @@
     };
 
     targets = {
+      noctalia.enable = false;
       gtk.enable = true;
     };
   };
