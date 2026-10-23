@@ -51,6 +51,7 @@ The tree below shows the main configuration paths rather than enumerating every 
 
 ```text
 Nix_Dot_Files/
+../
 ├── docs
 │   ├── about.md
 │   ├── hyprland.md
@@ -82,6 +83,11 @@ Nix_Dot_Files/
 │       └── sway
 │           └── config
 ├── home-manager
+│   ├── config
+│   │   ├── dconf.nix
+│   │   ├── default.nix
+│   │   ├── session.nix
+│   │   └── stylix.nix
 │   ├── default.nix
 │   ├── hosts
 │   │   ├── desktop.nix
@@ -95,7 +101,8 @@ Nix_Dot_Files/
 │   ├── noctalia
 │   │   ├── desktop.nix
 │   │   ├── generic.nix
-│   │   └── laptop.nix
+│   │   ├── laptop.nix
+│   │   └── noctalia.nix
 │   ├── programs
 │   │   ├── browsers
 │   │   │   ├── firefox.nix
@@ -107,6 +114,7 @@ Nix_Dot_Files/
 │   │   │   ├── starship.nix
 │   │   │   └── tmux.nix
 │   │   ├── editors
+│   │   │   ├── emacs.nix
 │   │   │   ├── helix.nix
 │   │   │   └── vscode.nix
 │   │   ├── mime.nix
@@ -116,13 +124,9 @@ Nix_Dot_Files/
 │   │   │   ├── programs.nix
 │   │   │   └── unity_hub.nix
 │   │   ├── services
-│   │   │   └── kanshi.nix
+│   │   │   └── rclone.nix
 │   │   └── terminals
 │   │       └── ghostty.nix
-│   ├── stylix
-│   │   ├── dconf.nix
-│   │   ├── default.nix
-│   │   └── include.nix
 │   └── sway
 │       ├── desktop.nix
 │       ├── generic.nix
@@ -147,6 +151,7 @@ Nix_Dot_Files/
 │   │   └── sway.nix
 │   ├── default.nix
 │   ├── dm
+│   │   ├── noctalia.nix
 │   │   └── tuigreet.nix
 │   ├── graphics
 │   │   └── nvidia.nix
@@ -171,12 +176,12 @@ Nix_Dot_Files/
 ├── scripts
 │   ├── generic_config.sh
 │   ├── gen.sh
-│   ├── nixpkgs.sh
 │   ├── rebuildnh.sh
 │   ├── rebuild.sh
 │   ├── security_check.sh
 │   ├── trash.sh
 │   ├── tree.sh
+│   ├── upgradeall.sh
 │   └── upgrade.sh
 ├── scrot1.png
 ├── scrot2.png
@@ -184,7 +189,7 @@ Nix_Dot_Files/
 └── .vscode
     └── tasks.json
 
-41 directories, 92 files
+41 directories, 96 files
 
 ```
 
