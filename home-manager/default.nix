@@ -24,7 +24,7 @@
 
     # Customization
     ./stylix/default.nix
-    ./stylix/dconf.nix
+    ./misc/dconf.nix
 
     # Browsers
     ./programs/browsers/firefox.nix
@@ -37,6 +37,7 @@
     # Desktop
     ./sway/sway.nix
     ./hyprland/hyprland.nix
+    ./noctalia/noctalia.nix
 
     # Display Settings
     ./programs/services/kanshi.nix
@@ -57,11 +58,6 @@
     ];
   };
 
-  programs.noctalia.enable = true;
-
-  xdg.configFile."noctalia/palettes/AstroDark.json".source =
-    ../home/.config/noctalia/palettes/AstroDark.json;
-
   home.username = "tyler";
   home.homeDirectory = "/home/tyler";
 
@@ -69,6 +65,10 @@
     EDITOR = "nvim";
     VISUAL = "code";
   };
+
+  home.sessionPath = [
+    "$HOME/.config/emacs/bin"
+  ]
 
   fonts.fontconfig.enable = true;
 
