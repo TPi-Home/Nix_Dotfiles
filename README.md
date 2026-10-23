@@ -151,7 +151,6 @@ Nix_Dot_Files/
 │   │   └── sway.nix
 │   ├── default.nix
 │   ├── dm
-│   │   ├── noctalia.nix
 │   │   └── tuigreet.nix
 │   ├── graphics
 │   │   └── nvidia.nix
@@ -189,7 +188,7 @@ Nix_Dot_Files/
 └── .vscode
     └── tasks.json
 
-41 directories, 96 files
+41 directories, 95 files
 
 ```
 
