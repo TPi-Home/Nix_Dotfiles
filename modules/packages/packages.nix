@@ -20,7 +20,6 @@
     # Editors (for TTY fallback only at system level)
     vim
     neovim
-    
 
     # Graphics / Vulkan
     vulkan-tools
@@ -41,7 +40,7 @@
     man-pages
     ncdu
     sc-im
-    
+
     # Dependencies
     zlib
 
@@ -56,7 +55,7 @@
     npc
     steam-run
 
-    # Misc 
+    # Misc
     graphviz
 
     # VM/ISO

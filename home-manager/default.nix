@@ -39,6 +39,6 @@
     ./hyprland/hyprland.nix
     ./noctalia/noctalia.nix
   ];
-  
+
   home.stateVersion = "26.11";
 }
