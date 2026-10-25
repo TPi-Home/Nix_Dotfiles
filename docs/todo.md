@@ -33,6 +33,7 @@ rclone mount OneDrive: ~/OneDrive \
 
 - [ ] Consider the Cachy kernel only if a trusted binary cache is available and the benefit is clear.
 - [ ] Noctalia greeter to flake and DM folder (if I can wrap the session in a way that allows me to switch between window managers)
+- [ ] Fix Mouse disappearing when typing on Firefox
 
 ## Future experiments
 

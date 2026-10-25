@@ -32,8 +32,6 @@
     zip
     p7zip
     rsync
-    fuse3
-    rclone
     file
     tree
     man-db
