@@ -25,6 +25,7 @@
 
     # Config
     ./config/default.nix
+    ./services/rclone.nix
 
     # Browsers
     ./programs/browsers/firefox.nix
@@ -35,8 +36,8 @@
     ./programs/misc/unity_hub.nix
 
     # Desktop
-    ./sway/sway.nix
-    ./hyprland/hyprland.nix
+    ./de/sway/sway.nix
+    ./de/hyprland/hyprland.nix
     ./noctalia/noctalia.nix
   ];
 

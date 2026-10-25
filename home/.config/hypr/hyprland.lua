@@ -60,6 +60,39 @@ hl.config({
         force_split = 2,
     },
 
+    group = {
+        col = {
+            border_active = 0xff5eb7ff,
+            border_inactive = 0xff696c76,
+            border_locked_active = 0xff5eb7ff,
+            border_locked_inactive = 0xff696c76,
+        },
+
+        groupbar = {
+            enabled = true,
+            height = 30,
+            font_size = 16,
+            render_titles = true,
+            gradients = true,
+
+            indicator_height = 0,
+            indicator_gap = 0,
+            gaps_in = 0,
+            gaps_out = 0,
+            keep_upper_gap = false,
+
+            text_color = 0xff16181d,
+            text_color_inactive = 0xff9b9fa9,
+            text_color_locked_active = 0xffdd97f1,
+            text_color_locked_inactive = 0xffdd97f1,
+
+            ["col.active"] = 0xff696c76,
+            ["col.inactive"] = 0xff1e222a,
+            ["col.locked_active"] = 0xff1e222a,
+            ["col.locked_inactive"] = 0xff1e222a,
+        },
+    },
+
     animations = {
         enabled = true,
     },
@@ -124,16 +157,7 @@ hl.bind(mod .. " + SHIFT + E", hl.dsp.exec_cmd("systemctl --user stop wayland-se
 -- ----------------------------------------------------------------------------
 -- Smart Borders
 -- ----------------------------------------------------------------------------
-
-hl.window_rule({
-    name = "smart-borders",
-    match = {
-        float = false,
-        workspace = "w[tv1]",
-    },
-    border_size = 0,
-})
-
+--- Not yet implemented 
 
 -- ----------------------------------------------------------------------------
 -- Focus
@@ -167,7 +191,8 @@ hl.bind(mod .. " + H", function() focus_direction("h") end)
 hl.bind(mod .. " + J", function() focus_direction("j") end)
 hl.bind(mod .. " + K", function() focus_direction("k") end)
 hl.bind(mod .. " + L", function() focus_direction("l") end)
-
+hl.bind(mod .. " + CTRL + H", hl.dsp.group.prev())
+hl.bind(mod .. " + CTRL + L", hl.dsp.group.next())
 -- ----------------------------------------------------------------------------
 -- Move Windows
 -- ----------------------------------------------------------------------------
@@ -199,11 +224,11 @@ end
 -- Layout
 -- ----------------------------------------------------------------------------
 
-hl.bind(mod .. " + B", hl.dsp.layout("togglesplit"))
-hl.bind(mod .. " + V", hl.dsp.window.pseudo())
+hl.bind(mod .. " + T", hl.dsp.layout("togglesplit"))
+hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind(mod .. " + C", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mod .. " + M", hl.dsp.group.toggle())
+hl.bind(mod .. " + G", hl.dsp.group.toggle())
 
 
 local function set_layout(layout)

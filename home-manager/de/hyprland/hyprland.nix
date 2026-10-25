@@ -6,7 +6,7 @@
     enable = true;
     package = null;
     configType = "lua";
-    extraConfig = builtins.readFile ../../home/.config/hypr/hyprland.lua;
+    extraConfig = builtins.readFile ../../../home/.config/hypr/hyprland.lua;
     systemd.enable = true;
     xwayland.enable = true;
   };

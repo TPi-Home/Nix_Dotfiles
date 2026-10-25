@@ -97,11 +97,11 @@ The source of truth is `home/.config/hypr/hyprland.lua`.
 | Super+Shift+H/J/K/L | Move the window left/down/up/right |
 | Super+1…0 | Switch to workspaces 1…10 |
 | Super+Shift+1…0 | Move the window to workspaces 1…10 without following |
-| Super+B | Toggle split |
-| Super+V | Toggle pseudo mode |
+| Super+T | Toggle split |
+| Super+P | Toggle pseudo mode |
 | Super+F | Toggle fullscreen |
 | Super+C | Toggle floating |
-| Super+M | Toggle group |
+| Super+G | Toggle group |
 | Super+Shift+D | Set Dwindle layout |
 | Super+Shift+M | Set Master layout |
 | Super+Shift+S | Set Scrolling layout |
