@@ -15,8 +15,6 @@
     # Version Control
     git-lfs
     lazygit
-    github-cli
-    github-desktop
 
     # C / C++
     (lib.hiPrio gcc)
