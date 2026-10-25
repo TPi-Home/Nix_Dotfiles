@@ -16,6 +16,12 @@
   nixpkgs.config.allowUnfree = true;
   # services.flatpak.enable = true;
 
+  # Allow nix build system to utilize multi-core CPU when building from scratch:
+  nix.settings = {
+    max-jobs = "auto";
+    cores = 0;
+  };
+
   # --------------------------------------------------------------------------
   # Experimental Features Excluding Stylix and Home-Manager
   # --------------------------------------------------------------------------

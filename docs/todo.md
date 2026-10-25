@@ -12,7 +12,7 @@
 ---
 
 ## Validation and maintenance
-
+- [ ] Set up a cachix server or automated build system for noctalia so I am not rebuilding it every day
 - [ ] Test each flake output with the intended physical machine: desktop, laptop, and generic. Maybe I could explore a way to setup generic to autodetect host configuration. 
 - [ ] Test a clean installation procedure; it has not yet been validated end to end.
 - [ ] Verify output names, modes, monitor scaling, pointer-cursor sizes, and application scaling in both Sway and Hyprland after a rebuild.
