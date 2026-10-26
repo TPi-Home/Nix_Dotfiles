@@ -54,7 +54,9 @@ rclone mount OneDrive: ~/OneDrive \
 - [ ] Fix Mouse disappearing when typing
 - [ ⚠️ ] Groups need some love
 - [ ] Fix floating windows out of bounds. (only affects hyprland)
+- [ ] Extent file manager
 - [ ] 
+
 ## Future experiments
 
 MangoWM and Niri are ideas for future experimentation, not currently configured sessions in this repository. Any future compositor should reuse the existing separation between NixOS system modules, Home Manager host-specific settings, and application config files rather than copying the older component tables from this file.
