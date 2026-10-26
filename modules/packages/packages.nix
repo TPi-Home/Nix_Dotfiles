@@ -11,8 +11,7 @@
     fzf
     fastfetch
     htop
-    bottom
-    atop
+    btop
     direnv
     nvtopPackages.full
     taskwarrior3
