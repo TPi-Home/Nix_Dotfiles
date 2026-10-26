@@ -15,13 +15,13 @@
 
 This repository contains my personal NixOS configuration and dotfiles. The goal is to keep the system configuration declarative, reproducible, organized, and maintainable across multiple machines.
 
-This is a personal work in progress, not a general-purpose NixOS installer. Review the configuration and adapt it before using it on different hardware.
+This is a **currently** personal work in progress, not a general-purpose NixOS installer. Review the configuration and adapt it before using it on different hardware. I may consider setting up an installation script.
 
 ## Philosophy and separation of responsibilities
 
 I want system-wide configuration to provide the basic functionality a computer needs, while user-specific software and preferences are managed by Home Manager. GUI applications are generally not installed system-wide unless they are part of the system or Wayland session setup.
 
-For most situations, a Home Manager Nix module that points to an application's config file is easier to maintain than expressing every application setting in Nix. The choice depends on what the application and Home Manager support.
+For most situations, a Home Manager Nix module that points to an application's config file is easier to maintain than expressing every application setting in Nix. The choice depends on what the application and Home Manager support. In my opinion, this is also more portable. If for some reason I want to also have an FHS compliant linux distro. Portability should make the fewest assumptions possible, at least in my opinion. 
 
 | Directory | Purpose |
 |---|---|
@@ -32,6 +32,9 @@ For most situations, a Home Manager Nix module that points to an application's c
 | `scripts/` | System rebuild, upgrade, cleanup, and helper scripts |
 | `docs/` | Installation and project documentation |
 | `reference/` | Theme references and assets |
+
+### Neovim
+Neovim is **not** set up in the style of nix. Last time I tried to do it, I ended up way over my head. I may revisit this. 
 
 ## Current window-manager setup
 
@@ -49,13 +52,15 @@ The greetd setup enables Num Lock before displaying the login screen. If that ca
 
 ## Code style and formatting
 
-Nix files in this project are formatted with Nix Fmt. From the repository root, run:
+Nix files in this project are formatted with `Nix Fmt` referencing `nixfmt` in the flake. From the repository root, run:
 
-~~~sh
-alejandra .
-~~~
+```sh
+nix fmt .
+```
 
-Review the resulting diff before committing formatting changes.
+See:
+
+[nixfmt](https://github.com/NixOS/nixfmt)
 
 ## Flake structure
 

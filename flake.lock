@@ -195,11 +195,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1792968454,
-        "narHash": "sha256-yv/5Cefzi3sYW3dhvClaoJbt7Yfpnkn3DN5yMw76Xvg=",
+        "lastModified": 1792975254,
+        "narHash": "sha256-JrvvytvzCAC7LFRd5ehJNaqi6uWGMAux9CjInAwkPfM=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "e2ad6e7d87ba0a20f819e3cf4c587c1db1705f5f",
+        "rev": "aaae4059d42284f3da05b5e3c1cd26f83470aaa1",
         "type": "github"
       },
       "original": {

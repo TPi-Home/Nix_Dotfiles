@@ -103,6 +103,7 @@ nightlight = false
 [shell]
 font_family = "UbuntuSans NF"
 scale = 1.5
+time_format = "{:%-I:%M %p}"
 
 [shell.panel]
 control_center_placement = "attached"
@@ -121,7 +122,9 @@ path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
 [wallpaper.last]
 path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
 
+
 [widget.clock]
+format = "{:%-I:%M %p}"
 font_scale = 1.25
 font_weight = 700
 

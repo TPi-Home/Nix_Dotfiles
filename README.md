@@ -56,6 +56,8 @@ Nix_Dot_Files/
 │   ├── about.md
 │   ├── hyprland.md
 │   ├── installation.md
+│   ├── mango.md
+│   ├── niri.md
 │   ├── sway.md
 │   ├── tmux.md
 │   └── todo.md
@@ -69,6 +71,8 @@ Nix_Dot_Files/
 │       │       └── settings.json
 │       ├── hypr
 │       │   └── hyprland.lua
+│       ├── mango
+│       │   └── config.conf
 │       ├── noctalia
 │       │   ├── hosts
 │       │   │   ├── desktop.toml
@@ -88,12 +92,20 @@ Nix_Dot_Files/
 │   │   ├── default.nix
 │   │   ├── session.nix
 │   │   └── stylix.nix
+│   ├── de
+│   │   ├── hyprland
+│   │   │   └── hyprland.nix
+│   │   ├── mango
+│   │   │   └── mango.nix
+│   │   └── sway
+│   │       ├── desktop.nix
+│   │       ├── generic.nix
+│   │       ├── laptop.nix
+│   │       └── sway.nix
 │   ├── default.nix
 │   ├── hosts
 │   │   ├── desktop.nix
 │   │   └── laptop.nix
-│   ├── hyprland
-│   │   └── hyprland.nix
 │   ├── kanshi
 │   │   ├── desktop.nix
 │   │   ├── generic.nix
@@ -123,15 +135,10 @@ Nix_Dot_Files/
 │   │   │   ├── ollama.nix
 │   │   │   ├── programs.nix
 │   │   │   └── unity_hub.nix
-│   │   ├── services
-│   │   │   └── rclone.nix
 │   │   └── terminals
 │   │       └── ghostty.nix
-│   └── sway
-│       ├── desktop.nix
-│       ├── generic.nix
-│       ├── laptop.nix
-│       └── sway.nix
+│   └── services
+│       └── rclone.nix
 ├── hosts
 │   ├── desktop
 │   │   ├── default.nix
@@ -148,6 +155,7 @@ Nix_Dot_Files/
 │   │   └── audio.nix
 │   ├── de
 │   │   ├── hyprland.nix
+│   │   ├── mango.nix
 │   │   └── sway.nix
 │   ├── default.nix
 │   ├── dm
@@ -175,6 +183,7 @@ Nix_Dot_Files/
 ├── scripts
 │   ├── generic_config.sh
 │   ├── gen.sh
+│   ├── nixfmt.sh
 │   ├── rebuildnh.sh
 │   ├── rebuild.sh
 │   ├── security_check.sh
@@ -188,8 +197,7 @@ Nix_Dot_Files/
 └── .vscode
     └── tasks.json
 
-41 directories, 95 files
-
+44 directories, 101 files
 ```
 
 ## Separation of responsibilities

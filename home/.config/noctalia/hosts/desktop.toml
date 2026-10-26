@@ -101,6 +101,7 @@ nightlight = false
 
 [shell]
 font_family = "UbuntuSans NF"
+time_format = "{:%-I:%M %p}"
 
 [shell.panel]
 control_center_placement = "attached"
@@ -120,6 +121,7 @@ path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
 path = "/home/tyler/Nix_Dot_Files/reference/Hilltopper.png"
 
 [widget.clock]
+format = "{:%-I:%M %p}"
 font_scale = 1.5
 font_weight = 700
 
@@ -136,3 +138,11 @@ auto_locate = true
 
 [weather]
 unit = "imperial"
+
+[dock]
+enabled = true
+position = "bottom"
+show_running = true
+auto_hide = false
+smart_auto_hide = false
+icon_size = 48

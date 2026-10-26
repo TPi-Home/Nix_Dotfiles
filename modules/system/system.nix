@@ -16,20 +16,26 @@
   nixpkgs.config.allowUnfree = true;
   # services.flatpak.enable = true;
 
-  # Allow nix build system to utilize multi-core CPU when building from scratch:
   nix.settings = {
+    # Experimental Features
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    # Allow Nix to utilize multiple CPU cores when building from scratch
     max-jobs = "auto";
     cores = 0;
+
+    # Binary Caches
+    extra-substituters = [
+      "https://noctalia.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+    ];
   };
-
-  # --------------------------------------------------------------------------
-  # Experimental Features Excluding Stylix and Home-Manager
-  # --------------------------------------------------------------------------
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   # --------------------------------------------------------------------------
   # User Management (No user process can persist)
