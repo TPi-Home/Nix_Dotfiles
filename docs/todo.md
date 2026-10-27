@@ -54,7 +54,6 @@ rclone mount OneDrive: ~/OneDrive \
 - [ ] Fix Mouse disappearing when typing
 - [ ⚠️ ] Groups need some love
 - [ ] Fix floating windows out of bounds. (only affects hyprland)
-- [ ] Extent file manager
 - [ ] 
 
 ## Future experiments
