@@ -26,6 +26,7 @@
     # Config
     ./config/default.nix
     ./services/rclone.nix
+    ./programs/mime.nix
 
     # Browsers
     ./programs/browsers/firefox.nix
