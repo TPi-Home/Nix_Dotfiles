@@ -94,6 +94,11 @@
     aseprite
     godot-mono
 
+    # Games
+    openrct2
+    openmw
+    cataclysm-dda
+
     # GUI Applications
     gimp
     kdePackages.okular
