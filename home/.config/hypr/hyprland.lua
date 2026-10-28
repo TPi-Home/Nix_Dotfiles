@@ -103,12 +103,6 @@ hl.config({
     
 })
 
-hl.window_rule({
-    match = {
-        float = true,
-    },
-    center = true,
-})
 -- Host-specific monitor scale is configured by home-manager/hyprland/<host>.nix.
 
 -- ----------------------------------------------------------------------------
