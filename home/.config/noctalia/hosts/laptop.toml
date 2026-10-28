@@ -139,7 +139,7 @@ custom_palette = "AstroDark"
 source = "custom"
 
 [location]
-auto_locate = true
+auto_locate = false
 
 [weather]
 unit = "imperial"
