@@ -42,6 +42,12 @@
             installation_mode = "force_installed";
             updates_disabled = false;
           };
+
+          "{20fc2e06-e3e4-4b2b-812b-ab431220cada}" = {
+            install_url = moz "startpage-private-search";
+            installation_mode = "force_installed";
+            updates_disabled = false;
+          };
         };
     };
 
